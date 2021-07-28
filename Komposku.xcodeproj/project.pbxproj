@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357626B00BD100FCCA93 /* CoreDataManager.swift */; };
+		7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357926B1933A00FCCA93 /* Seeder.swift */; };
+		7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */; };
+		7851357F26B1C4F500FCCA93 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357E26B1C4F500FCCA93 /* Material.swift */; };
+		7851358126B1C52300FCCA93 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358026B1C52300FCCA93 /* Condition.swift */; };
+		7851358326B1C54900FCCA93 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358226B1C54900FCCA93 /* Solution.swift */; };
+		7851358526B1CD0400FCCA93 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358426B1CD0400FCCA93 /* Tutorial.swift */; };
+		7851358726B1CFF000FCCA93 /* WasteMaterialTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */; };
 		78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */; };
 		78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */; };
 		78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0EE26AF12290034CFC1 /* CompostController.swift */; };
@@ -21,6 +28,13 @@
 
 /* Begin PBXFileReference section */
 		7851357626B00BD100FCCA93 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7851357926B1933A00FCCA93 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
+		7851357E26B1C4F500FCCA93 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		7851358026B1C52300FCCA93 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		7851358226B1C54900FCCA93 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		7851358426B1CD0400FCCA93 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteMaterialTutorial.swift; sourceTree = "<group>"; };
 		78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compost+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78FEC0EE26AF12290034CFC1 /* CompostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostController.swift; sourceTree = "<group>"; };
@@ -45,6 +59,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7851357B26B1C4BF00FCCA93 /* Static Data */ = {
+			isa = PBXGroup;
+			children = (
+				7851357926B1933A00FCCA93 /* Seeder.swift */,
+				7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */,
+				7851357E26B1C4F500FCCA93 /* Material.swift */,
+				7851358026B1C52300FCCA93 /* Condition.swift */,
+				7851358226B1C54900FCCA93 /* Solution.swift */,
+				7851358426B1CD0400FCCA93 /* Tutorial.swift */,
+				7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */,
+			);
+			path = "Static Data";
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +122,7 @@
 		C6C9CBEA26AE7D1900D2BECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7851357B26B1C4BF00FCCA93 /* Static Data */,
 				78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */,
 				78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */,
 				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
@@ -181,7 +210,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7851358126B1C52300FCCA93 /* Condition.swift in Sources */,
+				7851357F26B1C4F500FCCA93 /* Material.swift in Sources */,
+				7851358326B1C54900FCCA93 /* Solution.swift in Sources */,
+				7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */,
+				7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */,
+				7851358726B1CFF000FCCA93 /* WasteMaterialTutorial.swift in Sources */,
 				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
+				7851358526B1CD0400FCCA93 /* Tutorial.swift in Sources */,
 				78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
