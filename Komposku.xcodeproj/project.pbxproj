@@ -7,31 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A9ADF2B26B25CE9003E0304 /* CompostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF1C26B25CE9003E0304 /* CompostController.xib */; };
-		9A9ADF2C26B25CE9003E0304 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF1D26B25CE9003E0304 /* CompostController.swift */; };
-		9A9ADF2D26B25CE9003E0304 /* ListBahanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2026B25CE9003E0304 /* ListBahanViewController.xib */; };
-		9A9ADF2E26B25CE9003E0304 /* ListBahanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2126B25CE9003E0304 /* ListBahanViewController.swift */; };
-		9A9ADF2F26B25CE9003E0304 /* BahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2326B25CE9003E0304 /* BahanTableViewCell.xib */; };
-		9A9ADF3026B25CE9003E0304 /* BahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2426B25CE9003E0304 /* BahanTableViewCell.swift */; };
-		9A9ADF3126B25CE9003E0304 /* CreateCompostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2626B25CE9003E0304 /* CreateCompostViewController.xib */; };
-		9A9ADF3226B25CE9003E0304 /* CreateCompostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2726B25CE9003E0304 /* CreateCompostViewController.swift */; };
-		9A9ADF3326B25CE9003E0304 /* ListBahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2926B25CE9003E0304 /* ListBahanTableViewCell.swift */; };
-		9A9ADF3426B25CE9003E0304 /* ListBahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2A26B25CE9003E0304 /* ListBahanTableViewCell.xib */; };
-		9A9ADF3D26B25D53003E0304 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3626B25D53003E0304 /* Solution.swift */; };
-		9A9ADF3E26B25D53003E0304 /* WasteMaterialTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3726B25D53003E0304 /* WasteMaterialTutorial.swift */; };
-		9A9ADF3F26B25D53003E0304 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3826B25D53003E0304 /* Tutorial.swift */; };
-		9A9ADF4026B25D53003E0304 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3926B25D53003E0304 /* Condition.swift */; };
-		9A9ADF4126B25D53003E0304 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3A26B25D53003E0304 /* Seeder.swift */; };
-		9A9ADF4226B25D53003E0304 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3B26B25D53003E0304 /* Material.swift */; };
-		9A9ADF4326B25D53003E0304 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3C26B25D53003E0304 /* MaterialDetail.swift */; };
-		9A9ADF4426B25FFD003E0304 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */; };
-		9A9ADF4526B26000003E0304 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357626B00BD100FCCA93 /* CoreDataManager.swift */; };
-		9A9ADF4626B26002003E0304 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */; };
-		9A9ADF5326B276DD003E0304 /* TotalItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5126B276DD003E0304 /* TotalItemTableViewCell.swift */; };
-		9A9ADF5426B276DD003E0304 /* TotalItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5226B276DD003E0304 /* TotalItemTableViewCell.xib */; };
-		9A9ADF5726B276EC003E0304 /* CreateButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5526B276EC003E0304 /* CreateButtonTableViewCell.swift */; };
-		9A9ADF5826B276EC003E0304 /* CreateButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5626B276EC003E0304 /* CreateButtonTableViewCell.xib */; };
-		9A9ADF5C26B2DB57003E0304 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5B26B2DB57003E0304 /* UIView+Ext.swift */; };
+		9A9ADF2B26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		9A9ADF2C26B25CE9003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF2D26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		9A9ADF2E26B25CE9003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF2F26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		9A9ADF3426B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		9A9ADF3D26B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF3E26B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF3F26B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF4126B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF4326B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF4426B25FFD003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF4626B26002003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF5326B276DD003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9A9ADF5826B276EC003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		9A9ADF5C26B2DB57003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9AF79E4F26B2F7E100FE6255 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4126B2F7E100FE6255 /* Process+CoreDataClass.swift */; };
+		9AF79E5026B2F7E100FE6255 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4426B2F7E100FE6255 /* UIView+Ext.swift */; };
+		9AF79E5126B2F7E100FE6255 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4626B2F7E100FE6255 /* Solution.swift */; };
+		9AF79E5226B2F7E100FE6255 /* WasteMaterialTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4726B2F7E100FE6255 /* WasteMaterialTutorial.swift */; };
+		9AF79E5326B2F7E100FE6255 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4826B2F7E100FE6255 /* Tutorial.swift */; };
+		9AF79E5426B2F7E100FE6255 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4926B2F7E100FE6255 /* Condition.swift */; };
+		9AF79E5526B2F7E100FE6255 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4A26B2F7E100FE6255 /* Seeder.swift */; };
+		9AF79E5626B2F7E100FE6255 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4B26B2F7E100FE6255 /* Material.swift */; };
+		9AF79E5726B2F7E100FE6255 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4C26B2F7E100FE6255 /* MaterialDetail.swift */; };
+		9AF79E5826B2F7E100FE6255 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4D26B2F7E100FE6255 /* CoreDataManager.swift */; };
+		9AF79E5926B2F7E100FE6255 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4E26B2F7E100FE6255 /* Compost+CoreDataClass.swift */; };
+		9AF79E6F26B2F7F800FE6255 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E5A26B2F7F800FE6255 /* CompostController.swift */; };
+		9AF79E7026B2F7F800FE6255 /* CompostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E5B26B2F7F800FE6255 /* CompostController.xib */; };
+		9AF79E7126B2F7F800FE6255 /* CreateButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E5E26B2F7F800FE6255 /* CreateButtonTableViewCell.xib */; };
+		9AF79E7226B2F7F800FE6255 /* CreateButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E5F26B2F7F800FE6255 /* CreateButtonTableViewCell.swift */; };
+		9AF79E7326B2F7F800FE6255 /* ListBahanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E6126B2F7F800FE6255 /* ListBahanViewController.xib */; };
+		9AF79E7426B2F7F800FE6255 /* ListBahanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E6226B2F7F800FE6255 /* ListBahanViewController.swift */; };
+		9AF79E7526B2F7F800FE6255 /* BahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E6426B2F7F800FE6255 /* BahanTableViewCell.xib */; };
+		9AF79E7626B2F7F800FE6255 /* BahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E6526B2F7F800FE6255 /* BahanTableViewCell.swift */; };
+		9AF79E7726B2F7F800FE6255 /* TotalItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E6726B2F7F800FE6255 /* TotalItemTableViewCell.swift */; };
+		9AF79E7826B2F7F800FE6255 /* TotalItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E6826B2F7F800FE6255 /* TotalItemTableViewCell.xib */; };
+		9AF79E7926B2F7F800FE6255 /* CreateCompostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E6A26B2F7F800FE6255 /* CreateCompostViewController.xib */; };
+		9AF79E7A26B2F7F800FE6255 /* CreateCompostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E6B26B2F7F800FE6255 /* CreateCompostViewController.swift */; };
+		9AF79E7B26B2F7F800FE6255 /* ListBahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E6D26B2F7F800FE6255 /* ListBahanTableViewCell.swift */; };
+		9AF79E7C26B2F7F800FE6255 /* ListBahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF79E6E26B2F7F800FE6255 /* ListBahanTableViewCell.xib */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
@@ -40,6 +56,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9AF79E4126B2F7E100FE6255 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9AF79E4426B2F7E100FE6255 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		9AF79E4626B2F7E100FE6255 /* Solution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		9AF79E4726B2F7E100FE6255 /* WasteMaterialTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteMaterialTutorial.swift; sourceTree = "<group>"; };
+		9AF79E4826B2F7E100FE6255 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		9AF79E4926B2F7E100FE6255 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		9AF79E4A26B2F7E100FE6255 /* Seeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		9AF79E4B26B2F7E100FE6255 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		9AF79E4C26B2F7E100FE6255 /* MaterialDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
+		9AF79E4D26B2F7E100FE6255 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9AF79E4E26B2F7E100FE6255 /* Compost+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compost+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9AF79E5A26B2F7F800FE6255 /* CompostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompostController.swift; sourceTree = "<group>"; };
+		9AF79E5B26B2F7F800FE6255 /* CompostController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompostController.xib; sourceTree = "<group>"; };
+		9AF79E5E26B2F7F800FE6255 /* CreateButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateButtonTableViewCell.xib; sourceTree = "<group>"; };
+		9AF79E5F26B2F7F800FE6255 /* CreateButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateButtonTableViewCell.swift; sourceTree = "<group>"; };
+		9AF79E6126B2F7F800FE6255 /* ListBahanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListBahanViewController.xib; sourceTree = "<group>"; };
+		9AF79E6226B2F7F800FE6255 /* ListBahanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBahanViewController.swift; sourceTree = "<group>"; };
+		9AF79E6426B2F7F800FE6255 /* BahanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BahanTableViewCell.xib; sourceTree = "<group>"; };
+		9AF79E6526B2F7F800FE6255 /* BahanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BahanTableViewCell.swift; sourceTree = "<group>"; };
+		9AF79E6726B2F7F800FE6255 /* TotalItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalItemTableViewCell.swift; sourceTree = "<group>"; };
+		9AF79E6826B2F7F800FE6255 /* TotalItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalItemTableViewCell.xib; sourceTree = "<group>"; };
+		9AF79E6A26B2F7F800FE6255 /* CreateCompostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateCompostViewController.xib; sourceTree = "<group>"; };
+		9AF79E6B26B2F7F800FE6255 /* CreateCompostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCompostViewController.swift; sourceTree = "<group>"; };
+		9AF79E6D26B2F7F800FE6255 /* ListBahanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBahanTableViewCell.swift; sourceTree = "<group>"; };
+		9AF79E6E26B2F7F800FE6255 /* ListBahanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListBahanTableViewCell.xib; sourceTree = "<group>"; };
 		C645E01D26AE59D800888F63 /* Komposku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komposku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C645E02026AE59D800888F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C645E02226AE59D800888F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +101,103 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9AF79E4226B2F7E100FE6255 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E4326B2F7E100FE6255 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9AF79E4326B2F7E100FE6255 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E4426B2F7E100FE6255 /* UIView+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9AF79E4526B2F7E100FE6255 /* Static Data */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E4626B2F7E100FE6255 /* Solution.swift */,
+				9AF79E4726B2F7E100FE6255 /* WasteMaterialTutorial.swift */,
+				9AF79E4826B2F7E100FE6255 /* Tutorial.swift */,
+				9AF79E4926B2F7E100FE6255 /* Condition.swift */,
+				9AF79E4A26B2F7E100FE6255 /* Seeder.swift */,
+				9AF79E4B26B2F7E100FE6255 /* Material.swift */,
+				9AF79E4C26B2F7E100FE6255 /* MaterialDetail.swift */,
+			);
+			path = "Static Data";
+			sourceTree = "<group>";
+		};
+		9AF79E5C26B2F7F800FE6255 /* CreateCompost */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E5D26B2F7F800FE6255 /* CreateButton */,
+				9AF79E6026B2F7F800FE6255 /* ListBahan */,
+				9AF79E6326B2F7F800FE6255 /* BahanCell */,
+				9AF79E6626B2F7F800FE6255 /* TotalItem */,
+				9AF79E6926B2F7F800FE6255 /* Create */,
+				9AF79E6C26B2F7F800FE6255 /* ListBahanCell */,
+			);
+			path = CreateCompost;
+			sourceTree = "<group>";
+		};
+		9AF79E5D26B2F7F800FE6255 /* CreateButton */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E5E26B2F7F800FE6255 /* CreateButtonTableViewCell.xib */,
+				9AF79E5F26B2F7F800FE6255 /* CreateButtonTableViewCell.swift */,
+			);
+			path = CreateButton;
+			sourceTree = "<group>";
+		};
+		9AF79E6026B2F7F800FE6255 /* ListBahan */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E6126B2F7F800FE6255 /* ListBahanViewController.xib */,
+				9AF79E6226B2F7F800FE6255 /* ListBahanViewController.swift */,
+			);
+			path = ListBahan;
+			sourceTree = "<group>";
+		};
+		9AF79E6326B2F7F800FE6255 /* BahanCell */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E6426B2F7F800FE6255 /* BahanTableViewCell.xib */,
+				9AF79E6526B2F7F800FE6255 /* BahanTableViewCell.swift */,
+			);
+			path = BahanCell;
+			sourceTree = "<group>";
+		};
+		9AF79E6626B2F7F800FE6255 /* TotalItem */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E6726B2F7F800FE6255 /* TotalItemTableViewCell.swift */,
+				9AF79E6826B2F7F800FE6255 /* TotalItemTableViewCell.xib */,
+			);
+			path = TotalItem;
+			sourceTree = "<group>";
+		};
+		9AF79E6926B2F7F800FE6255 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E6A26B2F7F800FE6255 /* CreateCompostViewController.xib */,
+				9AF79E6B26B2F7F800FE6255 /* CreateCompostViewController.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9AF79E6C26B2F7F800FE6255 /* ListBahanCell */ = {
+			isa = PBXGroup;
+			children = (
+				9AF79E6D26B2F7F800FE6255 /* ListBahanTableViewCell.swift */,
+				9AF79E6E26B2F7F800FE6255 /* ListBahanTableViewCell.xib */,
+			);
+			path = ListBahanCell;
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +229,9 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C645E02426AE59D800888F63 /* ViewController.swift */,
+				9AF79E5A26B2F7F800FE6255 /* CompostController.swift */,
+				9AF79E5B26B2F7F800FE6255 /* CompostController.xib */,
+				9AF79E5C26B2F7F800FE6255 /* CreateCompost */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -108,12 +248,12 @@
 		C6C9CBEA26AE7D1900D2BECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9A9ADF5926B2DB45003E0304 /* Utils */,
-				78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */,
-				7851357626B00BD100FCCA93 /* CoreDataManager.swift */,
+				9AF79E4E26B2F7E100FE6255 /* Compost+CoreDataClass.swift */,
+				9AF79E4D26B2F7E100FE6255 /* CoreDataManager.swift */,
+				9AF79E4126B2F7E100FE6255 /* Process+CoreDataClass.swift */,
 				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
-				78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */,
-				9A9ADF3526B25D53003E0304 /* Static Data */,
+				9AF79E4526B2F7E100FE6255 /* Static Data */,
+				9AF79E4226B2F7E100FE6255 /* Utils */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -185,12 +325,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
-				9A9ADF2D26B25CE9003E0304 /* ListBahanViewController.xib in Resources */,
-				9A9ADF3426B25CE9003E0304 /* ListBahanTableViewCell.xib in Resources */,
-				9A9ADF2B26B25CE9003E0304 /* CompostController.xib in Resources */,
-				9A9ADF2F26B25CE9003E0304 /* BahanTableViewCell.xib in Resources */,
+				9AF79E7826B2F7F800FE6255 /* TotalItemTableViewCell.xib in Resources */,
+				9AF79E7926B2F7F800FE6255 /* CreateCompostViewController.xib in Resources */,
+				9AF79E7526B2F7F800FE6255 /* BahanTableViewCell.xib in Resources */,
+				9AF79E7326B2F7F800FE6255 /* ListBahanViewController.xib in Resources */,
+				9A9ADF2D26B25CE9003E0304 /* (null) in Resources */,
+				9A9ADF3426B25CE9003E0304 /* (null) in Resources */,
+				9A9ADF2B26B25CE9003E0304 /* (null) in Resources */,
+				9A9ADF2F26B25CE9003E0304 /* (null) in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
-				9A9ADF5826B276EC003E0304 /* CreateButtonTableViewCell.xib in Resources */,
+				9AF79E7C26B2F7F800FE6255 /* ListBahanTableViewCell.xib in Resources */,
+				9A9ADF5826B276EC003E0304 /* (null) in Resources */,
+				9AF79E7026B2F7F800FE6255 /* CompostController.xib in Resources */,
+				9AF79E7126B2F7F800FE6255 /* CreateButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,21 +348,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C645E02526AE59D800888F63 /* ViewController.swift in Sources */,
+				9AF79E5026B2F7E100FE6255 /* UIView+Ext.swift in Sources */,
+				9AF79E5226B2F7E100FE6255 /* WasteMaterialTutorial.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
-				9A9ADF3F26B25D53003E0304 /* Tutorial.swift in Sources */,
+				9AF79E4F26B2F7E100FE6255 /* Process+CoreDataClass.swift in Sources */,
+				9A9ADF3F26B25D53003E0304 /* (null) in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
-				9A9ADF5326B276DD003E0304 /* TotalItemTableViewCell.swift in Sources */,
-				9A9ADF5C26B2DB57003E0304 /* UIView+Ext.swift in Sources */,
-				9A9ADF3E26B25D53003E0304 /* WasteMaterialTutorial.swift in Sources */,
-				9A9ADF4326B25D53003E0304 /* MaterialDetail.swift in Sources */,
-				9A9ADF2E26B25CE9003E0304 /* ListBahanViewController.swift in Sources */,
+				9AF79E5826B2F7E100FE6255 /* CoreDataManager.swift in Sources */,
+				9A9ADF5326B276DD003E0304 /* (null) in Sources */,
+				9A9ADF5C26B2DB57003E0304 /* (null) in Sources */,
+				9AF79E5726B2F7E100FE6255 /* MaterialDetail.swift in Sources */,
+				9AF79E5626B2F7E100FE6255 /* Material.swift in Sources */,
+				9A9ADF3E26B25D53003E0304 /* (null) in Sources */,
+				9AF79E7226B2F7F800FE6255 /* CreateButtonTableViewCell.swift in Sources */,
+				9AF79E7626B2F7F800FE6255 /* BahanTableViewCell.swift in Sources */,
+				9AF79E5426B2F7E100FE6255 /* Condition.swift in Sources */,
+				9AF79E7726B2F7F800FE6255 /* TotalItemTableViewCell.swift in Sources */,
+				9AF79E7B26B2F7F800FE6255 /* ListBahanTableViewCell.swift in Sources */,
+				9AF79E5326B2F7E100FE6255 /* Tutorial.swift in Sources */,
+				9AF79E5526B2F7E100FE6255 /* Seeder.swift in Sources */,
+				9AF79E5126B2F7E100FE6255 /* Solution.swift in Sources */,
+				9A9ADF4326B25D53003E0304 /* (null) in Sources */,
+				9A9ADF2E26B25CE9003E0304 /* (null) in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
-				9A9ADF4626B26002003E0304 /* Process+CoreDataClass.swift in Sources */,
-				9A9ADF4126B25D53003E0304 /* Seeder.swift in Sources */,
-				9A9ADF2C26B25CE9003E0304 /* CompostController.swift in Sources */,
-				9A9ADF3D26B25D53003E0304 /* Solution.swift in Sources */,
-				9A9ADF4426B25FFD003E0304 /* Compost+CoreDataClass.swift in Sources */,
+				9A9ADF4626B26002003E0304 /* (null) in Sources */,
+				9AF79E7A26B2F7F800FE6255 /* CreateCompostViewController.swift in Sources */,
+				9AF79E7426B2F7F800FE6255 /* ListBahanViewController.swift in Sources */,
+				9A9ADF4126B25D53003E0304 /* (null) in Sources */,
+				9A9ADF2C26B25CE9003E0304 /* (null) in Sources */,
+				9A9ADF3D26B25D53003E0304 /* (null) in Sources */,
+				9AF79E6F26B2F7F800FE6255 /* CompostController.swift in Sources */,
+				9A9ADF4426B25FFD003E0304 /* (null) in Sources */,
+				9AF79E5926B2F7E100FE6255 /* Compost+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
