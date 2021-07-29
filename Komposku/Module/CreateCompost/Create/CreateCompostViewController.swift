@@ -15,8 +15,9 @@ class CreateCompostViewController: UIViewController {
     @IBOutlet weak var compostImage: UIImageView!
     
     @IBOutlet weak var containerViewBottom: UIView!
-    var dataHijau: [MaterialDetail] = []
-    var dataCoklat: [MaterialDetail] = []
+//    var dataHijau: [MaterialDetail] = []
+    var dataHijau: Material = Material(color: "Hijau", detail: [], total_material: 0)
+    var dataCoklat: Material = Material(color: "Coklat", detail: [], total_material: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +54,9 @@ class CreateCompostViewController: UIViewController {
 extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return dataHijau.count + 1
+            return dataHijau.detail.count + 1
         } else {
-            return dataCoklat.count + 1
+            return dataCoklat.detail.count + 1
         }
         
     }
@@ -77,15 +78,16 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if dataHijau.count == 0 {
+            if dataHijau.detail.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "createButtonIdentifier") as! CreateButtonTableViewCell
                 cell.action = {
                     let vc = ListBahanViewController()
                     vc.section = 0
+                    vc.material = self.dataHijau
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 return cell
-            } else if indexPath.row == dataHijau.count + 1 && dataHijau.count != 0 {
+            } else if indexPath.row == dataHijau.detail.count + 1 && dataHijau.detail.count != 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "totalItemIdentifier") as! TotalItemTableViewCell
                 return cell
             } else {
@@ -93,15 +95,16 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
                 return cell
             }
         } else {
-            if dataCoklat.count == 0 {
+            if dataCoklat.detail.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "createButtonIdentifier") as! CreateButtonTableViewCell
                 cell.action = {
                     let vc = ListBahanViewController()
                     vc.section = 1
+                    vc.material = self.dataCoklat
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 return cell
-            } else if indexPath.row == dataCoklat.count + 1 && dataCoklat.count != 0 {
+            } else if indexPath.row == dataCoklat.detail.count + 1 && dataCoklat.detail.count != 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "totalItemIdentifier") as! TotalItemTableViewCell
                 return cell
             } else {
