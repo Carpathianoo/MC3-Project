@@ -22,13 +22,18 @@ class BahanTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    var materials: MaterialModel? {
-//        didSet {
-//              setupView()
-//        }
-//    }
+    var materials: MaterialDetail? {
+        didSet {
+              setupView()
+        }
+    }
 
     func setupView(){
+        guard let material = materials else {
+            return
+        }
+
+        bahanTitle.text = material.name
         viewContainer.layer.cornerRadius = 10
         viewContainer.backgroundColor = UIColor(named: "accentGray")
         viewContainer.layer.shadowColor = UIColor(red: 0.2, green: 0.31, blue: 0.22, alpha: 0.1).cgColor
