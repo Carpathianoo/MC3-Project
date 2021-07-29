@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A3E705126B1A8D10025C451 /* ListBahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3E704F26B1A8D10025C451 /* ListBahanTableViewCell.swift */; };
+		9A3E705226B1A8D10025C451 /* ListBahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3E705026B1A8D10025C451 /* ListBahanTableViewCell.xib */; };
+		9A8A9D5F26B17EDF00048938 /* ListBahanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A9D5D26B17EDF00048938 /* ListBahanViewController.swift */; };
+		9A8A9D6026B17EDF00048938 /* ListBahanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8A9D5E26B17EDF00048938 /* ListBahanViewController.xib */; };
+		9A9A2C0126B0FCC100EEE34C /* CreateCompostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A2BFF26B0FCC100EEE34C /* CreateCompostViewController.swift */; };
+		9A9A2C0226B0FCC100EEE34C /* CreateCompostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9A2C0026B0FCC100EEE34C /* CreateCompostViewController.xib */; };
+		9A9A2C0626B1093900EEE34C /* BahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A2C0426B1093900EEE34C /* BahanTableViewCell.swift */; };
+		9A9A2C0726B1093900EEE34C /* BahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9A2C0526B1093900EEE34C /* BahanTableViewCell.xib */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
 		C645E02526AE59D800888F63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02426AE59D800888F63 /* ViewController.swift */; };
@@ -16,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A3E704F26B1A8D10025C451 /* ListBahanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBahanTableViewCell.swift; sourceTree = "<group>"; };
+		9A3E705026B1A8D10025C451 /* ListBahanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBahanTableViewCell.xib; sourceTree = "<group>"; };
+		9A8A9D5D26B17EDF00048938 /* ListBahanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBahanViewController.swift; sourceTree = "<group>"; };
+		9A8A9D5E26B17EDF00048938 /* ListBahanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBahanViewController.xib; sourceTree = "<group>"; };
+		9A9A2BFF26B0FCC100EEE34C /* CreateCompostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompostViewController.swift; sourceTree = "<group>"; };
+		9A9A2C0026B0FCC100EEE34C /* CreateCompostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCompostViewController.xib; sourceTree = "<group>"; };
+		9A9A2C0426B1093900EEE34C /* BahanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BahanTableViewCell.swift; sourceTree = "<group>"; };
+		9A9A2C0526B1093900EEE34C /* BahanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BahanTableViewCell.xib; sourceTree = "<group>"; };
 		C645E01D26AE59D800888F63 /* Komposku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komposku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C645E02026AE59D800888F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C645E02226AE59D800888F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A3E704B26B1A7E50025C451 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				9A9A2BFF26B0FCC100EEE34C /* CreateCompostViewController.swift */,
+				9A9A2C0026B0FCC100EEE34C /* CreateCompostViewController.xib */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9A3E704C26B1A7EE0025C451 /* BahanCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A9A2C0426B1093900EEE34C /* BahanTableViewCell.swift */,
+				9A9A2C0526B1093900EEE34C /* BahanTableViewCell.xib */,
+			);
+			path = BahanCell;
+			sourceTree = "<group>";
+		};
+		9A3E704D26B1A7F80025C451 /* ListBahan */ = {
+			isa = PBXGroup;
+			children = (
+				9A8A9D5D26B17EDF00048938 /* ListBahanViewController.swift */,
+				9A8A9D5E26B17EDF00048938 /* ListBahanViewController.xib */,
+			);
+			path = ListBahan;
+			sourceTree = "<group>";
+		};
+		9A3E704E26B1A7FF0025C451 /* ListBahanCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A3E704F26B1A8D10025C451 /* ListBahanTableViewCell.swift */,
+				9A3E705026B1A8D10025C451 /* ListBahanTableViewCell.xib */,
+			);
+			path = ListBahanCell;
+			sourceTree = "<group>";
+		};
+		9A9A2BFE26B0FCB300EEE34C /* CreateCompost */ = {
+			isa = PBXGroup;
+			children = (
+				9A3E704E26B1A7FF0025C451 /* ListBahanCell */,
+				9A3E704D26B1A7F80025C451 /* ListBahan */,
+				9A3E704C26B1A7EE0025C451 /* BahanCell */,
+				9A3E704B26B1A7E50025C451 /* Create */,
+			);
+			path = CreateCompost;
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -56,11 +119,11 @@
 		C645E01F26AE59D800888F63 /* Komposku */ = {
 			isa = PBXGroup;
 			children = (
-				C6C9CBEB26AE7D3100D2BECE /* Resources */,
-				C6C9CBEA26AE7D1900D2BECE /* Core */,
-				C6C9CBE926AE7D1100D2BECE /* App */,
-				C6C9CBE826AE7D0800D2BECE /* Module */,
 				C645E03126AE59D900888F63 /* Info.plist */,
+				C6C9CBE926AE7D1100D2BECE /* App */,
+				C6C9CBEA26AE7D1900D2BECE /* Core */,
+				C6C9CBE826AE7D0800D2BECE /* Module */,
+				C6C9CBEB26AE7D3100D2BECE /* Resources */,
 			);
 			path = Komposku;
 			sourceTree = "<group>";
@@ -68,6 +131,7 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				9A9A2BFE26B0FCB300EEE34C /* CreateCompost */,
 				C645E02426AE59D800888F63 /* ViewController.swift */,
 			);
 			path = Module;
@@ -156,6 +220,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3E705226B1A8D10025C451 /* ListBahanTableViewCell.xib in Resources */,
+				9A9A2C0726B1093900EEE34C /* BahanTableViewCell.xib in Resources */,
+				9A8A9D6026B17EDF00048938 /* ListBahanViewController.xib in Resources */,
+				9A9A2C0226B0FCC100EEE34C /* CreateCompostViewController.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
 			);
@@ -168,7 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3E705126B1A8D10025C451 /* ListBahanTableViewCell.swift in Sources */,
+				9A8A9D5F26B17EDF00048938 /* ListBahanViewController.swift in Sources */,
+				9A9A2C0626B1093900EEE34C /* BahanTableViewCell.swift in Sources */,
 				C645E02526AE59D800888F63 /* ViewController.swift in Sources */,
+				9A9A2C0126B0FCC100EEE34C /* CreateCompostViewController.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
@@ -311,7 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42F2NQF94Z;
+				DEVELOPMENT_TEAM = H443SZWX2N;
 				INFOPLIST_FILE = Komposku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -330,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42F2NQF94Z;
+				DEVELOPMENT_TEAM = H443SZWX2N;
 				INFOPLIST_FILE = Komposku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
