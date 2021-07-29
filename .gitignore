@@ -4,6 +4,11 @@
 
 ## User settings
 xcuserdata/
+project.xcworkspace
+UserInterface.xcuserstate
+UserInterfaceState.xcuserstate
+*/.DS_Store
+.DS_Store
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -85,5 +90,6 @@ fastlane/test_output
 #
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
+
 
 iOSInjectionProject/
