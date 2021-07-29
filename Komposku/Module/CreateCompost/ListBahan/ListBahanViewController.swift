@@ -12,12 +12,17 @@ class ListBahanViewController: UIViewController {
     @IBOutlet weak var detailMaterial: UILabel!
     @IBOutlet weak var listBahanTableView: UITableView!
     
-    var materialTitle = ""
-//    var material: Material?
+    var section: Int?
+    var material: Material?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = materialTitle
+        if section == 0 {
+            title = "List Bahan Hijau"
+        } else {
+            title = "List Bahan Coklat"
+        }
         setupView()
         // Do any additional setup after loading the view.
     }
@@ -27,6 +32,12 @@ class ListBahanViewController: UIViewController {
         listBahanTableView.register(listBahanNib, forCellReuseIdentifier: "listBahanCellIdentifier")
         listBahanTableView.delegate = self
         listBahanTableView.dataSource = self
+        listBahanTableView.separatorStyle = .none
+        if section == 0 {
+            detailMaterial.text = "Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein. Ukur bahan hijaumu dengan ukuran wadah yang sama."
+        } else {
+            detailMaterial.text = "Sampah Cokelat adalah bahan yang kaya akan karbon atau karbohidrat. Ukur bahan cokelatmu dengan ukuran wadah yang sama."
+        }
     }
    
     /*
@@ -47,7 +58,7 @@ extension ListBahanViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listBahanCellIdentifier", for: indexPath) as! ListBahanTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listBahanCellIdentifier", for: indexPath)
         return cell
     }
     
