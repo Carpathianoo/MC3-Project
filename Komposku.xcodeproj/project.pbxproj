@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A9ADF2B26B25CE9003E0304 /* CompostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF1C26B25CE9003E0304 /* CompostController.xib */; };
+		9A9ADF2C26B25CE9003E0304 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF1D26B25CE9003E0304 /* CompostController.swift */; };
+		9A9ADF2D26B25CE9003E0304 /* ListBahanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2026B25CE9003E0304 /* ListBahanViewController.xib */; };
+		9A9ADF2E26B25CE9003E0304 /* ListBahanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2126B25CE9003E0304 /* ListBahanViewController.swift */; };
+		9A9ADF2F26B25CE9003E0304 /* BahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2326B25CE9003E0304 /* BahanTableViewCell.xib */; };
+		9A9ADF3026B25CE9003E0304 /* BahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2426B25CE9003E0304 /* BahanTableViewCell.swift */; };
+		9A9ADF3126B25CE9003E0304 /* CreateCompostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2626B25CE9003E0304 /* CreateCompostViewController.xib */; };
+		9A9ADF3226B25CE9003E0304 /* CreateCompostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2726B25CE9003E0304 /* CreateCompostViewController.swift */; };
+		9A9ADF3326B25CE9003E0304 /* ListBahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2926B25CE9003E0304 /* ListBahanTableViewCell.swift */; };
+		9A9ADF3426B25CE9003E0304 /* ListBahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF2A26B25CE9003E0304 /* ListBahanTableViewCell.xib */; };
+		9A9ADF3D26B25D53003E0304 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3626B25D53003E0304 /* Solution.swift */; };
+		9A9ADF3E26B25D53003E0304 /* WasteMaterialTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3726B25D53003E0304 /* WasteMaterialTutorial.swift */; };
+		9A9ADF3F26B25D53003E0304 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3826B25D53003E0304 /* Tutorial.swift */; };
+		9A9ADF4026B25D53003E0304 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3926B25D53003E0304 /* Condition.swift */; };
+		9A9ADF4126B25D53003E0304 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3A26B25D53003E0304 /* Seeder.swift */; };
+		9A9ADF4226B25D53003E0304 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3B26B25D53003E0304 /* Material.swift */; };
+		9A9ADF4326B25D53003E0304 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF3C26B25D53003E0304 /* MaterialDetail.swift */; };
+		9A9ADF4426B25FFD003E0304 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */; };
+		9A9ADF4526B26000003E0304 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357626B00BD100FCCA93 /* CoreDataManager.swift */; };
+		9A9ADF4626B26002003E0304 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */; };
+		9A9ADF5326B276DD003E0304 /* TotalItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5126B276DD003E0304 /* TotalItemTableViewCell.swift */; };
+		9A9ADF5426B276DD003E0304 /* TotalItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5226B276DD003E0304 /* TotalItemTableViewCell.xib */; };
+		9A9ADF5726B276EC003E0304 /* CreateButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5526B276EC003E0304 /* CreateButtonTableViewCell.swift */; };
+		9A9ADF5826B276EC003E0304 /* CreateButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5626B276EC003E0304 /* CreateButtonTableViewCell.xib */; };
+		9A9ADF5C26B2DB57003E0304 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9ADF5B26B2DB57003E0304 /* UIView+Ext.swift */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
@@ -15,26 +40,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A3E704F26B1A8D10025C451 /* ListBahanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBahanTableViewCell.swift; sourceTree = "<group>"; };
-		9A3E705026B1A8D10025C451 /* ListBahanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBahanTableViewCell.xib; sourceTree = "<group>"; };
-		9A8A9D5D26B17EDF00048938 /* ListBahanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBahanViewController.swift; sourceTree = "<group>"; };
-		9A8A9D5E26B17EDF00048938 /* ListBahanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBahanViewController.xib; sourceTree = "<group>"; };
-		9A9A2BFF26B0FCC100EEE34C /* CreateCompostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompostViewController.swift; sourceTree = "<group>"; };
-		9A9A2C0026B0FCC100EEE34C /* CreateCompostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCompostViewController.xib; sourceTree = "<group>"; };
-		9A9A2C0426B1093900EEE34C /* BahanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BahanTableViewCell.swift; sourceTree = "<group>"; };
-		9A9A2C0526B1093900EEE34C /* BahanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BahanTableViewCell.xib; sourceTree = "<group>"; };
 		7851357626B00BD100FCCA93 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		7851357926B1933A00FCCA93 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
-		7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
-		7851357E26B1C4F500FCCA93 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
-		7851358026B1C52300FCCA93 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
-		7851358226B1C54900FCCA93 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
-		7851358426B1CD0400FCCA93 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
-		7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteMaterialTutorial.swift; sourceTree = "<group>"; };
 		78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compost+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
-		78FEC0EE26AF12290034CFC1 /* CompostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostController.swift; sourceTree = "<group>"; };
-		78FEC0EF26AF12290034CFC1 /* CompostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompostController.xib; sourceTree = "<group>"; };
+		9A9ADF1C26B25CE9003E0304 /* CompostController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompostController.xib; sourceTree = "<group>"; };
+		9A9ADF1D26B25CE9003E0304 /* CompostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompostController.swift; sourceTree = "<group>"; };
+		9A9ADF2026B25CE9003E0304 /* ListBahanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListBahanViewController.xib; sourceTree = "<group>"; };
+		9A9ADF2126B25CE9003E0304 /* ListBahanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBahanViewController.swift; sourceTree = "<group>"; };
+		9A9ADF2326B25CE9003E0304 /* BahanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BahanTableViewCell.xib; sourceTree = "<group>"; };
+		9A9ADF2426B25CE9003E0304 /* BahanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BahanTableViewCell.swift; sourceTree = "<group>"; };
+		9A9ADF2626B25CE9003E0304 /* CreateCompostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateCompostViewController.xib; sourceTree = "<group>"; };
+		9A9ADF2726B25CE9003E0304 /* CreateCompostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCompostViewController.swift; sourceTree = "<group>"; };
+		9A9ADF2926B25CE9003E0304 /* ListBahanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBahanTableViewCell.swift; sourceTree = "<group>"; };
+		9A9ADF2A26B25CE9003E0304 /* ListBahanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListBahanTableViewCell.xib; sourceTree = "<group>"; };
+		9A9ADF3626B25D53003E0304 /* Solution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		9A9ADF3726B25D53003E0304 /* WasteMaterialTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteMaterialTutorial.swift; sourceTree = "<group>"; };
+		9A9ADF3826B25D53003E0304 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		9A9ADF3926B25D53003E0304 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		9A9ADF3A26B25D53003E0304 /* Seeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		9A9ADF3B26B25D53003E0304 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		9A9ADF3C26B25D53003E0304 /* MaterialDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
+		9A9ADF5126B276DD003E0304 /* TotalItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalItemTableViewCell.swift; sourceTree = "<group>"; };
+		9A9ADF5226B276DD003E0304 /* TotalItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalItemTableViewCell.xib; sourceTree = "<group>"; };
+		9A9ADF5526B276EC003E0304 /* CreateButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButtonTableViewCell.swift; sourceTree = "<group>"; };
+		9A9ADF5626B276EC003E0304 /* CreateButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateButtonTableViewCell.xib; sourceTree = "<group>"; };
+		9A9ADF5B26B2DB57003E0304 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		C645E01D26AE59D800888F63 /* Komposku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komposku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C645E02026AE59D800888F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C645E02226AE59D800888F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +85,103 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A9ADF1E26B25CE9003E0304 /* CreateCompost */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF2226B25CE9003E0304 /* BahanCell */,
+				9A9ADF2526B25CE9003E0304 /* Create */,
+				9A9ADF4F26B2763B003E0304 /* CreateButton */,
+				9A9ADF5026B27646003E0304 /* TotalItem */,
+				9A9ADF1F26B25CE9003E0304 /* ListBahan */,
+				9A9ADF2826B25CE9003E0304 /* ListBahanCell */,
+			);
+			path = CreateCompost;
+			sourceTree = "<group>";
+		};
+		9A9ADF1F26B25CE9003E0304 /* ListBahan */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF2026B25CE9003E0304 /* ListBahanViewController.xib */,
+				9A9ADF2126B25CE9003E0304 /* ListBahanViewController.swift */,
+			);
+			path = ListBahan;
+			sourceTree = "<group>";
+		};
+		9A9ADF2226B25CE9003E0304 /* BahanCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF2326B25CE9003E0304 /* BahanTableViewCell.xib */,
+				9A9ADF2426B25CE9003E0304 /* BahanTableViewCell.swift */,
+			);
+			path = BahanCell;
+			sourceTree = "<group>";
+		};
+		9A9ADF2526B25CE9003E0304 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF2626B25CE9003E0304 /* CreateCompostViewController.xib */,
+				9A9ADF2726B25CE9003E0304 /* CreateCompostViewController.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9A9ADF2826B25CE9003E0304 /* ListBahanCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF2926B25CE9003E0304 /* ListBahanTableViewCell.swift */,
+				9A9ADF2A26B25CE9003E0304 /* ListBahanTableViewCell.xib */,
+			);
+			path = ListBahanCell;
+			sourceTree = "<group>";
+		};
+		9A9ADF3526B25D53003E0304 /* Static Data */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF3626B25D53003E0304 /* Solution.swift */,
+				9A9ADF3726B25D53003E0304 /* WasteMaterialTutorial.swift */,
+				9A9ADF3826B25D53003E0304 /* Tutorial.swift */,
+				9A9ADF3926B25D53003E0304 /* Condition.swift */,
+				9A9ADF3A26B25D53003E0304 /* Seeder.swift */,
+				9A9ADF3B26B25D53003E0304 /* Material.swift */,
+				9A9ADF3C26B25D53003E0304 /* MaterialDetail.swift */,
+			);
+			path = "Static Data";
+			sourceTree = "<group>";
+		};
+		9A9ADF4F26B2763B003E0304 /* CreateButton */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF5526B276EC003E0304 /* CreateButtonTableViewCell.swift */,
+				9A9ADF5626B276EC003E0304 /* CreateButtonTableViewCell.xib */,
+			);
+			path = CreateButton;
+			sourceTree = "<group>";
+		};
+		9A9ADF5026B27646003E0304 /* TotalItem */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF5126B276DD003E0304 /* TotalItemTableViewCell.swift */,
+				9A9ADF5226B276DD003E0304 /* TotalItemTableViewCell.xib */,
+			);
+			path = TotalItem;
+			sourceTree = "<group>";
+		};
+		9A9ADF5926B2DB45003E0304 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF5A26B2DB4A003E0304 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9A9ADF5A26B2DB4A003E0304 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9A9ADF5B26B2DB57003E0304 /* UIView+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +213,9 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C645E02426AE59D800888F63 /* ViewController.swift */,
+				9A9ADF1D26B25CE9003E0304 /* CompostController.swift */,
+				9A9ADF1C26B25CE9003E0304 /* CompostController.xib */,
+				9A9ADF1E26B25CE9003E0304 /* CreateCompost */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -103,11 +232,12 @@
 		C6C9CBEA26AE7D1900D2BECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7851357B26B1C4BF00FCCA93 /* Static Data */,
+				9A9ADF5926B2DB45003E0304 /* Utils */,
 				78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */,
-				78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */,
-				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
 				7851357626B00BD100FCCA93 /* CoreDataManager.swift */,
+				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
+				78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */,
+				9A9ADF3526B25D53003E0304 /* Static Data */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -178,13 +308,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A3E705226B1A8D10025C451 /* ListBahanTableViewCell.xib in Resources */,
-				9A9A2C0726B1093900EEE34C /* BahanTableViewCell.xib in Resources */,
-				9A8A9D6026B17EDF00048938 /* ListBahanViewController.xib in Resources */,
-				9A9A2C0226B0FCC100EEE34C /* CreateCompostViewController.xib in Resources */,
+				9A9ADF3126B25CE9003E0304 /* CreateCompostViewController.xib in Resources */,
+				9A9ADF5426B276DD003E0304 /* TotalItemTableViewCell.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
-				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
+				9A9ADF2D26B25CE9003E0304 /* ListBahanViewController.xib in Resources */,
+				9A9ADF3426B25CE9003E0304 /* ListBahanTableViewCell.xib in Resources */,
+				9A9ADF2B26B25CE9003E0304 /* CompostController.xib in Resources */,
+				9A9ADF2F26B25CE9003E0304 /* BahanTableViewCell.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
+				9A9ADF5826B276EC003E0304 /* CreateButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,12 +327,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C645E02526AE59D800888F63 /* ViewController.swift in Sources */,
+				9A9ADF4226B25D53003E0304 /* Material.swift in Sources */,
+				9A9ADF5726B276EC003E0304 /* CreateButtonTableViewCell.swift in Sources */,
+				9A9ADF3326B25CE9003E0304 /* ListBahanTableViewCell.swift in Sources */,
+				9A9ADF4026B25D53003E0304 /* Condition.swift in Sources */,
+				9A9ADF3226B25CE9003E0304 /* CreateCompostViewController.swift in Sources */,
+				9A9ADF4526B26000003E0304 /* CoreDataManager.swift in Sources */,
+				9A9ADF3026B25CE9003E0304 /* BahanTableViewCell.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
+				9A9ADF3F26B25D53003E0304 /* Tutorial.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
+				9A9ADF5326B276DD003E0304 /* TotalItemTableViewCell.swift in Sources */,
+				9A9ADF5C26B2DB57003E0304 /* UIView+Ext.swift in Sources */,
+				9A9ADF3E26B25D53003E0304 /* WasteMaterialTutorial.swift in Sources */,
+				9A9ADF4326B25D53003E0304 /* MaterialDetail.swift in Sources */,
+				9A9ADF2E26B25CE9003E0304 /* ListBahanViewController.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
-				7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */,
-				78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */,
+				9A9ADF4626B26002003E0304 /* Process+CoreDataClass.swift in Sources */,
+				9A9ADF4126B25D53003E0304 /* Seeder.swift in Sources */,
+				9A9ADF2C26B25CE9003E0304 /* CompostController.swift in Sources */,
+				9A9ADF3D26B25D53003E0304 /* Solution.swift in Sources */,
+				9A9ADF4426B25FFD003E0304 /* Compost+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
