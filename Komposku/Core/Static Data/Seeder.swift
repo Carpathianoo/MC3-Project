@@ -70,7 +70,11 @@ class Seeder{
         var wasteMats: [WasteMaterialTutorial] = []
         
         wasteMats.append(WasteMaterialTutorial(type: "Sampah Hijau", name: ["Sayur dan buah", "Potongan rumput", "Belukar", "Ampas kopi", "Nasi", "Sampah dapur", "Sampah kebun", "Cangkang telur"],photo: ["sayur_buah", "potongan_rumput", "belukar", "ampas_kopi", "nasi", "sampah_dapur", "sampah_kebun", "cangkang_telur"]))
+        
         wasteMats.append(WasteMaterialTutorial(type: "Sampah Cokelat", name: ["Potongan koran", "Daun kering", "Potongan kardus", "Sekam/Gabah"], photo: ["koran", "daun_kering", "kardus", "sekam"]))
+        
+        wasteMats.append(WasteMaterialTutorial(type: "Tidak disarankan untuk kompos", name: ["Sisa daging atau ikan", "Olahan susu", "Lemak atau minyak", "Kotoran hewan", "Tumbuhan sakit", "Tumbuhan berpestisida"], photo: ["daging", "susu", "lemak", "kotoran_hewan", "tumbuhan_sakit", "tumbuhan_berpestisida"]))
+        
         
         return wasteMats
     }
