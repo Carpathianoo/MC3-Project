@@ -16,6 +16,24 @@ class ListBahanTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupView()
+
+    }
+    
+    var currentAmount: Double?
+    
+    var updateMaterial: ((MaterialDetail) -> ())?
+    
+    var materialsDetail: MaterialDetail? {
+        didSet{
+            guard let material = materialsDetail else {
+                return
+            }
+            bahanTitle.text = material.name
+            
+            bahanStepper.minimumValue = 0
+            jumlahBahan.text = "\(material.quantity) bagian"
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,6 +46,28 @@ class ListBahanTableViewCell: UITableViewCell {
         viewContainer.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1)
         viewContainer.layer.cornerRadius = 10
         bahanStepper.layer.cornerRadius = 10
+        bahanStepper.stepValue = 1
+        
     }
     
+    override func layoutSubviews() {
+        if let currentAmount = currentAmount {
+            bahanStepper.value = currentAmount
+            print("data", bahanStepper.value)
+        }
+    }
+    
+    @IBAction func addAmount(_ sender: UIStepper) {
+
+        guard var materials = materialsDetail else {
+            return
+        }
+        if let _ = currentAmount {
+            materials.quantity = Int(sender.value)
+        } else {
+            materials.quantity += Int(sender.value)
+        }
+        jumlahBahan.text = "\(materials.quantity) bagian"
+        updateMaterial?(materials)
+    }
 }

@@ -14,12 +14,22 @@ class TotalItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    var materialItem: Material? {
+        didSet {
+            guard let materialItem = materialItem else {
+                return
+            }
+            amountItem.text = "\(materialItem.total_material)"
+        }
     }
     
     

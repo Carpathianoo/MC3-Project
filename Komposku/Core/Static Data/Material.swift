@@ -9,6 +9,6 @@ import Foundation
 
 struct Material{
     let color: String
-    let detail: [MaterialDetail]
+    var detail: [MaterialDetail]
     var total_material: Int
 }

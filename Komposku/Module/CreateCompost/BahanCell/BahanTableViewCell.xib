@@ -11,18 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bahanCellIdentifier" id="KGk-i7-Jjw" customClass="BahanTableViewCell" customModule="Komposku" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="bahanCellIdentifier" id="KGk-i7-Jjw" customClass="BahanTableViewCell" customModule="Komposku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2o-BL-0NL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="20" y="8" width="280" height="47"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bubuk Kopi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ld-mH-UQf">
-                                <rect key="frame" x="17" y="10" width="86.5" height="24"/>
+                                <rect key="frame" x="17" y="10" width="86.5" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,16 +37,16 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="k2o-BL-0NL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EOQ-PQ-0SM"/>
-                    <constraint firstAttribute="trailing" secondItem="k2o-BL-0NL" secondAttribute="trailing" id="Meq-sa-h0X"/>
-                    <constraint firstItem="k2o-BL-0NL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eS5-iH-L8O"/>
+                    <constraint firstItem="k2o-BL-0NL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="EOQ-PQ-0SM"/>
+                    <constraint firstAttribute="trailing" secondItem="k2o-BL-0NL" secondAttribute="trailing" constant="20" id="Meq-sa-h0X"/>
+                    <constraint firstItem="k2o-BL-0NL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="eS5-iH-L8O"/>
                     <constraint firstAttribute="bottom" secondItem="k2o-BL-0NL" secondAttribute="bottom" id="lna-BI-k9W"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bahanTitle" destination="9Ld-mH-UQf" id="4KD-vf-DFs"/>
-                <outlet property="viewContainer" destination="9Ld-mH-UQf" id="D0n-9W-giX"/>
+                <outlet property="viewContainer" destination="k2o-BL-0NL" id="WtW-cX-d5N"/>
             </connections>
             <point key="canvasLocation" x="139" y="131"/>
         </tableViewCell>
