@@ -14,6 +14,7 @@ class BahanTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,18 +25,18 @@ class BahanTableViewCell: UITableViewCell {
     
     var materials: MaterialDetail? {
         didSet {
-              setupView()
+            guard let material = materials else {
+                return
+            }
+
+            bahanTitle.text = material.name
         }
     }
 
     func setupView(){
-        guard let material = materials else {
-            return
-        }
-
-        bahanTitle.text = material.name
+        
         viewContainer.layer.cornerRadius = 10
-        viewContainer.backgroundColor = UIColor(named: "accentGray")
+        viewContainer.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
         viewContainer.layer.shadowColor = UIColor(red: 0.2, green: 0.31, blue: 0.22, alpha: 0.1).cgColor
         viewContainer.layer.shadowRadius = 10
         viewContainer.layer.shadowPath = UIBezierPath(rect: viewContainer.bounds).cgPath

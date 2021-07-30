@@ -15,6 +15,7 @@ class ListBahanViewController: UIViewController {
     var section: Int?
     var material: Material?
     
+    var actionBack: ((Material) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,26 +40,52 @@ class ListBahanViewController: UIViewController {
             detailMaterial.text = "Sampah Cokelat adalah bahan yang kaya akan karbon atau karbohidrat. Ukur bahan cokelatmu dengan ukuran wadah yang sama."
         }
     }
-   
-    /*
-    // MARK: - Navigation
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+        updateTotalAmount()
+        
+        guard let material = material else {
+            return
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        actionBack?(material)
     }
-    */
+    
+    func updateTotalAmount() {
+        var total = 0
+        for mtrl in material!.detail {
+            total += mtrl.quantity
+        }
+        
+        material?.total_material = total
+    }
 
 }
 
 extension ListBahanViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let material = material else {
+            return 1
+        }
+        return material.detail.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        90
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listBahanCellIdentifier", for: indexPath)
+        
+        let cell = listBahanTableView.dequeueReusableCell(withIdentifier: "listBahanCellIdentifier", for: indexPath) as! ListBahanTableViewCell
+        cell.materialsDetail = material?.detail[indexPath.row]
+        cell.currentAmount = Double(material?.detail[indexPath.row].quantity ?? 0)
+        cell.updateMaterial = { material in
+            self.material?.detail[indexPath.row] = material
+        }
         return cell
     }
     
