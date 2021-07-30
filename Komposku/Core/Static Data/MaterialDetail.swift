@@ -10,4 +10,5 @@ import Foundation
 struct MaterialDetail{
     let name: String
     var quantity: Int
+    let moistureLevel: Double
 }
