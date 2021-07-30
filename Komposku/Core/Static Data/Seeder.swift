@@ -42,7 +42,7 @@ class Seeder{
         var conditions: [Condition] = []
         conditions.append(Condition(desc: "Tidak basah dan berbau tengik", isChecked: false))
         conditions.append(Condition(desc: "Menghasilkan panas", isChecked: false))
-        conditions.append(Condition(desc: "Lembab dan wangi fermentasi seperti tapai", isChecked: false))
+        conditions.append(Condition(desc: "Lembab dan wangi fermentasi seperti tapai, dan menghasilkan panas", isChecked: false))
         conditions.append(Condition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
         return conditions
     }
@@ -77,6 +77,15 @@ class Seeder{
         
         
         return wasteMats
+    }
+    
+    func seedHarvestCondition() -> [HarvestCondition]{
+        var conditions: [HarvestCondition] = []
+        conditions.append(HarvestCondition(desc: "Warna Kehitaman", isChecked: false))
+        conditions.append(HarvestCondition(desc: "Tidak berbau tengik", isChecked: false))
+        conditions.append(HarvestCondition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
+        conditions.append(HarvestCondition(desc: "Kompos tidak terlalu panas", isChecked: false))
+        return conditions
     }
     
 }

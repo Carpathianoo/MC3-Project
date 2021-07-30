@@ -10,10 +10,19 @@ import UIKit
 class ConditionViewController: UIViewController {
 
     @IBOutlet weak var conditionTV: UITableView!
+    
+    let seeder = Seeder()
+    var conditions: [Condition] = []
+    var harvestConditions: [HarvestCondition] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        conditions = seeder.seedCondition()
+        harvestConditions = seeder.seedHarvestCondition()
+        
         let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
+        
         conditionTV.register(nibCell, forCellReuseIdentifier: ConditionTableViewCell.identifier)
         conditionTV.separatorStyle = .none
         conditionTV.delegate = self
@@ -23,14 +32,30 @@ class ConditionViewController: UIViewController {
 }
 
 extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+            return conditions.count
+        }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = conditionTV.dequeueReusableCell(withIdentifier: ConditionTableViewCell.identifier, for: indexPath) as! ConditionTableViewCell
+        cell.conditionLbl.text = conditions[indexPath.section].desc
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 12
+        }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+                headerView.backgroundColor = .white
+
+        return headerView
+    }
     
 }

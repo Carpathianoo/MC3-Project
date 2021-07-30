@@ -9,9 +9,12 @@ import UIKit
 
 class ConditionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var conditionLbl: UILabel!
+    @IBOutlet weak var statusIV: UIImageView!
     static let identifier = "ConditionTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         // Initialization code
     }
 
