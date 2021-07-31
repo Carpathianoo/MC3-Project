@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DoneCheckingViewController" customModule="Komposku" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pengecekkan selesai!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZM-Nz-NTg">
+                    <rect key="frame" x="12.666666666666657" y="547" width="365" height="33.666666666666629"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-KI-ErP">
+                    <rect key="frame" x="12.666666666666657" y="665.66666666666663" width="365" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="365" id="LM3-W2-gZA"/>
+                        <constraint firstAttribute="height" constant="49" id="OEZ-Ec-Z92"/>
+                    </constraints>
+                    <state key="normal" title="Balik ke Kompos"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lanjutkan kerja kerasmu untuk mengkompos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-v3-9P0">
+                    <rect key="frame" x="42.666666666666657" y="588.66666666666663" width="305" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="305" id="7CY-yl-h7c"/>
+                        <constraint firstAttribute="height" constant="61" id="Wxu-Ju-6iT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Done Checking-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Iz-Ki-nGg">
+                    <rect key="frame" x="23" y="174" width="344" height="365"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="344" id="FUA-k1-u3A"/>
+                        <constraint firstAttribute="height" constant="365" id="ajs-Ah-PRr"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="FTa-v3-9P0" firstAttribute="top" secondItem="MZM-Nz-NTg" secondAttribute="bottom" constant="8" id="3Dr-J8-Z8t"/>
+                <constraint firstItem="MZM-Nz-NTg" firstAttribute="centerX" secondItem="FTa-v3-9P0" secondAttribute="centerX" id="53o-7S-wMQ"/>
+                <constraint firstItem="MZM-Nz-NTg" firstAttribute="top" secondItem="1Iz-Ki-nGg" secondAttribute="bottom" constant="8" id="Htq-aH-iMb"/>
+                <constraint firstItem="cYF-KI-ErP" firstAttribute="top" secondItem="FTa-v3-9P0" secondAttribute="bottom" constant="16" id="I9z-MF-gEH"/>
+                <constraint firstItem="FTa-v3-9P0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="d9l-Nd-IH9"/>
+                <constraint firstItem="MZM-Nz-NTg" firstAttribute="trailing" secondItem="cYF-KI-ErP" secondAttribute="trailing" id="e57-o5-ank"/>
+                <constraint firstItem="1Iz-Ki-nGg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="23" id="ftH-k6-tpf"/>
+                <constraint firstItem="1Iz-Ki-nGg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="130" id="rxk-xk-0z1"/>
+                <constraint firstItem="1Iz-Ki-nGg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="u6J-x4-DZ5"/>
+                <constraint firstItem="MZM-Nz-NTg" firstAttribute="top" secondItem="1Iz-Ki-nGg" secondAttribute="bottom" constant="8" id="uqx-sz-lsW"/>
+                <constraint firstItem="MZM-Nz-NTg" firstAttribute="leading" secondItem="cYF-KI-ErP" secondAttribute="leading" id="yQ8-JV-D7F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Iz-Ki-nGg" secondAttribute="trailing" constant="23" id="yws-vk-0Nz"/>
+            </constraints>
+            <point key="canvasLocation" x="79.710144927536234" y="119.86607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Done Checking-1" width="1063" height="1063"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

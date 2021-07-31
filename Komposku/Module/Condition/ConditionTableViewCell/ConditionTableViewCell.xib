@@ -20,23 +20,29 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQG-wq-G03" customClass="CustomTableViewCell" customModule="Komposku" customModuleProvider="target">
                         <rect key="frame" x="3" y="3" width="367" height="70"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eX4-xs-aNZ">
-                                <rect key="frame" x="340" y="25" width="19" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KI-0n-TPj">
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="19" id="Koq-A2-IYY"/>
+                                    <constraint firstAttribute="width" constant="30" id="2M2-mR-wjP"/>
+                                    <constraint firstAttribute="height" constant="30" id="igV-Ej-3v0"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="checkListTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nhV-KU-N4K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="eX4-xs-aNZ" secondAttribute="trailing" constant="8" id="COS-xi-QBP"/>
-                            <constraint firstItem="eX4-xs-aNZ" firstAttribute="centerY" secondItem="JQG-wq-G03" secondAttribute="centerY" id="TwM-Cb-vk4"/>
-                            <constraint firstAttribute="bottom" secondItem="eX4-xs-aNZ" secondAttribute="bottom" constant="25" id="bEc-Xj-ujB"/>
-                            <constraint firstItem="eX4-xs-aNZ" firstAttribute="top" secondItem="JQG-wq-G03" secondAttribute="top" constant="25" id="vpJ-9h-h1C"/>
+                            <constraint firstItem="5KI-0n-TPj" firstAttribute="centerY" secondItem="JQG-wq-G03" secondAttribute="centerY" id="Bu6-YB-fr4"/>
+                            <constraint firstAttribute="trailing" secondItem="5KI-0n-TPj" secondAttribute="trailing" constant="8" id="vA7-zM-znj"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hb-kO-RJW">
-                        <rect key="frame" x="14" y="5" width="321" height="66"/>
+                        <rect key="frame" x="14" y="5" width="314" height="66"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -46,7 +52,7 @@
                     <constraint firstItem="9Hb-kO-RJW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2yc-mx-Zwe"/>
                     <constraint firstItem="JQG-wq-G03" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="7d0-Qf-jct"/>
                     <constraint firstItem="JQG-wq-G03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="K9m-Oq-ryb"/>
-                    <constraint firstAttribute="trailing" secondItem="9Hb-kO-RJW" secondAttribute="trailing" constant="38" id="KCI-iv-Fry"/>
+                    <constraint firstAttribute="trailing" secondItem="9Hb-kO-RJW" secondAttribute="trailing" constant="45" id="KCI-iv-Fry"/>
                     <constraint firstItem="9Hb-kO-RJW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="Shp-Yz-wQS"/>
                     <constraint firstAttribute="trailing" secondItem="JQG-wq-G03" secondAttribute="trailing" constant="3" id="Vaa-7t-Kqb"/>
                     <constraint firstAttribute="bottom" secondItem="JQG-wq-G03" secondAttribute="bottom" constant="3" id="eNd-sK-3ym"/>
@@ -55,13 +61,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="checkListBtn" destination="5KI-0n-TPj" id="roK-iR-Bbm"/>
                 <outlet property="conditionLbl" destination="9Hb-kO-RJW" id="pVw-CE-TQn"/>
-                <outlet property="statusIV" destination="eX4-xs-aNZ" id="8l2-eR-LEI"/>
             </connections>
             <point key="canvasLocation" x="79.230769230769226" y="72.511848341232223"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

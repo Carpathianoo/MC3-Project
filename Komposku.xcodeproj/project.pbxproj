@@ -13,6 +13,12 @@
 		78472A7126B3E5210076E3D7 /* ConditionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A6F26B3E5210076E3D7 /* ConditionTableViewCell.xib */; };
 		78472A7326B3EBAE0076E3D7 /* HarvestCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7226B3EBAE0076E3D7 /* HarvestCondition.swift */; };
 		78472A7726B3F45E0076E3D7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7626B3F45E0076E3D7 /* CustomTableViewCell.swift */; };
+		78472A7B26B4277D0076E3D7 /* DoneCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7926B4277D0076E3D7 /* DoneCheckingViewController.swift */; };
+		78472A7C26B4277D0076E3D7 /* DoneCheckingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A7A26B4277D0076E3D7 /* DoneCheckingViewController.xib */; };
+		78472A8026B42F920076E3D7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7E26B42F920076E3D7 /* ResultViewController.swift */; };
+		78472A8126B42F920076E3D7 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A7F26B42F920076E3D7 /* ResultViewController.xib */; };
+		78472A8526B4312E0076E3D7 /* SolutionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A8326B4312E0076E3D7 /* SolutionTableViewCell.swift */; };
+		78472A8626B4312E0076E3D7 /* SolutionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A8426B4312E0076E3D7 /* SolutionTableViewCell.xib */; };
 		7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357626B00BD100FCCA93 /* CoreDataManager.swift */; };
 		7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357926B1933A00FCCA93 /* Seeder.swift */; };
 		7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */; };
@@ -39,6 +45,12 @@
 		78472A6F26B3E5210076E3D7 /* ConditionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionTableViewCell.xib; sourceTree = "<group>"; };
 		78472A7226B3EBAE0076E3D7 /* HarvestCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestCondition.swift; sourceTree = "<group>"; };
 		78472A7626B3F45E0076E3D7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		78472A7926B4277D0076E3D7 /* DoneCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCheckingViewController.swift; sourceTree = "<group>"; };
+		78472A7A26B4277D0076E3D7 /* DoneCheckingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneCheckingViewController.xib; sourceTree = "<group>"; };
+		78472A7E26B42F920076E3D7 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		78472A7F26B42F920076E3D7 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		78472A8326B4312E0076E3D7 /* SolutionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionTableViewCell.swift; sourceTree = "<group>"; };
+		78472A8426B4312E0076E3D7 /* SolutionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolutionTableViewCell.xib; sourceTree = "<group>"; };
 		7851357626B00BD100FCCA93 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7851357926B1933A00FCCA93 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
@@ -90,6 +102,34 @@
 			path = ConditionTableViewCell;
 			sourceTree = "<group>";
 		};
+		78472A7826B427510076E3D7 /* DoneChecking */ = {
+			isa = PBXGroup;
+			children = (
+				78472A7926B4277D0076E3D7 /* DoneCheckingViewController.swift */,
+				78472A7A26B4277D0076E3D7 /* DoneCheckingViewController.xib */,
+			);
+			path = DoneChecking;
+			sourceTree = "<group>";
+		};
+		78472A7D26B42F710076E3D7 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				78472A8226B42F970076E3D7 /* SolutionTableViewCell */,
+				78472A7E26B42F920076E3D7 /* ResultViewController.swift */,
+				78472A7F26B42F920076E3D7 /* ResultViewController.xib */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		78472A8226B42F970076E3D7 /* SolutionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				78472A8326B4312E0076E3D7 /* SolutionTableViewCell.swift */,
+				78472A8426B4312E0076E3D7 /* SolutionTableViewCell.xib */,
+			);
+			path = SolutionTableViewCell;
+			sourceTree = "<group>";
+		};
 		7851357B26B1C4BF00FCCA93 /* Static Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +176,8 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				78472A7D26B42F710076E3D7 /* Result */,
+				78472A7826B427510076E3D7 /* DoneChecking */,
 				78472A6826B3E49E0076E3D7 /* Condition */,
 				78FEC0EE26AF12290034CFC1 /* CompostController.swift */,
 				78FEC0EF26AF12290034CFC1 /* CompostController.xib */,
@@ -231,7 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78472A7C26B4277D0076E3D7 /* DoneCheckingViewController.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
+				78472A8626B4312E0076E3D7 /* SolutionTableViewCell.xib in Resources */,
+				78472A8126B42F920076E3D7 /* ResultViewController.xib in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
 				78472A6C26B3E4C80076E3D7 /* ConditionViewController.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
@@ -249,6 +294,7 @@
 				7851358126B1C52300FCCA93 /* Condition.swift in Sources */,
 				78472A7026B3E5210076E3D7 /* ConditionTableViewCell.swift in Sources */,
 				7851357F26B1C4F500FCCA93 /* Material.swift in Sources */,
+				78472A7B26B4277D0076E3D7 /* DoneCheckingViewController.swift in Sources */,
 				78472A7726B3F45E0076E3D7 /* CustomTableViewCell.swift in Sources */,
 				7851358326B1C54900FCCA93 /* Solution.swift in Sources */,
 				7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */,
@@ -260,9 +306,11 @@
 				78472A7326B3EBAE0076E3D7 /* HarvestCondition.swift in Sources */,
 				78472A6B26B3E4C80076E3D7 /* ConditionViewController.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
+				78472A8026B42F920076E3D7 /* ResultViewController.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
 				7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */,
+				78472A8526B4312E0076E3D7 /* SolutionTableViewCell.swift in Sources */,
 				78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,9 @@ class ConditionViewController: UIViewController {
 
     @IBOutlet weak var conditionTV: UITableView!
     
+    @IBAction func checkCondition(_ sender: Any) {
+        navigationController?.pushViewController(ResultViewController(), animated: true)
+    }
     let seeder = Seeder()
     var conditions: [Condition] = []
     var harvestConditions: [HarvestCondition] = []
@@ -27,6 +30,8 @@ class ConditionViewController: UIViewController {
         conditionTV.separatorStyle = .none
         conditionTV.delegate = self
         conditionTV.dataSource = self
+        conditionTV.allowsMultipleSelection = true
+        conditionTV.isUserInteractionEnabled = true
        
     }
 }
@@ -44,6 +49,15 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = conditionTV.dequeueReusableCell(withIdentifier: ConditionTableViewCell.identifier, for: indexPath) as! ConditionTableViewCell
         cell.conditionLbl.text = conditions[indexPath.section].desc
+        cell.checkListCondition = {
+            if cell.checkListBtn.isSelected{
+                self.conditions[indexPath.section].isChecked = true
+                
+            }else{
+                self.conditions[indexPath.section].isChecked = false
+                
+            }
+        }
         return cell
     }
     
@@ -57,5 +71,4 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
 
         return headerView
     }
-    
 }
