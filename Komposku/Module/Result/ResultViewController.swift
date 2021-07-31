@@ -79,8 +79,19 @@ extension ResultViewController: UITableViewDataSource, UITableViewDelegate{
 
         
         return customView
+        
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
+        return CGFloat(90)
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return CGFloat.zero
+        
+    }
 }
 extension UIView{
     func anchor(top: NSLayoutYAxisAnchor, bottom: NSLayoutYAxisAnchor){
