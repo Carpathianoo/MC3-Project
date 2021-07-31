@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ConditionTableViewCell" customModule="Komposku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="76"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-nG-blA" customClass="CustomTableViewCell" customModule="Komposku" customModuleProvider="target">
+                        <rect key="frame" x="19" y="3" width="335" height="70"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGZ-zO-I8v">
+                                <rect key="frame" x="297" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1y7-hb-NF9"/>
+                                    <constraint firstAttribute="width" constant="30" id="cSP-3n-Hli"/>
+                                </constraints>
+                                <state key="normal" image="circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="checkListTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Coz-bb-44x"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IH-6y-Vx3">
+                                <rect key="frame" x="19" y="2" width="259" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2IH-6y-Vx3" firstAttribute="leading" secondItem="mh6-nG-blA" secondAttribute="leading" constant="19" id="46z-fj-Z4f"/>
+                            <constraint firstItem="2IH-6y-Vx3" firstAttribute="top" secondItem="mh6-nG-blA" secondAttribute="top" constant="2" id="8Ef-gK-AXC"/>
+                            <constraint firstItem="yGZ-zO-I8v" firstAttribute="centerY" secondItem="mh6-nG-blA" secondAttribute="centerY" id="WHT-9M-Trc"/>
+                            <constraint firstAttribute="bottom" secondItem="2IH-6y-Vx3" secondAttribute="bottom" constant="2" id="cVO-v7-o3t"/>
+                            <constraint firstAttribute="trailing" secondItem="yGZ-zO-I8v" secondAttribute="trailing" constant="8" id="chS-qB-jV9"/>
+                            <constraint firstItem="yGZ-zO-I8v" firstAttribute="leading" secondItem="2IH-6y-Vx3" secondAttribute="trailing" constant="19" id="gwu-dz-WBg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mh6-nG-blA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="FGu-pG-kS0"/>
+                    <constraint firstItem="mh6-nG-blA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="fI0-uh-MSN"/>
+                    <constraint firstAttribute="trailing" secondItem="mh6-nG-blA" secondAttribute="trailing" constant="19" id="ikX-fV-CDh"/>
+                    <constraint firstAttribute="bottom" secondItem="mh6-nG-blA" secondAttribute="bottom" constant="3" id="ipw-ZZ-2NR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkListBtn" destination="yGZ-zO-I8v" id="QZ4-Pk-bBl"/>
+                <outlet property="conditionLbl" destination="2IH-6y-Vx3" id="bbf-f2-hoj"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="109"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

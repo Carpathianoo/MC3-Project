@@ -89,11 +89,9 @@ class CoreDataManager{
             process.detail = detailArr[i]
             process.isDone = false
                 
-            if i == 4{
-                process.date = Calendar.current.date(byAdding: .day, value: 14, to: Date())
-            }else{
-                process.date = Calendar.current.date(byAdding: .day, value: 3*(i+1), to: Date())
-            }
+            
+            process.date = Calendar.current.date(byAdding: .day, value: 3*(i+1), to: Date())
+            
             processArr.insert(process)
         }
         
