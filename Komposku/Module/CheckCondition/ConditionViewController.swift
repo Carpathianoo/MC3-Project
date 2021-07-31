@@ -14,26 +14,36 @@ class ConditionViewController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBAction func checkCondition(_ sender: Any) {
         if upperBtn.titleLabel?.text == "Perpanjang"{
-            CoreDataManager.shared.extendProcess(from: (process?.compost)!)
-//            let vc = CompostDetailViewController(nibName: "CompostDetailViewController", bundle: nil)
+            CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Date())
             
             navigationController?.popViewController(animated: true)
+            
         }else{
+            //untuk button check condition kirim unchecked conditions ke result page
+            let uncheckedConditions = getUncheckedCondition()
 //            navigationController?.pushViewController(ResultViewController(), animated: true)
+            
+            let vc = DoneCheckingViewController()
+            CoreDataManager.shared.updateProcessStatus(process: process!)
+            vc.process = process
+            navigationController?.pushViewController(vc, animated: true)
         }
 
     }
     
+    @IBAction func harvestCompost(_ sender: Any) {
+        process?.isDone = true
+        navigationController?.popToRootViewController(animated: true)
+    }
     @IBOutlet weak var upperBtn: UIButton!
     @IBOutlet weak var lowerBtn: UIButton!
+    
     let seeder = Seeder()
     var conditions: [Condition] = []
     var process: Process?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let composts = CoreDataManager.shared.getAllCompost()
-//        process = CoreDataManager.shared.getAllProcess(from: composts[0])[0]
         upperBtn.layer.cornerRadius = 8
         lowerBtn.layer.cornerRadius = 8
         
@@ -56,7 +66,6 @@ class ConditionViewController: UIViewController {
         }
         
         let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
-        
         conditionTV.register(nibCell, forCellReuseIdentifier: ConditionTableViewCell.identifier)
         conditionTV.separatorStyle = .none
         conditionTV.delegate = self
@@ -70,23 +79,30 @@ class ConditionViewController: UIViewController {
         if upperBtn.titleLabel?.text == "Perpanjang"{
             for c in conditions{
                 if c.isChecked == true{
+                    
                     noneIsChecked = false
-                    upperBtn.isEnabled = true
+                    
                     upperBtn.setEnabledView()
-                    lowerBtn.isEnabled = false
                     lowerBtn.setDisabledView()
                     break
                 }
             }
+            
             if noneIsChecked{
-                upperBtn.isEnabled = false
                 upperBtn.setDisabledView()
-                lowerBtn.isEnabled = true
                 lowerBtn.setEnabledView()
             }
         }
-        
-        
+    }
+    
+    func getUncheckedCondition()->[Condition]{
+        var uncheckedConditions: [Condition] = []
+        for c in conditions{
+            if !c.isChecked{
+                uncheckedConditions.append(c)
+            }
+        }
+        return uncheckedConditions
     }
 }
 
@@ -124,15 +140,16 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
 
         return headerView
     }
-    
 }
 extension UIButton{
     func setDisabledView(){
+        isEnabled = false
         layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
         tintColor = UIColor.darkGray
     }
     
     func setEnabledView(){
+        isEnabled = true
         layer.backgroundColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0).cgColor
         tintColor = UIColor.white
     }

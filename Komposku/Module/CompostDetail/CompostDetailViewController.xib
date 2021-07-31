@@ -15,7 +15,7 @@
                 <outlet property="compostNameLbl" destination="Msj-of-EmN" id="WjW-ov-WQD"/>
                 <outlet property="dashedView" destination="slu-c9-hh0" id="TTy-5X-VZI"/>
                 <outlet property="moistureLbl" destination="eTc-P6-dgl" id="CKn-aK-0JO"/>
-                <outlet property="processReportLbl" destination="LGS-FA-kRk" id="G7s-kf-Hsv"/>
+                <outlet property="processReportLbl" destination="LGS-FA-kRk" id="IJP-L4-Hs3"/>
                 <outlet property="processTV" destination="2ly-OP-ZFD" id="QD9-hR-jjM"/>
                 <outlet property="statusLbl" destination="yhB-MH-eWh" id="YqM-hE-iEM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -82,7 +82,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDo-jT-LBi">
                     <rect key="frame" x="0.0" y="683" width="390" height="161"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kamu belum melakukan pengadukan dan pengecekan kondisi." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGS-FA-kRk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGS-FA-kRk">
                             <rect key="frame" x="40" y="20" width="310" height="53"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <nil key="textColor"/>

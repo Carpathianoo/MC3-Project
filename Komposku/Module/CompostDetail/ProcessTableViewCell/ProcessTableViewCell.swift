@@ -37,9 +37,16 @@ class ProcessTableViewCell: UITableViewCell {
         }else{
             checkListIV.image = UIImage(systemName: "circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }
-        let processDate = Calendar.current.isDateInToday(date)
-        if  processDate{
+        
+//        let isToday = Calendar.current.isDateInToday(date)
+        let dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: date).day
+        if  dateDiff! >= 1 && dateDiff! < 3{
             checkListIV.tintColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
+            processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
+            processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
+        }
+        if processDetailLbl.text == "Panen"{
+            checkListIV.image = UIImage(named: "Shovel-icon")!
             processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
             processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
         }

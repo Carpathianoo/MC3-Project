@@ -7,8 +7,9 @@
 
 import UIKit
 
-class CompostDetailViewController: UIViewController {
 
+class CompostDetailViewController: UIViewController {
+    
     @IBOutlet weak var compostNameLbl: UILabel!
     
     @IBOutlet weak var statusLbl: UILabel!
@@ -25,6 +26,7 @@ class CompostDetailViewController: UIViewController {
     
     @IBOutlet weak var checkBtn: CustomButton!
     
+    
     @IBAction func checkCondition(_ sender: Any) {
         let latestProcess = getLatestProcess()
         
@@ -36,6 +38,7 @@ class CompostDetailViewController: UIViewController {
     
     var compDetail: Compost?
     var processes: [Process] = []
+    var latestProcess: Process?
     
     fileprivate func setupTableView() {
         processTV.delegate = self
@@ -67,13 +70,16 @@ class CompostDetailViewController: UIViewController {
         if latestProcess.detail == "Aduk dan cek kondisi"{
             if !latestProcess.isDone{
                 processReportLbl.text = "Kamu belum melakukan pengadukan dan pengecekan kondisi."
+               
                 checkBtn.isHidden = false
                 checkBtn.setTitle("Cek Kondisi", for: .normal)
             }else{
                 processReportLbl.text = "Kamu telah menyelesaikan pengecekan."
+                checkBtn.isHidden = true
             }
-            
-        }else if latestProcess.isDone{
+        }else if latestProcess.detail == "Perpanjang"{
+            processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            processReportLbl.text = "Kamu telah melakukan perpanjangan kompos."
             checkBtn.isHidden = true
         }
     }
@@ -97,24 +103,37 @@ class CompostDetailViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         setupNavigationBar()
+        
 //        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
         
         compDetail = CoreDataManager.shared.getAllCompost()[0]
-        
+        print("Today: \(Calendar.current.date(byAdding: .day, value: 9, to: Date()))")
         guard let unwrappedCompDetail = compDetail else {return}
         
         setupView(unwrappedCompDetail)
         
         setupTableView()
         
-        let latestProcess = getLatestProcess()
+        latestProcess = getLatestProcess()
         
-//        checkCompostCreatedInterval(latestProcess)
+        checkCompostCreatedInterval(latestProcess!)
         
-        checkCompostMixInterval(latestProcess)
+        checkCompostMixInterval(latestProcess!)
         
-        checkCompostHarvestTime(latestProcess)
+        checkCompostHarvestTime(latestProcess!)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkCompostCreatedInterval(latestProcess!)
+                
+        checkCompostMixInterval(latestProcess!)
+                
+        checkCompostHarvestTime(latestProcess!)
+        
+        processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
+        
+        processTV.reloadData()
     }
     
     func dateDiff(from startDate: Date, to endDate: Date) -> DateComponents{
@@ -130,12 +149,13 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = processTV.dequeueReusableCell(withIdentifier: ProcessTableViewCell.identifier, for: indexPath) as! ProcessTableViewCell
         if indexPath.row % 2 == 0{
             var index = indexPath.row / 2
             if indexPath.row == 0{
                 index = 0
             }
-            let cell = processTV.dequeueReusableCell(withIdentifier: ProcessTableViewCell.identifier, for: indexPath) as! ProcessTableViewCell
+            
             guard let unwrappedDate = processes[index].date else{return cell}
             
             cell.setupProcessCell(isDone: processes[index].isDone, process_date: unwrappedDate)
@@ -147,24 +167,25 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
             cell.processDetailLbl.text = processes[index].detail
             
             index = indexPath.row / 2 - 1
-            return cell
+         
         }else{
-            let lineCell = processTV.dequeueReusableCell(withIdentifier: ProcessTableViewCell.identifier, for: indexPath) as! ProcessTableViewCell
             
-            lineCell.setupLine()
-            return lineCell
+            cell.setupLine()
+            
         }
+        return cell
     }
     
     func getLatestProcess() -> Process{
-        if dateDiff(from: (processes.last?.date)!, to: (processes.last?.date!)!).day == 0{
+        if dateDiff(from: (processes.last?.date)!, to: Date()).day == 0{
             
             return processes[processes.count-1]
         }
         for p in processes{
             guard let unwrappedDate = p.date else{return Process()}
             
-            if dateDiff(from: unwrappedDate, to: Date()).day! < 3 {
+            if dateDiff(from: unwrappedDate, to: Calendar.current.date(byAdding: .day, value: 3, to: Date())!).day! < 3 {
+                print("LATEST: \(p.detail)")
                 return p
             }
         }
@@ -187,8 +208,8 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
         if(dateDiffValue + 1 < 3){
             processReportLbl.text = "Kompos telah dibuat"
             processReportLbl.font = UIFont.boldSystemFont(ofSize: 20)
+            processReportLbl.translatesAutoresizingMaskIntoConstraints = false
             processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
-
         }
     }
     

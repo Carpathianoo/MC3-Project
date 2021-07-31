@@ -100,13 +100,13 @@ class CoreDataManager{
         return processArr
     }
     
-    func extendProcess(from compost: Compost){
+    func extendProcess(from compost: Compost, date: Date){
         var processes = getAllProcess(from: compost)
         
         guard let process = processes.last else{ return}
         
         process.detail = "Perpanjang"
-        process.date = Date()
+        process.date = date
         process.isDone = true
         
         processes.append(process)

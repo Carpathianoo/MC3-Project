@@ -61,6 +61,9 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Panen"/>
                     <state key="disabled" title="Panen"/>
+                    <connections>
+                        <action selector="harvestCompost:" destination="-1" eventType="touchUpInside" id="B4t-DP-HFh"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" contentInsetAdjustmentBehavior="always" style="plain" separatorStyle="none" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mIJ-cI-ufh">
                     <rect key="frame" x="0.0" y="202" width="414" height="485"/>

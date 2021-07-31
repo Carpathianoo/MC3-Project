@@ -31,6 +31,9 @@
                         <constraint firstAttribute="width" constant="365" id="yv3-Qc-39H"/>
                     </constraints>
                     <state key="normal" title="Balik ke Kompos"/>
+                    <connections>
+                        <action selector="returnToCompost:" destination="-1" eventType="touchUpInside" id="uKZ-iO-49o"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lanjutkan kerja kerasmu untuk mengkompos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsW-1q-2fq">
                     <rect key="frame" x="40" y="588.66666666666663" width="305" height="61"/>
