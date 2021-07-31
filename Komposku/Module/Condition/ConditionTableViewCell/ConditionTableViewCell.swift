@@ -28,16 +28,13 @@ class ConditionTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         isUserInteractionEnabled = true
         checkListBtn.isEnabled = true
-//        checkListBtn.setImage(UIImage(systemName: "circle"), for: .normal)
-//        checkListBtn.setImage(UIImage(named: "checkmark.circle.fill"), for: UIControl.State.selected)
-        checkListBtn.tintColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
-        // Initialization code
+        checkListBtn.tintColor = UIColor(red: 124/255, green: 204/255, blue: 167/255, alpha: 1.0)
+     
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
     }
     
 }

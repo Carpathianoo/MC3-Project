@@ -12,17 +12,37 @@ class ConditionViewController: UIViewController {
     @IBOutlet weak var conditionTV: UITableView!
     
     @IBAction func checkCondition(_ sender: Any) {
-        navigationController?.pushViewController(ResultViewController(), animated: true)
+//        navigationController?.pushViewController(ResultViewController(), animated: true)
     }
+    
+    @IBOutlet weak var upperBtn: UIButton!
+    @IBOutlet weak var lowerBtn: UIButton!
     let seeder = Seeder()
     var conditions: [Condition] = []
-    var harvestConditions: [HarvestCondition] = []
+    var process: Process?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let composts = CoreDataManager.shared.getAllCompost()
+        process = CoreDataManager.shared.getAllProcess(from: composts[0])[0]
+        upperBtn.layer.cornerRadius = 8
+        lowerBtn.layer.cornerRadius = 8
         
-        conditions = seeder.seedCondition()
-        harvestConditions = seeder.seedHarvestCondition()
+        if process?.detail == "Panen"{
+            conditions = seeder.seedHarvestCondition()
+            
+            upperBtn.setTitle("Perpanjang", for: .normal)
+            upperBtn.isEnabled = false
+            lowerBtn.isHidden = false
+            
+            upperBtn.layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
+            upperBtn.tintColor = UIColor.darkGray
+    
+        }else{
+            upperBtn.setTitle("Cek Kondisi", for: .normal)
+            conditions = seeder.seedCondition()
+            lowerBtn.isHidden = true
+        }
         
         let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
         
@@ -32,7 +52,27 @@ class ConditionViewController: UIViewController {
         conditionTV.dataSource = self
         conditionTV.allowsMultipleSelection = true
         conditionTV.isUserInteractionEnabled = true
-       
+    }
+    
+    func checkSelected(){
+        var noneIsChecked = true
+        for c in conditions{
+            if c.isChecked == true{
+                noneIsChecked = false
+                upperBtn.isEnabled = true
+                upperBtn.setEnabledView()
+                lowerBtn.isEnabled = false
+                lowerBtn.setDisabledView()
+                break
+            }
+        }
+        if noneIsChecked{
+            upperBtn.isEnabled = false
+            upperBtn.setDisabledView()
+            lowerBtn.isEnabled = true
+            lowerBtn.setEnabledView()
+        }
+        
     }
 }
 
@@ -52,11 +92,10 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
         cell.checkListCondition = {
             if cell.checkListBtn.isSelected{
                 self.conditions[indexPath.section].isChecked = true
-                
             }else{
                 self.conditions[indexPath.section].isChecked = false
-                
             }
+            self.checkSelected()
         }
         return cell
     }
@@ -70,5 +109,17 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
                 headerView.backgroundColor = .white
 
         return headerView
+    }
+    
+}
+extension UIButton{
+    func setDisabledView(){
+        layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
+        tintColor = UIColor.darkGray
+    }
+    
+    func setEnabledView(){
+        layer.backgroundColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0).cgColor
+        tintColor = UIColor.white
     }
 }

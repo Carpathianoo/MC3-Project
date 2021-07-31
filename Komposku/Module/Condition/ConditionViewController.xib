@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConditionViewController" customModule="Komposku" customModuleProvider="target">
             <connections>
                 <outlet property="conditionTV" destination="Te2-0M-L9j" id="CJn-dT-3FV"/>
+                <outlet property="lowerBtn" destination="CU2-2A-l7D" id="NbC-fb-eVg"/>
+                <outlet property="upperBtn" destination="cdR-gy-Fdk" id="xYe-8J-RjW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,26 +39,50 @@
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdR-gy-Fdk">
                     <rect key="frame" x="20" y="624" width="350" height="50"/>
+                    <color key="backgroundColor" red="0.19215686274509802" green="0.59215686274509804" blue="0.40392156862745099" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="JVm-qY-RBb"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="checkCondition:" destination="-1" eventType="touchUpInside" id="vMf-DG-cS8"/>
+                        <action selector="upperBtn:" destination="-1" eventType="touchUpInside" id="yEt-Oo-IcW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU2-2A-l7D">
+                    <rect key="frame" x="20" y="687" width="350" height="50"/>
+                    <color key="backgroundColor" red="0.19215686269999999" green="0.59215686270000001" blue="0.4039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Ztd-tg-x3V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Panen"/>
+                    <state key="disabled" title="Panen"/>
+                    <connections>
+                        <action selector="checkCondition:" destination="-1" eventType="touchUpInside" id="IVT-PE-SR7"/>
+                        <action selector="upperBtn:" destination="-1" eventType="touchUpInside" id="Ric-rc-8Oe"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="CU2-2A-l7D" firstAttribute="width" secondItem="cdR-gy-Fdk" secondAttribute="width" id="CYu-2b-lcg"/>
+                <constraint firstItem="CU2-2A-l7D" firstAttribute="leading" secondItem="cdR-gy-Fdk" secondAttribute="leading" id="JCL-dH-Ic3"/>
                 <constraint firstItem="cdR-gy-Fdk" firstAttribute="leading" secondItem="H5N-V6-KHg" secondAttribute="leading" id="NIq-xB-Xjb"/>
                 <constraint firstItem="H5N-V6-KHg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NYr-AA-cYM"/>
+                <constraint firstItem="CU2-2A-l7D" firstAttribute="top" secondItem="cdR-gy-Fdk" secondAttribute="bottom" constant="13" id="QDd-56-hZd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H5N-V6-KHg" secondAttribute="trailing" constant="20" id="Tcg-1h-Yxk"/>
                 <constraint firstItem="TJd-eb-zzr" firstAttribute="top" secondItem="H5N-V6-KHg" secondAttribute="bottom" constant="16" id="UKl-lK-hTN"/>
                 <constraint firstItem="TJd-eb-zzr" firstAttribute="leading" secondItem="H5N-V6-KHg" secondAttribute="leading" id="Vpr-dH-8QP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cdR-gy-Fdk" secondAttribute="bottom" constant="136" id="bgn-yE-dZ8"/>
+                <constraint firstItem="CU2-2A-l7D" firstAttribute="trailing" secondItem="cdR-gy-Fdk" secondAttribute="trailing" id="Yz5-LJ-glr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CU2-2A-l7D" secondAttribute="bottom" constant="73" id="cWi-lI-0tO"/>
                 <constraint firstItem="Te2-0M-L9j" firstAttribute="top" secondItem="TJd-eb-zzr" secondAttribute="bottom" constant="16" id="gGu-D3-71P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Te2-0M-L9j" secondAttribute="trailing" id="nHh-Wi-r2p"/>
+                <constraint firstItem="CU2-2A-l7D" firstAttribute="height" secondItem="cdR-gy-Fdk" secondAttribute="height" id="oIJ-c1-uGQ"/>
                 <constraint firstItem="cdR-gy-Fdk" firstAttribute="top" secondItem="Te2-0M-L9j" secondAttribute="bottom" constant="32" id="rbM-87-pwD"/>
                 <constraint firstItem="cdR-gy-Fdk" firstAttribute="trailing" secondItem="H5N-V6-KHg" secondAttribute="trailing" id="s0K-0n-Jdx"/>
                 <constraint firstItem="Te2-0M-L9j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ugR-Jx-xOP"/>

@@ -11,7 +11,6 @@
 		78472A6C26B3E4C80076E3D7 /* ConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A6A26B3E4C80076E3D7 /* ConditionViewController.xib */; };
 		78472A7026B3E5210076E3D7 /* ConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A6E26B3E5210076E3D7 /* ConditionTableViewCell.swift */; };
 		78472A7126B3E5210076E3D7 /* ConditionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A6F26B3E5210076E3D7 /* ConditionTableViewCell.xib */; };
-		78472A7326B3EBAE0076E3D7 /* HarvestCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7226B3EBAE0076E3D7 /* HarvestCondition.swift */; };
 		78472A7726B3F45E0076E3D7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7626B3F45E0076E3D7 /* CustomTableViewCell.swift */; };
 		78472A7B26B4277D0076E3D7 /* DoneCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A7926B4277D0076E3D7 /* DoneCheckingViewController.swift */; };
 		78472A7C26B4277D0076E3D7 /* DoneCheckingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A7A26B4277D0076E3D7 /* DoneCheckingViewController.xib */; };
@@ -39,7 +38,6 @@
 		78472A6A26B3E4C80076E3D7 /* ConditionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionViewController.xib; sourceTree = "<group>"; };
 		78472A6E26B3E5210076E3D7 /* ConditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionTableViewCell.swift; sourceTree = "<group>"; };
 		78472A6F26B3E5210076E3D7 /* ConditionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionTableViewCell.xib; sourceTree = "<group>"; };
-		78472A7226B3EBAE0076E3D7 /* HarvestCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestCondition.swift; sourceTree = "<group>"; };
 		78472A7626B3F45E0076E3D7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		78472A7926B4277D0076E3D7 /* DoneCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCheckingViewController.swift; sourceTree = "<group>"; };
 		78472A7A26B4277D0076E3D7 /* DoneCheckingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneCheckingViewController.xib; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				7851358226B1C54900FCCA93 /* Solution.swift */,
 				7851358426B1CD0400FCCA93 /* Tutorial.swift */,
 				7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */,
-				78472A7226B3EBAE0076E3D7 /* HarvestCondition.swift */,
 			);
 			path = "Static Data";
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
 				7851358526B1CD0400FCCA93 /* Tutorial.swift in Sources */,
 				78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */,
-				78472A7326B3EBAE0076E3D7 /* HarvestCondition.swift in Sources */,
 				78472A6B26B3E4C80076E3D7 /* ConditionViewController.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
