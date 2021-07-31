@@ -53,7 +53,6 @@ class ListBahanTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         if let currentAmount = currentAmount {
             bahanStepper.value = currentAmount
-            print("data", bahanStepper.value)
         }
     }
     

@@ -41,7 +41,9 @@ class CreateCompostViewController: UIViewController {
     
     func setupView(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(createNewCompostTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(dismissCreateCompost))
         navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0.19, green: 0.59, blue: 0.403, alpha: 1.0)
         
         let buttonNib = UINib(nibName: "CreateButtonTableViewCell", bundle: nil)
         let totalItemNib = UINib(nibName: "TotalItemTableViewCell", bundle: nil)
@@ -63,6 +65,9 @@ class CreateCompostViewController: UIViewController {
     @objc func createNewCompostTapped() {
         createNewCompost()
         print(CoreDataManager.shared.getAllCompost())
+    }
+    @objc func dismissCreateCompost() {
+        dismiss(animated: true)
     }
 
 
@@ -198,6 +203,7 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
             label.frame = CGRect.init(x: 21, y: 5, width: 180, height: headerView.frame.height - 10)
             label.text = "Bahan Hijau"
             label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
             
             let label2 = UILabel()
             label2.frame = CGRect.init(x: headerView.frame.width - 60, y: 5, width: 50, height: headerView.frame.height - 10)
@@ -205,6 +211,8 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
             label2.textColor = UIColor(red: 0.19, green: 0.59, blue: 0.403, alpha: 1.0)
             label.isUserInteractionEnabled = true
             label2.isUserInteractionEnabled = true
+            label2.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            
             
             let gestureHijau = UITapGestureRecognizer(target: self, action: #selector(editHijauMaterialTapped))
             
@@ -224,11 +232,13 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
             label.frame = CGRect.init(x: 21, y: 5, width: headerView.frame.width - 10, height: headerView.frame.height - 10)
             label.text = "Bahan Coklat"
             label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
             
             let label2 = UILabel()
             label2.frame = CGRect.init(x: headerView.frame.width - 60, y: 5, width: 50, height: headerView.frame.height - 10)
             label2.text = "Edit"
             label2.textColor = UIColor(red: 0.19, green: 0.59, blue: 0.403, alpha: 1.0)
+            label2.font = UIFont.systemFont(ofSize: 17)
             
             label2.isUserInteractionEnabled = true
             
