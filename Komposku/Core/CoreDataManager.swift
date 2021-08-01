@@ -56,7 +56,7 @@ class CoreDataManager{
         compost.identifier = Int64(index+1)
         compost.name = name
         compost.photo = photo
-        compost.estimated_date = Calendar.current.date(byAdding: .day, value: 14, to: Date())
+        compost.estimated_date = Calendar.current.date(byAdding: .day, value: 15, to: Date())
         compost.moisture = moisture
         compost.process = processes as NSSet
         save()
@@ -113,7 +113,7 @@ class CoreDataManager{
         
         compost.process = NSSet(array: processes)
         compost.process = createProcess(compost: compost) as NSSet
-        
+        compost.estimated_date = Calendar.current.date(byAdding: .day, value: 15, to: Date())
         save()
     }
     

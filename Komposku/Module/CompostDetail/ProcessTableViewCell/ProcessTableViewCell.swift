@@ -28,16 +28,18 @@ class ProcessTableViewCell: UITableViewCell {
     }
 
     func setupProcessCell(isDone: Bool, process_date date: Date){
-        let isWithinYesterday = Calendar.current.isDateInYesterday(date)
+//        let isWithinYesterday = Calendar.current.isDateInYesterday(date)
+        let dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: date).day
         
-        if !isDone && isWithinYesterday{
+        if !isDone && dateDiff! < -2{
+            
             checkListIV.image = UIImage(systemName: "xmark.circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }else if isDone{
             checkListIV.image = UIImage(systemName: "checkmark.circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }else if processDetailLbl.text == "Panen"{
             checkListIV.image = UIImage(named: "Shovel-icon")!
-            processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
-            processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
+            processDateLbl.textColor = UIColor(red: 124/255, green: 204/255, blue: 167/255, alpha: 1.0)
+            processDetailLbl.textColor = UIColor(red: 124/255, green: 204/255, blue: 167/255, alpha: 1.0)
         }else{
             checkListIV.image = UIImage(systemName: "circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }

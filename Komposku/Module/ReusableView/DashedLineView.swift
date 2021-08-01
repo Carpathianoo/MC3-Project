@@ -25,7 +25,7 @@ class DashedLineView: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 0.2).cgColor
         shapeLayer.lineWidth = 3
-        shapeLayer.lineDashPattern = [10, 3]
+        shapeLayer.lineDashPattern = [8, 7]
         let start = CGPoint(x: layer.bounds.minX, y: layer.bounds.maxY/2)
         let end = CGPoint(x: layer.bounds.maxX, y: layer.bounds.maxY/2)
         let path = CGMutablePath()

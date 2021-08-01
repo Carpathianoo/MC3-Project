@@ -14,7 +14,7 @@ class ConditionViewController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBAction func checkCondition(_ sender: Any) {
         if upperBtn.titleLabel?.text == "Perpanjang"{
-            CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Calendar.current.date(byAdding: .day, value: 15, to: Date())!)
+            CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Date())
             
             navigationController?.popViewController(animated: true)
             
@@ -78,7 +78,6 @@ class ConditionViewController: UIViewController {
     
     func checkSelected(){
         var noneIsChecked = true
-//        if upperBtn.titleLabel?.text == "Perpanjang"{
             for c in conditions{
                 if c.isChecked == true{
                     
@@ -94,7 +93,6 @@ class ConditionViewController: UIViewController {
                 upperBtn.setDisabledView()
                 lowerBtn.setEnabledView()
             }
-//        }
     }
     
     func getUncheckedCondition()->[Condition]{

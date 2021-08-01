@@ -50,6 +50,9 @@ class CompostDetailViewController: UIViewController {
     }
     
     fileprivate func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
@@ -87,8 +90,8 @@ class CompostDetailViewController: UIViewController {
     fileprivate func setupView(_ unwrappedCompDetail: Compost) {
         compostNameLbl.text = unwrappedCompDetail.name
         
-        let harvest_day = dateDiff(from: Date(), to: unwrappedCompDetail.estimated_date!)
-        statusLbl.text = "Siap panen dalam \(harvest_day.day!) hari"
+        let harvest_day = dateDiff(from: Date(), to: unwrappedCompDetail.estimated_date!).day! + 1
+        statusLbl.text = "Siap panen dalam \(harvest_day) hari"
         
         moistureLbl.text = String(unwrappedCompDetail.moisture) + "%"
         
@@ -107,7 +110,7 @@ class CompostDetailViewController: UIViewController {
         CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
         
         compDetail = CoreDataManager.shared.getAllCompost()[0]
-//        print("Today: \(Calendar.current.date(byAdding: .day, value: 6, to: Date()))")
+        
         guard let unwrappedCompDetail = compDetail else {return}
         
         setupView(unwrappedCompDetail)
@@ -134,6 +137,14 @@ class CompostDetailViewController: UIViewController {
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
         processTV.reloadData()
+        
+        let harvest_day = dateDiff(from: Date(), to: processes[0].compost!.estimated_date!).day! + 1
+        
+        if Calendar.current.isDateInToday(processes[0].compost!.estimated_date!) {
+            statusLbl.text = "Hari ini Panen"
+        }else{
+            statusLbl.text = "Siap panen dalam \(harvest_day) hari"
+        }
     }
     
     func dateDiff(from startDate: Date, to endDate: Date) -> DateComponents{
@@ -163,10 +174,7 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
             cell.processDateLbl.text = dateFormatter.string(from: unwrappedDate)
         cell.processDetailLbl.text = processes[indexPath.section].detail
         cell.setupProcessCell(isDone: processes[indexPath.section].isDone, process_date: unwrappedDate)
-//            print(indexPath.row)
-//            index = indexPath.row / 2 - 1
          
-        
         return cell
     }
     
@@ -179,13 +187,13 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func getLatestProcess() -> Process{
-        if dateDiff(from: (processes.last?.date)!, to: Date()).day == 0{
+        if dateDiff(from: (processes.last?.date)!, to: Date()).day! + 1 == 0{
             return processes[processes.count-1]
         }
         for p in processes{
             guard let unwrappedDate = p.date else{return Process()}
             
-            if dateDiff(from: unwrappedDate, to: Date()).day! < 2 {
+            if dateDiff(from: unwrappedDate, to: Date()).day! < 3 {
                 return p
             }
         }
