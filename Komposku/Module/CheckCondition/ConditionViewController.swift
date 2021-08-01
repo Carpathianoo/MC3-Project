@@ -14,7 +14,7 @@ class ConditionViewController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBAction func checkCondition(_ sender: Any) {
         if upperBtn.titleLabel?.text == "Perpanjang"{
-            CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Date())
+            CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Calendar.current.date(byAdding: .day, value: 15, to: Date())!)
             
             navigationController?.popViewController(animated: true)
             
@@ -32,7 +32,8 @@ class ConditionViewController: UIViewController {
     }
     
     @IBAction func harvestCompost(_ sender: Any) {
-        process?.isDone = true
+        guard let unwrappedProcess = process else{return}
+        CoreDataManager.shared.updateProcessStatus(process: unwrappedProcess)
         navigationController?.popToRootViewController(animated: true)
     }
     @IBOutlet weak var upperBtn: UIButton!
@@ -57,11 +58,12 @@ class ConditionViewController: UIViewController {
             
             upperBtn.layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
             upperBtn.tintColor = UIColor.darkGray
-    
+            
         }else{
             titleLbl.text = "Cek kondisi kompos '\(process?.compost?.name ?? "")'"
             upperBtn.setTitle("Cek Kondisi", for: .normal)
             conditions = seeder.seedCondition()
+            upperBtn.setDisabledView()
             lowerBtn.isHidden = true
         }
         
@@ -76,7 +78,7 @@ class ConditionViewController: UIViewController {
     
     func checkSelected(){
         var noneIsChecked = true
-        if upperBtn.titleLabel?.text == "Perpanjang"{
+//        if upperBtn.titleLabel?.text == "Perpanjang"{
             for c in conditions{
                 if c.isChecked == true{
                     
@@ -92,7 +94,7 @@ class ConditionViewController: UIViewController {
                 upperBtn.setDisabledView()
                 lowerBtn.setEnabledView()
             }
-        }
+//        }
     }
     
     func getUncheckedCondition()->[Condition]{
@@ -131,15 +133,22 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 12
+            return 0
         }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect.zero)
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 headerView.backgroundColor = .white
 
         return headerView
     }
+    
 }
 extension UIButton{
     func setDisabledView(){

@@ -43,7 +43,7 @@ class CompostDetailViewController: UIViewController {
     fileprivate func setupTableView() {
         processTV.delegate = self
         processTV.dataSource = self
-        
+        processTV.contentInset = UIEdgeInsets(top: -28, left: 0, bottom: 0, right: 0)
         let compDetailNibCell = UINib(nibName: ProcessTableViewCell.identifier, bundle: nil)
         processTV.register(compDetailNibCell, forCellReuseIdentifier: ProcessTableViewCell.identifier)
         processTV.reloadData()
@@ -104,10 +104,10 @@ class CompostDetailViewController: UIViewController {
         
         setupNavigationBar()
         
-//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
+        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
         
         compDetail = CoreDataManager.shared.getAllCompost()[0]
-        print("Today: \(Calendar.current.date(byAdding: .day, value: 9, to: Date()))")
+//        print("Today: \(Calendar.current.date(byAdding: .day, value: 6, to: Date()))")
         guard let unwrappedCompDetail = compDetail else {return}
         
         setupView(unwrappedCompDetail)
@@ -143,49 +143,49 @@ class CompostDetailViewController: UIViewController {
 
 extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSource{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return processes.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let unwrappedProcess = compDetail?.process else{return 0}
-        return unwrappedProcess.count * 2 - 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = processTV.dequeueReusableCell(withIdentifier: ProcessTableViewCell.identifier, for: indexPath) as! ProcessTableViewCell
-        if indexPath.row % 2 == 0{
-            var index = indexPath.row / 2
-            if indexPath.row == 0{
-                index = 0
-            }
+        
             
-            guard let unwrappedDate = processes[index].date else{return cell}
-            
-            cell.setupProcessCell(isDone: processes[index].isDone, process_date: unwrappedDate)
+        guard let unwrappedDate = processes[indexPath.section].date else{return cell}
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd MMM"
-            
             cell.processDateLbl.text = dateFormatter.string(from: unwrappedDate)
-            cell.processDetailLbl.text = processes[index].detail
-            
-            index = indexPath.row / 2 - 1
+        cell.processDetailLbl.text = processes[indexPath.section].detail
+        cell.setupProcessCell(isDone: processes[indexPath.section].isDone, process_date: unwrappedDate)
+//            print(indexPath.row)
+//            index = indexPath.row / 2 - 1
          
-        }else{
-            
-            cell.setupLine()
-            
-        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return LineProcessView()
     }
     
     func getLatestProcess() -> Process{
         if dateDiff(from: (processes.last?.date)!, to: Date()).day == 0{
-            
             return processes[processes.count-1]
         }
         for p in processes{
             guard let unwrappedDate = p.date else{return Process()}
             
-            if dateDiff(from: unwrappedDate, to: Calendar.current.date(byAdding: .day, value: 3, to: Date())!).day! < 3 {
-                print("LATEST: \(p.detail)")
+            if dateDiff(from: unwrappedDate, to: Date()).day! < 2 {
                 return p
             }
         }
@@ -212,8 +212,6 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
             processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
         }
     }
-    
-
     
     func checkCompostHarvestTime(_ latestProcess: Process){
         if latestProcess.detail == "Panen"{

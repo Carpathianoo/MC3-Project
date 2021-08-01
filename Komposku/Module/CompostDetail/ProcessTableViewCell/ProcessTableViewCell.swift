@@ -16,7 +16,7 @@ class ProcessTableViewCell: UITableViewCell {
         
     let lineView: LineProcessView = LineProcessView()
     static let identifier = "ProcessTableViewCell"
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,26 +34,34 @@ class ProcessTableViewCell: UITableViewCell {
             checkListIV.image = UIImage(systemName: "xmark.circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }else if isDone{
             checkListIV.image = UIImage(systemName: "checkmark.circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
+        }else if processDetailLbl.text == "Panen"{
+            checkListIV.image = UIImage(named: "Shovel-icon")!
+            processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
+            processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
         }else{
             checkListIV.image = UIImage(systemName: "circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }
         
-//        let isToday = Calendar.current.isDateInToday(date)
-        let dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: date).day
-        if  dateDiff! >= 1 && dateDiff! < 3{
+        let isToday = Calendar.current.isDateInToday(date)
+//        let dateDiff = Calendar.current.dateComponents([.day], from: Calendar.current.date(byAdding: .day, value: 3, to: Date())!, to: date).day
+//        dateDiff! >= 1 && dateDiff! < 3
+        if  isToday{
             checkListIV.tintColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
-            processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
-            processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
-        }
-        if processDetailLbl.text == "Panen"{
-            checkListIV.image = UIImage(named: "Shovel-icon")!
             processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
             processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
         }
     }
     
+    override func prepareForReuse() {
+        processDateLbl.textColor = UIColor(red: 175/255, green: 175/255, blue: 175/255, alpha: 1.0)
+        processDetailLbl.textColor = UIColor(red: 175/255, green: 175/255, blue: 175/255, alpha: 1.0)
+        checkListIV.tintColor = UIColor(red: 175/255, green: 175/255, blue: 175/255, alpha: 1.0)
+    }
+    
     func setupLine(){
+        
         self.addSubview(LineProcessView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height+2)))
+        
         checkListIV.isHidden = true
         processDateLbl.isHidden = true
         processDetailLbl.isHidden = true

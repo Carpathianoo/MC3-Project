@@ -22,11 +22,12 @@ class LineProcessView: UIView {
      }
 
      private func setup() {
+        self.frame = CGRect(x: 0, y: 0, width: 320, height: 22)
          let shapeLayer = CAShapeLayer()
          shapeLayer.strokeColor = UIColor(red: 175/255, green: 175/255, blue: 175/255, alpha: 1).cgColor
          shapeLayer.lineWidth = 2
-        let start = CGPoint(x: 11, y: layer.bounds.minY)
-         let end = CGPoint(x: 11, y: layer.bounds.maxY)
+        let start = CGPoint(x: 11, y: layer.bounds.minY-1)
+         let end = CGPoint(x: 11, y: layer.bounds.maxY-4)
          let path = CGMutablePath()
          path.addLines(between: [start, end])
          shapeLayer.path = path

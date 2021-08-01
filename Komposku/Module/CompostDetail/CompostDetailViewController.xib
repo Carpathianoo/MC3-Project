@@ -74,10 +74,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="20" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ly-OP-ZFD">
-                    <rect key="frame" x="16" y="327" width="358" height="340"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="20" sectionHeaderHeight="18" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ly-OP-ZFD">
+                    <rect key="frame" x="16" y="327" width="358" height="356"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="2E0-Vw-8EE"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Ta3-Wx-YLh"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDo-jT-LBi">
                     <rect key="frame" x="0.0" y="683" width="390" height="161"/>
@@ -115,7 +116,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="sDo-jT-LBi" firstAttribute="top" secondItem="2ly-OP-ZFD" secondAttribute="bottom" constant="16" id="4kf-AV-sKH"/>
+                <constraint firstItem="sDo-jT-LBi" firstAttribute="top" secondItem="2ly-OP-ZFD" secondAttribute="bottom" id="4kf-AV-sKH"/>
                 <constraint firstItem="HpJ-0h-VUs" firstAttribute="trailing" secondItem="cBF-kB-N3P" secondAttribute="trailing" id="5td-RR-hm6"/>
                 <constraint firstItem="2ly-OP-ZFD" firstAttribute="leading" secondItem="HpJ-0h-VUs" secondAttribute="leading" id="9qF-Jn-tHd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Msj-of-EmN" secondAttribute="trailing" constant="16" id="F3G-ee-YR2"/>
