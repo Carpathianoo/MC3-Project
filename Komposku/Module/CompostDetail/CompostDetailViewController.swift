@@ -54,7 +54,7 @@ class CompostDetailViewController: UIViewController {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.backgroundImage = UIImage(named: (compDetail?.photo) ?? "")
+//            navBarAppearance.backgroundImage = UIImage(named: (compDetail?.photo) ?? "")
             
             self.navigationController!.navigationBar.standardAppearance = navBarAppearance
             self.navigationController!.navigationBar.scrollEdgeAppearance = navBarAppearance
