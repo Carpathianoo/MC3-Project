@@ -9,6 +9,9 @@ import UIKit
 
 class ContentMaterialCompostCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var imageContentMaterial: UIImageView!
+    @IBOutlet weak var labelContentMaterial: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

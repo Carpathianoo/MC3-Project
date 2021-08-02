@@ -7,23 +7,41 @@
 
 import UIKit
 
-class TutorialPageViewController: UIViewController {
+class TutorialPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titleTutorial.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tutorialCell = tutorialTableView.dequeueReusableCell(withIdentifier: "tutorialCell", for: indexPath) as! TutorialTableViewCellPage
+        
+        tutorialCell.imageTableTutorial.image = UIImage(named: imageTutorial[indexPath.row])
+        tutorialCell.labelTitleTableTutorial.text = titleTutorial[indexPath.row]
+        return tutorialCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        //show(ContentTutorialViewController, sender: self)
+        //let row = titleTutorial[indexPath.row]
+        let controller = ContentTutorialViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    var titleTutorial:[String] = ["Material Kompos", "Cara Mengkompos", "Tips & Tricks"]
+    var imageTutorial:[String] = ["Material Kompos","Cara Mengkompos","Tips and Tricks"]
 
+    
+    
+    @IBOutlet weak var tutorialTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        tutorialTableView.register(UINib(nibName: "TutorialTableViewCellPage", bundle: nil), forCellReuseIdentifier: "tutorialCell")
+        tutorialTableView.delegate = self
+        tutorialTableView.dataSource = self
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

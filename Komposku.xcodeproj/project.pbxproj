@@ -21,6 +21,7 @@
 		CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */; };
 		CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */; };
 		CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */; };
+		CCD6279226B7AFEC00C701C8 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialPageViewController.xib; sourceTree = "<group>"; };
 		CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMaterialCompostCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentMaterialCompostCollectionViewCell.xib; sourceTree = "<group>"; };
+		CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		C6C9CBEA26AE7D1900D2BECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CCD6278F26B7AF8E00C701C8 /* Utils */,
 				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
 			);
 			path = Core;
@@ -129,6 +132,22 @@
 				CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		CCD6278F26B7AF8E00C701C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CCD6279026B7AF9D00C701C8 /* Extention */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CCD6279026B7AF9D00C701C8 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +228,7 @@
 				CC7931EE26B18BF10005C58C /* TutorialPageViewController.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */,
+				CCD6279226B7AFEC00C701C8 /* UIView+Ext.swift in Sources */,
 				CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
 				CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */,
@@ -351,8 +371,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42F2NQF94Z;
+				DEVELOPMENT_TEAM = 9WD655P9JU;
 				INFOPLIST_FILE = Komposku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,8 +391,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42F2NQF94Z;
+				DEVELOPMENT_TEAM = 9WD655P9JU;
 				INFOPLIST_FILE = Komposku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
