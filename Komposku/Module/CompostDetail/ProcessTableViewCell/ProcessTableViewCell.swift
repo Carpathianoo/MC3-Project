@@ -28,9 +28,7 @@ class ProcessTableViewCell: UITableViewCell {
     }
 
     func setupProcessCell(isDone: Bool, process_date date: Date){
-//        let isWithinYesterday = Calendar.current.isDateInYesterday(date)
         let dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: date).day
-        
         if !isDone && dateDiff! < -2{
             
             checkListIV.image = UIImage(systemName: "xmark.circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
@@ -44,10 +42,7 @@ class ProcessTableViewCell: UITableViewCell {
             checkListIV.image = UIImage(systemName: "circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
         }
         
-        let isToday = Calendar.current.isDateInToday(date)
-//        let dateDiff = Calendar.current.dateComponents([.day], from: Calendar.current.date(byAdding: .day, value: 3, to: Date())!, to: date).day
-//        dateDiff! >= 1 && dateDiff! < 3
-        if  isToday{
+        if  dateDiff! > -3 && dateDiff! < 0 || Calendar.current.isDateInToday(date){
             checkListIV.tintColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
             processDateLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
             processDetailLbl.textColor = UIColor(red: 49/255, green: 151/255, blue: 103/255, alpha: 1.0)
