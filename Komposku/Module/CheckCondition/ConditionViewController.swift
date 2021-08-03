@@ -69,8 +69,8 @@ class ConditionViewController: UIViewController {
             upperBtn.tintColor = UIColor.darkGray
             
         }else{
-            titleLbl.text = "Cek kondisi kompos '\(process?.compost?.name ?? "")'"
-            upperBtn.setTitle("Cek Kondisi", for: .normal)
+            titleLbl.text = "Cek kondisi kompos \"\(process?.compost?.name ?? "")\""
+            upperBtn.setTitle("Lihat Solusi", for: .normal)
             conditions = seeder.seedCondition()
             upperBtn.setDisabledView()
             lowerBtn.isHidden = true
