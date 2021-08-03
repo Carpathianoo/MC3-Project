@@ -10,8 +10,13 @@ import Foundation
 class MoistureCalculation {
     
     static func getMoisturePercentage(materials: [Material]) -> Double {
-        let percentage = getAllMoisture(materials: materials) / getTotalAmount(materials: materials)
-        return percentage
+        let amount = getTotalAmount(materials: materials)
+        if amount == 0 {
+            return 0
+        } else {
+            let percentage = getAllMoisture(materials: materials) / getTotalAmount(materials: materials)
+            return percentage
+        }
     }
     
     static func getAllMoisture(materials: [Material]) -> Double {
