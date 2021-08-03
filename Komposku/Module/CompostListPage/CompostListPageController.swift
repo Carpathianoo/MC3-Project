@@ -88,6 +88,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         print(indexPath.row)
         
         //buat code pindah ke detail compost page disini
+//        let controller = DummyPage()
+//        navigationController?.pushViewController(controller, animated: true)
         
     }
     
