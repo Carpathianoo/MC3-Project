@@ -11,6 +11,7 @@ class BahanTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bahanTitle: UILabel!
     @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var bahanAmount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,17 +31,13 @@ class BahanTableViewCell: UITableViewCell {
             }
 
             bahanTitle.text = material.name
+            bahanAmount.text = "\(material.quantity) bagian"
         }
     }
 
     func setupView(){
-        
+        viewContainer.dropShadowCell()
         viewContainer.layer.cornerRadius = 10
-        viewContainer.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
-        viewContainer.layer.shadowColor = UIColor(red: 0.2, green: 0.31, blue: 0.22, alpha: 0.1).cgColor
-        viewContainer.layer.shadowRadius = 10
-        viewContainer.layer.shadowPath = UIBezierPath(rect: viewContainer.bounds).cgPath
-        
     }
     
 }
