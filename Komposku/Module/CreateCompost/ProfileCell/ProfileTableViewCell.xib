@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="106" id="KGk-i7-Jjw" customClass="ProfileTableViewCell" customModule="Komposku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IJ-dZ-rtr">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="99"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kVc-Iy-3bC">
+                                <rect key="frame" x="20" y="7.5" width="83" height="83.5"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.60392156860000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="Zpv-6c-jIU"/>
+                                    <constraint firstAttribute="width" constant="83" id="p1b-Bn-1wl"/>
+                                </constraints>
+                                <imageReference key="image" image="plus" catalog="system"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Kompos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPj-HN-IBB">
+                                <rect key="frame" x="123" y="32.5" width="277" height="34"/>
+                                <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kVc-Iy-3bC" firstAttribute="top" secondItem="9IJ-dZ-rtr" secondAttribute="top" constant="8" id="Dff-Hr-wI7"/>
+                            <constraint firstItem="kVc-Iy-3bC" firstAttribute="leading" secondItem="9IJ-dZ-rtr" secondAttribute="leading" constant="20" id="Kqk-6v-vQ2"/>
+                            <constraint firstAttribute="trailing" secondItem="TPj-HN-IBB" secondAttribute="trailing" constant="20" id="O7s-21-nZk"/>
+                            <constraint firstAttribute="bottom" secondItem="kVc-Iy-3bC" secondAttribute="bottom" constant="8" id="co4-i8-4OU"/>
+                            <constraint firstItem="TPj-HN-IBB" firstAttribute="centerY" secondItem="kVc-Iy-3bC" secondAttribute="centerY" id="ytA-C8-HRf"/>
+                            <constraint firstItem="TPj-HN-IBB" firstAttribute="leading" secondItem="kVc-Iy-3bC" secondAttribute="trailing" constant="20" id="zTo-BT-deV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9IJ-dZ-rtr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7bZ-uE-a0l"/>
+                    <constraint firstItem="9IJ-dZ-rtr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EP7-qg-UFF"/>
+                    <constraint firstAttribute="bottom" secondItem="9IJ-dZ-rtr" secondAttribute="bottom" id="Myj-IX-SJ8"/>
+                    <constraint firstAttribute="trailing" secondItem="9IJ-dZ-rtr" secondAttribute="trailing" id="avz-q3-m7S"/>
+                    <constraint firstItem="9IJ-dZ-rtr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="s11-Bm-BmL"/>
+                    <constraint firstItem="9IJ-dZ-rtr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xtY-W4-9fC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="profileImage" destination="kVc-Iy-3bC" id="S2C-el-rbi"/>
+                <outlet property="profileTextField" destination="TPj-HN-IBB" id="T60-RG-7lP"/>
+            </connections>
+            <point key="canvasLocation" x="65.217391304347828" y="119.86607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
