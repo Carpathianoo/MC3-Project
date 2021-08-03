@@ -11,22 +11,6 @@
 		9A1C620C26B8E1B7007E332E /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1C620A26B8E1B7007E332E /* ProfileTableViewCell.xib */; };
 		9A2578B926B99031002FBF0E /* DetailMaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2578B726B99031002FBF0E /* DetailMaterialTableViewCell.swift */; };
 		9A2578BA26B99031002FBF0E /* DetailMaterialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2578B826B99031002FBF0E /* DetailMaterialTableViewCell.xib */; };
-		9A9ADF2B26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		9A9ADF2C26B25CE9003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF2D26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		9A9ADF2E26B25CE9003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF2F26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		9A9ADF3426B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		9A9ADF3D26B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF3E26B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF3F26B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF4126B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF4326B25D53003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF4426B25FFD003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF4626B26002003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF5326B276DD003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		9A9ADF5826B276EC003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		9A9ADF5C26B2DB57003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		9AAEAC4B26B39F9A00093429 /* MoistureCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAC4A26B39F9A00093429 /* MoistureCalculation.swift */; };
 		9AAEAC4D26B3CB8B00093429 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAC4C26B3CB8B00093429 /* UITextField+Ext.swift */; };
 		9AAEAC6426B45D4D00093429 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAC6026B45D4D00093429 /* Process+CoreDataClass.swift */; };
@@ -381,13 +365,8 @@
 				9AF79E7526B2F7F800FE6255 /* BahanTableViewCell.xib in Resources */,
 				9AF79E7326B2F7F800FE6255 /* ListBahanViewController.xib in Resources */,
 				9A2578BA26B99031002FBF0E /* DetailMaterialTableViewCell.xib in Resources */,
-				9A9ADF2D26B25CE9003E0304 /* (null) in Resources */,
-				9A9ADF3426B25CE9003E0304 /* (null) in Resources */,
-				9A9ADF2B26B25CE9003E0304 /* (null) in Resources */,
-				9A9ADF2F26B25CE9003E0304 /* (null) in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
 				9AF79E7C26B2F7F800FE6255 /* ListBahanTableViewCell.xib in Resources */,
-				9A9ADF5826B276EC003E0304 /* (null) in Resources */,
 				9AF79E7026B2F7F800FE6255 /* CompostController.xib in Resources */,
 				9AF79E7126B2F7F800FE6255 /* CreateButtonTableViewCell.xib in Resources */,
 				9A1C620C26B8E1B7007E332E /* ProfileTableViewCell.xib in Resources */,
@@ -406,16 +385,12 @@
 				9AAEAC6526B45D4D00093429 /* Process+CoreDataProperties.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
 				9AAEAC4B26B39F9A00093429 /* MoistureCalculation.swift in Sources */,
-				9A9ADF3F26B25D53003E0304 /* (null) in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				9AAEAC6626B45D4D00093429 /* Compost+CoreDataClass.swift in Sources */,
 				9AF79E5826B2F7E100FE6255 /* CoreDataManager.swift in Sources */,
-				9A9ADF5326B276DD003E0304 /* (null) in Sources */,
-				9A9ADF5C26B2DB57003E0304 /* (null) in Sources */,
 				9A1C620B26B8E1B7007E332E /* ProfileTableViewCell.swift in Sources */,
 				9AF79E5726B2F7E100FE6255 /* MaterialDetail.swift in Sources */,
 				9AF79E5626B2F7E100FE6255 /* Material.swift in Sources */,
-				9A9ADF3E26B25D53003E0304 /* (null) in Sources */,
 				9AAEAC4D26B3CB8B00093429 /* UITextField+Ext.swift in Sources */,
 				9AF79E7226B2F7F800FE6255 /* CreateButtonTableViewCell.swift in Sources */,
 				9AF79E7626B2F7F800FE6255 /* BahanTableViewCell.swift in Sources */,
@@ -427,18 +402,11 @@
 				9AF79E5526B2F7E100FE6255 /* Seeder.swift in Sources */,
 				9AAEAC6726B45D4D00093429 /* Compost+CoreDataProperties.swift in Sources */,
 				9AF79E5126B2F7E100FE6255 /* Solution.swift in Sources */,
-				9A9ADF4326B25D53003E0304 /* (null) in Sources */,
-				9A9ADF2E26B25CE9003E0304 /* (null) in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
-				9A9ADF4626B26002003E0304 /* (null) in Sources */,
 				9AF79E7A26B2F7F800FE6255 /* CreateCompostViewController.swift in Sources */,
 				9AF79E7426B2F7F800FE6255 /* ListBahanViewController.swift in Sources */,
-				9A9ADF4126B25D53003E0304 /* (null) in Sources */,
-				9A9ADF2C26B25CE9003E0304 /* (null) in Sources */,
-				9A9ADF3D26B25D53003E0304 /* (null) in Sources */,
 				9AAEAC6426B45D4D00093429 /* Process+CoreDataClass.swift in Sources */,
 				9AF79E6F26B2F7F800FE6255 /* CompostController.swift in Sources */,
-				9A9ADF4426B25FFD003E0304 /* (null) in Sources */,
 				9A2578B926B99031002FBF0E /* DetailMaterialTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
