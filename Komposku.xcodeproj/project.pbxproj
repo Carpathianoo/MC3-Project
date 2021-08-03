@@ -19,6 +19,10 @@
 		78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */; };
 		78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0EE26AF12290034CFC1 /* CompostController.swift */; };
 		78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FEC0EF26AF12290034CFC1 /* CompostController.xib */; };
+		C61980AF26B8FD920079F4BA /* CheckingResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C61980AB26B8FD920079F4BA /* CheckingResultsCell.xib */; };
+		C61980B026B8FD920079F4BA /* CheckingResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61980AC26B8FD920079F4BA /* CheckingResultsCell.swift */; };
+		C61980B126B8FD920079F4BA /* CheckingResultsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61980AD26B8FD920079F4BA /* CheckingResultsPageController.swift */; };
+		C61980B226B8FD920079F4BA /* CheckingResultsPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C61980AE26B8FD920079F4BA /* CheckingResultsPageController.xib */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
@@ -39,6 +43,10 @@
 		78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78FEC0EE26AF12290034CFC1 /* CompostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostController.swift; sourceTree = "<group>"; };
 		78FEC0EF26AF12290034CFC1 /* CompostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompostController.xib; sourceTree = "<group>"; };
+		C61980AB26B8FD920079F4BA /* CheckingResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckingResultsCell.xib; sourceTree = "<group>"; };
+		C61980AC26B8FD920079F4BA /* CheckingResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckingResultsCell.swift; sourceTree = "<group>"; };
+		C61980AD26B8FD920079F4BA /* CheckingResultsPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckingResultsPageController.swift; sourceTree = "<group>"; };
+		C61980AE26B8FD920079F4BA /* CheckingResultsPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckingResultsPageController.xib; sourceTree = "<group>"; };
 		C645E01D26AE59D800888F63 /* Komposku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komposku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C645E02026AE59D800888F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C645E02226AE59D800888F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +81,25 @@
 			path = "Static Data";
 			sourceTree = "<group>";
 		};
+		C61980A926B8FD920079F4BA /* CheckingResultsPage */ = {
+			isa = PBXGroup;
+			children = (
+				C61980AA26B8FD920079F4BA /* CheckingResultsCell */,
+				C61980AD26B8FD920079F4BA /* CheckingResultsPageController.swift */,
+				C61980AE26B8FD920079F4BA /* CheckingResultsPageController.xib */,
+			);
+			path = CheckingResultsPage;
+			sourceTree = "<group>";
+		};
+		C61980AA26B8FD920079F4BA /* CheckingResultsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C61980AB26B8FD920079F4BA /* CheckingResultsCell.xib */,
+				C61980AC26B8FD920079F4BA /* CheckingResultsCell.swift */,
+			);
+			path = CheckingResultsCell;
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +131,7 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C61980A926B8FD920079F4BA /* CheckingResultsPage */,
 				78FEC0EE26AF12290034CFC1 /* CompostController.swift */,
 				78FEC0EF26AF12290034CFC1 /* CompostController.xib */,
 			);
@@ -199,6 +227,8 @@
 			files = (
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
+				C61980B226B8FD920079F4BA /* CheckingResultsPageController.xib in Resources */,
+				C61980AF26B8FD920079F4BA /* CheckingResultsCell.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +242,10 @@
 			files = (
 				7851358126B1C52300FCCA93 /* Condition.swift in Sources */,
 				7851357F26B1C4F500FCCA93 /* Material.swift in Sources */,
+				C61980B026B8FD920079F4BA /* CheckingResultsCell.swift in Sources */,
 				7851358326B1C54900FCCA93 /* Solution.swift in Sources */,
 				7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */,
+				C61980B126B8FD920079F4BA /* CheckingResultsPageController.swift in Sources */,
 				7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */,
 				7851358726B1CFF000FCCA93 /* WasteMaterialTutorial.swift in Sources */,
 				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
