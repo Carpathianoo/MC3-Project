@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ListBahanViewController: UIViewController {
-
-    @IBOutlet weak var detailMaterial: UILabel!
+class ListBahanViewController: UIViewController, UIScrollViewDelegate {
+    
     @IBOutlet weak var listBahanTableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var section: Int?
     var material: Material?
@@ -30,17 +30,18 @@ class ListBahanViewController: UIViewController {
     
     func setupView() {
         let listBahanNib = UINib(nibName: "ListBahanTableViewCell", bundle: nil)
+        let detailNib = UINib(nibName: "DetailMaterialTableViewCell", bundle: nil)
         listBahanTableView.register(listBahanNib, forCellReuseIdentifier: "listBahanCellIdentifier")
+        listBahanTableView.register(detailNib, forCellReuseIdentifier: "detailMaterialCell")
         listBahanTableView.delegate = self
         listBahanTableView.dataSource = self
         listBahanTableView.separatorStyle = .none
-        if section == 0 {
-            detailMaterial.text = "Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein. Ukur bahan hijaumu dengan ukuran wadah yang sama."
-        } else {
-            detailMaterial.text = "Sampah Cokelat adalah bahan yang kaya akan karbon atau karbohidrat. Ukur bahan cokelatmu dengan ukuran wadah yang sama."
-        }
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0.0
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -51,7 +52,7 @@ class ListBahanViewController: UIViewController {
         guard let material = material else {
             return
         }
-
+        
         actionBack?(material)
     }
     
@@ -63,7 +64,7 @@ class ListBahanViewController: UIViewController {
         
         material?.total_material = total
     }
-
+    
 }
 
 extension ListBahanViewController: UITableViewDelegate, UITableViewDataSource{
@@ -71,22 +72,32 @@ extension ListBahanViewController: UITableViewDelegate, UITableViewDataSource{
         guard let material = material else {
             return 1
         }
-        return material.detail.count
+        return material.detail.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        90
+        if indexPath.row == 0 {
+            return 176
+        } else {
+            return 90
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = listBahanTableView.dequeueReusableCell(withIdentifier: "listBahanCellIdentifier", for: indexPath) as! ListBahanTableViewCell
-        cell.materialsDetail = material?.detail[indexPath.row]
-        cell.currentAmount = Double(material?.detail[indexPath.row].quantity ?? 0)
-        cell.updateMaterial = { material in
-            self.material?.detail[indexPath.row] = material
+        if indexPath.row == 0 {
+            let cell = listBahanTableView.dequeueReusableCell(withIdentifier: "detailMaterialCell", for: indexPath) as! DetailMaterialTableViewCell
+            cell.bahan = section
+            return cell
+        } else {
+            let cell = listBahanTableView.dequeueReusableCell(withIdentifier: "listBahanCellIdentifier", for: indexPath) as! ListBahanTableViewCell
+            cell.materialsDetail = material?.detail[indexPath.row - 1]
+            cell.currentAmount = Double(material?.detail[indexPath.row - 1].quantity ?? 0)
+            cell.updateMaterial = { material in
+                self.material?.detail[indexPath.row - 1] = material
+            }
+            return cell
         }
-        return cell
     }
     
     

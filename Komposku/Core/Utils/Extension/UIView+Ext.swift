@@ -46,4 +46,25 @@ public extension UIView {
             action?()
         }
     }
+    
+    func dropShadowCell() {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = CGSize(width: 2, height: 20)
+        self.layer.shadowRadius = 4
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    func addGradientBackground(firstColor: UIColor, secondColor: UIColor){
+           clipsToBounds = true
+           let gradientLayer = CAGradientLayer()
+           gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
+           gradientLayer.frame = self.bounds
+           gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+           gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+           print(gradientLayer.frame)
+           self.layer.insertSublayer(gradientLayer, at: 0)
+       }
 }

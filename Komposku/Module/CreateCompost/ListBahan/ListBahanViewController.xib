@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListBahanViewController" customModule="Komposku" customModuleProvider="target">
             <connections>
-                <outlet property="detailMaterial" destination="IEp-1z-Y1H" id="Zek-L1-mdR"/>
                 <outlet property="listBahanTableView" destination="KMc-io-rZE" id="thM-1z-etm"/>
+                <outlet property="scrollView" destination="VVq-Xd-hug" id="P0o-PR-eeL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,32 +20,45 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein. Ukur bahan hijaumu dengan ukuran wadah yang sama." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEp-1z-Y1H">
-                    <rect key="frame" x="21" y="56" width="372" height="80"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVq-Xd-hug">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-yd-doq">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KMc-io-rZE">
+                                    <rect key="frame" x="18" y="10" width="378" height="798"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="KMc-io-rZE" firstAttribute="top" secondItem="mPn-yd-doq" secondAttribute="top" constant="10" id="Cum-y4-OQt"/>
+                                <constraint firstItem="KMc-io-rZE" firstAttribute="leading" secondItem="mPn-yd-doq" secondAttribute="leading" constant="18" id="VZo-Z1-8E6"/>
+                                <constraint firstAttribute="bottom" secondItem="KMc-io-rZE" secondAttribute="bottom" constant="10" id="swd-CG-h2c"/>
+                                <constraint firstAttribute="trailing" secondItem="KMc-io-rZE" secondAttribute="trailing" constant="18" id="x8Z-44-6dQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="JfG-Ji-WO8"/>
+                        <constraint firstAttribute="bottom" secondItem="mPn-yd-doq" secondAttribute="bottom" id="LkD-8g-8bn"/>
+                        <constraint firstItem="mPn-yd-doq" firstAttribute="centerX" secondItem="VVq-Xd-hug" secondAttribute="centerX" id="SF9-f4-yZb"/>
+                        <constraint firstItem="mPn-yd-doq" firstAttribute="centerY" secondItem="VVq-Xd-hug" secondAttribute="centerY" id="bG5-mU-KQb"/>
+                        <constraint firstItem="mPn-yd-doq" firstAttribute="leading" secondItem="VVq-Xd-hug" secondAttribute="leading" id="e9K-98-rLa"/>
+                        <constraint firstItem="mPn-yd-doq" firstAttribute="top" secondItem="VVq-Xd-hug" secondAttribute="top" id="huf-K2-LkU"/>
+                        <constraint firstAttribute="trailing" secondItem="mPn-yd-doq" secondAttribute="trailing" id="p6y-SZ-fuy"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KMc-io-rZE">
-                    <rect key="frame" x="21" y="152" width="372" height="710"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KMc-io-rZE" secondAttribute="bottom" id="Bd1-QF-PwT"/>
-                <constraint firstItem="KMc-io-rZE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="IqZ-nr-JQp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KMc-io-rZE" secondAttribute="trailing" constant="21" id="Rfr-Mu-siU"/>
-                <constraint firstItem="KMc-io-rZE" firstAttribute="top" secondItem="IEp-1z-Y1H" secondAttribute="bottom" constant="16" id="Vxx-v2-xn2"/>
-                <constraint firstItem="IEp-1z-Y1H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="nGO-SF-xfx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IEp-1z-Y1H" secondAttribute="trailing" constant="21" id="oTD-wg-cRM"/>
-                <constraint firstItem="IEp-1z-Y1H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="vBU-HO-3J5"/>
+                <constraint firstItem="VVq-Xd-hug" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k2Z-63-LJW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VVq-Xd-hug" secondAttribute="bottom" id="lHQ-nu-bQU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VVq-Xd-hug" secondAttribute="trailing" id="qHJ-gq-QYX"/>
+                <constraint firstItem="VVq-Xd-hug" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wYJ-iV-1fb"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="151"/>
+            <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>
         </view>
     </objects>
     <resources>

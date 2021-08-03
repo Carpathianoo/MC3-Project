@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A1C620B26B8E1B7007E332E /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C620926B8E1B7007E332E /* ProfileTableViewCell.swift */; };
+		9A1C620C26B8E1B7007E332E /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1C620A26B8E1B7007E332E /* ProfileTableViewCell.xib */; };
+		9A2578B926B99031002FBF0E /* DetailMaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2578B726B99031002FBF0E /* DetailMaterialTableViewCell.swift */; };
+		9A2578BA26B99031002FBF0E /* DetailMaterialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2578B826B99031002FBF0E /* DetailMaterialTableViewCell.xib */; };
 		9A9ADF2B26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9A9ADF2C26B25CE9003E0304 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		9A9ADF2D26B25CE9003E0304 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -29,6 +33,7 @@
 		9AAEAC6526B45D4D00093429 /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAC6126B45D4D00093429 /* Process+CoreDataProperties.swift */; };
 		9AAEAC6626B45D4D00093429 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAC6226B45D4D00093429 /* Compost+CoreDataClass.swift */; };
 		9AAEAC6726B45D4D00093429 /* Compost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAC6326B45D4D00093429 /* Compost+CoreDataProperties.swift */; };
+		9ADB7FDC26B9958900248C81 /* StringModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB7FDB26B9958900248C81 /* StringModifier.swift */; };
 		9AF79E5026B2F7E100FE6255 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4426B2F7E100FE6255 /* UIView+Ext.swift */; };
 		9AF79E5126B2F7E100FE6255 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4626B2F7E100FE6255 /* Solution.swift */; };
 		9AF79E5226B2F7E100FE6255 /* WasteMaterialTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF79E4726B2F7E100FE6255 /* WasteMaterialTutorial.swift */; };
@@ -60,12 +65,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A1C620926B8E1B7007E332E /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		9A1C620A26B8E1B7007E332E /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		9A2578B726B99031002FBF0E /* DetailMaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMaterialTableViewCell.swift; sourceTree = "<group>"; };
+		9A2578B826B99031002FBF0E /* DetailMaterialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMaterialTableViewCell.xib; sourceTree = "<group>"; };
 		9AAEAC4A26B39F9A00093429 /* MoistureCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoistureCalculation.swift; sourceTree = "<group>"; };
 		9AAEAC4C26B3CB8B00093429 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		9AAEAC6026B45D4D00093429 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9AAEAC6126B45D4D00093429 /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9AAEAC6226B45D4D00093429 /* Compost+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compost+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9AAEAC6326B45D4D00093429 /* Compost+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compost+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9ADB7FDB26B9958900248C81 /* StringModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModifier.swift; sourceTree = "<group>"; };
 		9AF79E4426B2F7E100FE6255 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		9AF79E4626B2F7E100FE6255 /* Solution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 		9AF79E4726B2F7E100FE6255 /* WasteMaterialTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteMaterialTutorial.swift; sourceTree = "<group>"; };
@@ -109,10 +119,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A1C620826B8E19B007E332E /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A1C620926B8E1B7007E332E /* ProfileTableViewCell.swift */,
+				9A1C620A26B8E1B7007E332E /* ProfileTableViewCell.xib */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		9A2578B626B9901C002FBF0E /* DetailMaterialCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A2578B726B99031002FBF0E /* DetailMaterialTableViewCell.swift */,
+				9A2578B826B99031002FBF0E /* DetailMaterialTableViewCell.xib */,
+			);
+			path = DetailMaterialCell;
+			sourceTree = "<group>";
+		};
 		9AAEAC4926B39F8800093429 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				9AAEAC4A26B39F9A00093429 /* MoistureCalculation.swift */,
+				9ADB7FDB26B9958900248C81 /* StringModifier.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -152,6 +181,8 @@
 		9AF79E5C26B2F7F800FE6255 /* CreateCompost */ = {
 			isa = PBXGroup;
 			children = (
+				9A2578B626B9901C002FBF0E /* DetailMaterialCell */,
+				9A1C620826B8E19B007E332E /* ProfileCell */,
 				9AF79E6326B2F7F800FE6255 /* BahanCell */,
 				9AF79E6926B2F7F800FE6255 /* Create */,
 				9AF79E5D26B2F7F800FE6255 /* CreateButton */,
@@ -349,6 +380,7 @@
 				9AF79E7926B2F7F800FE6255 /* CreateCompostViewController.xib in Resources */,
 				9AF79E7526B2F7F800FE6255 /* BahanTableViewCell.xib in Resources */,
 				9AF79E7326B2F7F800FE6255 /* ListBahanViewController.xib in Resources */,
+				9A2578BA26B99031002FBF0E /* DetailMaterialTableViewCell.xib in Resources */,
 				9A9ADF2D26B25CE9003E0304 /* (null) in Resources */,
 				9A9ADF3426B25CE9003E0304 /* (null) in Resources */,
 				9A9ADF2B26B25CE9003E0304 /* (null) in Resources */,
@@ -358,6 +390,7 @@
 				9A9ADF5826B276EC003E0304 /* (null) in Resources */,
 				9AF79E7026B2F7F800FE6255 /* CompostController.xib in Resources */,
 				9AF79E7126B2F7F800FE6255 /* CreateButtonTableViewCell.xib in Resources */,
+				9A1C620C26B8E1B7007E332E /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,12 +412,14 @@
 				9AF79E5826B2F7E100FE6255 /* CoreDataManager.swift in Sources */,
 				9A9ADF5326B276DD003E0304 /* (null) in Sources */,
 				9A9ADF5C26B2DB57003E0304 /* (null) in Sources */,
+				9A1C620B26B8E1B7007E332E /* ProfileTableViewCell.swift in Sources */,
 				9AF79E5726B2F7E100FE6255 /* MaterialDetail.swift in Sources */,
 				9AF79E5626B2F7E100FE6255 /* Material.swift in Sources */,
 				9A9ADF3E26B25D53003E0304 /* (null) in Sources */,
 				9AAEAC4D26B3CB8B00093429 /* UITextField+Ext.swift in Sources */,
 				9AF79E7226B2F7F800FE6255 /* CreateButtonTableViewCell.swift in Sources */,
 				9AF79E7626B2F7F800FE6255 /* BahanTableViewCell.swift in Sources */,
+				9ADB7FDC26B9958900248C81 /* StringModifier.swift in Sources */,
 				9AF79E5426B2F7E100FE6255 /* Condition.swift in Sources */,
 				9AF79E7726B2F7F800FE6255 /* TotalItemTableViewCell.swift in Sources */,
 				9AF79E7B26B2F7F800FE6255 /* ListBahanTableViewCell.swift in Sources */,
@@ -404,6 +439,7 @@
 				9AAEAC6426B45D4D00093429 /* Process+CoreDataClass.swift in Sources */,
 				9AF79E6F26B2F7F800FE6255 /* CompostController.swift in Sources */,
 				9A9ADF4426B25FFD003E0304 /* (null) in Sources */,
+				9A2578B926B99031002FBF0E /* DetailMaterialTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
