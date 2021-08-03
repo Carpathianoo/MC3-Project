@@ -8,7 +8,7 @@
         <attribute name="photo" optional="YES" attributeType="String"/>
         <relationship name="process" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Process" inverseName="compost" inverseEntity="Process"/>
     </entity>
-    <entity name="Process" representedClassName="Process" syncable="YES" codeGenerationType="category">
+    <entity name="Process" representedClassName=".Process" syncable="YES" codeGenerationType="category">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="detail" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>

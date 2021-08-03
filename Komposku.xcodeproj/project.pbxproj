@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78472A9426B53A540076E3D7 /* ConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A9226B53A540076E3D7 /* ConditionViewController.swift */; };
+		78472A9526B53A540076E3D7 /* ConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A9326B53A540076E3D7 /* ConditionViewController.xib */; };
+		78472A9926B53A760076E3D7 /* ConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A9726B53A760076E3D7 /* ConditionTableViewCell.swift */; };
+		78472A9A26B53A760076E3D7 /* ConditionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A9826B53A760076E3D7 /* ConditionTableViewCell.xib */; };
+		78472A9D26B53D7B0076E3D7 /* DoneCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472A9B26B53D7B0076E3D7 /* DoneCheckingViewController.swift */; };
+		78472A9E26B53D7B0076E3D7 /* DoneCheckingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472A9C26B53D7B0076E3D7 /* DoneCheckingViewController.xib */; };
+		78472AA126B53E800076E3D7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AA026B53E800076E3D7 /* CustomButton.swift */; };
+		78472AA326B53EA10076E3D7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AA226B53EA10076E3D7 /* CustomTableViewCell.swift */; };
+		78472AA526B53EBC0076E3D7 /* DashedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AA426B53EBC0076E3D7 /* DashedLineView.swift */; };
+		78472AA726B53ED00076E3D7 /* LineProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AA626B53ED00076E3D7 /* LineProcessView.swift */; };
+		78472AA926B53EE90076E3D7 /* MoistureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AA826B53EE90076E3D7 /* MoistureLabel.swift */; };
+		78472AAC26B53F410076E3D7 /* CompostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AAA26B53F410076E3D7 /* CompostDetailViewController.swift */; };
+		78472AAD26B53F410076E3D7 /* CompostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472AAB26B53F410076E3D7 /* CompostDetailViewController.xib */; };
+		78472AB026B540810076E3D7 /* ProcessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78472AAE26B540810076E3D7 /* ProcessTableViewCell.swift */; };
+		78472AB126B540810076E3D7 /* ProcessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78472AAF26B540810076E3D7 /* ProcessTableViewCell.xib */; };
 		7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357626B00BD100FCCA93 /* CoreDataManager.swift */; };
 		7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357926B1933A00FCCA93 /* Seeder.swift */; };
 		7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */; };
@@ -27,6 +42,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78472A9226B53A540076E3D7 /* ConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionViewController.swift; sourceTree = "<group>"; };
+		78472A9326B53A540076E3D7 /* ConditionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionViewController.xib; sourceTree = "<group>"; };
+		78472A9726B53A760076E3D7 /* ConditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionTableViewCell.swift; sourceTree = "<group>"; };
+		78472A9826B53A760076E3D7 /* ConditionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionTableViewCell.xib; sourceTree = "<group>"; };
+		78472A9B26B53D7B0076E3D7 /* DoneCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCheckingViewController.swift; sourceTree = "<group>"; };
+		78472A9C26B53D7B0076E3D7 /* DoneCheckingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneCheckingViewController.xib; sourceTree = "<group>"; };
+		78472AA026B53E800076E3D7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		78472AA226B53EA10076E3D7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		78472AA426B53EBC0076E3D7 /* DashedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedLineView.swift; sourceTree = "<group>"; };
+		78472AA626B53ED00076E3D7 /* LineProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProcessView.swift; sourceTree = "<group>"; };
+		78472AA826B53EE90076E3D7 /* MoistureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoistureLabel.swift; sourceTree = "<group>"; };
+		78472AAA26B53F410076E3D7 /* CompostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostDetailViewController.swift; sourceTree = "<group>"; };
+		78472AAB26B53F410076E3D7 /* CompostDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompostDetailViewController.xib; sourceTree = "<group>"; };
+		78472AAE26B540810076E3D7 /* ProcessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTableViewCell.swift; sourceTree = "<group>"; };
+		78472AAF26B540810076E3D7 /* ProcessTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcessTableViewCell.xib; sourceTree = "<group>"; };
 		7851357626B00BD100FCCA93 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7851357926B1933A00FCCA93 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
@@ -59,6 +89,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78472A8F26B53A080076E3D7 /* CompostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				78472AB226B540A70076E3D7 /* ProcessTableViewCell */,
+				78472AAA26B53F410076E3D7 /* CompostDetailViewController.swift */,
+				78472AAB26B53F410076E3D7 /* CompostDetailViewController.xib */,
+			);
+			path = CompostDetail;
+			sourceTree = "<group>";
+		};
+		78472A9026B53A150076E3D7 /* DoneChecking */ = {
+			isa = PBXGroup;
+			children = (
+				78472A9B26B53D7B0076E3D7 /* DoneCheckingViewController.swift */,
+				78472A9C26B53D7B0076E3D7 /* DoneCheckingViewController.xib */,
+			);
+			path = DoneChecking;
+			sourceTree = "<group>";
+		};
+		78472A9126B53A2B0076E3D7 /* CheckCondition */ = {
+			isa = PBXGroup;
+			children = (
+				78472A9626B53A580076E3D7 /* ConditionTableViewCell */,
+				78472A9226B53A540076E3D7 /* ConditionViewController.swift */,
+				78472A9326B53A540076E3D7 /* ConditionViewController.xib */,
+			);
+			path = CheckCondition;
+			sourceTree = "<group>";
+		};
+		78472A9626B53A580076E3D7 /* ConditionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				78472A9726B53A760076E3D7 /* ConditionTableViewCell.swift */,
+				78472A9826B53A760076E3D7 /* ConditionTableViewCell.xib */,
+			);
+			path = ConditionTableViewCell;
+			sourceTree = "<group>";
+		};
+		78472A9F26B53E630076E3D7 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				78472AA026B53E800076E3D7 /* CustomButton.swift */,
+				78472AA226B53EA10076E3D7 /* CustomTableViewCell.swift */,
+				78472AA426B53EBC0076E3D7 /* DashedLineView.swift */,
+				78472AA626B53ED00076E3D7 /* LineProcessView.swift */,
+				78472AA826B53EE90076E3D7 /* MoistureLabel.swift */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
+		78472AB226B540A70076E3D7 /* ProcessTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				78472AAE26B540810076E3D7 /* ProcessTableViewCell.swift */,
+				78472AAF26B540810076E3D7 /* ProcessTableViewCell.xib */,
+			);
+			path = ProcessTableViewCell;
+			sourceTree = "<group>";
+		};
 		7851357B26B1C4BF00FCCA93 /* Static Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +193,10 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				78472A9F26B53E630076E3D7 /* ReusableView */,
+				78472A9126B53A2B0076E3D7 /* CheckCondition */,
+				78472A9026B53A150076E3D7 /* DoneChecking */,
+				78472A8F26B53A080076E3D7 /* CompostDetail */,
 				78FEC0EE26AF12290034CFC1 /* CompostController.swift */,
 				78FEC0EF26AF12290034CFC1 /* CompostController.xib */,
 			);
@@ -197,9 +290,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78472A9E26B53D7B0076E3D7 /* DoneCheckingViewController.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
+				78472AB126B540810076E3D7 /* ProcessTableViewCell.xib in Resources */,
+				78472A9526B53A540076E3D7 /* ConditionViewController.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
+				78472AAD26B53F410076E3D7 /* CompostDetailViewController.xib in Resources */,
+				78472A9A26B53A760076E3D7 /* ConditionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,19 +309,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7851358126B1C52300FCCA93 /* Condition.swift in Sources */,
+				78472A9926B53A760076E3D7 /* ConditionTableViewCell.swift in Sources */,
+				78472AA926B53EE90076E3D7 /* MoistureLabel.swift in Sources */,
+				78472AA126B53E800076E3D7 /* CustomButton.swift in Sources */,
+				78472AA526B53EBC0076E3D7 /* DashedLineView.swift in Sources */,
 				7851357F26B1C4F500FCCA93 /* Material.swift in Sources */,
 				7851358326B1C54900FCCA93 /* Solution.swift in Sources */,
+				78472AA326B53EA10076E3D7 /* CustomTableViewCell.swift in Sources */,
 				7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */,
 				7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */,
 				7851358726B1CFF000FCCA93 /* WasteMaterialTutorial.swift in Sources */,
 				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
+				78472A9D26B53D7B0076E3D7 /* DoneCheckingViewController.swift in Sources */,
 				7851358526B1CD0400FCCA93 /* Tutorial.swift in Sources */,
 				78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */,
+				78472A9426B53A540076E3D7 /* ConditionViewController.swift in Sources */,
+				78472AAC26B53F410076E3D7 /* CompostDetailViewController.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
+				78472AA726B53ED00076E3D7 /* LineProcessView.swift in Sources */,
 				7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */,
 				78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */,
+				78472AB026B540810076E3D7 /* ProcessTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42F2NQF94Z;
+				DEVELOPMENT_TEAM = 3BJK86B698;
 				INFOPLIST_FILE = Komposku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42F2NQF94Z;
+				DEVELOPMENT_TEAM = 3BJK86B698;
 				INFOPLIST_FILE = Komposku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
