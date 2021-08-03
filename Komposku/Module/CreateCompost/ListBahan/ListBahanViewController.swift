@@ -87,6 +87,7 @@ extension ListBahanViewController: UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.row == 0 {
             let cell = listBahanTableView.dequeueReusableCell(withIdentifier: "detailMaterialCell", for: indexPath) as! DetailMaterialTableViewCell
+            cell.selectionStyle = .none
             cell.bahan = section
             return cell
         } else {
