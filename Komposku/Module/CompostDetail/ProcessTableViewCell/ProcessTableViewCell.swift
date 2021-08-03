@@ -16,7 +16,8 @@ class ProcessTableViewCell: UITableViewCell {
         
     let lineView: LineProcessView = LineProcessView()
     static let identifier = "ProcessTableViewCell"
-
+    let today = Date()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,7 +29,7 @@ class ProcessTableViewCell: UITableViewCell {
     }
 
     func setupProcessCell(isDone: Bool, process_date date: Date){
-        let dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: date).day
+        let dateDiff = Calendar.current.dateComponents([.day], from: today, to: date).day
         if !isDone && dateDiff! < -2{
             
             checkListIV.image = UIImage(systemName: "xmark.circle.fill")?.withAlignmentRectInsets(UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))

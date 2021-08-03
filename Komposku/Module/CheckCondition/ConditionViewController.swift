@@ -43,11 +43,20 @@ class ConditionViewController: UIViewController {
     var conditions: [Condition] = []
     var process: Process?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func setupTableView() {
+        let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
+        conditionTV.register(nibCell, forCellReuseIdentifier: ConditionTableViewCell.identifier)
+        conditionTV.separatorStyle = .none
+        conditionTV.delegate = self
+        conditionTV.dataSource = self
+        conditionTV.allowsMultipleSelection = true
+        conditionTV.isUserInteractionEnabled = true
+        conditionTV.backgroundColor = UIColor.white
+    }
+    
+    fileprivate func setupBtn() {
         upperBtn.layer.cornerRadius = 8
         lowerBtn.layer.cornerRadius = 8
-        
         if process?.detail == "Panen"{
             titleLbl.text = "Hari ini panen ‘\(process?.compost?.name ?? "")’"
             conditions = seeder.seedHarvestCondition()
@@ -66,14 +75,14 @@ class ConditionViewController: UIViewController {
             upperBtn.setDisabledView()
             lowerBtn.isHidden = true
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
-        conditionTV.register(nibCell, forCellReuseIdentifier: ConditionTableViewCell.identifier)
-        conditionTV.separatorStyle = .none
-        conditionTV.delegate = self
-        conditionTV.dataSource = self
-        conditionTV.allowsMultipleSelection = true
-        conditionTV.isUserInteractionEnabled = true
+        setupBtn()
+        
+        setupTableView()
     }
     
     func checkSelected(){

@@ -26,7 +26,11 @@ class CompostDetailViewController: UIViewController {
     
     @IBOutlet weak var checkBtn: CustomButton!
     
+    @IBOutlet weak var navImageView: UIImageView!
     
+    @IBAction func backToPrev(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func checkCondition(_ sender: Any) {
         let latestProcess = getLatestProcess()
         
@@ -34,11 +38,13 @@ class CompostDetailViewController: UIViewController {
         vc.process = latestProcess
 
         navigationController?.pushViewController(vc, animated: true)
+        navigationController?.navigationBar.isHidden = false
     }
     
     var compDetail: Compost?
     var processes: [Process] = []
     var latestProcess: Process?
+    let today = Date()
     
     fileprivate func setupTableView() {
         processTV.delegate = self
@@ -51,17 +57,20 @@ class CompostDetailViewController: UIViewController {
     
     fileprivate func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-//            navBarAppearance.backgroundImage = UIImage(named: (compDetail?.photo) ?? "")
-            
-            self.navigationController!.navigationBar.standardAppearance = navBarAppearance
-            self.navigationController!.navigationBar.scrollEdgeAppearance = navBarAppearance
-        }
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " ", style: .plain, target: nil, action: nil)
+
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backItem?.backButtonTitle = " "
+        navigationController?.navigationBar.tintColor = UIColor.black
+        
+        navImageView.layer.cornerRadius = 20
+        navImageView.layer.masksToBounds = true
+        navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        navImageView.image = UIImage(named: "photo")
+        
         checkConditionView.layer.cornerRadius = 30
         checkConditionView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
@@ -77,20 +86,25 @@ class CompostDetailViewController: UIViewController {
                 checkBtn.isHidden = false
                 checkBtn.setTitle("Cek Kondisi", for: .normal)
             }else{
+                processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
                 processReportLbl.text = "Kamu telah menyelesaikan pengecekan."
                 checkBtn.isHidden = true
+                processReportLbl.translatesAutoresizingMaskIntoConstraints = false
+                processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
             }
         }else if latestProcess.detail == "Perpanjang"{
             processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             processReportLbl.text = "Kamu telah melakukan perpanjangan kompos."
             checkBtn.isHidden = true
+            processReportLbl.translatesAutoresizingMaskIntoConstraints = false
+            processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
         }
     }
     
     fileprivate func setupView(_ unwrappedCompDetail: Compost) {
         compostNameLbl.text = unwrappedCompDetail.name
         
-        let harvest_day = dateDiff(from: Date(), to: unwrappedCompDetail.estimated_date!).day! + 1
+        let harvest_day = dateDiff(from: today, to: unwrappedCompDetail.estimated_date!).day! + 1
         statusLbl.text = "Siap panen dalam \(harvest_day) hari"
         
         moistureLbl.text = String(unwrappedCompDetail.moisture) + "%"
@@ -128,6 +142,8 @@ class CompostDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+        
         checkCompostCreatedInterval(latestProcess!)
                 
         checkCompostMixInterval(latestProcess!)
@@ -138,7 +154,7 @@ class CompostDetailViewController: UIViewController {
         
         processTV.reloadData()
         
-        let harvest_day = dateDiff(from: Date(), to: processes[0].compost!.estimated_date!).day! + 1
+        let harvest_day = dateDiff(from: today, to: processes[0].compost!.estimated_date!).day! + 1
         
         if Calendar.current.isDateInToday(processes[0].compost!.estimated_date!) {
             statusLbl.text = "Hari ini Panen"
@@ -187,13 +203,14 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func getLatestProcess() -> Process{
-        if dateDiff(from: (processes.last?.date)!, to: Date()).day! + 1 == 0{
+       
+        if dateDiff(from: (processes.last?.date)!, to: today).day! + 1 == 0{
             return processes[processes.count-1]
         }
         for p in processes{
             guard let unwrappedDate = p.date else{return Process()}
             
-            if dateDiff(from: unwrappedDate, to: Date()).day! < 3 {
+            if dateDiff(from: unwrappedDate, to: today).day! < 3 {
                 return p
             }
         }

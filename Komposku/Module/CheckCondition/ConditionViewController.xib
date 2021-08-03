@@ -40,10 +40,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-Nf-pFl">
-                    <rect key="frame" x="20" y="667" width="350" height="40"/>
+                    <rect key="frame" x="20" y="647" width="350" height="50"/>
                     <color key="backgroundColor" red="0.19215686269999999" green="0.59215686270000001" blue="0.4039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="YFn-hb-szZ"/>
+                        <constraint firstAttribute="height" constant="50" id="YFn-hb-szZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,10 +53,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-ue-7QI">
-                    <rect key="frame" x="20" y="720" width="350" height="40"/>
+                    <rect key="frame" x="20" y="710" width="350" height="50"/>
                     <color key="backgroundColor" red="0.19215686269999999" green="0.59215686270000001" blue="0.4039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="XMy-jt-bLR"/>
+                        <constraint firstAttribute="height" constant="50" id="XMy-jt-bLR"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,7 +67,7 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" contentInsetAdjustmentBehavior="always" style="plain" separatorStyle="none" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mIJ-cI-ufh">
-                    <rect key="frame" x="0.0" y="202" width="390" height="433"/>
+                    <rect key="frame" x="0.0" y="202" width="390" height="445"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iPZ-ue-7QI" secondAttribute="bottom" constant="50" id="JgO-k9-aMe"/>
                 <constraint firstItem="iPZ-ue-7QI" firstAttribute="trailing" secondItem="eq5-Nf-pFl" secondAttribute="trailing" id="QrK-qo-RHv"/>
                 <constraint firstItem="iPZ-ue-7QI" firstAttribute="top" secondItem="eq5-Nf-pFl" secondAttribute="bottom" constant="13" id="RT7-AS-LkP"/>
-                <constraint firstItem="eq5-Nf-pFl" firstAttribute="top" secondItem="mIJ-cI-ufh" secondAttribute="bottom" constant="32" id="UW9-2Z-oSs"/>
+                <constraint firstItem="eq5-Nf-pFl" firstAttribute="top" secondItem="mIJ-cI-ufh" secondAttribute="bottom" id="UW9-2Z-oSs"/>
                 <constraint firstItem="iPZ-ue-7QI" firstAttribute="width" secondItem="eq5-Nf-pFl" secondAttribute="width" id="W4E-Cc-yi3"/>
                 <constraint firstItem="eq5-Nf-pFl" firstAttribute="leading" secondItem="4nV-eB-4aD" secondAttribute="leading" id="YF3-ni-jXH"/>
                 <constraint firstItem="Jm3-Q5-EMx" firstAttribute="trailing" secondItem="4nV-eB-4aD" secondAttribute="trailing" id="d6X-6K-FgF"/>
