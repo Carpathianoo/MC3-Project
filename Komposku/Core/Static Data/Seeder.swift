@@ -9,27 +9,32 @@ import Foundation
 
 class Seeder{
  
-    func seedMaterial() -> [Material]{
+    static func seedMaterial() -> [Material]{
         var materials: [Material] = []
         
-        let brownMaterialDetail =
-            [MaterialDetail(name: "Bubuk Kopi", quantity: 0),
-             MaterialDetail(name: "Sampah Kebun", quantity: 0),
-             MaterialDetail(name: "Potongan Rumput", quantity: 0),
-             MaterialDetail(name: "Sampah Dapur", quantity: 0),
-             MaterialDetail(name: "Dedaunan Segar", quantity: 0),
-             MaterialDetail(name: "Potongan Semak", quantity: 0),
-             MaterialDetail(name: "Nasi", quantity: 0),
-             MaterialDetail(name: "Kulit Telur", quantity: 0),
-             MaterialDetail(name: "Sampah Buah", quantity: 0),
-             MaterialDetail(name: "Sampah Sayuran Hijau", quantity: 0),
-             MaterialDetail(name: "Umbi-umbian", quantity: 0)
-            ]
         let greenMaterialDetail =
-            [MaterialDetail(name: "Tisu Toilet", quantity: 0),
-             MaterialDetail(name: "Daun Kering", quantity: 0),
-             MaterialDetail(name: "Sekam / Gabah", quantity: 0),
-             MaterialDetail(name: "Tisu Pengesat", quantity: 0),
+        [MaterialDetail(name: "Sampah Makanan", quantity: 0, moistureLevel: 69),
+         MaterialDetail(name: "Potongan Rumput", quantity: 0, moistureLevel: 82),
+         MaterialDetail(name: "Sampah Sayuran", quantity: 0, moistureLevel: 91),
+         MaterialDetail(name: "Produk Sayuran", quantity: 0, moistureLevel: 87),
+         MaterialDetail(name: "Sampah Buah", quantity: 0, moistureLevel: 80),
+         MaterialDetail(name: "Sampah Kebun", quantity: 0, moistureLevel: 60),
+         MaterialDetail(name: "Dedaunan Segar", quantity: 0, moistureLevel: 86.2),
+         MaterialDetail(name: "Dedaunan", quantity: 0, moistureLevel: 38),
+         MaterialDetail(name: "Nasi", quantity: 0, moistureLevel: 64),
+         MaterialDetail(name: "Potongan Pohon", quantity: 0, moistureLevel: 70),
+         MaterialDetail(name: "Umbi-umbian", quantity: 0, moistureLevel: 10),
+         MaterialDetail(name: "Bubuk Kopi", quantity: 0, moistureLevel: 40.5),
+         MaterialDetail(name: "Potongan Semak", quantity: 0, moistureLevel: 15),
+         MaterialDetail(name: "Cangkang Telur", quantity: 0, moistureLevel: 29.1),
+            ]
+        let brownMaterialDetail =
+        [MaterialDetail(name: "Tisu Toilet", quantity: 0, moistureLevel: 5),
+         MaterialDetail(name: "Daun Kering", quantity: 0, moistureLevel: 4.04),
+         MaterialDetail(name: "Sekam / Gabah", quantity: 0, moistureLevel: 14),
+         MaterialDetail(name: "Koran", quantity: 0, moistureLevel: 5.5),
+         MaterialDetail(name: "Kardus", quantity: 0, moistureLevel: 10.5),
+         MaterialDetail(name: "Serbuk Gergaji", quantity: 0, moistureLevel: 39),
             ]
         
             materials.append(Material(color: "Hijau", detail: greenMaterialDetail, total_material: 0))
