@@ -15,18 +15,22 @@ class ConditionViewController: UIViewController {
     @IBAction func checkCondition(_ sender: Any) {
         if upperBtn.titleLabel?.text == "Perpanjang"{
             CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Date())
-            
             navigationController?.popViewController(animated: true)
             
         }else{
-            //untuk button check condition kirim unchecked conditions ke result page
             let uncheckedConditions = getUncheckedCondition()
-//            navigationController?.pushViewController(ResultViewController(), animated: true)
+            if uncheckedConditions.isEmpty{
+                let vc = DoneCheckingViewController()
+                CoreDataManager.shared.updateProcessStatus(process: process!)
+                vc.process = process
+                navigationController?.pushViewController(vc, animated: true)
+            }else{
+//                let vc = ResultViewController()
+//                vc.uncheckedConditions = uncheckedConditions
+                //untuk button check condition kirim unchecked conditions ke result page
+//                navigationController?.pushViewController(vc, animated: true)
+            }
             
-            let vc = DoneCheckingViewController()
-            CoreDataManager.shared.updateProcessStatus(process: process!)
-            vc.process = process
-            navigationController?.pushViewController(vc, animated: true)
         }
 
     }
@@ -58,12 +62,13 @@ class ConditionViewController: UIViewController {
         upperBtn.layer.cornerRadius = 8
         lowerBtn.layer.cornerRadius = 8
         if process?.detail == "Panen"{
-            titleLbl.text = "Hari ini panen ‘\(process?.compost?.name ?? "")’"
+            titleLbl.text = "Hari ini panen \"\(process?.compost?.name ?? "")\""
             conditions = seeder.seedHarvestCondition()
             
             upperBtn.setTitle("Perpanjang", for: .normal)
             upperBtn.isEnabled = false
             lowerBtn.isHidden = false
+            lowerBtn.setEnabledView()
             
             upperBtn.layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
             upperBtn.tintColor = UIColor.darkGray
@@ -72,7 +77,7 @@ class ConditionViewController: UIViewController {
             titleLbl.text = "Cek kondisi kompos \"\(process?.compost?.name ?? "")\""
             upperBtn.setTitle("Lihat Solusi", for: .normal)
             conditions = seeder.seedCondition()
-            upperBtn.setDisabledView()
+            upperBtn.setEnabledView()
             lowerBtn.isHidden = true
         }
     }
@@ -104,12 +109,15 @@ class ConditionViewController: UIViewController {
             }
     }
     
-    func getUncheckedCondition()->[Condition]{
-        var uncheckedConditions: [Condition] = []
+    func getUncheckedCondition()->[Int]{
+        var uncheckedConditions: [Int] = []
+        var index = 0
         for c in conditions{
             if !c.isChecked{
-                uncheckedConditions.append(c)
+                uncheckedConditions.append(index)
+                print(uncheckedConditions)
             }
+            index += 1
         }
         return uncheckedConditions
     }
@@ -134,7 +142,9 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
             }else{
                 self.conditions[indexPath.section].isChecked = false
             }
-            self.checkSelected()
+            if self.upperBtn.titleLabel?.text == "Perpanjang"{
+                self.checkSelected()
+            }
         }
         return cell
     }
