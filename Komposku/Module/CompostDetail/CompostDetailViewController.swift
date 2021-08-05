@@ -28,6 +28,8 @@ class CompostDetailViewController: UIViewController {
     
     @IBOutlet weak var navImageView: UIImageView!
     
+    @IBOutlet weak var backBtn: MoistureLabel!
+    
     @IBAction func backToPrev(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -64,6 +66,8 @@ class CompostDetailViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
         navigationController?.navigationBar.backItem?.backButtonTitle = " "
         navigationController?.navigationBar.tintColor = UIColor.black
+        
+        backBtn.backgroundColor = UIColor.lightGray
         
         navImageView.layer.cornerRadius = 20
         navImageView.layer.masksToBounds = true
@@ -121,9 +125,9 @@ class CompostDetailViewController: UIViewController {
         
         setupNavigationBar()
         
-        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
-        
-        compDetail = CoreDataManager.shared.getAllCompost()[0]
+//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
+//        
+//        compDetail = CoreDataManager.shared.getAllCompost()[0]
         
         guard let unwrappedCompDetail = compDetail else {return}
         
