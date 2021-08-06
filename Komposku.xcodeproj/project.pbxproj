@@ -62,6 +62,15 @@
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
 		C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645E02C26AE59D900888F63 /* Assets.xcassets */; };
 		C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C645E02E26AE59D900888F63 /* LaunchScreen.storyboard */; };
+		CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */; };
+		CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */; };
+		CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */; };
+		CC7931E926B18B1C0005C58C /* ContentTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931E726B18B1C0005C58C /* ContentTutorialViewController.xib */; };
+		CC7931EE26B18BF10005C58C /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931EC26B18BF10005C58C /* TutorialPageViewController.swift */; };
+		CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */; };
+		CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */; };
+		CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */; };
+		CCD6279226B7AFEC00C701C8 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +131,15 @@
 		C645E02C26AE59D900888F63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645E02F26AE59D900888F63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645E03126AE59D900888F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCellPage.swift; sourceTree = "<group>"; };
+		CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialTableViewCellPage.xib; sourceTree = "<group>"; };
+		CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTutorialViewController.swift; sourceTree = "<group>"; };
+		CC7931E726B18B1C0005C58C /* ContentTutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTutorialViewController.xib; sourceTree = "<group>"; };
+		CC7931EC26B18BF10005C58C /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialPageViewController.xib; sourceTree = "<group>"; };
+		CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMaterialCompostCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentMaterialCompostCollectionViewCell.xib; sourceTree = "<group>"; };
+		CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +387,8 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CC7931DA26B180870005C58C /* Tutorial */,
+				C645E02426AE59D800888F63 /* ViewController.swift */,
 				782A792126BB782100B31493 /* Notification */,
 				9ABE351B26B9B0A400D9ECB9 /* CreateCompost */,
 				78472A9F26B53E630076E3D7 /* ReusableView */,
@@ -393,6 +413,7 @@
 		C6C9CBEA26AE7D1900D2BECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CCD6278F26B7AF8E00C701C8 /* Utils */,
 				9ABE351426B9B09600D9ECB9 /* Compost+CoreDataClass.swift */,
 				9ABE351326B9B09600D9ECB9 /* Compost+CoreDataProperties.swift */,
 				9ABE351226B9B09600D9ECB9 /* CoreDataManager.swift */,
@@ -412,6 +433,37 @@
 				C645E02C26AE59D900888F63 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC7931DA26B180870005C58C /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */,
+				CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */,
+				CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */,
+				CC7931E726B18B1C0005C58C /* ContentTutorialViewController.xib */,
+				CC7931EC26B18BF10005C58C /* TutorialPageViewController.swift */,
+				CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */,
+				CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */,
+				CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		CCD6278F26B7AF8E00C701C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CCD6279026B7AF9D00C701C8 /* Extention */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CCD6279026B7AF9D00C701C8 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */,
 				78472A9E26B53D7B0076E3D7 /* DoneCheckingViewController.xib in Resources */,
 				9ABE353826B9B0A400D9ECB9 /* BahanTableViewCell.xib in Resources */,
 				9ABE353626B9B0A400D9ECB9 /* ListBahanViewController.xib in Resources */,
@@ -478,11 +531,14 @@
 				9ABE354326B9B0A400D9ECB9 /* ListBahanTableViewCell.xib in Resources */,
 				9ABE353E26B9B0A400D9ECB9 /* CreateCompostViewController.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
+				CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */,
+				CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
 				9ABE353B26B9B0A400D9ECB9 /* ProfileTableViewCell.xib in Resources */,
 				78472AB126B540810076E3D7 /* ProcessTableViewCell.xib in Resources */,
 				78472A9526B53A540076E3D7 /* ConditionViewController.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
+				CC7931E926B18B1C0005C58C /* ContentTutorialViewController.xib in Resources */,
 				78472AAD26B53F410076E3D7 /* CompostDetailViewController.xib in Resources */,
 				9ABE354126B9B0A400D9ECB9 /* DetailMaterialTableViewCell.xib in Resources */,
 				78472A9A26B53A760076E3D7 /* ConditionTableViewCell.xib in Resources */,
@@ -531,9 +587,14 @@
 				9ABE350C26B9B00600D9ECB9 /* StringModifier.swift in Sources */,
 				78472AAC26B53F410076E3D7 /* CompostDetailViewController.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
+				CC7931EE26B18BF10005C58C /* TutorialPageViewController.swift in Sources */,
 				9ABE350726B9AFC100D9ECB9 /* Seeder.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
+				CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */,
+				CCD6279226B7AFEC00C701C8 /* UIView+Ext.swift in Sources */,
+				CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
+				CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */,
 				78472AA726B53ED00076E3D7 /* LineProcessView.swift in Sources */,
 				78472AB026B540810076E3D7 /* ProcessTableViewCell.swift in Sources */,
 			);
@@ -677,6 +738,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BJK86B698;
 				INFOPLIST_FILE = Komposku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -696,6 +758,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BJK86B698;
 				INFOPLIST_FILE = Komposku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
