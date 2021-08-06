@@ -61,6 +61,14 @@
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
 		C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645E02C26AE59D900888F63 /* Assets.xcassets */; };
 		C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C645E02E26AE59D900888F63 /* LaunchScreen.storyboard */; };
+		C677494826BB018600ECEAC8 /* CheckingResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C677494126BB018600ECEAC8 /* CheckingResultsCell.xib */; };
+		C677494926BB018600ECEAC8 /* CheckingResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677494226BB018600ECEAC8 /* CheckingResultsCell.swift */; };
+		C677494A26BB018600ECEAC8 /* CheckingResultsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677494326BB018600ECEAC8 /* CheckingResultsPageController.swift */; };
+		C677494B26BB018600ECEAC8 /* SelesaiButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = C677494526BB018600ECEAC8 /* SelesaiButton.xib */; };
+		C677494C26BB018600ECEAC8 /* SelesaiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677494626BB018600ECEAC8 /* SelesaiButton.swift */; };
+		C677494D26BB018600ECEAC8 /* CheckingResultsPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C677494726BB018600ECEAC8 /* CheckingResultsPageController.xib */; };
+		C67CE0BB26BB891D00AEC0DF /* SolutionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CE0B926BB891D00AEC0DF /* SolutionHeaderCell.swift */; };
+		C67CE0BC26BB891D00AEC0DF /* SolutionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67CE0BA26BB891D00AEC0DF /* SolutionHeaderCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +128,14 @@
 		C645E02C26AE59D900888F63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645E02F26AE59D900888F63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645E03126AE59D900888F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C677494126BB018600ECEAC8 /* CheckingResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckingResultsCell.xib; sourceTree = "<group>"; };
+		C677494226BB018600ECEAC8 /* CheckingResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckingResultsCell.swift; sourceTree = "<group>"; };
+		C677494326BB018600ECEAC8 /* CheckingResultsPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckingResultsPageController.swift; sourceTree = "<group>"; };
+		C677494526BB018600ECEAC8 /* SelesaiButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelesaiButton.xib; sourceTree = "<group>"; };
+		C677494626BB018600ECEAC8 /* SelesaiButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelesaiButton.swift; sourceTree = "<group>"; };
+		C677494726BB018600ECEAC8 /* CheckingResultsPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckingResultsPageController.xib; sourceTree = "<group>"; };
+		C67CE0B926BB891D00AEC0DF /* SolutionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionHeaderCell.swift; sourceTree = "<group>"; };
+		C67CE0BA26BB891D00AEC0DF /* SolutionHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolutionHeaderCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,25 +343,6 @@
 			path = "Static Data";
 			sourceTree = "<group>";
 		};
-		C61980A926B8FD920079F4BA /* CheckingResultsPage */ = {
-			isa = PBXGroup;
-			children = (
-				C61980AA26B8FD920079F4BA /* CheckingResultsCell */,
-				C61980AD26B8FD920079F4BA /* CheckingResultsPageController.swift */,
-				C61980AE26B8FD920079F4BA /* CheckingResultsPageController.xib */,
-			);
-			path = CheckingResultsPage;
-			sourceTree = "<group>";
-		};
-		C61980AA26B8FD920079F4BA /* CheckingResultsCell */ = {
-			isa = PBXGroup;
-			children = (
-				C61980AB26B8FD920079F4BA /* CheckingResultsCell.xib */,
-				C61980AC26B8FD920079F4BA /* CheckingResultsCell.swift */,
-			);
-			path = CheckingResultsCell;
-			sourceTree = "<group>";
-		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -375,9 +372,50 @@
 			path = Komposku;
 			sourceTree = "<group>";
 		};
+		C677493F26BB018600ECEAC8 /* CheckingResultsPage */ = {
+			isa = PBXGroup;
+			children = (
+				C67CE0B826BB88E000AEC0DF /* SolutionHeader */,
+				C677494326BB018600ECEAC8 /* CheckingResultsPageController.swift */,
+				C677494726BB018600ECEAC8 /* CheckingResultsPageController.xib */,
+				C677494026BB018600ECEAC8 /* CheckingResultsCell */,
+				C677494426BB018600ECEAC8 /* SelesaiButtonCell */,
+			);
+			name = CheckingResultsPage;
+			path = "../../../../../Copy an/CheckingResultsPage";
+			sourceTree = "<group>";
+		};
+		C677494026BB018600ECEAC8 /* CheckingResultsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C677494126BB018600ECEAC8 /* CheckingResultsCell.xib */,
+				C677494226BB018600ECEAC8 /* CheckingResultsCell.swift */,
+			);
+			path = CheckingResultsCell;
+			sourceTree = "<group>";
+		};
+		C677494426BB018600ECEAC8 /* SelesaiButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				C677494526BB018600ECEAC8 /* SelesaiButton.xib */,
+				C677494626BB018600ECEAC8 /* SelesaiButton.swift */,
+			);
+			path = SelesaiButtonCell;
+			sourceTree = "<group>";
+		};
+		C67CE0B826BB88E000AEC0DF /* SolutionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				C67CE0B926BB891D00AEC0DF /* SolutionHeaderCell.swift */,
+				C67CE0BA26BB891D00AEC0DF /* SolutionHeaderCell.xib */,
+			);
+			path = SolutionHeader;
+			sourceTree = "<group>";
+		};
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C677493F26BB018600ECEAC8 /* CheckingResultsPage */,
 				9ABE351B26B9B0A400D9ECB9 /* CreateCompost */,
 				78472A9F26B53E630076E3D7 /* ReusableView */,
 				78472A9126B53A2B0076E3D7 /* CheckCondition */,
@@ -481,20 +519,24 @@
 			files = (
 				78472A9E26B53D7B0076E3D7 /* DoneCheckingViewController.xib in Resources */,
 				9ABE353826B9B0A400D9ECB9 /* BahanTableViewCell.xib in Resources */,
+				C677494D26BB018600ECEAC8 /* CheckingResultsPageController.xib in Resources */,
 				9ABE353626B9B0A400D9ECB9 /* ListBahanViewController.xib in Resources */,
 				9ABE353D26B9B0A400D9ECB9 /* TotalItemTableViewCell.xib in Resources */,
 				9ABE354326B9B0A400D9ECB9 /* ListBahanTableViewCell.xib in Resources */,
 				9ABE353E26B9B0A400D9ECB9 /* CreateCompostViewController.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
+				C67CE0BC26BB891D00AEC0DF /* SolutionHeaderCell.xib in Resources */,
 				9ABE353B26B9B0A400D9ECB9 /* ProfileTableViewCell.xib in Resources */,
 				78472AB126B540810076E3D7 /* ProcessTableViewCell.xib in Resources */,
 				78472A9526B53A540076E3D7 /* ConditionViewController.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
+				C677494B26BB018600ECEAC8 /* SelesaiButton.xib in Resources */,
 				78472AAD26B53F410076E3D7 /* CompostDetailViewController.xib in Resources */,
 				9ABE354126B9B0A400D9ECB9 /* DetailMaterialTableViewCell.xib in Resources */,
 				78472A9A26B53A760076E3D7 /* ConditionTableViewCell.xib in Resources */,
 				9ABE353426B9B0A400D9ECB9 /* CreateButtonTableViewCell.xib in Resources */,
+				C677494826BB018600ECEAC8 /* CheckingResultsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +552,7 @@
 				78472A9926B53A760076E3D7 /* ConditionTableViewCell.swift in Sources */,
 				9ABE351A26B9B09600D9ECB9 /* Process+CoreDataClass.swift in Sources */,
 				9ABE350526B9AFC100D9ECB9 /* Tutorial.swift in Sources */,
+				C677494A26BB018600ECEAC8 /* CheckingResultsPageController.swift in Sources */,
 				9ABE354026B9B0A400D9ECB9 /* DetailMaterialTableViewCell.swift in Sources */,
 				9ABE354226B9B0A400D9ECB9 /* ListBahanTableViewCell.swift in Sources */,
 				9ABE350326B9AFC100D9ECB9 /* MaterialDetail.swift in Sources */,
@@ -523,6 +566,7 @@
 				9ABE351026B9B00F00D9ECB9 /* UITextField+Ext.swift in Sources */,
 				9ABE353926B9B0A400D9ECB9 /* BahanTableViewCell.swift in Sources */,
 				78472AA126B53E800076E3D7 /* CustomButton.swift in Sources */,
+				C677494C26BB018600ECEAC8 /* SelesaiButton.swift in Sources */,
 				9ABE353726B9B0A400D9ECB9 /* ListBahanViewController.swift in Sources */,
 				9ABE351826B9B09600D9ECB9 /* Compost+CoreDataProperties.swift in Sources */,
 				78472AA526B53EBC0076E3D7 /* DashedLineView.swift in Sources */,
@@ -532,8 +576,10 @@
 				78472AA326B53EA10076E3D7 /* CustomTableViewCell.swift in Sources */,
 				9ABE350226B9AFC100D9ECB9 /* Solution.swift in Sources */,
 				9ABE353F26B9B0A400D9ECB9 /* CreateCompostViewController.swift in Sources */,
+				C67CE0BB26BB891D00AEC0DF /* SolutionHeaderCell.swift in Sources */,
 				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
 				78472A9D26B53D7B0076E3D7 /* DoneCheckingViewController.swift in Sources */,
+				C677494926BB018600ECEAC8 /* CheckingResultsCell.swift in Sources */,
 				78472A9426B53A540076E3D7 /* ConditionViewController.swift in Sources */,
 				9ABE350C26B9B00600D9ECB9 /* StringModifier.swift in Sources */,
 				78472AAC26B53F410076E3D7 /* CompostDetailViewController.swift in Sources */,
