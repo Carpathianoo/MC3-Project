@@ -28,6 +28,8 @@ class CreateCompostViewController: UIViewController {
     var coklatMoisture: Double = 0
     var image: UIImage?
     
+    let notificationPublisher = NotificationPublisher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Kompos"
@@ -363,6 +365,18 @@ extension CreateCompostViewController {
         return filtered
     }
     
+    fileprivate func scheduleNotification(_ sharedInstance: CoreDataManager) {
+        let compost = sharedInstance.getAllCompost().last
+        let process = sharedInstance.getAllProcess(from: compost!)
+        for p in process{
+            if p.identifier != 1{
+                guard let unwrappedDetail = p.detail else {return}
+                guard let unwrappedDate = p.date else {return}
+                notificationPublisher.sendNotification(title: (compost?.name)!, body: "Waktunya \(unwrappedDetail) kompos kamu.", badge: 1, date: unwrappedDate)
+            }
+        }
+    }
+    
     func createNewCompost() {
         let sharedInstance = CoreDataManager.shared
         
@@ -374,6 +388,8 @@ extension CreateCompostViewController {
         print("name", name)
         
         sharedInstance.createCompost(name: name, photo: image.jpegData(compressionQuality: 1)!.base64EncodedString(), moisture: moisturePercentage)
+        
+        scheduleNotification(sharedInstance)
     }
 
     func editMaterial(section: Int, material: Material) {
