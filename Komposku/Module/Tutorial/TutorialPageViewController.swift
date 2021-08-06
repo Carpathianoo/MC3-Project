@@ -8,13 +8,15 @@
 import UIKit
 
 class TutorialPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var listTutorial = tutorialData
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleTutorial.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tutorialCell = tutorialTableView.dequeueReusableCell(withIdentifier: "tutorialCell", for: indexPath) as! TutorialTableViewCellPage
-        
+        tutorialCell.selectionStyle = .none
         tutorialCell.imageTableTutorial.image = UIImage(named: imageTutorial[indexPath.row])
         tutorialCell.labelTitleTableTutorial.text = titleTutorial[indexPath.row]
         return tutorialCell
@@ -25,6 +27,8 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
         //show(ContentTutorialViewController, sender: self)
         //let row = titleTutorial[indexPath.row]
         let controller = ContentTutorialViewController()
+        controller.tutorial = listTutorial[indexPath.row]
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -43,5 +47,5 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
         tutorialTableView.delegate = self
         tutorialTableView.dataSource = self
     }
-
+    
 }

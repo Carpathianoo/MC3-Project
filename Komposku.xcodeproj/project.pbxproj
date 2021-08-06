@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357626B00BD100FCCA93 /* CoreDataManager.swift */; };
+		7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357926B1933A00FCCA93 /* Seeder.swift */; };
+		7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */; };
+		7851357F26B1C4F500FCCA93 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851357E26B1C4F500FCCA93 /* Material.swift */; };
+		7851358126B1C52300FCCA93 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358026B1C52300FCCA93 /* Condition.swift */; };
+		7851358326B1C54900FCCA93 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358226B1C54900FCCA93 /* Solution.swift */; };
+		7851358526B1CD0400FCCA93 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358426B1CD0400FCCA93 /* Tutorial.swift */; };
+		7851358726B1CFF000FCCA93 /* WasteMaterialTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */; };
+		78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */; };
+		78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */; };
+		78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0EE26AF12290034CFC1 /* CompostController.swift */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
-		C645E02526AE59D800888F63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02426AE59D800888F63 /* ViewController.swift */; };
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
 		C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645E02C26AE59D900888F63 /* Assets.xcassets */; };
 		C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C645E02E26AE59D900888F63 /* LaunchScreen.storyboard */; };
+		CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */; };
+		CC19FEBF26BB70B000FD04A5 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */; };
+		CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */; };
 		CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */; };
 		CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */; };
 		CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */; };
@@ -25,14 +38,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7851357626B00BD100FCCA93 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7851357926B1933A00FCCA93 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetail.swift; sourceTree = "<group>"; };
+		7851357E26B1C4F500FCCA93 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		7851358026B1C52300FCCA93 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		7851358226B1C54900FCCA93 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		7851358426B1CD0400FCCA93 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteMaterialTutorial.swift; sourceTree = "<group>"; };
+		78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compost+CoreDataClass.swift"; sourceTree = "<group>"; };
+		78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
+		78FEC0EE26AF12290034CFC1 /* CompostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostController.swift; sourceTree = "<group>"; };
+		78FEC0EF26AF12290034CFC1 /* CompostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompostController.xib; sourceTree = "<group>"; };
 		C645E01D26AE59D800888F63 /* Komposku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komposku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C645E02026AE59D800888F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C645E02226AE59D800888F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C645E02426AE59D800888F63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C645E02A26AE59D800888F63 /* Komposku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Komposku.xcdatamodel; sourceTree = "<group>"; };
 		C645E02C26AE59D900888F63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645E02F26AE59D900888F63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645E03126AE59D900888F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionCellData.swift; sourceTree = "<group>"; };
 		CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCellPage.swift; sourceTree = "<group>"; };
 		CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialTableViewCellPage.xib; sourceTree = "<group>"; };
 		CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTutorialViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7851357B26B1C4BF00FCCA93 /* Static Data */ = {
+			isa = PBXGroup;
+			children = (
+				7851357926B1933A00FCCA93 /* Seeder.swift */,
+				7851357C26B1C4D500FCCA93 /* MaterialDetail.swift */,
+				7851357E26B1C4F500FCCA93 /* Material.swift */,
+				7851358026B1C52300FCCA93 /* Condition.swift */,
+				7851358226B1C54900FCCA93 /* Solution.swift */,
+				7851358426B1CD0400FCCA93 /* Tutorial.swift */,
+				7851358626B1CFF000FCCA93 /* WasteMaterialTutorial.swift */,
+			);
+			path = "Static Data";
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				CC7931DA26B180870005C58C /* Tutorial */,
-				C645E02426AE59D800888F63 /* ViewController.swift */,
+				78FEC0EE26AF12290034CFC1 /* CompostController.swift */,
+				78FEC0EF26AF12290034CFC1 /* CompostController.xib */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -105,7 +147,11 @@
 			isa = PBXGroup;
 			children = (
 				CCD6278F26B7AF8E00C701C8 /* Utils */,
+				7851357B26B1C4BF00FCCA93 /* Static Data */,
+				78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */,
+				78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */,
 				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
+				7851357626B00BD100FCCA93 /* CoreDataManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -124,11 +170,14 @@
 			children = (
 				CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */,
 				CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */,
+				CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */,
+				CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */,
 				CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */,
 				CC7931E726B18B1C0005C58C /* ContentTutorialViewController.xib */,
 				CC7931EC26B18BF10005C58C /* TutorialPageViewController.swift */,
 				CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */,
 				CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */,
+				CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */,
 				CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */,
 			);
 			path = Tutorial;
@@ -208,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */,
+				CC19FEBF26BB70B000FD04A5 /* ContentTableViewCell.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */,
 				CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */,
@@ -223,7 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C645E02526AE59D800888F63 /* ViewController.swift in Sources */,
+				7851358126B1C52300FCCA93 /* Condition.swift in Sources */,
+				7851357F26B1C4F500FCCA93 /* Material.swift in Sources */,
+				7851358326B1C54900FCCA93 /* Solution.swift in Sources */,
+				7851357D26B1C4D500FCCA93 /* MaterialDetail.swift in Sources */,
+				7851357A26B1933A00FCCA93 /* Seeder.swift in Sources */,
+				7851358726B1CFF000FCCA93 /* WasteMaterialTutorial.swift in Sources */,
+				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
+				7851358526B1CD0400FCCA93 /* Tutorial.swift in Sources */,
+				78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */,
 				C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */,
 				CC7931EE26B18BF10005C58C /* TutorialPageViewController.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
@@ -232,6 +290,10 @@
 				CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
 				CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */,
+				7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */,
+				78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */,
+				CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */,
+				CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
