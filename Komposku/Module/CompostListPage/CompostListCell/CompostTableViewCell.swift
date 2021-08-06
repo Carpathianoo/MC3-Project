@@ -29,28 +29,21 @@ import UIKit
     func setupView(){
         
         nextStep?.layer.masksToBounds = true
-        nextStep?.layer.cornerRadius = self.nextStep.bounds.width / 10
+        nextStep?.layer.cornerRadius = self.nextStep.bounds.width / 7
         nextStep.sizeToFit()
         estimasiPanen?.layer.masksToBounds = true
-        estimasiPanen?.layer.cornerRadius = self.estimasiPanen.bounds.width / 12
+        estimasiPanen?.layer.cornerRadius = self.estimasiPanen.bounds.width / 10
         cell.layer.cornerRadius = 8
         underCell.layer.cornerRadius = 8
         
 
-        underCell.layer.shadowOffset = CGSize(width: 2, height: 1)
+        underCell.layer.shadowOffset = CGSize(width: 2, height: 2)
         underCell.layer.shadowColor = UIColor.black.cgColor
-        underCell.layer.shadowOpacity = 0.2
+        underCell.layer.shadowOpacity = 0.15
         underCell.layer.shadowRadius = 4
-        
-        cell.layer.shadowOffset = CGSize(width: 20, height: 0)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.2
-        cell.layer.shadowRadius = 4
-        cell.layer.masksToBounds = true
-        
       
         
-        compostImage.contentMode = .scaleAspectFit
+        compostImage.contentMode = .scaleAspectFill
 
         
     }
