@@ -93,4 +93,13 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    @IBAction func goToTutorialPage(_ sender: Any) {
+        //buat function pindah ke tutorial page disini
+    }
+    
+    
+    @IBAction func goToCreateCompostPage(_ sender: Any) {
+        //buat function pindah ke create compost page disini
+    }
+    
 }

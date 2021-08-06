@@ -29,9 +29,9 @@ class FirstTimePageController: UIViewController {
     @IBAction func createCompost(_ sender: Any) {
         
         
-//        let myViewController = CompostListPageController(nibName: "CompostListPage", bundle: nil)
-//        myViewController.modalPresentationStyle = .fullScreen
-//        self.navigationController?.pushViewController(myViewController, animated: true)
+        let myViewController = CompostListPageController(nibName: "CompostListPage", bundle: nil)
+        myViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(myViewController, animated: true)
         
         
         //buat func ke create compost page disini
@@ -41,6 +41,9 @@ class FirstTimePageController: UIViewController {
     @IBAction func lihatTutorial(_ sender: Any) {
         
         //buat func ke tutorial page disini
+//        let myViewController = tutorialPageController(nibName: "TutorialPageController", bundle: nil)
+//        myViewController.modalPresentationStyle = .fullScreen
+//        self.navigationController?.pushViewController(myViewController, animated: true)
     }
     
 }

@@ -39,6 +39,9 @@
                     <state key="normal" backgroundImage="plus.circle" catalog="system">
                         <color key="titleColor" systemColor="labelColor"/>
                     </state>
+                    <connections>
+                        <action selector="goToCreateCompostPage:" destination="-1" eventType="touchUpInside" id="DBm-PL-gVa"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tg7-zN-GvM">
                     <rect key="frame" x="280" y="118" width="94" height="33"/>
@@ -52,6 +55,9 @@
                     <state key="normal" title="Lihat Tutorial">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="goToTutorialPage:" destination="-1" eventType="touchUpInside" id="QgU-9O-Pdm"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Kompos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGY-8o-wMK">
                     <rect key="frame" x="20.000000000000014" y="111.33333333333333" width="229.33333333333337" height="39.666666666666671"/>
