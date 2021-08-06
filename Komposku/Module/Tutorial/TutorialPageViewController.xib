@@ -33,12 +33,9 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5M9-4I-Dbj">
-                    <rect key="frame" x="19" y="150" width="352" height="564"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5M9-4I-Dbj">
+                    <rect key="frame" x="19" y="150" width="352" height="644"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="564" id="5de-Lg-1sy"/>
-                    </constraints>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -50,6 +47,7 @@
                 <constraint firstItem="fCt-U5-SwA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="49" id="Ghg-9q-wAe"/>
                 <constraint firstItem="VGR-jU-9EZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="H2b-NL-al7"/>
                 <constraint firstItem="fCt-U5-SwA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="JbH-av-b9W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5M9-4I-Dbj" secondAttribute="bottom" constant="16" id="UrO-UN-MTn"/>
                 <constraint firstItem="5M9-4I-Dbj" firstAttribute="top" secondItem="fCt-U5-SwA" secondAttribute="bottom" constant="16" id="eA2-ZW-ec2"/>
             </constraints>
             <point key="canvasLocation" x="-146.37681159420291" y="103.79464285714285"/>

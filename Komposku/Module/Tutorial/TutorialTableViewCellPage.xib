@@ -18,21 +18,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k49-Bd-ag2">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
+                        <rect key="frame" x="0.0" y="8" width="374" height="144"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eVZ-Ub-hVK">
                                 <rect key="frame" x="0.0" y="0.0" width="374" height="144"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="VQZ-gF-Qlx"/>
-                                </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opU-2z-EZt">
+                                <rect key="frame" x="0.0" y="72" width="374" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="YXt-kn-05h"/>
+                                    <constraint firstAttribute="height" constant="72" id="ogK-P5-dm9"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWx-P2-YS8">
-                                <rect key="frame" x="12" y="93" width="72" height="37"/>
+                                <rect key="frame" x="12" y="77" width="72" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="1WI-hv-2fA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -41,15 +45,19 @@
                             <constraint firstItem="eVZ-Ub-hVK" firstAttribute="leading" secondItem="k49-Bd-ag2" secondAttribute="leading" id="CON-yP-zqP"/>
                             <constraint firstItem="eVZ-Ub-hVK" firstAttribute="top" secondItem="k49-Bd-ag2" secondAttribute="top" id="Jhi-NK-vTi"/>
                             <constraint firstAttribute="bottom" secondItem="LWx-P2-YS8" secondAttribute="bottom" constant="30" id="M38-Ta-ZiI"/>
+                            <constraint firstAttribute="trailing" secondItem="opU-2z-EZt" secondAttribute="trailing" id="NBd-jB-m5A"/>
+                            <constraint firstAttribute="bottom" secondItem="eVZ-Ub-hVK" secondAttribute="bottom" id="PI6-sr-xFS"/>
                             <constraint firstItem="LWx-P2-YS8" firstAttribute="leading" secondItem="k49-Bd-ag2" secondAttribute="leading" constant="12" id="WQW-ms-LIR"/>
+                            <constraint firstItem="opU-2z-EZt" firstAttribute="leading" secondItem="k49-Bd-ag2" secondAttribute="leading" id="n0T-CZ-R7k"/>
+                            <constraint firstItem="opU-2z-EZt" firstAttribute="bottom" secondItem="eVZ-Ub-hVK" secondAttribute="bottom" id="vhn-Y8-3Ga"/>
                             <constraint firstAttribute="trailing" secondItem="eVZ-Ub-hVK" secondAttribute="trailing" id="vq1-Va-MjD"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="k49-Bd-ag2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="G8D-tw-ADF"/>
-                    <constraint firstItem="k49-Bd-ag2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xud-Ev-0c4"/>
-                    <constraint firstAttribute="bottom" secondItem="k49-Bd-ag2" secondAttribute="bottom" id="b0Q-gc-sWa"/>
+                    <constraint firstItem="k49-Bd-ag2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Xud-Ev-0c4"/>
+                    <constraint firstAttribute="bottom" secondItem="k49-Bd-ag2" secondAttribute="bottom" constant="8" id="b0Q-gc-sWa"/>
                     <constraint firstAttribute="trailing" secondItem="k49-Bd-ag2" secondAttribute="trailing" id="hbd-cg-Hqc"/>
                 </constraints>
             </tableViewCellContentView>
@@ -57,6 +65,7 @@
             <connections>
                 <outlet property="imageTableTutorial" destination="eVZ-Ub-hVK" id="0ax-rn-jAO"/>
                 <outlet property="labelTitleTableTutorial" destination="LWx-P2-YS8" id="cfI-9K-v03"/>
+                <outlet property="viewShadowTutorial" destination="opU-2z-EZt" id="eAu-Jv-Utp"/>
                 <outlet property="viewTableTutorial" destination="k49-Bd-ag2" id="e84-cU-xLl"/>
             </connections>
             <point key="canvasLocation" x="34.782608695652179" y="105.80357142857143"/>

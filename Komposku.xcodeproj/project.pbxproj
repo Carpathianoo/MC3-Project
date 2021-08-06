@@ -18,12 +18,14 @@
 		78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E626AF10190034CFC1 /* Compost+CoreDataClass.swift */; };
 		78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0E826AF10190034CFC1 /* Process+CoreDataClass.swift */; };
 		78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FEC0EE26AF12290034CFC1 /* CompostController.swift */; };
-		78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FEC0EF26AF12290034CFC1 /* CompostController.xib */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
 		C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645E02C26AE59D900888F63 /* Assets.xcassets */; };
 		C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C645E02E26AE59D900888F63 /* LaunchScreen.storyboard */; };
+		CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */; };
+		CC19FEBF26BB70B000FD04A5 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */; };
+		CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */; };
 		CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */; };
 		CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */; };
 		CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */; };
@@ -55,6 +57,9 @@
 		C645E02C26AE59D900888F63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645E02F26AE59D900888F63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645E03126AE59D900888F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionCellData.swift; sourceTree = "<group>"; };
 		CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCellPage.swift; sourceTree = "<group>"; };
 		CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialTableViewCellPage.xib; sourceTree = "<group>"; };
 		CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTutorialViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				CC7931DA26B180870005C58C /* Tutorial */,
-				C645E02426AE59D800888F63 /* ViewController.swift */,
 				78FEC0EE26AF12290034CFC1 /* CompostController.swift */,
 				78FEC0EF26AF12290034CFC1 /* CompostController.xib */,
 			);
@@ -166,11 +170,14 @@
 			children = (
 				CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */,
 				CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */,
+				CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */,
+				CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */,
 				CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */,
 				CC7931E726B18B1C0005C58C /* ContentTutorialViewController.xib */,
 				CC7931EC26B18BF10005C58C /* TutorialPageViewController.swift */,
 				CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */,
 				CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */,
+				CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */,
 				CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */,
 			);
 			path = Tutorial;
@@ -250,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */,
+				CC19FEBF26BB70B000FD04A5 /* ContentTableViewCell.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */,
 				CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */,
@@ -284,6 +292,8 @@
 				CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */,
 				7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */,
 				78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */,
+				CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */,
+				CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
