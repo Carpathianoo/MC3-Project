@@ -9,27 +9,32 @@ import Foundation
 
 class Seeder{
  
-    func seedMaterial() -> [Material]{
+    static func seedMaterial() -> [Material]{
         var materials: [Material] = []
         
-        let brownMaterialDetail =
-            [MaterialDetail(name: "Bubuk Kopi", quantity: 0),
-             MaterialDetail(name: "Sampah Kebun", quantity: 0),
-             MaterialDetail(name: "Potongan Rumput", quantity: 0),
-             MaterialDetail(name: "Sampah Dapur", quantity: 0),
-             MaterialDetail(name: "Dedaunan Segar", quantity: 0),
-             MaterialDetail(name: "Potongan Semak", quantity: 0),
-             MaterialDetail(name: "Nasi", quantity: 0),
-             MaterialDetail(name: "Kulit Telur", quantity: 0),
-             MaterialDetail(name: "Sampah Buah", quantity: 0),
-             MaterialDetail(name: "Sampah Sayuran Hijau", quantity: 0),
-             MaterialDetail(name: "Umbi-umbian", quantity: 0)
-            ]
         let greenMaterialDetail =
-            [MaterialDetail(name: "Tisu Toilet", quantity: 0),
-             MaterialDetail(name: "Daun Kering", quantity: 0),
-             MaterialDetail(name: "Sekam / Gabah", quantity: 0),
-             MaterialDetail(name: "Tisu Pengesat", quantity: 0),
+        [MaterialDetail(name: "Sampah Makanan", quantity: 0, moistureLevel: 69),
+         MaterialDetail(name: "Potongan Rumput", quantity: 0, moistureLevel: 82),
+         MaterialDetail(name: "Sampah Sayuran", quantity: 0, moistureLevel: 91),
+         MaterialDetail(name: "Produk Sayuran", quantity: 0, moistureLevel: 87),
+         MaterialDetail(name: "Sampah Buah", quantity: 0, moistureLevel: 80),
+         MaterialDetail(name: "Sampah Kebun", quantity: 0, moistureLevel: 60),
+         MaterialDetail(name: "Dedaunan Segar", quantity: 0, moistureLevel: 86.2),
+         MaterialDetail(name: "Dedaunan", quantity: 0, moistureLevel: 38),
+         MaterialDetail(name: "Nasi", quantity: 0, moistureLevel: 64),
+         MaterialDetail(name: "Potongan Pohon", quantity: 0, moistureLevel: 70),
+         MaterialDetail(name: "Umbi-umbian", quantity: 0, moistureLevel: 10),
+         MaterialDetail(name: "Bubuk Kopi", quantity: 0, moistureLevel: 40.5),
+         MaterialDetail(name: "Potongan Semak", quantity: 0, moistureLevel: 15),
+         MaterialDetail(name: "Cangkang Telur", quantity: 0, moistureLevel: 29.1),
+            ]
+        let brownMaterialDetail =
+        [MaterialDetail(name: "Tisu Toilet", quantity: 0, moistureLevel: 5),
+         MaterialDetail(name: "Daun Kering", quantity: 0, moistureLevel: 4.04),
+         MaterialDetail(name: "Sekam / Gabah", quantity: 0, moistureLevel: 14),
+         MaterialDetail(name: "Koran", quantity: 0, moistureLevel: 5.5),
+         MaterialDetail(name: "Kardus", quantity: 0, moistureLevel: 10.5),
+         MaterialDetail(name: "Serbuk Gergaji", quantity: 0, moistureLevel: 39),
             ]
         
             materials.append(Material(color: "Hijau", detail: greenMaterialDetail, total_material: 0))
@@ -42,7 +47,7 @@ class Seeder{
         var conditions: [Condition] = []
         conditions.append(Condition(desc: "Tidak basah dan berbau tengik", isChecked: false))
         conditions.append(Condition(desc: "Menghasilkan panas", isChecked: false))
-        conditions.append(Condition(desc: "Lembab dan wangi fermentasi seperti tapai", isChecked: false))
+        conditions.append(Condition(desc: "Lembab dan wangi fermentasi seperti tapai, dan menghasilkan panas", isChecked: false))
         conditions.append(Condition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
         return conditions
     }
@@ -51,6 +56,8 @@ class Seeder{
         var solutions: [Solution] = []
         solutions.append(Solution(name: "Basah dan berbau tengik", photo: "sol-1", subtitle: ["Tidak cukup udara", "Kandungan Nitrogen berlebih"], detail: ["Aduk campuran kompos", "Campur jerami, serbuk gergaji, atau serpihan kayu"]))
         solutions.append(Solution(name: "Tidak menghasilkan panas", photo: "sol-2", subtitle: ["Tumpukan terlalu sedikit", "Tumpukan terlalu kering"], detail: ["Tambahkan bahan baru", "Tambah air ketika diaduk"]))
+        solutions.append(Solution(name: "Lembab dan wangi fermentasi tapai tetapi tidak menghasilkan panas", photo: "sol-3", subtitle: ["Kandungan Nitrogen kurang"], detail: ["Campur potongan rumput, sisa makanan"]))
+        solutions.append(Solution(name: "Tumpukan menarik perhatian binatang", photo: "sol-4", subtitle: ["Ditambahkan daging atau produk susu", "Sisa makanan kurang tertutup"], detail: ["Tambahkan bahan baru", "Tutup dengan bahan cokelat"]))
         
         return solutions
     }
@@ -77,6 +84,15 @@ class Seeder{
         
         
         return wasteMats
+    }
+    
+    func seedHarvestCondition() -> [Condition]{
+        var conditions: [Condition] = []
+        conditions.append(Condition(desc: "Warna Kehitaman", isChecked: false))
+        conditions.append(Condition(desc: "Tidak berbau tengik", isChecked: false))
+        conditions.append(Condition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
+        conditions.append(Condition(desc: "Kompos tidak terlalu panas", isChecked: false))
+        return conditions
     }
     
 }

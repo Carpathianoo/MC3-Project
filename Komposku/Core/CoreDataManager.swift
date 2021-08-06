@@ -56,7 +56,7 @@ class CoreDataManager{
         compost.identifier = Int64(index+1)
         compost.name = name
         compost.photo = photo
-        compost.estimated_date = Calendar.current.date(byAdding: .day, value: 14, to: Date())
+        compost.estimated_date = Calendar.current.date(byAdding: .day, value: 15, to: Date())
         compost.moisture = moisture
         compost.process = processes as NSSet
         save()
@@ -89,11 +89,9 @@ class CoreDataManager{
             process.detail = detailArr[i]
             process.isDone = false
                 
-            if i == 4{
-                process.date = Calendar.current.date(byAdding: .day, value: 14, to: Date())
-            }else{
-                process.date = Calendar.current.date(byAdding: .day, value: 3*(i+1), to: Date())
-            }
+            
+            process.date = Calendar.current.date(byAdding: .day, value: 3*(i+1), to: Date())
+            
             processArr.insert(process)
         }
         
@@ -102,20 +100,20 @@ class CoreDataManager{
         return processArr
     }
     
-    func extendProcess(from compost: Compost){
+    func extendProcess(from compost: Compost, date: Date){
         var processes = getAllProcess(from: compost)
         
         guard let process = processes.last else{ return}
         
         process.detail = "Perpanjang"
-        process.date = Date()
+        process.date = date
         process.isDone = true
         
         processes.append(process)
         
         compost.process = NSSet(array: processes)
         compost.process = createProcess(compost: compost) as NSSet
-        
+        compost.estimated_date = Calendar.current.date(byAdding: .day, value: 15, to: Date())
         save()
     }
     
