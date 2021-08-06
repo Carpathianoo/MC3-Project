@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,15 +9,65 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CheckingResultsCell" customModule="Komposku" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CRCell" rowHeight="90" id="KGk-i7-Jjw" customClass="CheckingResultsCell" customModule="Komposku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="358" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqQ-8I-fQW">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="358" id="qCZ-vW-O4M"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xy-Wl-Eix" customClass="LabelPadding" customModule="Komposku" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="29" width="358" height="50"/>
+                        <color key="backgroundColor" red="0.95295017959999995" green="0.95292967559999997" blue="0.95293372870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="a5w-SY-FC9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="topPadding">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7Xy-Wl-Eix" secondAttribute="trailing" id="DGE-YO-G0Q"/>
+                    <constraint firstItem="mqQ-8I-fQW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hbd-oD-DDi"/>
+                    <constraint firstItem="mqQ-8I-fQW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JYX-pY-sMW"/>
+                    <constraint firstItem="7Xy-Wl-Eix" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zgx-W5-PCw"/>
+                    <constraint firstAttribute="bottom" secondItem="7Xy-Wl-Eix" secondAttribute="bottom" constant="11" id="pbm-tp-deZ"/>
+                    <constraint firstItem="7Xy-Wl-Eix" firstAttribute="top" secondItem="mqQ-8I-fQW" secondAttribute="bottom" constant="8" symbolic="YES" id="xkP-1V-2LQ"/>
+                    <constraint firstAttribute="trailing" secondItem="mqQ-8I-fQW" secondAttribute="trailing" id="yAq-06-8hG"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="103" y="90"/>
+            <connections>
+                <outlet property="solutionDetail" destination="7Xy-Wl-Eix" id="18t-aB-3LE"/>
+                <outlet property="solutionSubtitle" destination="mqQ-8I-fQW" id="zDz-9f-53R"/>
+            </connections>
+            <point key="canvasLocation" x="47.692307692307693" y="105.21327014218009"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="7Xy-Wl-Eix">
+            <size key="intrinsicContentSize" width="77" height="20.333333333333332"/>
+        </designable>
+    </designables>
 </document>
