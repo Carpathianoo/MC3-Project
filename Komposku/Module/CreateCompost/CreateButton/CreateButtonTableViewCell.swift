@@ -48,6 +48,19 @@ class CreateButtonTableViewCell: UITableViewCell {
                 layer.fillColor = nil
                 layer.lineWidth = 2
                 layer.lineDashPattern = [8,6]
+            case 2208,1920,1792:
+                layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: addBahanButton.bounds.width + 35, height: addBahanButton.bounds.height), cornerRadius: 8).cgPath
+                layer.strokeColor = UIColor(red: 0.19, green: 0.59, blue: 0.40, alpha: 1).cgColor
+                layer.fillColor = nil
+                layer.lineWidth = 2
+                layer.lineDashPattern = [8,6]
+            case 2436, 2688:
+                layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: addBahanButton.bounds.width, height: addBahanButton.bounds.height), cornerRadius: 8).cgPath
+                layer.strokeColor = UIColor(red: 0.19, green: 0.59, blue: 0.40, alpha: 1).cgColor
+                layer.fillColor = nil
+                layer.lineWidth = 2
+                layer.lineDashPattern = [8,6]
+            
             default:
                 layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: addBahanButton.bounds.width + 12, height: addBahanButton.bounds.height), cornerRadius: 8).cgPath
                 layer.strokeColor = UIColor(red: 0.19, green: 0.59, blue: 0.40, alpha: 1).cgColor
