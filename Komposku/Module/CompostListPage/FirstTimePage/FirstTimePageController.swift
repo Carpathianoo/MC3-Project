@@ -35,6 +35,9 @@ class FirstTimePageController: UIViewController {
         
         
         //buat func ke create compost page disini
+//
+//        let controller = CreateCompostViewController()
+//        navigationController?.pushViewController(controller, animated: true)
     }
     
     

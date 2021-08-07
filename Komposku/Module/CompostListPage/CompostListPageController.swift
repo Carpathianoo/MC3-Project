@@ -99,7 +99,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func goToCreateCompostPage(_ sender: Any) {
-        //buat function pindah ke create compost page disini
+        let controller = CreateCompostViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
