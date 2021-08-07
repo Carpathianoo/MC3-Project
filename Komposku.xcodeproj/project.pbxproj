@@ -64,8 +64,6 @@
 		C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C645E02E26AE59D900888F63 /* LaunchScreen.storyboard */; };
 		C65630D426B26C190043B325 /* CompostListPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65630D326B26C190043B325 /* CompostListPage.xib */; };
 		C65630DC26B26FD30043B325 /* CompostListPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65630DB26B26FD30043B325 /* CompostListPageController.swift */; };
-		C67F5EBF26B5AA5200CEEA93 /* FirstTimePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67F5EBD26B5AA5200CEEA93 /* FirstTimePageController.swift */; };
-		C67F5EC026B5AA5200CEEA93 /* FirstTimePageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67F5EBE26B5AA5200CEEA93 /* FirstTimePageController.xib */; };
 		C68FA6B626B3B2D400634243 /* CompostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FA6B426B3B2D400634243 /* CompostTableViewCell.swift */; };
 		C68FA6B726B3B2D400634243 /* CompostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68FA6B526B3B2D400634243 /* CompostTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -130,8 +128,6 @@
 		C645E03126AE59D900888F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65630D326B26C190043B325 /* CompostListPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompostListPage.xib; sourceTree = "<group>"; };
 		C65630DB26B26FD30043B325 /* CompostListPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostListPageController.swift; sourceTree = "<group>"; };
-		C67F5EBD26B5AA5200CEEA93 /* FirstTimePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimePageController.swift; sourceTree = "<group>"; };
-		C67F5EBE26B5AA5200CEEA93 /* FirstTimePageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTimePageController.xib; sourceTree = "<group>"; };
 		C68FA6B426B3B2D400634243 /* CompostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostTableViewCell.swift; sourceTree = "<group>"; };
 		C68FA6B526B3B2D400634243 /* CompostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompostTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -387,20 +383,10 @@
 			path = CompostListCell;
 			sourceTree = "<group>";
 		};
-		C64F6D5A26B39E5A000A23CA /* FirstTimePage */ = {
-			isa = PBXGroup;
-			children = (
-				C67F5EBD26B5AA5200CEEA93 /* FirstTimePageController.swift */,
-				C67F5EBE26B5AA5200CEEA93 /* FirstTimePageController.xib */,
-			);
-			path = FirstTimePage;
-			sourceTree = "<group>";
-		};
 		C67126BF26B31EE500F9B332 /* CompostListPage */ = {
 			isa = PBXGroup;
 			children = (
 				C64F6D5926B39E45000A23CA /* CompostListCell */,
-				C64F6D5A26B39E5A000A23CA /* FirstTimePage */,
 				C65630D326B26C190043B325 /* CompostListPage.xib */,
 				C65630DB26B26FD30043B325 /* CompostListPageController.swift */,
 			);
@@ -522,7 +508,6 @@
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
 				C68FA6B726B3B2D400634243 /* CompostTableViewCell.xib in Resources */,
-				C67F5EC026B5AA5200CEEA93 /* FirstTimePageController.xib in Resources */,
 				C65630D426B26C190043B325 /* CompostListPage.xib in Resources */,
 				9ABE353B26B9B0A400D9ECB9 /* ProfileTableViewCell.xib in Resources */,
 				78472AB126B540810076E3D7 /* ProcessTableViewCell.xib in Resources */,
@@ -572,7 +557,6 @@
 				9ABE353F26B9B0A400D9ECB9 /* CreateCompostViewController.swift in Sources */,
 				78FEC0F026AF12290034CFC1 /* CompostController.swift in Sources */,
 				C68FA6B626B3B2D400634243 /* CompostTableViewCell.swift in Sources */,
-				78FEC0EC26AF10190034CFC1 /* Process+CoreDataClass.swift in Sources */,
 				78472A9D26B53D7B0076E3D7 /* DoneCheckingViewController.swift in Sources */,
 				78472A9426B53A540076E3D7 /* ConditionViewController.swift in Sources */,
 				9ABE350C26B9B00600D9ECB9 /* StringModifier.swift in Sources */,
@@ -581,7 +565,6 @@
 				9ABE350726B9AFC100D9ECB9 /* Seeder.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				C65630DC26B26FD30043B325 /* CompostListPageController.swift in Sources */,
-				C67F5EBF26B5AA5200CEEA93 /* FirstTimePageController.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
 				78472AA726B53ED00076E3D7 /* LineProcessView.swift in Sources */,
 				78472AB026B540810076E3D7 /* ProcessTableViewCell.swift in Sources */,

@@ -38,13 +38,17 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     var dataCollection: [ListModel] = []
     
     @IBOutlet weak var compostList: UITableView!
-    @IBOutlet weak var tutorialBtn: UIButton!
+    @IBOutlet weak var tutorialBtnTop: UIButton!
+    @IBOutlet weak var illustration: UIImageView!
+    @IBOutlet weak var firstLine: UILabel!
+    @IBOutlet weak var secondLine: UILabel!
+    @IBOutlet weak var tutorialBtnDown: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupData()
-        
+        setupView()
+    
         
         let nib = UINib(nibName: "CompostTableViewCell" , bundle: nil)
         compostList.register(nib, forCellReuseIdentifier: "CompostListCell")
@@ -54,7 +58,20 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     func setupView(){
         navigationController?.setNavigationBarHidden(true, animated: false)
-        tutorialBtn.layer.cornerRadius = 10
+        
+        if dataCollection.isEmpty == true{
+            compostList.isHidden = true
+            tutorialBtnTop.isHidden = true
+        }else{
+            compostList.isHidden = false
+            tutorialBtnTop.isHidden = false
+            illustration.isHidden = true
+            firstLine.isHidden = true
+            secondLine.isHidden = true
+            tutorialBtnDown.isHidden = true
+        }
+        
+        tutorialBtnTop.layer.cornerRadius = 10
         self.compostList.separatorStyle = UITableViewCell.SeparatorStyle.none
 //        compostList.layer.cornerRadius = 8
         compostList.layer.masksToBounds = false
@@ -100,7 +117,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func goToCreateCompostPage(_ sender: Any) {
         let controller = CreateCompostViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        let nav = UINavigationController(rootViewController: controller)
+        present(nav, animated: true, completion: nil)
     }
     
 }
