@@ -46,7 +46,7 @@ class CompostDetailViewController: UIViewController {
     var compDetail: Compost?
     var processes: [Process] = []
     var latestProcess: Process?
-    let today = Date()
+    var today = Date()
     
     fileprivate func setupTableView() {
         processTV.delegate = self
@@ -73,18 +73,14 @@ class CompostDetailViewController: UIViewController {
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        navImageView.image = UIImage(named: "photo")
         
-        checkConditionView.layer.cornerRadius = 30
-        checkConditionView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        checkConditionView.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         
     }
     
     fileprivate func checkCompostMixInterval(_ latestProcess: Process) {
         if latestProcess.detail == "Aduk dan cek kondisi"{
             if !latestProcess.isDone{
+                processReportLbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
                 processReportLbl.text = "Kamu belum melakukan pengadukan dan pengecekan kondisi."
                
                 checkBtn.isHidden = false
@@ -93,15 +89,11 @@ class CompostDetailViewController: UIViewController {
                 processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
                 processReportLbl.text = "Kamu telah menyelesaikan pengecekan."
                 checkBtn.isHidden = true
-                processReportLbl.translatesAutoresizingMaskIntoConstraints = false
-                processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
             }
         }else if latestProcess.detail == "Perpanjang"{
             processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             processReportLbl.text = "Kamu telah melakukan perpanjangan kompos."
             checkBtn.isHidden = true
-            processReportLbl.translatesAutoresizingMaskIntoConstraints = false
-            processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
         }
     }
     
@@ -116,6 +108,15 @@ class CompostDetailViewController: UIViewController {
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
         checkBtn.isHidden = true
+        
+        checkConditionView.layer.cornerRadius = 30
+        checkConditionView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        checkConditionView.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
+        
+        guard let unwrappedPhoto = compDetail?.photo else {return}
+        guard let decodedData = Data(base64Encoded: unwrappedPhoto) else {return}
+        navImageView.image = UIImage(data: decodedData)
     }
     
     override func viewDidLoad() {
@@ -127,7 +128,7 @@ class CompostDetailViewController: UIViewController {
         
 //        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
 //        
-//        compDetail = CoreDataManager.shared.getAllCompost()[0]
+        compDetail = CoreDataManager.shared.getAllCompost()[0]
         
         guard let unwrappedCompDetail = compDetail else {return}
         
@@ -145,8 +146,20 @@ class CompostDetailViewController: UIViewController {
         
     }
     
+    @objc func willEnterForeground(){
+        
+        viewWillAppear(true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        today = Date()
+        guard let unwrappedComp = compDetail else {return}
+        setupView(unwrappedComp)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         navigationController?.navigationBar.isHidden = true
+        
+        latestProcess = getLatestProcess()
         
         checkCompostCreatedInterval(latestProcess!)
                 
@@ -159,9 +172,9 @@ class CompostDetailViewController: UIViewController {
         processTV.reloadData()
         
         let harvest_day = dateDiff(from: today, to: processes[0].compost!.estimated_date!).day! + 1
-        
-        if Calendar.current.isDateInToday(processes[0].compost!.estimated_date!) {
-            statusLbl.text = "Hari ini Panen"
+        guard let unwrappedCompost = processes.first?.compost else {return}
+        if dateDiff(from: today, to: unwrappedCompost.estimated_date ?? Date()).day! < 0 || Calendar.current.isDateInToday(unwrappedCompost.estimated_date ?? Date()) {
+            statusLbl.text = "Komposmu siap panen"
         }else{
             statusLbl.text = "Siap panen dalam \(harvest_day) hari"
         }
@@ -179,7 +192,6 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let unwrappedProcess = compDetail?.process else{return 0}
         return 1
     }
     
@@ -207,8 +219,8 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func getLatestProcess() -> Process{
-       
-        if dateDiff(from: (processes.last?.date)!, to: today).day! + 1 == 0{
+       today = Date()
+        if dateDiff(from: (processes.last?.date)!, to: today).day! + 1 >= 0{
             return processes[processes.count-1]
         }
         for p in processes{
@@ -237,13 +249,12 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
         if(dateDiffValue + 1 < 3){
             processReportLbl.text = "Kompos telah dibuat"
             processReportLbl.font = UIFont.boldSystemFont(ofSize: 20)
-            processReportLbl.translatesAutoresizingMaskIntoConstraints = false
-            processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
         }
     }
     
     func checkCompostHarvestTime(_ latestProcess: Process){
         if latestProcess.detail == "Panen"{
+            processReportLbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
             processReportLbl.text = "Kamu belum melakukan pengecekkan panen komposmu."
             checkBtn.isHidden = false
             checkBtn.setTitle("Panen Kompos", for: .normal)
