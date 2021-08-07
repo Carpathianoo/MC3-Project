@@ -78,7 +78,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpJ-0h-VUs">
-                    <rect key="frame" x="16" y="416" width="358" height="27"/>
+                    <rect key="frame" x="16" y="416" width="358" height="26.333333333333314"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -86,7 +86,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="20" sectionHeaderHeight="18" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ly-OP-ZFD">
-                    <rect key="frame" x="16" y="451" width="358" height="232"/>
+                    <rect key="frame" x="16" y="450.33333333333331" width="358" height="232.66666666666669"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="contentLayoutGuide" id="2E0-Vw-8EE"/>
@@ -97,33 +97,36 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDo-jT-LBi">
                     <rect key="frame" x="0.0" y="683" width="390" height="161"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGS-FA-kRk">
-                            <rect key="frame" x="40" y="20" width="310" height="0.0"/>
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZED-Tj-IUe" customClass="CustomButton" customModule="Komposku" customModuleProvider="target">
-                            <rect key="frame" x="20" y="36" width="350" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="350" id="rfy-1e-Ogr"/>
-                                <constraint firstAttribute="height" constant="45" id="xOy-PE-Xji"/>
-                            </constraints>
-                            <connections>
-                                <action selector="checkCondition:" destination="-1" eventType="touchUpInside" id="qn7-br-Twa"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8hy-cq-WgR">
+                            <rect key="frame" x="20" y="0.0" width="350" height="126"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGS-FA-kRk">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="81"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZED-Tj-IUe" customClass="CustomButton" customModule="Komposku" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="81" width="350" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="350" id="rfy-1e-Ogr"/>
+                                        <constraint firstAttribute="height" constant="45" id="xOy-PE-Xji"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="checkCondition:" destination="-1" eventType="touchUpInside" id="qn7-br-Twa"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="LGS-FA-kRk" firstAttribute="top" secondItem="sDo-jT-LBi" secondAttribute="top" constant="20" id="EFV-Z9-YM3"/>
-                        <constraint firstItem="ZED-Tj-IUe" firstAttribute="leading" secondItem="sDo-jT-LBi" secondAttribute="leading" constant="20" id="Jyc-1J-FO2"/>
-                        <constraint firstItem="LGS-FA-kRk" firstAttribute="leading" secondItem="sDo-jT-LBi" secondAttribute="leading" constant="40" id="Nuu-4a-aRG"/>
-                        <constraint firstItem="ZED-Tj-IUe" firstAttribute="top" secondItem="LGS-FA-kRk" secondAttribute="bottom" constant="16" identifier="topConst" id="eKF-am-cHh"/>
-                        <constraint firstAttribute="trailing" secondItem="LGS-FA-kRk" secondAttribute="trailing" constant="40" id="oHx-2Z-3cI"/>
+                        <constraint firstAttribute="trailing" secondItem="8hy-cq-WgR" secondAttribute="trailing" constant="20" id="Tba-Cf-wIb"/>
+                        <constraint firstItem="8hy-cq-WgR" firstAttribute="top" secondItem="sDo-jT-LBi" secondAttribute="top" id="aXE-ip-F6Q"/>
+                        <constraint firstItem="8hy-cq-WgR" firstAttribute="leading" secondItem="sDo-jT-LBi" secondAttribute="leading" constant="20" id="cmL-c9-WaM"/>
+                        <constraint firstAttribute="bottom" secondItem="8hy-cq-WgR" secondAttribute="bottom" constant="35" id="ihv-hN-eQv"/>
                         <constraint firstAttribute="height" constant="161" id="wKv-wc-TDw"/>
-                        <constraint firstAttribute="trailing" secondItem="ZED-Tj-IUe" secondAttribute="trailing" constant="20" id="yLj-nR-J8A"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-y2-toz" customClass="MoistureLabel" customModule="Komposku" customModuleProvider="target">

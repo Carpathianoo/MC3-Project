@@ -89,15 +89,11 @@ class CompostDetailViewController: UIViewController {
                 processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
                 processReportLbl.text = "Kamu telah menyelesaikan pengecekan."
                 checkBtn.isHidden = true
-                processReportLbl.translatesAutoresizingMaskIntoConstraints = false
-                processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
             }
         }else if latestProcess.detail == "Perpanjang"{
             processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             processReportLbl.text = "Kamu telah melakukan perpanjangan kompos."
             checkBtn.isHidden = true
-            processReportLbl.translatesAutoresizingMaskIntoConstraints = false
-            processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
         }
     }
     
@@ -250,8 +246,6 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
         if(dateDiffValue + 1 < 3){
             processReportLbl.text = "Kompos telah dibuat"
             processReportLbl.font = UIFont.boldSystemFont(ofSize: 20)
-            processReportLbl.translatesAutoresizingMaskIntoConstraints = false
-            processReportLbl.centerYAnchor.constraint(equalTo: checkConditionView.centerYAnchor).isActive = true
         }
     }
     
