@@ -28,7 +28,7 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
         //let row = titleTutorial[indexPath.row]
         let controller = ContentTutorialViewController()
         controller.tutorial = listTutorial[indexPath.row]
-        
+        controller.index = indexPath.row
         navigationController?.pushViewController(controller, animated: true)
     }
     

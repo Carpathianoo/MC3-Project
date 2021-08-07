@@ -25,6 +25,7 @@
                         <constraint firstAttribute="height" constant="18" id="0CE-5d-9Ee"/>
                         <constraint firstAttribute="width" constant="18" id="7qW-6E-uxV"/>
                     </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" backgroundImage="arrow.backward" catalog="system"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCt-U5-SwA">

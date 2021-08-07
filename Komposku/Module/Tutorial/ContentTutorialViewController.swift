@@ -30,9 +30,12 @@ class ContentTutorialViewController: UIViewController {
     @IBOutlet weak var descContentLabel: UILabel!
     @IBOutlet weak var contentTutorialTableView: UITableView!
     @IBOutlet weak var titleViewTutorial: UIView!
+    @IBOutlet weak var backgroundViewLabel: UIView!
     
     var tutorial: Tutorial?
     let listTableTutorial = tutorialData
+    
+    var index:Int?
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -46,7 +49,10 @@ class ContentTutorialViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         titleViewTutorial.clipsToBounds = true
         titleViewTutorial.layer.cornerRadius = 40
-       setData()
+        backgroundViewLabel.layer.cornerRadius = 20
+        contentTutorialTableView.layer.cornerRadius = 20
+        
+        setData()
         
         let nib = UINib(nibName: "ContentTableViewCell" , bundle: nil)
                 contentTutorialTableView.register(nib, forCellReuseIdentifier: "contentTableVIew")
@@ -55,15 +61,6 @@ class ContentTutorialViewController: UIViewController {
         contentTutorialTableView.delegate = self
         
         seperateData()
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        //line height size
-        
-        paragraphStyle.lineSpacing = 5
-        let attrString = NSMutableAttributedString(string: tutorial!.detail)
-        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
-        descContentLabel.attributedText = attrString
-        descContentLabel.textAlignment = NSTextAlignment.left
     }
     
     func seperateData() {
@@ -74,6 +71,7 @@ class ContentTutorialViewController: UIViewController {
         }
     }
     
+    //set different color text in label
     func setData() {
         guard let tutorial = tutorial else {
             return
@@ -81,10 +79,39 @@ class ContentTutorialViewController: UIViewController {
         
         TitleContentTutorialLabel.text = tutorial.name
         ImageContentTutorial.image = UIImage(named: tutorial.photo)
-        descContentLabel.text = tutorial.detail
+        
+        
+        if index == 1 {
+            descContentLabel.attributedText = modifyDetailMaterial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+        }else{
+            descContentLabel.attributedText = modifyDetailMaterial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n\n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+        }
+        
+        
+    }
+    
+    func modifyDetailMaterial(sentence: [String], color1: UIColor, color2: UIColor) -> NSMutableAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        
+        let string = NSMutableAttributedString(string: "")
+        let firstAttributes = [NSAttributedString.Key.foregroundColor: color1, NSAttributedString.Key.font: UIFont.systemFont(ofSize:15), NSAttributedString.Key.paragraphStyle: paragraphStyle ]
+            let secondAttributes = [NSAttributedString.Key.foregroundColor: color2, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
+            for i in 0..<sentence.count {
+                if i % 2 == 0 {
+                    let strings = NSAttributedString(string: sentence[i], attributes: firstAttributes)
+                    string.append(strings)
+                } else {
+                    let strings = NSAttributedString(string: sentence[i], attributes: secondAttributes)
+                    string.append(strings)
+                }
+            }
+        return string
     }
 
 }
+
+
 
 extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -121,4 +148,5 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         view.tintColor = #colorLiteral(red: 0.9528475404, green: 0.953006804, blue: 0.9528264403, alpha: 1)
     }
+    
 }

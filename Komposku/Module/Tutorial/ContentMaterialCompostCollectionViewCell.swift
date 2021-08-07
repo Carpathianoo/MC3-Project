@@ -15,6 +15,7 @@ class ContentMaterialCompostCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imageContentMaterial.layer.cornerRadius = 10
     }
 
 }

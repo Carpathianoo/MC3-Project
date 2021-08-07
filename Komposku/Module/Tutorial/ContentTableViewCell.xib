@@ -17,8 +17,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wWj-hr-QZr">
-                        <rect key="frame" x="20" y="8" width="374" height="220"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alK-o0-zrp">
+                        <rect key="frame" x="35" y="30" width="41" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wWj-hr-QZr">
+                        <rect key="frame" x="0.0" y="8" width="414" height="220"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qqe-ce-pqI">
                             <size key="itemSize" width="336" height="210"/>
@@ -29,17 +36,18 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="wWj-hr-QZr" secondAttribute="trailing" constant="20" id="59L-aq-ILc"/>
+                    <constraint firstAttribute="trailing" secondItem="wWj-hr-QZr" secondAttribute="trailing" id="59L-aq-ILc"/>
                     <constraint firstAttribute="bottom" secondItem="wWj-hr-QZr" secondAttribute="bottom" constant="10" id="bpU-eN-pJb"/>
-                    <constraint firstItem="wWj-hr-QZr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vjB-SM-UxA"/>
+                    <constraint firstItem="wWj-hr-QZr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vjB-SM-UxA"/>
                     <constraint firstItem="wWj-hr-QZr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="w5C-8l-aSE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="CollectionViewTutorial" destination="wWj-hr-QZr" id="KfA-Me-Uf7"/>
+                <outlet property="sectionLabel" destination="alK-o0-zrp" id="b1M-6I-VAT"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="124.21875"/>
+            <point key="canvasLocation" x="131.8840579710145" y="123.88392857142857"/>
         </tableViewCell>
     </objects>
     <resources>

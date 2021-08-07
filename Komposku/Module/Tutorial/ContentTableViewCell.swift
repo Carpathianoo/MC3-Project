@@ -10,6 +10,7 @@ import UIKit
 class ContentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var CollectionViewTutorial: UICollectionView!
+    @IBOutlet weak var sectionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

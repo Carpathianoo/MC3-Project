@@ -73,7 +73,7 @@
 		CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */; };
 		CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */; };
 		CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */; };
-		CCD6279226B7AFEC00C701C8 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */; };
+		CC8C342126BCEF7900CA606D /* StringModifierTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8C342026BCEF7900CA606D /* StringModifierTutorial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,7 +145,7 @@
 		CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialPageViewController.xib; sourceTree = "<group>"; };
 		CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMaterialCompostCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentMaterialCompostCollectionViewCell.xib; sourceTree = "<group>"; };
-		CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		CC8C342026BCEF7900CA606D /* StringModifierTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModifierTutorial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +231,7 @@
 			children = (
 				9ABE350926B9B00600D9ECB9 /* MoistureCalculation.swift */,
 				9ABE350A26B9B00600D9ECB9 /* StringModifier.swift */,
+				CC8C342026BCEF7900CA606D /* StringModifierTutorial.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -394,7 +395,6 @@
 			isa = PBXGroup;
 			children = (
 				CC7931DA26B180870005C58C /* Tutorial */,
-				C645E02426AE59D800888F63 /* ViewController.swift */,
 				782A792126BB782100B31493 /* Notification */,
 				9ABE351B26B9B0A400D9ECB9 /* CreateCompost */,
 				78472A9F26B53E630076E3D7 /* ReusableView */,
@@ -419,13 +419,11 @@
 		C6C9CBEA26AE7D1900D2BECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				CCD6278F26B7AF8E00C701C8 /* Utils */,
 				9ABE351426B9B09600D9ECB9 /* Compost+CoreDataClass.swift */,
 				9ABE351326B9B09600D9ECB9 /* Compost+CoreDataProperties.swift */,
 				9ABE351226B9B09600D9ECB9 /* CoreDataManager.swift */,
 				9ABE351526B9B09600D9ECB9 /* Process+CoreDataClass.swift */,
 				9ABE351126B9B09600D9ECB9 /* Process+CoreDataProperties.swift */,
-				7851357B26B1C4BF00FCCA93 /* Static Data */,
 				C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */,
 				9AF79E4526B2F7E100FE6255 /* Static Data */,
 				9AF79E4226B2F7E100FE6255 /* Utils */,
@@ -458,22 +456,6 @@
 				CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */,
 			);
 			path = Tutorial;
-			sourceTree = "<group>";
-		};
-		CCD6278F26B7AF8E00C701C8 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				CCD6279026B7AF9D00C701C8 /* Extention */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		CCD6279026B7AF9D00C701C8 /* Extention */ = {
-			isa = PBXGroup;
-			children = (
-				CCD6279126B7AFEC00C701C8 /* UIView+Ext.swift */,
-			);
-			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +569,7 @@
 				9ABE351826B9B09600D9ECB9 /* Compost+CoreDataProperties.swift in Sources */,
 				78472AA526B53EBC0076E3D7 /* DashedLineView.swift in Sources */,
 				9ABE350F26B9B00F00D9ECB9 /* UIView+Ext.swift in Sources */,
+				CC8C342126BCEF7900CA606D /* StringModifierTutorial.swift in Sources */,
 				9ABE350826B9AFC100D9ECB9 /* Material.swift in Sources */,
 				9ABE350626B9AFC100D9ECB9 /* WasteMaterialTutorial.swift in Sources */,
 				78472AA326B53EA10076E3D7 /* CustomTableViewCell.swift in Sources */,
@@ -602,14 +585,11 @@
 				9ABE350726B9AFC100D9ECB9 /* Seeder.swift in Sources */,
 				C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */,
 				CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */,
-				CCD6279226B7AFEC00C701C8 /* UIView+Ext.swift in Sources */,
 				CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
 				78472AA726B53ED00076E3D7 /* LineProcessView.swift in Sources */,
 				78472AB026B540810076E3D7 /* ProcessTableViewCell.swift in Sources */,
-				7851357726B00BD100FCCA93 /* CoreDataManager.swift in Sources */,
 				CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */,
-				78FEC0EA26AF10190034CFC1 /* Compost+CoreDataClass.swift in Sources */,
 				CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */,
 				CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */,
 			);
