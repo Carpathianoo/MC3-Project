@@ -73,8 +73,8 @@ class CompostDetailViewController: UIViewController {
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        guard let unwrappedPhoto = compDetail?.photo else {return}
-        navImageView.image = UIImage(named: unwrappedPhoto)
+        
+        
     }
     
     fileprivate func checkCompostMixInterval(_ latestProcess: Process) {
@@ -114,6 +114,9 @@ class CompostDetailViewController: UIViewController {
         
         checkConditionView.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         
+        guard let unwrappedPhoto = compDetail?.photo else {return}
+        guard let decodedData = Data(base64Encoded: unwrappedPhoto) else {return}
+        navImageView.image = UIImage(data: decodedData)
     }
     
     override func viewDidLoad() {
@@ -125,7 +128,7 @@ class CompostDetailViewController: UIViewController {
         
 //        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
 //        
-//        compDetail = CoreDataManager.shared.getAllCompost()[0]
+        compDetail = CoreDataManager.shared.getAllCompost()[0]
         
         guard let unwrappedCompDetail = compDetail else {return}
         
