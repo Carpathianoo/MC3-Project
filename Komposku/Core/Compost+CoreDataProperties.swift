@@ -20,7 +20,7 @@ extension Compost {
     @NSManaged public var identifier: Int64
     @NSManaged public var moisture: Double
     @NSManaged public var name: String?
-    @NSManaged public var photo: String?
+    @NSManaged public var photo: Data?
     @NSManaged public var process: NSSet?
 
 }

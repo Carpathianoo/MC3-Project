@@ -43,7 +43,7 @@ class CoreDataManager{
         }
     }
     
-    func createCompost(name: String, photo: String, moisture: Double){
+    func createCompost(name: String, photo: Data, moisture: Double){
         let compostsCount = getAllCompost().count
         let compost = Compost(context: viewContext)
         let processes = createProcess(compost: compost)
