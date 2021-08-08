@@ -30,12 +30,12 @@ struct ListModel{
 class CompostListPageController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     
-    let firstData = ListModel(title: "Kompos Pertama Ku", nextStep: "Aduk dan cek kondisi", estimasiPanen: "2 hari lagi", foto: #imageLiteral(resourceName: "compost1"))
-    let secondData = ListModel(title: "Kompos Ku Tercinta", nextStep: "Aduk dan cek kondisi", estimasiPanen: "3 hari lagi", foto: #imageLiteral(resourceName: "compost3"))
-    let thirdData = ListModel(title: "Kompos Yang Mantap", nextStep: "Aduk dan aduk - aduk", estimasiPanen: "5 hari lagi", foto: #imageLiteral(resourceName: "compost2"))
+//    let firstData = ListModel(title: "Kompos Pertama Ku", nextStep: "Aduk dan cek kondisi", estimasiPanen: "2 hari lagi", foto: #imageLiteral(resourceName: "compost1"))
+//    let secondData = ListModel(title: "Kompos Ku Tercinta", nextStep: "Aduk dan cek kondisi", estimasiPanen: "3 hari lagi", foto: #imageLiteral(resourceName: "compost3"))
+//    let thirdData = ListModel(title: "Kompos Yang Mantap", nextStep: "Aduk dan aduk - aduk", estimasiPanen: "5 hari lagi", foto: #imageLiteral(resourceName: "compost2"))
 
     
-    var dataCollection: [ListModel] = []
+    var dataCollection: [Compost] = []
     
     @IBOutlet weak var compostList: UITableView!
     @IBOutlet weak var tutorialBtnTop: UIButton!
@@ -46,7 +46,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
+//        setupData()
         setupView()
     
         
@@ -58,7 +58,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     func setupView(){
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        overrideUserInterfaceStyle = .light
         if dataCollection.isEmpty == true{
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
@@ -71,18 +71,31 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
             tutorialBtnDown.isHidden = true
         }
         
+        dataCollection = CoreDataManager.shared.getAllCompost()
+        
         tutorialBtnTop.layer.cornerRadius = 10
+        tutorialBtnDown.layer.cornerRadius = 10
         self.compostList.separatorStyle = UITableViewCell.SeparatorStyle.none
-//        compostList.layer.cornerRadius = 8
         compostList.layer.masksToBounds = false
 
     }
     
-    func setupData() {
-        dataCollection.append(firstData)
-        dataCollection.append(secondData)
-        dataCollection.append(thirdData)
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataCollection = CoreDataManager.shared.getAllCompost()
+        compostList.reloadData()
+        if dataCollection.isEmpty{
+            compostList.isHidden = true
+            tutorialBtnTop.isHidden = true
+        }else{
+            compostList.isHidden = false
+            tutorialBtnTop.isHidden = false
+            illustration.isHidden = true
+            firstLine.isHidden = true
+            secondLine.isHidden = true
+            tutorialBtnDown.isHidden = true
+        }
     }
     
     
@@ -93,10 +106,11 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = compostList.dequeueReusableCell(withIdentifier: "CompostListCell", for: indexPath) as! CompostTableViewCell
         cell.selectionStyle = .none
-        cell.compostTitle.text = dataCollection[indexPath.row].title
-        cell.compostImage.image = dataCollection[indexPath.row].foto
-        cell.nextStep.text = dataCollection[indexPath.row].nextStep
-        cell.estimasiPanen.text = dataCollection[indexPath.row].estimasiPanen
+        cell.compostTitle.text = dataCollection[indexPath.row].name
+        let newImage = UIImage(data:dataCollection[indexPath.row].photo!, scale: 1)
+        cell.compostImage.image = newImage
+//        cell.nextStep.text = dataCollection[indexPath.row].
+        cell.estimasiPanen.text = "\(dataCollection[indexPath.row].estimated_date!)"
         return cell
         
     }
@@ -105,8 +119,9 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         print(indexPath.row)
         
         //buat code pindah ke detail compost page disini
-//        let controller = DummyPage()
-//        navigationController?.pushViewController(controller, animated: true)
+        let vc = CompostDetailViewController()
+        vc.compDetail = dataCollection[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -118,7 +133,27 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func goToCreateCompostPage(_ sender: Any) {
         let controller = CreateCompostViewController()
         let nav = UINavigationController(rootViewController: controller)
+        controller.isDismissed = {
+            self.dataCollection = CoreDataManager.shared.getAllCompost()
+            self.compostList.reloadData()
+            self.checkIfListEmpty()
+        }
         present(nav, animated: true, completion: nil)
+        
+    }
+    
+    func checkIfListEmpty(){
+        if dataCollection.isEmpty{
+            compostList.isHidden = true
+            tutorialBtnTop.isHidden = true
+        }else{
+            compostList.isHidden = false
+            tutorialBtnTop.isHidden = false
+            illustration.isHidden = true
+            firstLine.isHidden = true
+            secondLine.isHidden = true
+            tutorialBtnDown.isHidden = true
+        }
     }
     
 }
