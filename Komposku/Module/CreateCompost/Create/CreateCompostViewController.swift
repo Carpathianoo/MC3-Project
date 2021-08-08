@@ -35,7 +35,7 @@ class CreateCompostViewController: UIViewController {
     
     let notificationPublisher = NotificationPublisher()
     var isDismissed: (() -> ())?
-    var textFieldStatus = false
+    var textFieldStatus: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -449,7 +449,8 @@ extension CreateCompostViewController {
         guard let cell = createTableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? ProfileTableViewCell else {
             return
         }
-        if self.textFieldStatus == true, image != nil, moisturePercentage > 50, moisturePercentage < 60 {
+        print("statustext", textFieldStatus)
+        if self.textFieldStatus == true, moisturePercentage > 50, moisturePercentage < 60 {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
     }
@@ -484,6 +485,7 @@ extension CreateCompostViewController {
                     self.dataCoklat = newMaterial
                 }
             }
+            self.checkAllFilled()
             self.createTableView.reloadData()
         }
         self.navigationController?.pushViewController(vc, animated: true)
