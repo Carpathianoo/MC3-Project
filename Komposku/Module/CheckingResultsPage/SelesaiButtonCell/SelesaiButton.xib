@@ -17,8 +17,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXG-YE-90Q">
-                        <rect key="frame" x="0.0" y="15" width="358" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
                         <color key="backgroundColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="X7e-P5-EOr"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <state key="normal" title="Selesai">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,9 +32,8 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="HXG-YE-90Q" secondAttribute="bottom" constant="15" id="3fP-Ce-iJt"/>
                     <constraint firstAttribute="trailing" secondItem="HXG-YE-90Q" secondAttribute="trailing" id="Nnq-r1-tVY"/>
-                    <constraint firstItem="HXG-YE-90Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="b3B-3G-W5Q"/>
+                    <constraint firstItem="HXG-YE-90Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="b3B-3G-W5Q"/>
                     <constraint firstItem="HXG-YE-90Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="p4U-wH-Brk"/>
                 </constraints>
             </tableViewCellContentView>

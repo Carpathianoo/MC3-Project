@@ -74,16 +74,6 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
     }
     
-    func checkI(i: Int) -> Int{
-        if i == uncheckedCondition.count{
-            
-            return 0
-        }else{
-            
-
-            return i + 1
-        }
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -110,31 +100,7 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        if indexPath.row < 3 {
-//            let cell = solutionList.dequeueReusableCell(withIdentifier: "CRCell", for: indexPath) as! CheckingResultsCell
-//
-//            cell.solutionSubtitle.text = solutionCollection[indexPath.row].subtitle[0]
-//            cell.solutionDetail.text = solutionCollection[indexPath.row].detail[0]
-//
-//
-//            return cell
-//        }
-//        else{
-//            let cell = solutionList.dequeueReusableCell(withIdentifier: "CRCell", for: indexPath) as! CheckingResultsCell
-//
-//            cell.solutionSubtitle.text = solutionCollection[indexPath.row].subtitle[0]
-//            cell.solutionDetail.text = solutionCollection[indexPath.row].detail[0]
-//
-//
-//            return cell
-//        }
-//        if indexPath.section == 0{
-//            let cell = solutionList.dequeueReusableCell(withIdentifier: "CRCell", for: indexPath) as! CheckingResultsCell
-//            cell.solutionSubtitle.text = solutionCollection[indexPath.section].subtitle[indexPath.row]
-//            cell.solutionDetail.text = solutionCollection[indexPath.section].detail[indexPath.row]
-//            return cell
-//        }
-        
+
         
     
         if indexPath.section < uncheckedCondition.count{
