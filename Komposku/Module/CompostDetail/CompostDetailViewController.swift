@@ -103,7 +103,7 @@ class CompostDetailViewController: UIViewController {
         let harvest_day = dateDiff(from: today, to: unwrappedCompDetail.estimated_date!).day! + 1
         statusLbl.text = "Siap panen dalam \(harvest_day) hari"
         
-        moistureLbl.text = String(unwrappedCompDetail.moisture) + "%"
+        moistureLbl.text = String(format: "%.2f",unwrappedCompDetail.moisture) + "%"
         
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
@@ -114,9 +114,7 @@ class CompostDetailViewController: UIViewController {
         
         checkConditionView.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         
-        guard let unwrappedPhoto = compDetail?.photo else {return}
-        guard let decodedData = Data(base64Encoded: unwrappedPhoto) else {return}
-        navImageView.image = UIImage(data: decodedData)
+        navImageView.image = UIImage(data:unwrappedCompDetail.photo!, scale: 1)
     }
     
     override func viewDidLoad() {
@@ -126,9 +124,7 @@ class CompostDetailViewController: UIViewController {
         
         setupNavigationBar()
         
-//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "Comp-1", moisture: 56.7)
-//        
-        compDetail = CoreDataManager.shared.getAllCompost()[0]
+        
         
         guard let unwrappedCompDetail = compDetail else {return}
         
