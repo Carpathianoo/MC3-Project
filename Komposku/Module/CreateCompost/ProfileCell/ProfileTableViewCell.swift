@@ -7,10 +7,13 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileTableViewCell: UITableViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileTextField: UITextField!
+    
+    var isEditingTextField: ((Bool) -> ())?
+    var nilTextField = false
     
     var buttonImageTouched: (() -> ())?
     override func awakeFromNib() {
@@ -37,9 +40,21 @@ class ProfileTableViewCell: UITableViewCell, UIImagePickerControllerDelegate, UI
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapCompostPhoto))
         profileImage.addGestureRecognizer(gesture)
         profileTextField.addUnderline()
+        
+        profileTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     @objc func didTapCompostPhoto() {
         buttonImageTouched?()
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if profileTextField.text == "" {
+            nilTextField = false
+            isEditingTextField?(nilTextField)
+        } else {
+            nilTextField = true
+            isEditingTextField?(nilTextField)
+        }
     }
     
 }

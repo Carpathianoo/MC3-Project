@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Photos
+import AVFoundation
 
 class CreateCompostViewController: UIViewController {
 
@@ -28,19 +30,29 @@ class CreateCompostViewController: UIViewController {
     var coklatMoisture: Double = 0
     var image: UIImage?
     
+    let readWriteStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+    let cameraAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
+    
     let notificationPublisher = NotificationPublisher()
+    var isDismissed: (() -> ())?
+    var textFieldStatus = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Kompos"
         setupView()
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.overrideUserInterfaceStyle = .light
         createTableView.dataSource = self
         createTableView.delegate = self
+        overrideUserInterfaceStyle = .light
     }
     
     func setupView(){
+        let tapDismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapDismiss))
+        self.view.addGestureRecognizer(tapDismissKeyboard)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(createNewCompostTapped))
+        navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(dismissCreateCompost))
         navigationItem.rightBarButtonItem?.tintColor = .black
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0.19, green: 0.59, blue: 0.403, alpha: 1.0)
@@ -59,6 +71,7 @@ class CreateCompostViewController: UIViewController {
         
         containerViewBottom.layer.cornerRadius = 20
         
+        
         createTableView.estimatedRowHeight = 90
         createTableView.rowHeight = UITableView.automaticDimension
         createTableView.estimatedSectionHeaderHeight = 38
@@ -68,13 +81,22 @@ class CreateCompostViewController: UIViewController {
         
     }
     
+    @objc func tapDismiss(){
+        view.endEditing(true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @objc func createNewCompostTapped() {
         createNewCompost()
-        print(CoreDataManager.shared.getAllCompost())
+        self.isDismissed?()
+        dismiss(animated: true, completion: nil)
     }
     @objc func dismissCreateCompost() {
         dismiss(animated: true)
@@ -151,6 +173,10 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
             cell.buttonImageTouched = {
                 self.presentPhotoActionSheet()
             }
+            cell.isEditingTextField = { isEditTextField in
+                self.textFieldStatus = isEditTextField
+            }
+            checkAllFilled()
             return cell
         }
         else if indexPath.section == 1 {
@@ -172,6 +198,7 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
                         self.updateStatus()
                         self.percentageLabel.text = "\(String(format: "%.2f", self.moisturePercentage))%"
                         self.createTableView.reloadData()
+                        self.checkAllFilled()
                     }
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
@@ -186,6 +213,7 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
                 cell.materials = filtered[indexPath.row]
                 self.totalMoisture()
                 self.updateStatus()
+                self.checkAllFilled()
                 self.percentageLabel.text = "\(String(format: "%.2f", self.moisturePercentage))%"
                 return cell
             }
@@ -205,6 +233,7 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
                         self.totalMoisture()
                         self.updateStatus()
                         self.percentageLabel.text = "\(String(format: "%.2f", self.moisturePercentage))%"
+                        self.checkAllFilled()
                         self.createTableView.reloadData()
                     }
                     self.navigationController?.pushViewController(vc, animated: true)
@@ -220,6 +249,7 @@ extension CreateCompostViewController: UITableViewDataSource, UITableViewDelegat
                 cell.materials = filtered[indexPath.row]
                 self.totalMoisture()
                 self.updateStatus()
+                self.checkAllFilled()
                 self.percentageLabel.text = "\(String(format: "%.2f", self.moisturePercentage))%"
                 return cell
             }
@@ -308,11 +338,27 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
     func presentPhotoActionSheet(){
         let actionSheet = UIAlertController(title: "Compost Photo", message: "How would you like to select a photo?", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { [weak self] _ in
-            self?.presentCamera()
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
+            switch self.cameraAuthStatus {
+            case .notDetermined:
+                self.requestCameraPermission()
+            case .authorized:
+                DispatchQueue.main.async {
+                    self.presentCamera()
+                }
+            case .restricted, .denied:
+                self.dismiss(animated: true, completion: nil)
+            @unknown default:
+                self.dismiss(animated: true, completion: nil)
+            }
         }))
         actionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: { [weak self] _ in
-            self?.presentLibrary()
+            self?.getPermissionLibraryStatus { granted in
+                guard granted else { return}
+                DispatchQueue.main.async {
+                    self?.presentLibrary()
+                }
+            }
         }))
         present(actionSheet, animated: true)
     }
@@ -365,6 +411,28 @@ extension CreateCompostViewController {
         return filtered
     }
     
+    func getPermissionLibraryStatus(completionHandler: @escaping (Bool) -> Void){
+        guard PHPhotoLibrary.authorizationStatus() != .authorized else {
+            completionHandler(true)
+            return
+        }
+        
+        PHPhotoLibrary.requestAuthorization { status in
+            completionHandler(status == .authorized ? true : false)
+        }
+    }
+    
+    func requestCameraPermission(){
+        AVCaptureDevice.requestAccess(for: .video) { status in
+            guard status == true else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.presentCamera()
+            }
+        }
+    }
+    
     fileprivate func scheduleNotification(_ sharedInstance: CoreDataManager) {
         let compost = sharedInstance.getAllCompost().last
         let process = sharedInstance.getAllProcess(from: compost!)
@@ -377,6 +445,15 @@ extension CreateCompostViewController {
         }
     }
     
+    private func checkAllFilled(){
+        guard let cell = createTableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? ProfileTableViewCell else {
+            return
+        }
+        if self.textFieldStatus == true, image != nil, moisturePercentage > 50, moisturePercentage < 60 {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+    }
+    
     func createNewCompost() {
         let sharedInstance = CoreDataManager.shared
         
@@ -384,10 +461,7 @@ extension CreateCompostViewController {
         guard let name = cell.profileTextField.text, let image = image else {
             return
         }
-        
-        print("name", name)
-        
-        sharedInstance.createCompost(name: name, photo: image.jpegData(compressionQuality: 1)!.base64EncodedString(), moisture: moisturePercentage)
+        sharedInstance.createCompost(name: name, photo: image.pngData()!, moisture: moisturePercentage)
         
         scheduleNotification(sharedInstance)
     }
@@ -452,5 +526,17 @@ extension CreateCompostViewController {
         let alert = UIAlertController(title: "Persentase Kelembapan", message: "Kelembapan material untuk kompos yang optimal berkisar di antara 50-60%", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Oke", style: .cancel, handler: nil))
         present(alert, animated: true)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
