@@ -22,7 +22,7 @@ let ContentList = [
 ]
 
 class ContentTutorialViewController: UIViewController {
-
+    
     
     @IBOutlet weak var TitleContentTutorialLabel: UILabel!
     @IBOutlet weak var ImageContentTutorial: UIImageView!
@@ -55,7 +55,7 @@ class ContentTutorialViewController: UIViewController {
         setData()
         
         let nib = UINib(nibName: "ContentTableViewCell" , bundle: nil)
-                contentTutorialTableView.register(nib, forCellReuseIdentifier: "contentTableVIew")
+        contentTutorialTableView.register(nib, forCellReuseIdentifier: "contentTableVIew")
         
         contentTutorialTableView.dataSource = self
         contentTutorialTableView.delegate = self
@@ -81,33 +81,12 @@ class ContentTutorialViewController: UIViewController {
         
         
         if index == 1 {
-            descContentLabel.attributedText = modifyDetailMaterial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
         }else{
-            descContentLabel.attributedText = modifyDetailMaterial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n\n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n\n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
         }
         
-        
     }
-    
-    func modifyDetailMaterial(sentence: [String], color1: UIColor, color2: UIColor) -> NSMutableAttributedString {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        
-        let string = NSMutableAttributedString(string: "")
-        let firstAttributes = [NSAttributedString.Key.foregroundColor: color1, NSAttributedString.Key.font: UIFont.systemFont(ofSize:15), NSAttributedString.Key.paragraphStyle: paragraphStyle ]
-            let secondAttributes = [NSAttributedString.Key.foregroundColor: color2, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
-            for i in 0..<sentence.count {
-                if i % 2 == 0 {
-                    let strings = NSAttributedString(string: sentence[i], attributes: firstAttributes)
-                    string.append(strings)
-                } else {
-                    let strings = NSAttributedString(string: sentence[i], attributes: secondAttributes)
-                    string.append(strings)
-                }
-            }
-        return string
-    }
-
 }
 
 
@@ -126,12 +105,12 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     func numberOfSections(in tableView: UITableView) -> Int {
         return ContentList.count
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 100
         } else if section == 1{
-            return 50
+            return 60
         } else {
             return 50
         }
@@ -156,46 +135,59 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     
     
     private func getHeaderSectionTable(section: Int, material: Material?) -> UIView {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 10, width: 350, height: 30))
+        var height = 0
+        if section == 0 {
+            height = 100
+        } else if section == 1 {
+            height = 60
+        } else {
+            height = 50
+        }
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 10, width: 350, height: height))
         headerView.autoresizesSubviews = true
         headerView.backgroundColor = #colorLiteral(red: 0.9528475404, green: 0.953006804, blue: 0.9528264403, alpha: 1)
         if section == 0 {
             let label = UILabel()
-            label.frame = CGRect.init(x: 5, y: 15, width: 350, height: headerView.frame.height)
+            label.frame = CGRect.init(x: 5, y: 15, width: 250, height: headerView.frame.height / 2 - 10 )
             label.text = "Disarankan untuk kompos"
-            
-            //how to make header programatically tableview
             label.numberOfLines = 1
             label.textColor = .black
             label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             headerView.addSubview(label)
+            let images = UIImageView()
+            headerView.addSubview(images)
+            images.frame = CGRect.init(x: label.frame.width + 4, y: 27, width: 14, height: 14)
+            images.image = UIImage(systemName: "checkmark")
+            images.tintColor = .black
             
             let label2 = UILabel()
-            label2.frame = CGRect.init(x: 0, y: 35, width: 350, height: headerView.frame.height + 50)
-            label2.text = "Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein."
+            label2.frame = CGRect.init(x: 5, y: headerView.frame.height / 2, width: 350, height: headerView.frame.height / 2)
+            let attributed = StringModifier.modifyDetailTutorial2(sentence: ["Bahan ", "Hijau ", "adalah bahan yang ", "kaya akan nitrogen atau protein."], color1: .black, color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1), bothBold: false, fontSize: 17)
+            label2.attributedText = attributed
             label2.numberOfLines = 2
-//            label2.textColor = UIColor(red: 0.19, green: 0.59, blue: 0.403, alpha: 1.0)
-//            label.isUserInteractionEnabled = true
-//            label2.isUserInteractionEnabled = true
-            label2.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            headerView.addSubview(label2)
             return headerView
         }
         else if section == 1 {
             let label = UILabel()
-            label.frame = CGRect.init(x: 5, y: 0, width: 350, height: headerView.frame.height + 100)
-            label.text = "Bahan Cokelat adalah bahan yang kaya akan karbon atau karbohidrat."
+            label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width - 10, height: headerView.frame.height - 10)
+            let attributed = StringModifier.modifyDetailTutorial2(sentence: ["Bahan ", "Cokelat ", "adalah bahan yang ", "kaya akan karbon atau karbohidrat."], color1: .black, color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1), bothBold: false, fontSize: 17)
+            label.attributedText = attributed
             label.numberOfLines = 2
-            label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
             headerView.addSubview(label)
             return headerView
         } else {
             let label = UILabel()
-            label.frame = CGRect.init(x: 5, y: 0, width: 350, height: 50)
+            label.frame = CGRect.init(x: 5, y: 0, width: 300, height: 50)
             label.text = "Tidak disarankan untuk kompos"
             label.textColor = .black
             label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             headerView.addSubview(label)
+            let images = UIImageView()
+            headerView.addSubview(images)
+            images.frame = CGRect.init(x: label.frame.width + 10, y: 20, width: 14, height: 14)
+            images.image = UIImage(systemName: "xmark")
+            images.tintColor = .black
             return headerView
         }
         
