@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,6 +17,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="358" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-dR-uTP">
+                        <rect key="frame" x="0.0" y="29" width="358" height="49"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqQ-8I-fQW">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="21"/>
                         <constraints>
@@ -61,13 +67,19 @@
             <connections>
                 <outlet property="solutionDetail" destination="7Xy-Wl-Eix" id="18t-aB-3LE"/>
                 <outlet property="solutionSubtitle" destination="mqQ-8I-fQW" id="zDz-9f-53R"/>
+                <outlet property="underView" destination="Zpz-dR-uTP" id="S3V-bw-76D"/>
             </connections>
             <point key="canvasLocation" x="47.692307692307693" y="105.21327014218009"/>
         </tableViewCell>
     </objects>
     <designables>
         <designable name="7Xy-Wl-Eix">
-            <size key="intrinsicContentSize" width="77" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="97" height="20.333333333333332"/>
         </designable>
     </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

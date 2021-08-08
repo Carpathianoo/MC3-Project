@@ -12,6 +12,7 @@ class CheckingResultsCell: UITableViewCell {
     
     @IBOutlet weak var solutionSubtitle: UILabel!
     @IBOutlet weak var solutionDetail: UILabel!
+    @IBOutlet weak var underView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +22,13 @@ class CheckingResultsCell: UITableViewCell {
 
     func setupView(){
         
-        solutionDetail.layer.cornerRadius = 30
-        
+        solutionDetail?.layer.masksToBounds = true
+        solutionDetail?.layer.cornerRadius = self.solutionDetail.bounds.width / 30
+        underView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        underView.layer.shadowColor = UIColor.black.cgColor
+        underView.layer.shadowOpacity = 0.15
+        underView.layer.shadowRadius = 1
+        underView.layer.cornerRadius = 15
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
