@@ -73,7 +73,6 @@
 		CC7931EF26B18BF10005C58C /* TutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */; };
 		CC7931F326B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */; };
 		CC7931F426B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */; };
-		CC8C342126BCEF7900CA606D /* StringModifierTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8C342026BCEF7900CA606D /* StringModifierTutorial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,7 +144,6 @@
 		CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialPageViewController.xib; sourceTree = "<group>"; };
 		CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMaterialCompostCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentMaterialCompostCollectionViewCell.xib; sourceTree = "<group>"; };
-		CC8C342026BCEF7900CA606D /* StringModifierTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModifierTutorial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +229,6 @@
 			children = (
 				9ABE350926B9B00600D9ECB9 /* MoistureCalculation.swift */,
 				9ABE350A26B9B00600D9ECB9 /* StringModifier.swift */,
-				CC8C342026BCEF7900CA606D /* StringModifierTutorial.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -569,7 +566,6 @@
 				9ABE351826B9B09600D9ECB9 /* Compost+CoreDataProperties.swift in Sources */,
 				78472AA526B53EBC0076E3D7 /* DashedLineView.swift in Sources */,
 				9ABE350F26B9B00F00D9ECB9 /* UIView+Ext.swift in Sources */,
-				CC8C342126BCEF7900CA606D /* StringModifierTutorial.swift in Sources */,
 				9ABE350826B9AFC100D9ECB9 /* Material.swift in Sources */,
 				9ABE350626B9AFC100D9ECB9 /* WasteMaterialTutorial.swift in Sources */,
 				78472AA326B53EA10076E3D7 /* CustomTableViewCell.swift in Sources */,

@@ -59,7 +59,6 @@ class ContentTutorialViewController: UIViewController {
         
         contentTutorialTableView.dataSource = self
         contentTutorialTableView.delegate = self
-        
         seperateData()
     }
     
@@ -120,7 +119,6 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentTutorialTableView.dequeueReusableCell(withIdentifier: "contentTableVIew", for: indexPath) as! ContentTableViewCell
-        cell.CollectionViewTutorial.tag = indexPath.section
         cell.CollectionViewTutorial.reloadData()
         return cell
     }
@@ -128,25 +126,78 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     func numberOfSections(in tableView: UITableView) -> Int {
         return ContentList.count
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ContentList[section].sectionType
-    }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 61.0
+        if section == 0 {
+            return 100
+        } else if section == 1{
+            return 50
+        } else {
+            return 50
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 238
     }
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = #colorLiteral(red: 0.9528475404, green: 0.953006804, blue: 0.9528264403, alpha: 1)
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return getHeaderSectionTable(section: section, material: nil)
+        }
+        else if section == 1 {
+            return getHeaderSectionTable(section: section, material: nil)
+        } else {
+            return getHeaderSectionTable(section: section, material: nil)
+        }
     }
     
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        view.tintColor = #colorLiteral(red: 0.9528475404, green: 0.953006804, blue: 0.9528264403, alpha: 1)
-    }
     
+    
+    private func getHeaderSectionTable(section: Int, material: Material?) -> UIView {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 10, width: 350, height: 30))
+        headerView.autoresizesSubviews = true
+        headerView.backgroundColor = #colorLiteral(red: 0.9528475404, green: 0.953006804, blue: 0.9528264403, alpha: 1)
+        if section == 0 {
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 15, width: 350, height: headerView.frame.height)
+            label.text = "Disarankan untuk kompos"
+            
+            //how to make header programatically tableview
+            label.numberOfLines = 1
+            label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            headerView.addSubview(label)
+            
+            let label2 = UILabel()
+            label2.frame = CGRect.init(x: 0, y: 35, width: 350, height: headerView.frame.height + 50)
+            label2.text = "Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein."
+            label2.numberOfLines = 2
+//            label2.textColor = UIColor(red: 0.19, green: 0.59, blue: 0.403, alpha: 1.0)
+//            label.isUserInteractionEnabled = true
+//            label2.isUserInteractionEnabled = true
+            label2.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            return headerView
+        }
+        else if section == 1 {
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 0, width: 350, height: headerView.frame.height + 100)
+            label.text = "Bahan Cokelat adalah bahan yang kaya akan karbon atau karbohidrat."
+            label.numberOfLines = 2
+            label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            headerView.addSubview(label)
+            return headerView
+        } else {
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 0, width: 350, height: 50)
+            label.text = "Tidak disarankan untuk kompos"
+            label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            headerView.addSubview(label)
+            return headerView
+        }
+        
+    }
 }

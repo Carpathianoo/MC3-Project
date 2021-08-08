@@ -73,10 +73,10 @@
                     <rect key="frame" x="20" y="320" width="350" height="488"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkh-yq-i5A">
-                            <rect key="frame" x="0.0" y="16" width="350" height="448"/>
+                            <rect key="frame" x="0.0" y="16" width="350" height="472"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETG-DM-j5b">
-                                    <rect key="frame" x="18" y="0.0" width="314" height="0.0"/>
+                                    <rect key="frame" x="18" y="0.0" width="314" height="472"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -84,16 +84,17 @@
                             </subviews>
                             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
+                                <constraint firstItem="ETG-DM-j5b" firstAttribute="height" secondItem="xkh-yq-i5A" secondAttribute="height" id="B7y-ih-Wyo"/>
                                 <constraint firstItem="ETG-DM-j5b" firstAttribute="top" secondItem="xkh-yq-i5A" secondAttribute="top" id="FMm-DE-LoK"/>
                                 <constraint firstItem="ETG-DM-j5b" firstAttribute="leading" secondItem="xkh-yq-i5A" secondAttribute="leading" constant="18" id="Hmj-Zq-Bd9"/>
                                 <constraint firstItem="ETG-DM-j5b" firstAttribute="centerX" secondItem="xkh-yq-i5A" secondAttribute="centerX" id="Pde-td-SaS"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OiE-MW-dpj" customClass="TableViewCell">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OiE-MW-dpj" customClass="TableViewCell">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="541" id="PIi-Jc-VGJ"/>
+                                <constraint firstAttribute="height" constant="500" id="PIi-Jc-VGJ"/>
                             </constraints>
                         </tableView>
                     </subviews>
@@ -104,8 +105,8 @@
                         <constraint firstItem="xkh-yq-i5A" firstAttribute="leading" secondItem="zl0-0B-PX2" secondAttribute="leading" id="I9J-pN-fu7"/>
                         <constraint firstItem="xkh-yq-i5A" firstAttribute="top" secondItem="zl0-0B-PX2" secondAttribute="top" constant="16" id="L6X-j7-td2"/>
                         <constraint firstItem="OiE-MW-dpj" firstAttribute="leading" secondItem="zl0-0B-PX2" secondAttribute="leading" id="phS-aN-H0C"/>
+                        <constraint firstAttribute="bottom" secondItem="xkh-yq-i5A" secondAttribute="bottom" id="spW-Je-D6c"/>
                         <constraint firstAttribute="trailing" secondItem="OiE-MW-dpj" secondAttribute="trailing" id="xXt-vG-Nla"/>
-                        <constraint firstItem="xkh-yq-i5A" firstAttribute="centerY" secondItem="zl0-0B-PX2" secondAttribute="centerY" constant="-4" id="xt1-wB-FH5"/>
                     </constraints>
                 </view>
             </subviews>
