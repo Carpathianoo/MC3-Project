@@ -199,7 +199,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
             guard let unwrappedDate = p.date else{return Process()}
             
             if Calendar.current.dateComponents([.day], from: unwrappedDate, to: today).day! < 3 {
-                if p.isDone == true{
+                if p.isDone == true && p.detail != "Panen"{
                     return processes[Int(p.identifier)]
                 }
                 return p

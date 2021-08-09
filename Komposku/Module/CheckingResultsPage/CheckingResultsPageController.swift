@@ -150,6 +150,7 @@ extension CheckingResultsPageController: SelesaiButtonDelegate{
         let controller = DoneCheckingViewController()
         guard let unwrappedLatestProcess = latestProcess else {return}
         CoreDataManager.shared.updateProcessStatus(process: unwrappedLatestProcess)
+        print(latestProcess)
              navigationController?.pushViewController(controller, animated: true)
     }
        
