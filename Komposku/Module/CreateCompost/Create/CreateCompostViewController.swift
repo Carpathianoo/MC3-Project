@@ -462,7 +462,7 @@ extension CreateCompostViewController {
         guard let name = cell.profileTextField.text, let image = image else {
             return
         }
-        sharedInstance.createCompost(name: name, photo: image.pngData()!, moisture: moisturePercentage)
+        sharedInstance.createCompost(name: name, photo: image.jpegData(compressionQuality: 1)!.base64EncodedString(), moisture: moisturePercentage)
         
         scheduleNotification(sharedInstance)
     }

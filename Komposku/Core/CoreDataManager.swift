@@ -43,7 +43,7 @@ class CoreDataManager{
         }
     }
     
-    func createCompost(name: String, photo: Data, moisture: Double){
+    func createCompost(name: String, photo: String, moisture: Double){
         let compostsCount = getAllCompost().count
         let compost = Compost(context: viewContext)
         let processes = createProcess(compost: compost)
@@ -91,7 +91,9 @@ class CoreDataManager{
                 
             
             process.date = Calendar.current.date(byAdding: .day, value: 3*(i+1), to: Date())
-            
+            if i == 0 {
+                compost.latestProcess = process
+            }
             processArr.insert(process)
         }
         
@@ -141,6 +143,16 @@ class CoreDataManager{
     //update process kalo udah selesai
     func updateProcessStatus(process: Process){
         process.isDone = true
+        save()
+    }
+    
+    func updateLatestProcess(compost: Compost, latest: Process){
+        let processes = getAllProcess(from: compost)
+        if latest.detail == "Panen"{
+            compost.latestProcess = processes.last
+        }else{
+            compost.latestProcess = processes[Int(latest.identifier)]
+        }
         save()
     }
 }

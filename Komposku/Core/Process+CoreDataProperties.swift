@@ -16,7 +16,6 @@ extension Process {
         return NSFetchRequest<Process>(entityName: "Process")
     }
 
-    @NSManaged public var latestProcess: Process?
     @NSManaged public var date: Date?
     @NSManaged public var detail: String?
     @NSManaged public var identifier: Int64

@@ -70,7 +70,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
             secondLine.isHidden = true
             tutorialBtnDown.isHidden = true
         }
-        
+//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "complist", moisture: 54.2)
         dataCollection = CoreDataManager.shared.getAllCompost()
         
         tutorialBtnTop.layer.cornerRadius = 10
@@ -107,10 +107,16 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         let cell = compostList.dequeueReusableCell(withIdentifier: "CompostListCell", for: indexPath) as! CompostTableViewCell
         cell.selectionStyle = .none
         cell.compostTitle.text = dataCollection[indexPath.row].name
-        let newImage = UIImage(data:dataCollection[indexPath.row].photo!, scale: 1)
+        guard let unwrappedPhoto = dataCollection[indexPath.row].photo else {return cell}
+//        guard let decodedData = Data(base64Encoded: unwrappedPhoto) else {return cell}
+        guard let unwrappedLatestProcess = dataCollection[indexPath.row].latestProcess else{return cell}
+        
+//        let newImage = UIImage(data: decodedData)
+        let newImage = UIImage(named: dataCollection[indexPath.row].photo!)
         cell.compostImage.image = newImage
-//        cell.nextStep.text = dataCollection[indexPath.row].
-        cell.estimasiPanen.text = "\(dataCollection[indexPath.row].estimated_date!)"
+        
+        cell.nextStep.text = unwrappedLatestProcess.detail
+        cell.estimasiPanen.text = calculateLatestProcessDate(latest: unwrappedLatestProcess)
         return cell
         
     }
@@ -157,4 +163,31 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func calculateLatestProcessDate(latest: Process) -> String{
+        guard let unwrappedDate = latest.date else {return ""}
+        guard let unwrappedCompost = latest.compost else {return ""}
+        if latest.isDone == true{
+            return "Selesai"
+        }else if Calendar.current.isDateInToday(unwrappedDate){
+            return "Hari ini"
+        }else{
+            var dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: unwrappedDate).day! + 1
+            if dateDiff < 0{
+                let upcomingProcess = getUpcomingProcess(compost: unwrappedCompost)
+                dateDiff = Calendar.current.dateComponents([.day], from: Date(), to: upcomingProcess.date!).day! + 1
+            }
+            return String(dateDiff) + " hari lagi"
+        }
+    }
+    
+    func getUpcomingProcess(compost: Compost) -> Process{
+        let processes = CoreDataManager.shared.getAllProcess(from: compost)
+        for p in processes{
+            guard let unwrappedDate = p.date else{return Process()}
+            if Calendar.current.isDateInTomorrow(unwrappedDate){
+                return p
+            }
+        }
+        return processes[processes.count-1]
+    }
 }

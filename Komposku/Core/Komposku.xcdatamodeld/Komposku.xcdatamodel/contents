@@ -3,10 +3,10 @@
     <entity name="Compost" representedClassName="Compost" syncable="YES">
         <attribute name="estimated_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="latestProcess" optional="YES" attributeType="Transformable" customClassName="Process"/>
         <attribute name="moisture" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="photo" optional="YES" attributeType="Binary"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <relationship name="latestProcess" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process"/>
         <relationship name="process" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Process" inverseName="compost" inverseEntity="Process"/>
     </entity>
     <entity name="Process" representedClassName=".Process" syncable="YES">
