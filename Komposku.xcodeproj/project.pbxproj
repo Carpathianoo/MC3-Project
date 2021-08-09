@@ -57,6 +57,14 @@
 		9ABE354126B9B0A400D9ECB9 /* DetailMaterialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE353026B9B0A400D9ECB9 /* DetailMaterialTableViewCell.xib */; };
 		9ABE354226B9B0A400D9ECB9 /* ListBahanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE353226B9B0A400D9ECB9 /* ListBahanTableViewCell.swift */; };
 		9ABE354326B9B0A400D9ECB9 /* ListBahanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE353326B9B0A400D9ECB9 /* ListBahanTableViewCell.xib */; };
+		C62BC62926BDAAF200D3E4EB /* CheckingResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62BC61F26BDAAF200D3E4EB /* CheckingResultsCell.xib */; };
+		C62BC62A26BDAAF200D3E4EB /* CheckingResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BC62026BDAAF200D3E4EB /* CheckingResultsCell.swift */; };
+		C62BC62B26BDAAF200D3E4EB /* SolutionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62BC62226BDAAF200D3E4EB /* SolutionHeaderCell.xib */; };
+		C62BC62C26BDAAF200D3E4EB /* SolutionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BC62326BDAAF200D3E4EB /* SolutionHeaderCell.swift */; };
+		C62BC62D26BDAAF200D3E4EB /* CheckingResultsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BC62426BDAAF200D3E4EB /* CheckingResultsPageController.swift */; };
+		C62BC62E26BDAAF200D3E4EB /* SelesaiButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62BC62626BDAAF200D3E4EB /* SelesaiButton.xib */; };
+		C62BC62F26BDAAF200D3E4EB /* SelesaiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BC62726BDAAF200D3E4EB /* SelesaiButton.swift */; };
+		C62BC63026BDAAF200D3E4EB /* CheckingResultsPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62BC62826BDAAF200D3E4EB /* CheckingResultsPageController.xib */; };
 		C645E02126AE59D800888F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02026AE59D800888F63 /* AppDelegate.swift */; };
 		C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645E02226AE59D800888F63 /* SceneDelegate.swift */; };
 		C645E02B26AE59D800888F63 /* Komposku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C645E02926AE59D800888F63 /* Komposku.xcdatamodeld */; };
@@ -115,6 +123,14 @@
 		9ABE353026B9B0A400D9ECB9 /* DetailMaterialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMaterialTableViewCell.xib; sourceTree = "<group>"; };
 		9ABE353226B9B0A400D9ECB9 /* ListBahanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBahanTableViewCell.swift; sourceTree = "<group>"; };
 		9ABE353326B9B0A400D9ECB9 /* ListBahanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListBahanTableViewCell.xib; sourceTree = "<group>"; };
+		C62BC61F26BDAAF200D3E4EB /* CheckingResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckingResultsCell.xib; sourceTree = "<group>"; };
+		C62BC62026BDAAF200D3E4EB /* CheckingResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckingResultsCell.swift; sourceTree = "<group>"; };
+		C62BC62226BDAAF200D3E4EB /* SolutionHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SolutionHeaderCell.xib; sourceTree = "<group>"; };
+		C62BC62326BDAAF200D3E4EB /* SolutionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionHeaderCell.swift; sourceTree = "<group>"; };
+		C62BC62426BDAAF200D3E4EB /* CheckingResultsPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckingResultsPageController.swift; sourceTree = "<group>"; };
+		C62BC62626BDAAF200D3E4EB /* SelesaiButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelesaiButton.xib; sourceTree = "<group>"; };
+		C62BC62726BDAAF200D3E4EB /* SelesaiButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelesaiButton.swift; sourceTree = "<group>"; };
+		C62BC62826BDAAF200D3E4EB /* CheckingResultsPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckingResultsPageController.xib; sourceTree = "<group>"; };
 		C645E01D26AE59D800888F63 /* Komposku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komposku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C645E02026AE59D800888F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C645E02226AE59D800888F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -337,6 +353,45 @@
 			path = "Static Data";
 			sourceTree = "<group>";
 		};
+		C62BC61D26BDAAF200D3E4EB /* CheckingResultsPage */ = {
+			isa = PBXGroup;
+			children = (
+				C62BC62426BDAAF200D3E4EB /* CheckingResultsPageController.swift */,
+				C62BC62826BDAAF200D3E4EB /* CheckingResultsPageController.xib */,
+				C62BC61E26BDAAF200D3E4EB /* CheckingResultsCell */,
+				C62BC62526BDAAF200D3E4EB /* SelesaiButtonCell */,
+				C62BC62126BDAAF200D3E4EB /* SolutionHeader */,
+			);
+			path = CheckingResultsPage;
+			sourceTree = "<group>";
+		};
+		C62BC61E26BDAAF200D3E4EB /* CheckingResultsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C62BC61F26BDAAF200D3E4EB /* CheckingResultsCell.xib */,
+				C62BC62026BDAAF200D3E4EB /* CheckingResultsCell.swift */,
+			);
+			path = CheckingResultsCell;
+			sourceTree = "<group>";
+		};
+		C62BC62126BDAAF200D3E4EB /* SolutionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				C62BC62226BDAAF200D3E4EB /* SolutionHeaderCell.xib */,
+				C62BC62326BDAAF200D3E4EB /* SolutionHeaderCell.swift */,
+			);
+			path = SolutionHeader;
+			sourceTree = "<group>";
+		};
+		C62BC62526BDAAF200D3E4EB /* SelesaiButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				C62BC62626BDAAF200D3E4EB /* SelesaiButton.xib */,
+				C62BC62726BDAAF200D3E4EB /* SelesaiButton.swift */,
+			);
+			path = SelesaiButtonCell;
+			sourceTree = "<group>";
+		};
 		C645E01426AE59D800888F63 = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +424,7 @@
 		C6C9CBE826AE7D0800D2BECE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C62BC61D26BDAAF200D3E4EB /* CheckingResultsPage */,
 				782A792126BB782100B31493 /* Notification */,
 				9ABE351B26B9B0A400D9ECB9 /* CreateCompost */,
 				78472A9F26B53E630076E3D7 /* ReusableView */,
@@ -478,8 +534,11 @@
 				9ABE354326B9B0A400D9ECB9 /* ListBahanTableViewCell.xib in Resources */,
 				9ABE353E26B9B0A400D9ECB9 /* CreateCompostViewController.xib in Resources */,
 				C645E03026AE59D900888F63 /* LaunchScreen.storyboard in Resources */,
+				C62BC63026BDAAF200D3E4EB /* CheckingResultsPageController.xib in Resources */,
+				C62BC62E26BDAAF200D3E4EB /* SelesaiButton.xib in Resources */,
 				78FEC0F126AF12290034CFC1 /* CompostController.xib in Resources */,
 				9ABE353B26B9B0A400D9ECB9 /* ProfileTableViewCell.xib in Resources */,
+				C62BC62B26BDAAF200D3E4EB /* SolutionHeaderCell.xib in Resources */,
 				78472AB126B540810076E3D7 /* ProcessTableViewCell.xib in Resources */,
 				78472A9526B53A540076E3D7 /* ConditionViewController.xib in Resources */,
 				C645E02D26AE59D900888F63 /* Assets.xcassets in Resources */,
@@ -487,6 +546,7 @@
 				9ABE354126B9B0A400D9ECB9 /* DetailMaterialTableViewCell.xib in Resources */,
 				78472A9A26B53A760076E3D7 /* ConditionTableViewCell.xib in Resources */,
 				9ABE353426B9B0A400D9ECB9 /* CreateButtonTableViewCell.xib in Resources */,
+				C62BC62926BDAAF200D3E4EB /* CheckingResultsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +558,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABE353C26B9B0A400D9ECB9 /* TotalItemTableViewCell.swift in Sources */,
+				C62BC62D26BDAAF200D3E4EB /* CheckingResultsPageController.swift in Sources */,
 				9ABE353526B9B0A400D9ECB9 /* CreateButtonTableViewCell.swift in Sources */,
+				C62BC62A26BDAAF200D3E4EB /* CheckingResultsCell.swift in Sources */,
 				78472A9926B53A760076E3D7 /* ConditionTableViewCell.swift in Sources */,
 				9ABE351A26B9B09600D9ECB9 /* Process+CoreDataClass.swift in Sources */,
 				9ABE350526B9AFC100D9ECB9 /* Tutorial.swift in Sources */,
@@ -520,7 +582,9 @@
 				9ABE351826B9B09600D9ECB9 /* Compost+CoreDataProperties.swift in Sources */,
 				78472AA526B53EBC0076E3D7 /* DashedLineView.swift in Sources */,
 				9ABE350F26B9B00F00D9ECB9 /* UIView+Ext.swift in Sources */,
+				C62BC62C26BDAAF200D3E4EB /* SolutionHeaderCell.swift in Sources */,
 				9ABE350826B9AFC100D9ECB9 /* Material.swift in Sources */,
+				C62BC62F26BDAAF200D3E4EB /* SelesaiButton.swift in Sources */,
 				9ABE350626B9AFC100D9ECB9 /* WasteMaterialTutorial.swift in Sources */,
 				78472AA326B53EA10076E3D7 /* CustomTableViewCell.swift in Sources */,
 				9ABE350226B9AFC100D9ECB9 /* Solution.swift in Sources */,
