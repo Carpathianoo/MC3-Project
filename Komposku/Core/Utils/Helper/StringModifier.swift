@@ -82,7 +82,7 @@ class StringModifier {
         
         let string = NSMutableAttributedString(string: "")
         let firstAttributes = [NSAttributedString.Key.foregroundColor: color1, NSAttributedString.Key.font: UIFont.systemFont(ofSize:15), NSAttributedString.Key.paragraphStyle: paragraphStyle]
-        let secondAttributes = [NSAttributedString.Key.foregroundColor: color2, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
+        let secondAttributes = [NSAttributedString.Key.foregroundColor: color2, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.paragraphStyle: paragraphStyle]
         for i in 0..<sentence.count {
             if i % 2 == 0 {
                 let strings = NSAttributedString(string: sentence[i], attributes: firstAttributes)
