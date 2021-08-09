@@ -103,9 +103,11 @@ class CreateCompostViewController: UIViewController {
     
     @objc func editHijauMaterialTapped() {
         editMaterial(section: 0, material: dataHijau)
+        self.checkAllFilled()
     }
     @objc func editCoklatMaterialTapped() {
         editMaterial(section: 1, material: dataCoklat)
+        self.checkAllFilled()
     }
     
     
@@ -344,6 +346,7 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
             case .authorized:
                 DispatchQueue.main.async {
                     self.presentCamera()
+                    self.checkAllFilled()
                 }
             case .restricted, .denied:
                 self.dismiss(animated: true, completion: nil)
@@ -356,6 +359,7 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
                 guard granted else { return}
                 DispatchQueue.main.async {
                     self?.presentLibrary()
+                    
                 }
             }
         }))
@@ -387,6 +391,7 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
         cell.image = selectedImage
         cell.profileImage.contentMode = .scaleAspectFill
         self.image = selectedImage
+        self.checkAllFilled()
         
     }
 
@@ -433,12 +438,10 @@ extension CreateCompostViewController {
     }
     
     private func checkAllFilled(){
-        guard let cell = createTableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? ProfileTableViewCell else {
-            return
-        }
-        print("statustext", textFieldStatus)
-        if self.textFieldStatus == true, moisturePercentage > 50, moisturePercentage < 60 {
+        if self.textFieldStatus == true, image != nil, moisturePercentage > 50, moisturePercentage < 60 {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
     
@@ -470,8 +473,8 @@ extension CreateCompostViewController {
                     self.dataCoklat = newMaterial
                 }
             }
-            self.checkAllFilled()
             self.createTableView.reloadData()
+            self.checkAllFilled()
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
