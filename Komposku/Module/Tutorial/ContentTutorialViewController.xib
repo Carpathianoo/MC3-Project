@@ -79,9 +79,8 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="ftX-Gr-PJP" firstAttribute="centerX" secondItem="SIR-G7-r9X" secondAttribute="centerX" id="1eO-YD-05G"/>
                                         <constraint firstItem="ftX-Gr-PJP" firstAttribute="centerX" secondItem="SIR-G7-r9X" secondAttribute="centerX" id="H93-UD-HvL"/>
-                                        <constraint firstItem="ftX-Gr-PJP" firstAttribute="leading" secondItem="SIR-G7-r9X" secondAttribute="leading" id="VjN-5h-8va"/>
+                                        <constraint firstItem="ftX-Gr-PJP" firstAttribute="leading" secondItem="SIR-G7-r9X" secondAttribute="leading" id="Trn-0B-dBA"/>
                                         <constraint firstAttribute="height" constant="214" id="dtO-6Y-9eD"/>
                                         <constraint firstItem="ftX-Gr-PJP" firstAttribute="centerY" secondItem="SIR-G7-r9X" secondAttribute="centerY" id="g6M-MP-SzY"/>
                                     </constraints>
@@ -103,9 +102,10 @@
                                         <constraint firstItem="ETG-DM-j5b" firstAttribute="top" secondItem="xkh-yq-i5A" secondAttribute="top" constant="26" id="wvX-N6-u7l"/>
                                     </constraints>
                                 </view>
-                                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OiE-MW-dpj" customClass="TableViewCell">
-                                    <rect key="frame" x="20" y="231" width="350" height="488"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OiE-MW-dpj" customClass="TableViewCell">
+                                    <rect key="frame" x="20" y="231" width="350" height="657"/>
                                     <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="488"/>
                                     <color key="separatorColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="sectionIndexTrackingBackgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -118,7 +118,7 @@
                                 <constraint firstItem="SIR-G7-r9X" firstAttribute="top" secondItem="zl0-0B-PX2" secondAttribute="top" constant="-8" id="FEV-8g-mK3"/>
                                 <constraint firstItem="SIR-G7-r9X" firstAttribute="centerX" secondItem="zl0-0B-PX2" secondAttribute="centerX" constant="195" id="NZn-jW-9qf"/>
                                 <constraint firstAttribute="trailing" secondItem="xkh-yq-i5A" secondAttribute="trailing" constant="-370" id="Oaq-8J-MPs"/>
-                                <constraint firstAttribute="bottom" secondItem="OiE-MW-dpj" secondAttribute="bottom" constant="169" id="S1u-AB-40I"/>
+                                <constraint firstAttribute="bottom" secondItem="OiE-MW-dpj" secondAttribute="bottom" id="S1u-AB-40I"/>
                                 <constraint firstAttribute="trailing" secondItem="SIR-G7-r9X" secondAttribute="trailing" constant="-390" id="VCf-W2-fCw"/>
                                 <constraint firstItem="xkh-yq-i5A" firstAttribute="leading" secondItem="zl0-0B-PX2" secondAttribute="leading" constant="20" id="YIF-Vi-Daz"/>
                                 <constraint firstItem="OiE-MW-dpj" firstAttribute="top" secondItem="zl0-0B-PX2" secondAttribute="top" constant="231" id="Yr2-rM-Mq0"/>

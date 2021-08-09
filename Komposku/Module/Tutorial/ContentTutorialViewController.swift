@@ -53,7 +53,7 @@ class ContentTutorialViewController: UIViewController {
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
-        imageViewContent.layer.cornerRadius = 40
+        //imageViewContent.layer.cornerRadius = 40
         
         setData()
         
@@ -86,10 +86,12 @@ class ContentTutorialViewController: UIViewController {
         if index == 1 {
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
             descContentLabel.font = descContentLabel.font.withSize(17)
-        }else{
+        }else if index == 2 {
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
             descContentLabel.font = descContentLabel.font.withSize(17)
             //descContentLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        }else{
+            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: [" "], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
         }
         
     }
