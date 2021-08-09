@@ -31,6 +31,7 @@ class ContentTutorialViewController: UIViewController {
     @IBOutlet weak var contentTutorialTableView: UITableView!
     @IBOutlet weak var titleViewTutorial: UIView!
     @IBOutlet weak var backgroundViewLabel: UIView!
+    @IBOutlet weak var imageViewContent: UIView!
     
     var tutorial: Tutorial?
     let listTableTutorial = tutorialData
@@ -47,10 +48,12 @@ class ContentTutorialViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        titleViewTutorial.clipsToBounds = true
-        titleViewTutorial.layer.cornerRadius = 40
+        //titleViewTutorial.clipsToBounds = true
+        //titleViewTutorial.layer.cornerRadius = 40
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
+        imageViewContent.clipsToBounds = true
+        imageViewContent.layer.cornerRadius = 40
         
         setData()
         
@@ -81,11 +84,12 @@ class ContentTutorialViewController: UIViewController {
         
         
         if index == 1 {
-            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
-            descContentLabel.font = descContentLabel.font.withSize(15)
+            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+            descContentLabel.font = descContentLabel.font.withSize(17)
         }else{
-            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n\n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
-            descContentLabel.font = descContentLabel.font.withSize(14)
+            descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+            descContentLabel.font = descContentLabel.font.withSize(17)
+            //descContentLabel.font = UIFont.boldSystemFont(ofSize: 17)
         }
         
     }
@@ -100,6 +104,7 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentTutorialTableView.dequeueReusableCell(withIdentifier: "contentTableVIew", for: indexPath) as! ContentTableViewCell
+        cell.CollectionViewTutorial.tag = indexPath.section
         cell.CollectionViewTutorial.reloadData()
         return cell
     }
@@ -134,13 +139,6 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        view.tintColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        view.tintColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
-    }
     
     private func getHeaderSectionTable(section: Int, material: Tutorial?) -> UIView {
         var height = 0
