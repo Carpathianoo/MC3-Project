@@ -26,6 +26,7 @@ class ListBahanViewController: UIViewController, UIScrollViewDelegate {
         }
         setupView()
         // Do any additional setup after loading the view.
+        overrideUserInterfaceStyle = .light
     }
     
     func setupView() {
