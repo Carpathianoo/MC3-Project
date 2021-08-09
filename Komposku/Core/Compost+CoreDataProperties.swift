@@ -22,7 +22,6 @@ extension Compost {
     @NSManaged public var name: String?
     @NSManaged public var photo: String?
     @NSManaged public var process: NSSet?
-    @NSManaged public var latestProcess: Process?
 
 }
 

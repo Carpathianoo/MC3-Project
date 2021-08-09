@@ -6,7 +6,6 @@
         <attribute name="moisture" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="String"/>
-        <relationship name="latestProcess" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process"/>
         <relationship name="process" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Process" inverseName="compost" inverseEntity="Process"/>
     </entity>
     <entity name="Process" representedClassName=".Process" syncable="YES">
@@ -17,7 +16,7 @@
         <relationship name="compost" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Compost" inverseName="process" inverseEntity="Compost"/>
     </entity>
     <elements>
-        <element name="Compost" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Compost" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="Process" positionX="-54" positionY="45" width="128" height="104"/>
     </elements>
 </model>

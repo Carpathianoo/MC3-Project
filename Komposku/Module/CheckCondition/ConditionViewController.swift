@@ -27,7 +27,6 @@ class ConditionViewController: UIViewController {
                 
                 CoreDataManager.shared.updateProcessStatus(process: process!)
                 
-                CoreDataManager.shared.updateLatestProcess(compost: unwrappedCompost, latest: unwrappedProcess)
                 vc.process = process
                 navigationController?.pushViewController(vc, animated: true)
             }else{
@@ -44,9 +43,7 @@ class ConditionViewController: UIViewController {
     
     @IBAction func harvestCompost(_ sender: Any) {
         guard let unwrappedProcess = process else{return}
-        guard let unwrappedCompost = process?.compost else {return}
         CoreDataManager.shared.updateProcessStatus(process: unwrappedProcess)
-        CoreDataManager.shared.updateLatestProcess(compost: unwrappedCompost, latest: unwrappedProcess)
         navigationController?.popToRootViewController(animated: true)
     }
     @IBOutlet weak var upperBtn: UIButton!
@@ -93,6 +90,8 @@ class ConditionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         setupBtn()
         

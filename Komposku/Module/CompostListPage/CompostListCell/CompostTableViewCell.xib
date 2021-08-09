@@ -20,10 +20,11 @@
                         <rect key="frame" x="20" y="8" width="374" height="138"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-1P-fQQ" customClass="LabelPadding2" customModule="Komposku" customModuleProvider="target">
-                                <rect key="frame" x="136.33333333333337" y="61" width="179.66666666666663" height="22"/>
+                                <rect key="frame" x="136.33333333333334" y="61" width="76" height="22"/>
                                 <color key="backgroundColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Pat-L6-dOY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="QXc-3y-6Bd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +83,6 @@
                             <constraint firstItem="pPr-xq-qcU" firstAttribute="top" secondItem="g6a-uC-0kL" secondAttribute="top" constant="14" id="khV-CO-IhE"/>
                             <constraint firstItem="rhu-m1-Kao" firstAttribute="leading" secondItem="pPr-xq-qcU" secondAttribute="trailing" constant="16" id="q3s-Az-pyI"/>
                             <constraint firstAttribute="trailing" secondItem="A6N-JN-QgD" secondAttribute="trailing" constant="126" id="ruJ-6r-M0N"/>
-                            <constraint firstAttribute="trailing" secondItem="sQu-1P-fQQ" secondAttribute="trailing" constant="58" id="yUS-Rt-ch1"/>
                         </constraints>
                     </view>
                 </subviews>

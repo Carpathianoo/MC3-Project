@@ -149,9 +149,7 @@ extension CheckingResultsPageController: SelesaiButtonDelegate{
     func goToDoneChecking(){
         let controller = DoneCheckingViewController()
         guard let unwrappedLatestProcess = latestProcess else {return}
-        guard let unwrappedCompost = unwrappedLatestProcess.compost else {return}
         CoreDataManager.shared.updateProcessStatus(process: unwrappedLatestProcess)
-        CoreDataManager.shared.updateLatestProcess(compost: unwrappedCompost, latest: unwrappedLatestProcess)
              navigationController?.pushViewController(controller, animated: true)
     }
        
