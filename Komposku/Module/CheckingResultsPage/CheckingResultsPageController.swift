@@ -17,14 +17,15 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
     var solutionCollection: [Solution] = Seeder.seedSolution()
     var uncheckedCondition: [Int] = [0,1,2,3]
-
+    var latestProcess: Process?
+    var delegate: SelesaiButtonDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        delegate = self
         
         let checkingResultsNib = UINib(nibName: "CheckingResultsCell", bundle: nil)
         solutionList.register(checkingResultsNib, forCellReuseIdentifier: "CRCell")
@@ -143,10 +144,13 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
 }
 
-extension UIViewController: SelesaiButtonDelegate{
+extension CheckingResultsPageController: SelesaiButtonDelegate{
     
     func goToDoneChecking(){
         let controller = DoneCheckingViewController()
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        CoreDataManager.shared.updateProcessStatus(process: unwrappedLatestProcess)
+        print(latestProcess)
              navigationController?.pushViewController(controller, animated: true)
     }
        

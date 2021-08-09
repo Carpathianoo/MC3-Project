@@ -2,7 +2,7 @@
 //  Compost+CoreDataProperties.swift
 //  Komposku
 //
-//  Created by Ahmad Zaky on 30/07/21.
+//  Created by Clara Anggraini on 09/08/21.
 //
 //
 
