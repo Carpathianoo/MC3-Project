@@ -145,6 +145,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func goToTutorialPage(_ sender: Any) {
         //buat function pindah ke tutorial page disini
+        let controller = TutorialPageViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     

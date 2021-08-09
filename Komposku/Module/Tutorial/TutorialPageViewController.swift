@@ -48,4 +48,7 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
         tutorialTableView.dataSource = self
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
