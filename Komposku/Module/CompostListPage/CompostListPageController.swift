@@ -36,6 +36,9 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
 
     
     var dataCollection: [Compost] = []
+    var processCollection: [Process] = []
+    var latestProcess: Process?
+    var currDate = Date()
     
     @IBOutlet weak var compostList: UITableView!
     @IBOutlet weak var tutorialBtnTop: UIButton!
@@ -47,7 +50,11 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupData()
+       
+       
+
         setupView()
+        
     
         
         let nib = UINib(nibName: "CompostTableViewCell" , bundle: nil)
@@ -83,6 +90,9 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+      //  latestProcess = getLatestProcess()
+        
         dataCollection = CoreDataManager.shared.getAllCompost()
         compostList.reloadData()
         if dataCollection.isEmpty{
@@ -98,6 +108,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataCollection.count
@@ -109,8 +121,28 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         cell.compostTitle.text = dataCollection[indexPath.row].name
         let newImage = UIImage(data:dataCollection[indexPath.row].photo!, scale: 1)
         cell.compostImage.image = newImage
-//        cell.nextStep.text = dataCollection[indexPath.row].
-        cell.estimasiPanen.text = "\(dataCollection[indexPath.row].estimated_date!)"
+ //       cell.nextStep.text = processCollection[indexPath.row].detail
+ //       print(processCollection[indexPath.row].detail!)
+        
+        processCollection = CoreDataManager.shared.getAllProcess(from: dataCollection[indexPath.row])
+        latestProcess = getLatestProcess()
+        
+        cell.nextStep.text = "\(String(describing: latestProcess?.detail!))"
+        
+        
+        
+        let formatting = DateFormatter()
+        formatting.dateFormat = "yyyy-MM-dd"
+        
+        
+        if let d1 = formatting.date(from: formatting.string(from: currDate)),
+           let d2 = formatting.date(from: formatting.string(from: dataCollection[indexPath.row].estimated_date!))   {
+            
+            let components = Calendar.current.dateComponents([.day], from: d1, to: d2)
+            print(components.day!, "hari lagi")
+            cell.estimasiPanen.text = "\(components.day!) hari lagi"
+        }
+    
         return cell
         
     }
@@ -124,6 +156,45 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    
+    func dateDiff(from startDate: Date, to endDate: Date) -> DateComponents{
+        return Calendar.current.dateComponents([.day], from: startDate, to: endDate)
+    }
+    
+    
+    func getLatestProcess() -> Process{
+       currDate = Date()
+        if dateDiff(from: (processCollection.last?.date)!, to: currDate).day! + 1 >= 0{
+            print("first if")
+            return processCollection[processCollection.count-1]
+        }
+        for p in processCollection{
+            guard let unwrappedDate = p.date else{
+                print("second if")
+                return Process()
+                
+            }
+            
+            if dateDiff(from: unwrappedDate, to: currDate).day! < 3 {
+                print("third if")
+                return p
+            }
+            
+            
+            
+        }
+        return Process()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func goToTutorialPage(_ sender: Any) {
         //buat function pindah ke tutorial page disini
