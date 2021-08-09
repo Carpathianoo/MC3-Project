@@ -52,11 +52,15 @@ class Seeder{
         return conditions
     }
     
-    func seedSolution() -> [Solution]{
+    static func seedSolution() -> [Solution]{
         var solutions: [Solution] = []
+        
         solutions.append(Solution(name: "Basah dan berbau tengik", photo: "sol-1", subtitle: ["Tidak cukup udara", "Kandungan Nitrogen berlebih"], detail: ["Aduk campuran kompos", "Campur jerami, serbuk gergaji, atau serpihan kayu"]))
+        
         solutions.append(Solution(name: "Tidak menghasilkan panas", photo: "sol-2", subtitle: ["Tumpukan terlalu sedikit", "Tumpukan terlalu kering"], detail: ["Tambahkan bahan baru", "Tambah air ketika diaduk"]))
+        
         solutions.append(Solution(name: "Lembab dan wangi fermentasi tapai tetapi tidak menghasilkan panas", photo: "sol-3", subtitle: ["Kandungan Nitrogen kurang"], detail: ["Campur potongan rumput, sisa makanan"]))
+        
         solutions.append(Solution(name: "Tumpukan menarik perhatian binatang", photo: "sol-4", subtitle: ["Ditambahkan daging atau produk susu", "Sisa makanan kurang tertutup"], detail: ["Tambahkan bahan baru", "Tutup dengan bahan cokelat"]))
         
         return solutions
