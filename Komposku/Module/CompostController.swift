@@ -19,7 +19,7 @@ class CompostController: UIViewController {
 //        coreData.createCompost(name: "Compost 1", photo: "IMG-1", moisture: 59.3)
         
         //Get Composts
-        composts = CoreDataManager.shared.getAllCompost()
+//        composts = CoreDataManager.shared.getAllCompost()
         
         var pcs = ""
         

@@ -2,7 +2,7 @@
 //  Process+CoreDataClass.swift
 //  Komposku
 //
-//  Created by Clara Anggraini on 26/07/21.
+//  Created by Ahmad Zaky on 30/07/21.
 //
 //
 
