@@ -17,7 +17,7 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
     var solutionCollection: [Solution] = Seeder.seedSolution()
     var uncheckedCondition: [Int] = [0,1,2,3]
-
+    var latestProcess: Process?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,6 +147,10 @@ extension UIViewController: SelesaiButtonDelegate{
     
     func goToDoneChecking(){
         let controller = DoneCheckingViewController()
+        let resultVC = CheckingResultsPageController()
+        guard let unwrappedLatestProcess = resultVC.latestProcess else {return}
+        CoreDataManager.shared.updateProcessStatus(process: unwrappedLatestProcess)
+        
              navigationController?.pushViewController(controller, animated: true)
     }
        

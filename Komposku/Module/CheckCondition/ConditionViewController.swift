@@ -27,6 +27,7 @@ class ConditionViewController: UIViewController {
             }else{
                 let vc = CheckingResultsPageController()
                 vc.uncheckedCondition = uncheckedConditions
+                vc.latestProcess = process
                 //untuk button check condition kirim unchecked conditions ke result page
                 navigationController?.pushViewController(vc, animated: true)
             }
