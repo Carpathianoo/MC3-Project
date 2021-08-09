@@ -218,7 +218,7 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     
     func getLatestProcess() -> Process{
        today = Date()
-        if dateDiff(from: (processes.last?.date)!, to: today).day! > 0{
+        if Calendar.current.isDateInToday((processes.last?.date!)!) || dateDiff(from: (processes.last?.date)!, to: today).day! > 0{
             return processes[processes.count-1]
         }
         for p in processes{
