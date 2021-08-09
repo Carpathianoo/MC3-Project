@@ -82,8 +82,10 @@ class ContentTutorialViewController: UIViewController {
         
         if index == 1 {
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+            descContentLabel.font = descContentLabel.font.withSize(15)
         }else{
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n\n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
+            descContentLabel.font = descContentLabel.font.withSize(14)
         }
         
     }
@@ -132,9 +134,15 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        view.tintColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+    }
     
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+    }
     
-    private func getHeaderSectionTable(section: Int, material: Material?) -> UIView {
+    private func getHeaderSectionTable(section: Int, material: Tutorial?) -> UIView {
         var height = 0
         if section == 0 {
             height = 100
@@ -148,7 +156,7 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
         headerView.backgroundColor = #colorLiteral(red: 0.9528475404, green: 0.953006804, blue: 0.9528264403, alpha: 1)
         if section == 0 {
             let label = UILabel()
-            label.frame = CGRect.init(x: 5, y: 15, width: 250, height: headerView.frame.height / 2 - 10 )
+            label.frame = CGRect.init(x: 5, y: 10, width: 250, height: headerView.frame.height / 2 - 10 )
             label.text = "Disarankan untuk kompos"
             label.numberOfLines = 1
             label.textColor = .black
@@ -156,7 +164,7 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
             headerView.addSubview(label)
             let images = UIImageView()
             headerView.addSubview(images)
-            images.frame = CGRect.init(x: label.frame.width + 4, y: 27, width: 14, height: 14)
+            images.frame = CGRect.init(x: label.frame.width + 4, y: 22, width: 14, height: 14)
             images.image = UIImage(systemName: "checkmark")
             images.tintColor = .black
             
