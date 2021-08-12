@@ -24,8 +24,6 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        //show(ContentTutorialViewController, sender: self)
-        //let row = titleTutorial[indexPath.row]
         let controller = ContentTutorialViewController()
         controller.tutorial = listTutorial[indexPath.row]
         controller.index = indexPath.row
@@ -35,8 +33,6 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
     var titleTutorial:[String] = ["Material Kompos", "Cara Mengkompos", "Tips & Tricks"]
     var imageTutorial:[String] = ["Material Kompos","Cara Mengkompos","Tips and Tricks"]
 
-    
-    
     @IBOutlet weak var tutorialTableView: UITableView!
     
     override func viewDidLoad() {

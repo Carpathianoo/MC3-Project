@@ -14,8 +14,6 @@ class ContentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
         CollectionViewTutorial.dataSource = self
         CollectionViewTutorial.delegate = self
         
@@ -25,8 +23,6 @@ class ContentTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -49,8 +45,6 @@ extension ContentTableViewCell : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 78, height: 102)
-        
-//        return CGSize(width: ContentMaterialCompostCollectionViewCell.frame.width, height: ContentMaterialCompostCollectionViewCell.frame.height)
     }
 }
 

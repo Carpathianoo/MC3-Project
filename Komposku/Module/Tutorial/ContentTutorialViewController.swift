@@ -41,7 +41,6 @@ class ContentTutorialViewController: UIViewController {
     
     var index:Int?
     
-    
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -51,8 +50,6 @@ class ContentTutorialViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        //titleViewTutorial.clipsToBounds = true
-        //titleViewTutorial.layer.cornerRadius = 40
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
@@ -92,7 +89,6 @@ class ContentTutorialViewController: UIViewController {
         TitleContentTutorialLabel.text = tutorial.name
         ImageContentTutorial.image = UIImage(named: tutorial.photo)
         
-        
         if index == 1 {
             descContentLabel.isHidden = false
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. ","Pisahkan ", "bahan hijau dan coklat kemudian ", "potong menjadi bagian kecil.\n", "2. ", "Masukan ", "ke dalam wadah kompos satu lapis bahan hijau kemudian satu lapis bahan coklat, lakukan ", "selang-seling ", "sampai bahan habis.\n3. ", "Setelah 3 hari, ", "periksa ", "kompos sesuai kriteria yang telah di tentukan dalam aplikasi dan ", "lakukan pengadukan.\n4. ", "Lanjutkan mengaduk dan memantau kompos ", "setiap 3 hari.\n5. ", "Saring ", "semua bahan organik yang berukuran besar dan biarkan berumur ", "2 minggu ", "lagi sebelum kompos dapat digunakan."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
@@ -105,11 +101,8 @@ class ContentTutorialViewController: UIViewController {
         }else{
             descContentLabel.isHidden = true
         }
-        
     }
 }
-
-
 
 extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

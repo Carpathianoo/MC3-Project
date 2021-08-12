@@ -20,9 +20,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-jU-9EZ">
-                    <rect key="frame" x="19" y="62.000000000000014" width="18" height="12.333333333333314"/>
+                    <rect key="frame" x="19" y="54" width="18" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="18" id="0CE-5d-9Ee"/>
+                        <constraint firstAttribute="height" constant="24.666666666666671" id="0CE-5d-9Ee"/>
                         <constraint firstAttribute="width" constant="18" id="7qW-6E-uxV"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +49,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5M9-4I-Dbj" secondAttribute="trailing" constant="19" id="7J5-Ai-tGk"/>
                 <constraint firstItem="5M9-4I-Dbj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="EFv-Om-4qu"/>
                 <constraint firstItem="fCt-U5-SwA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="49" id="Ghg-9q-wAe"/>
-                <constraint firstItem="VGR-jU-9EZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="H2b-NL-al7"/>
+                <constraint firstItem="VGR-jU-9EZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="7" id="H2b-NL-al7"/>
                 <constraint firstItem="fCt-U5-SwA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="JbH-av-b9W"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5M9-4I-Dbj" secondAttribute="bottom" constant="16" id="UrO-UN-MTn"/>
                 <constraint firstItem="5M9-4I-Dbj" firstAttribute="top" secondItem="fCt-U5-SwA" secondAttribute="bottom" constant="16" id="eA2-ZW-ec2"/>

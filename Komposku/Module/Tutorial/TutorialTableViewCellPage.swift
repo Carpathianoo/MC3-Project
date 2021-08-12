@@ -24,7 +24,6 @@ class TutorialTableViewCellPage: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
     }
     
     func setupView() {
@@ -34,6 +33,4 @@ class TutorialTableViewCellPage: UITableViewCell {
         viewShadowTutorial.addGradientBackground(firstColor: .clear, secondColor: .black)
         viewShadowTutorial.layer.cornerRadius = 12
     }
-
-    
 }
