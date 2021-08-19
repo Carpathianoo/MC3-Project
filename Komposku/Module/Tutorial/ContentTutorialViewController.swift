@@ -24,8 +24,8 @@ let ContentList = [
 class ContentTutorialViewController: UIViewController {
     
     
-    @IBOutlet weak var TitleContentTutorialLabel: UILabel!
-    @IBOutlet weak var ImageContentTutorial: UIImageView!
+    @IBOutlet weak var titleContentTutorialLabel: UILabel!
+    @IBOutlet weak var imageContentTutorial: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var descContentLabel: UILabel!
     @IBOutlet weak var contentTutorialTableView: UITableView!
@@ -48,13 +48,14 @@ class ContentTutorialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
         labelContainerTutorial.layer.cornerRadius = 20
+        contentTutorialTableView.isScrollEnabled = false
         
         setData()
         
@@ -63,7 +64,7 @@ class ContentTutorialViewController: UIViewController {
         
         contentTutorialTableView.dataSource = self
         contentTutorialTableView.delegate = self
-        contentTutorialTableView.isScrollEnabled = true
+        //contentTutorialTableView.isScrollEnabled = true
         seperateData()
     }
     
@@ -86,8 +87,8 @@ class ContentTutorialViewController: UIViewController {
             return
         }
         
-        TitleContentTutorialLabel.text = tutorial.name
-        ImageContentTutorial.image = UIImage(named: tutorial.photo)
+        titleContentTutorialLabel.text = tutorial.name
+        imageContentTutorial.image = UIImage(named: tutorial.photo)
         
         if index == 1 {
             descContentLabel.isHidden = false
@@ -111,8 +112,8 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentTutorialTableView.dequeueReusableCell(withIdentifier: "contentTableVIew", for: indexPath) as! ContentTableViewCell
-        cell.CollectionViewTutorial.tag = indexPath.section
-        cell.CollectionViewTutorial.reloadData()
+        cell.collectionViewTutorial.tag = indexPath.section
+        cell.collectionViewTutorial.reloadData()
         return cell
     }
     

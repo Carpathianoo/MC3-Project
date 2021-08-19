@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Material Kompos.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Tips and Tricks@2x.png",
+      "filename" : "Material Kompos@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Material Kompos@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

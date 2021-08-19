@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Tips and Tricks.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Compost Lst Page@2x.png",
+      "filename" : "Tips and Tricks@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Tips and Tricks@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
