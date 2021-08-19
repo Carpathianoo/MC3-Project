@@ -86,6 +86,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         super.viewWillAppear(animated)
         dataCollection = CoreDataManager.shared.getAllCompost()
         compostList.reloadData()
+        self.navigationController?.navigationBar.isHidden = true
         if dataCollection.isEmpty{
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
@@ -121,9 +122,9 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         latestProcess = getLatestProcess(compost: dataCollection[indexPath.row])
         guard let unwrappedLatestProcess = latestProcess else {return cell}
         if latestProcess?.detail == "Panen" && latestProcess?.isDone == true{
-            cell.isUserInteractionEnabled = false
+            cell.textLabel?.isEnabled = false
             cell.nextStep.text = "Sudah dipanen"
-            
+            cell.isUserInteractionEnabled = false
         }else{
             cell.nextStep.text = unwrappedLatestProcess.detail
         }
@@ -145,6 +146,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func goToTutorialPage(_ sender: Any) {
         //buat function pindah ke tutorial page disini
+        let controller = TutorialPageViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     

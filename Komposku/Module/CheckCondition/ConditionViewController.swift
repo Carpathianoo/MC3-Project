@@ -72,12 +72,9 @@ class ConditionViewController: UIViewController {
             conditions = seeder.seedHarvestCondition()
             
             upperBtn.setTitle("Perpanjang", for: .normal)
-            upperBtn.isEnabled = false
+            upperBtn.setEnabledView()
             lowerBtn.isHidden = false
-            lowerBtn.setEnabledView()
-            
-            upperBtn.layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
-            upperBtn.tintColor = UIColor.darkGray
+            lowerBtn.setDisabledView()
             
         }else{
             titleLbl.text = "Cek kondisi kompos \"\(process?.compost?.name ?? "")\""
@@ -99,22 +96,19 @@ class ConditionViewController: UIViewController {
     }
     
     func checkSelected(){
-        var noneIsChecked = true
-            for c in conditions{
-                if c.isChecked == true{
-                    
-                    noneIsChecked = false
-                    
-                    upperBtn.setEnabledView()
-                    lowerBtn.setDisabledView()
-                    break
-                }
+        var countChecked = 0
+        for c in conditions{
+            if c.isChecked{
+                countChecked += 1
             }
-            
-            if noneIsChecked{
-                upperBtn.setDisabledView()
-                lowerBtn.setEnabledView()
-            }
+        }
+        if countChecked == 4{
+            upperBtn.setDisabledView()
+            lowerBtn.setEnabledView()
+        }else{
+            upperBtn.setEnabledView()
+            lowerBtn.setDisabledView()
+        }
     }
     
     func getUncheckedCondition()->[Int]{
