@@ -26,7 +26,10 @@ class ListBahanViewController: UIViewController, UIScrollViewDelegate {
         }
         setupView()
         // Do any additional setup after loading the view.
-        overrideUserInterfaceStyle = .light
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        let btnBack = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(didTapBackButtonList))
+        btnBack.tintColor = UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1)
+        self.navigationItem.leftBarButtonItem = btnBack
     }
     
     func setupView() {
@@ -64,6 +67,10 @@ class ListBahanViewController: UIViewController, UIScrollViewDelegate {
         }
         
         material?.total_material = total
+    }
+    
+    @objc func didTapBackButtonList(){
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
