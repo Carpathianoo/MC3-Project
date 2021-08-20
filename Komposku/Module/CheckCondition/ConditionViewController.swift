@@ -23,9 +23,8 @@ class ConditionViewController: UIViewController {
                 let vc = DoneCheckingViewController()
                 
                 guard let unwrappedProcess = process else {return}
-                guard let unwrappedCompost = unwrappedProcess.compost else {return}
                 
-                CoreDataManager.shared.updateProcessStatus(process: process!)
+                CoreDataManager.shared.updateProcessStatus(process: unwrappedProcess)
                 
                 vc.process = process
                 navigationController?.pushViewController(vc, animated: true)
@@ -33,7 +32,6 @@ class ConditionViewController: UIViewController {
                 let vc = CheckingResultsPageController()
                 vc.uncheckedCondition = uncheckedConditions
                 vc.latestProcess = process
-                //untuk button check condition kirim unchecked conditions ke result page
                 navigationController?.pushViewController(vc, animated: true)
             }
             
