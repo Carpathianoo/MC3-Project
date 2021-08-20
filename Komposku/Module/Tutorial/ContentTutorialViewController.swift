@@ -39,23 +39,37 @@ class ContentTutorialViewController: UIViewController {
     var tutorial: Tutorial?
     let listTableTutorial = tutorialData
     
+    
+    
     var index:Int?
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1)
+        //navigationController?.navigationBar.titleTextAttributes = "aaa"
+        //navigationController?.navigationItem.titleView = UIImageView(image: UIImage(named: "Back"))
+        //navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "kembali", style: .plain, target: nil, action: nil)
+        //navigationController?.title = "aaaaa"
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
         labelContainerTutorial.layer.cornerRadius = 20
-        contentTutorialTableView.isScrollEnabled = false
+        
+//        let swipeButtonLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(getter: self.backButton))
+//        self.backButton.addGestureRecognizer(swipeButtonLeft)
+        
+//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: <#T##Selector?#>)
+//        leftSwipe.direction = UISwipeGestureRecognizer.self
+//        self.view.addGestureRecognizer(leftSwipe)
         
         setData()
         
@@ -64,7 +78,7 @@ class ContentTutorialViewController: UIViewController {
         
         contentTutorialTableView.dataSource = self
         contentTutorialTableView.delegate = self
-        //contentTutorialTableView.isScrollEnabled = true
+        contentTutorialTableView.isScrollEnabled = false
         seperateData()
     }
     
