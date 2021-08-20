@@ -28,11 +28,15 @@ class CompostDetailViewController: UIViewController {
     
     @IBOutlet weak var navImageView: UIImageView!
     
-    @IBOutlet weak var backBtnBg: UILabel!
-    
     @IBAction func checkCondition(_ sender: Any) {
         let latestProcess = getLatestProcess()
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " ", style: .plain, target: nil, action: nil)
+
         
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.tintColor = UIColor.black
         let vc = ConditionViewController(nibName: "ConditionViewController", bundle: nil)
         vc.process = latestProcess
         vc.extendProcess = processes[5].isDone
@@ -55,7 +59,6 @@ class CompostDetailViewController: UIViewController {
     }
     
     fileprivate func setupNavigationBar() {
-        
         navImageView.layer.cornerRadius = 20
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -132,10 +135,6 @@ class CompostDetailViewController: UIViewController {
         viewWillAppear(true)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        backBtnBg.isHidden = true
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         today = Date()
         guard let unwrappedComp = compDetail else {return}
@@ -145,7 +144,8 @@ class CompostDetailViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.setNavigationBarHidden(false, animated: true)
         
-        backBtnBg.isHidden = false
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backBtn")?.withRenderingMode(.alwaysOriginal)
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backBtn")
         
         latestProcess = getLatestProcess()
         
