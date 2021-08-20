@@ -27,6 +27,7 @@ class CompostDetailViewController: UIViewController {
     @IBOutlet weak var checkBtn: CustomButton!
     
     @IBOutlet weak var navImageView: UIImageView!
+    
     @IBOutlet weak var backBtnBg: UILabel!
     
     @IBAction func checkCondition(_ sender: Any) {
@@ -34,7 +35,7 @@ class CompostDetailViewController: UIViewController {
         
         let vc = ConditionViewController(nibName: "ConditionViewController", bundle: nil)
         vc.process = latestProcess
-
+        vc.extendProcess = processes[5].isDone
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
@@ -110,8 +111,6 @@ class CompostDetailViewController: UIViewController {
         
         setupNavigationBar()
         
-//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "IMG-1", moisture: 54.6)
-//        compDetail = CoreDataManager.shared.getAllCompost().first
         guard let unwrappedCompDetail = compDetail else {return}
 
         setupView(unwrappedCompDetail)

@@ -52,6 +52,7 @@ class ConditionViewController: UIViewController {
     let seeder = Seeder()
     var conditions: [Condition] = []
     var process: Process?
+    var extendProcess: Bool = false
     
     fileprivate func setupTableView() {
         let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
@@ -91,7 +92,9 @@ class ConditionViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         setupBtn()
-        
+        if extendProcess == true{
+            conditions.remove(at: 1)
+        }
         setupTableView()
     }
     
@@ -117,7 +120,6 @@ class ConditionViewController: UIViewController {
         for c in conditions{
             if !c.isChecked{
                 uncheckedConditions.append(index)
-                print(uncheckedConditions)
             }
             index += 1
         }
