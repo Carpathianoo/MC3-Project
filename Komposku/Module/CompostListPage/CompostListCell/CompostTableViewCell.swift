@@ -14,7 +14,8 @@ import UIKit
 
     @IBOutlet weak var compostImage: UIImageView!
     @IBOutlet weak var compostTitle: UILabel!
-    @IBOutlet weak var nextStep: UILabel!
+   
+    @IBOutlet weak var nextStep: LabelPadding2!
     @IBOutlet weak var estimasiPanen: UILabel!
     
     @IBOutlet weak var cell: UIView!
@@ -56,7 +57,7 @@ import UIKit
     
 }
 
-@IBDesignable public class LabelPadding: UILabel{
+@IBDesignable public class LabelPadding2: UILabel{
     @IBInspectable var topPadding: CGFloat = 0
     @IBInspectable var bottomPadding: CGFloat = 0
     @IBInspectable var leftPadding: CGFloat = 0

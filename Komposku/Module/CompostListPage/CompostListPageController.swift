@@ -95,6 +95,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         
         dataCollection = CoreDataManager.shared.getAllCompost()
         compostList.reloadData()
+        self.navigationController?.navigationBar.isHidden = true
         if dataCollection.isEmpty{
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
@@ -119,30 +120,27 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         let cell = compostList.dequeueReusableCell(withIdentifier: "CompostListCell", for: indexPath) as! CompostTableViewCell
         cell.selectionStyle = .none
         cell.compostTitle.text = dataCollection[indexPath.row].name
-        let newImage = UIImage(data:dataCollection[indexPath.row].photo!, scale: 1)
-        cell.compostImage.image = newImage
- //       cell.nextStep.text = processCollection[indexPath.row].detail
- //       print(processCollection[indexPath.row].detail!)
-        
-        processCollection = CoreDataManager.shared.getAllProcess(from: dataCollection[indexPath.row])
-        latestProcess = getLatestProcess()
-        
-        cell.nextStep.text = "\(String(describing: latestProcess?.detail!))"
-        
-        
-        
-        let formatting = DateFormatter()
-        formatting.dateFormat = "yyyy-MM-dd"
-        
-        
-        if let d1 = formatting.date(from: formatting.string(from: currDate)),
-           let d2 = formatting.date(from: formatting.string(from: dataCollection[indexPath.row].estimated_date!))   {
-            
-            let components = Calendar.current.dateComponents([.day], from: d1, to: d2)
-            print(components.day!, "hari lagi")
-            cell.estimasiPanen.text = "\(components.day!) hari lagi"
+        guard let unwrappedPhoto = dataCollection[indexPath.row].photo else {return cell}
+        if unwrappedPhoto != "complist"{
+            guard let decodedData = Data(base64Encoded: unwrappedPhoto) else {return cell}
+            let newImage = UIImage(data: decodedData)
+            cell.compostImage.image = newImage
+        }else{
+            let newImage = UIImage(named: dataCollection[indexPath.row].photo!)
+            cell.compostImage.image = newImage
         }
-    
+        
+        latestProcess = getLatestProcess(compost: dataCollection[indexPath.row])
+        guard let unwrappedLatestProcess = latestProcess else {return cell}
+        if latestProcess?.detail == "Panen" && latestProcess?.isDone == true{
+            cell.textLabel?.isEnabled = false
+            cell.nextStep.text = "Sudah dipanen"
+            cell.isUserInteractionEnabled = false
+        }else{
+            cell.nextStep.text = unwrappedLatestProcess.detail
+        }
+
+        cell.estimasiPanen.text = calculateLatestProcessDate(latest: unwrappedLatestProcess)
         return cell
         
     }
@@ -198,6 +196,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func goToTutorialPage(_ sender: Any) {
         //buat function pindah ke tutorial page disini
+        let controller = TutorialPageViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     
@@ -228,4 +228,36 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func calculateLatestProcessDate(latest: Process) -> String{
+        let today = Date()
+        
+        if latest.isDone == true{
+            return "Selesai"
+        }else if Calendar.current.isDateInToday(latest.date!) || Calendar.current.dateComponents([.day], from: today, to: latest.date!).day! < 0 && Calendar.current.dateComponents([.day], from: today, to: latest.date!).day! > -3{
+            return "Hari ini"
+        }else{
+            let dateDiff = Calendar.current.dateComponents([.day], from: today, to: latest.date!).day! + 1
+            return "\(dateDiff) hari lagi"
+        }
+        
+    }
+    
+    func getLatestProcess(compost: Compost) -> Process{
+        let processes = CoreDataManager.shared.getAllProcess(from: compost)
+        let today = Date()
+        if Calendar.current.dateComponents([.day], from: (processes.last?.date)!, to: today).day! > 0{
+            return processes[processes.count-1]
+        }
+        for p in processes{
+            guard let unwrappedDate = p.date else{return Process()}
+            
+            if Calendar.current.dateComponents([.day], from: unwrappedDate, to: today).day! < 3 {
+                if p.isDone == true && p.detail != "Panen"{
+                    return processes[Int(p.identifier)]
+                }
+                return p
+            }
+        }
+        return processes[processes.count-1]
+    }
 }

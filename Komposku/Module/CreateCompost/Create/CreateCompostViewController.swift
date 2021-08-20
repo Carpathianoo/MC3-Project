@@ -33,7 +33,6 @@ class CreateCompostViewController: UIViewController {
     let readWriteStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
     let cameraAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
     
-    let notificationPublisher = NotificationPublisher()
     var isDismissed: (() -> ())?
     var textFieldStatus: Bool?
     
@@ -104,9 +103,11 @@ class CreateCompostViewController: UIViewController {
     
     @objc func editHijauMaterialTapped() {
         editMaterial(section: 0, material: dataHijau)
+        self.checkAllFilled()
     }
     @objc func editCoklatMaterialTapped() {
         editMaterial(section: 1, material: dataCoklat)
+        self.checkAllFilled()
     }
     
     
@@ -345,6 +346,7 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
             case .authorized:
                 DispatchQueue.main.async {
                     self.presentCamera()
+                    self.checkAllFilled()
                 }
             case .restricted, .denied:
                 self.dismiss(animated: true, completion: nil)
@@ -357,6 +359,7 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
                 guard granted else { return}
                 DispatchQueue.main.async {
                     self?.presentLibrary()
+                    
                 }
             }
         }))
@@ -388,6 +391,7 @@ extension CreateCompostViewController: UIImagePickerControllerDelegate, UINaviga
         cell.image = selectedImage
         cell.profileImage.contentMode = .scaleAspectFill
         self.image = selectedImage
+        self.checkAllFilled()
         
     }
 
@@ -433,25 +437,11 @@ extension CreateCompostViewController {
         }
     }
     
-    fileprivate func scheduleNotification(_ sharedInstance: CoreDataManager) {
-        let compost = sharedInstance.getAllCompost().last
-        let process = sharedInstance.getAllProcess(from: compost!)
-        for p in process{
-            if p.identifier != 1{
-                guard let unwrappedDetail = p.detail else {return}
-                guard let unwrappedDate = p.date else {return}
-                notificationPublisher.sendNotification(title: (compost?.name)!, body: "Waktunya \(unwrappedDetail) kompos kamu.", badge: 1, date: unwrappedDate)
-            }
-        }
-    }
-    
     private func checkAllFilled(){
-        guard let cell = createTableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? ProfileTableViewCell else {
-            return
-        }
-        print("statustext", textFieldStatus)
-        if self.textFieldStatus == true, moisturePercentage > 50, moisturePercentage < 60 {
+        if self.textFieldStatus == true, image != nil, moisturePercentage > 50, moisturePercentage < 60 {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
     
@@ -462,9 +452,7 @@ extension CreateCompostViewController {
         guard let name = cell.profileTextField.text, let image = image else {
             return
         }
-        sharedInstance.createCompost(name: name, photo: image.pngData()!, moisture: moisturePercentage)
-        
-        scheduleNotification(sharedInstance)
+        sharedInstance.createCompost(name: name, photo: image.jpegData(compressionQuality: 1)!.base64EncodedString(), moisture: moisturePercentage)
     }
 
     func editMaterial(section: Int, material: Material) {
@@ -485,8 +473,8 @@ extension CreateCompostViewController {
                     self.dataCoklat = newMaterial
                 }
             }
-            self.checkAllFilled()
             self.createTableView.reloadData()
+            self.checkAllFilled()
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }

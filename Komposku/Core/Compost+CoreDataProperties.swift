@@ -2,7 +2,7 @@
 //  Compost+CoreDataProperties.swift
 //  Komposku
 //
-//  Created by Ahmad Zaky on 30/07/21.
+//  Created by Clara Anggraini on 09/08/21.
 //
 //
 
@@ -20,7 +20,7 @@ extension Compost {
     @NSManaged public var identifier: Int64
     @NSManaged public var moisture: Double
     @NSManaged public var name: String?
-    @NSManaged public var photo: Data?
+    @NSManaged public var photo: String?
     @NSManaged public var process: NSSet?
 
 }

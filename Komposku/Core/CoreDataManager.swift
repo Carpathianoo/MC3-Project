@@ -19,6 +19,8 @@ class CoreDataManager{
     
     let persistentContainer: NSPersistentContainer
     
+    let notificationPublisher = NotificationPublisher()
+    
     var viewContext: NSManagedObjectContext{
         return persistentContainer.viewContext
     }
@@ -43,10 +45,10 @@ class CoreDataManager{
         }
     }
     
-    func createCompost(name: String, photo: Data, moisture: Double){
+    func createCompost(name: String, photo: String, moisture: Double){
         let compostsCount = getAllCompost().count
         let compost = Compost(context: viewContext)
-        let processes = createProcess(compost: compost)
+        let processes = createProcess(compost: compost, name: name)
         
         var index = 0
         if compostsCount != 0{
@@ -62,7 +64,7 @@ class CoreDataManager{
         save()
     }
     
-    func createProcess(compost: Compost)-> Set<Process>{
+    func createProcess(compost: Compost, name: String)-> Set<Process>{
         
         var processArr: Set<Process> = compost.process as! Set<Process>
         
@@ -88,14 +90,10 @@ class CoreDataManager{
             process.identifier = Int64(index)
             process.detail = detailArr[i]
             process.isDone = false
-                
-            
             process.date = Calendar.current.date(byAdding: .day, value: 3*(i+1), to: Date())
-            
+            notificationPublisher.sendNotification(title: name, body: process.detail!, badge: 1, date: process.date!)
             processArr.insert(process)
         }
-        
-        
         
         return processArr
     }
@@ -112,7 +110,7 @@ class CoreDataManager{
         processes.append(process)
         
         compost.process = NSSet(array: processes)
-        compost.process = createProcess(compost: compost) as NSSet
+        compost.process = createProcess(compost: compost, name: compost.name!) as NSSet
         compost.estimated_date = Calendar.current.date(byAdding: .day, value: 15, to: Date())
         save()
     }
@@ -142,5 +140,14 @@ class CoreDataManager{
     func updateProcessStatus(process: Process){
         process.isDone = true
         save()
+    }
+    
+    func scheduleNotification(process: Process) {
+        guard let unwrappedDetail = process.detail else {return}
+        guard let unwrappedDate = process.date else {return}
+        guard let unwrappedCompost = process.compost?.name else {return}
+        notificationPublisher.sendNotification(title: unwrappedCompost, body: "Waktunya \(unwrappedDetail) kompos kamu.", badge: 1, date: unwrappedDate)
+            
+        
     }
 }

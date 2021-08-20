@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="154" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8z0-ve-fOV">
-                    <rect key="frame" x="15" y="174" width="360" height="636"/>
+                    <rect key="frame" x="0.0" y="174" width="390" height="636"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-C3-k9d">
@@ -118,7 +118,7 @@
                 <constraint firstItem="f8O-HI-rJI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="58" id="egS-6A-Fye"/>
                 <constraint firstItem="f8O-HI-rJI" firstAttribute="top" secondItem="iGY-8o-wMK" secondAttribute="bottom" constant="66" id="fks-dM-Yj5"/>
                 <constraint firstItem="FVf-C3-k9d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iS1-Cw-Ety"/>
-                <constraint firstItem="8z0-ve-fOV" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-15" id="j0e-aY-ES2"/>
+                <constraint firstItem="8z0-ve-fOV" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="j0e-aY-ES2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Cz-rD-3mP" secondAttribute="trailing" constant="57" id="j22-42-KjP"/>
                 <constraint firstItem="8z0-ve-fOV" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="kMZ-ly-rDH"/>
                 <constraint firstItem="iGY-8o-wMK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="lky-26-NYI"/>
@@ -128,7 +128,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tg7-zN-GvM" secondAttribute="trailing" constant="16" id="tGG-l2-UCB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S5b-E8-lye" secondAttribute="trailing" constant="57" id="uUx-PG-kwm"/>
                 <constraint firstItem="5Cz-rD-3mP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="58" id="uYr-eC-O0U"/>
-                <constraint firstItem="8z0-ve-fOV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="vU6-3X-2bl"/>
+                <constraint firstItem="8z0-ve-fOV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vU6-3X-2bl"/>
             </constraints>
             <point key="canvasLocation" x="130.76923076923077" y="123.69668246445497"/>
         </view>

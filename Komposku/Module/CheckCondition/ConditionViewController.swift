@@ -21,14 +21,20 @@ class ConditionViewController: UIViewController {
             let uncheckedConditions = getUncheckedCondition()
             if uncheckedConditions.isEmpty{
                 let vc = DoneCheckingViewController()
+                
+                guard let unwrappedProcess = process else {return}
+                guard let unwrappedCompost = unwrappedProcess.compost else {return}
+                
                 CoreDataManager.shared.updateProcessStatus(process: process!)
+                
                 vc.process = process
                 navigationController?.pushViewController(vc, animated: true)
             }else{
-//                let vc = ResultViewController()
-//                vc.uncheckedConditions = uncheckedConditions
+                let vc = CheckingResultsPageController()
+                vc.uncheckedCondition = uncheckedConditions
+                vc.latestProcess = process
                 //untuk button check condition kirim unchecked conditions ke result page
-//                navigationController?.pushViewController(vc, animated: true)
+                navigationController?.pushViewController(vc, animated: true)
             }
             
         }
@@ -66,12 +72,9 @@ class ConditionViewController: UIViewController {
             conditions = seeder.seedHarvestCondition()
             
             upperBtn.setTitle("Perpanjang", for: .normal)
-            upperBtn.isEnabled = false
+            upperBtn.setEnabledView()
             lowerBtn.isHidden = false
-            lowerBtn.setEnabledView()
-            
-            upperBtn.layer.backgroundColor = UIColor(red: 214/255, green: 212/255, blue: 212/255, alpha: 1.0).cgColor
-            upperBtn.tintColor = UIColor.darkGray
+            lowerBtn.setDisabledView()
             
         }else{
             titleLbl.text = "Cek kondisi kompos \"\(process?.compost?.name ?? "")\""
@@ -85,28 +88,27 @@ class ConditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         setupBtn()
         
         setupTableView()
     }
     
     func checkSelected(){
-        var noneIsChecked = true
-            for c in conditions{
-                if c.isChecked == true{
-                    
-                    noneIsChecked = false
-                    
-                    upperBtn.setEnabledView()
-                    lowerBtn.setDisabledView()
-                    break
-                }
+        var countChecked = 0
+        for c in conditions{
+            if c.isChecked{
+                countChecked += 1
             }
-            
-            if noneIsChecked{
-                upperBtn.setDisabledView()
-                lowerBtn.setEnabledView()
-            }
+        }
+        if countChecked == 4{
+            upperBtn.setDisabledView()
+            lowerBtn.setEnabledView()
+        }else{
+            upperBtn.setEnabledView()
+            lowerBtn.setDisabledView()
+        }
     }
     
     func getUncheckedCondition()->[Int]{

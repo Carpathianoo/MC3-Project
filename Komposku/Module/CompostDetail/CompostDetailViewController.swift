@@ -114,7 +114,9 @@ class CompostDetailViewController: UIViewController {
         
         checkConditionView.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         
-        navImageView.image = UIImage(data:unwrappedCompDetail.photo!, scale: 1)
+        guard let unwrappedPhoto = compDetail?.photo else {return}
+        guard let decodedData = Data(base64Encoded: unwrappedPhoto) else {return}
+        navImageView.image = UIImage(data: decodedData)
     }
     
     override func viewDidLoad() {
@@ -124,10 +126,10 @@ class CompostDetailViewController: UIViewController {
         
         setupNavigationBar()
         
-        
-        
+//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "IMG-1", moisture: 54.6)
+//        compDetail = CoreDataManager.shared.getAllCompost().first
         guard let unwrappedCompDetail = compDetail else {return}
-        
+
         setupView(unwrappedCompDetail)
         
         setupTableView()
@@ -216,7 +218,7 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     
     func getLatestProcess() -> Process{
        today = Date()
-        if dateDiff(from: (processes.last?.date)!, to: today).day! + 1 >= 0{
+        if Calendar.current.isDateInToday((processes.last?.date!)!) || dateDiff(from: (processes.last?.date)!, to: today).day! > 0{
             return processes[processes.count-1]
         }
         for p in processes{
