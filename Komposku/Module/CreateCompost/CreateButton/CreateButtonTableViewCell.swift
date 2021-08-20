@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateButtonTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var addBahanButton: UIImageView!
     
     @IBOutlet weak var containerView: UIView!
@@ -20,10 +20,10 @@ class CreateButtonTableViewCell: UITableViewCell {
         setupView()
     }
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -60,7 +60,12 @@ class CreateButtonTableViewCell: UITableViewCell {
                 layer.fillColor = nil
                 layer.lineWidth = 2
                 layer.lineDashPattern = [8,6]
-            
+            case 1136:
+                layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: addBahanButton.bounds.width - 55, height: addBahanButton.bounds.height), cornerRadius: 8).cgPath
+                layer.strokeColor = UIColor(red: 0.19, green: 0.59, blue: 0.40, alpha: 1).cgColor
+                layer.fillColor = nil
+                layer.lineWidth = 2
+                layer.lineDashPattern = [8,6]
             default:
                 layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: addBahanButton.bounds.width + 12, height: addBahanButton.bounds.height), cornerRadius: 8).cgPath
                 layer.strokeColor = UIColor(red: 0.19, green: 0.59, blue: 0.40, alpha: 1).cgColor
@@ -71,6 +76,6 @@ class CreateButtonTableViewCell: UITableViewCell {
         }
         containerView.layer.addSublayer(layer)
     }
-
+    
     
 }
