@@ -30,10 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amw-rp-LCj">
-                                <rect key="frame" x="20" y="86" width="337" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RQD-Ez-8FI"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="100" width="337" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +41,7 @@
                             <constraint firstAttribute="trailing" secondItem="amw-rp-LCj" secondAttribute="trailing" constant="20" id="9i8-5z-SO3"/>
                             <constraint firstItem="kfv-Cn-9ew" firstAttribute="leading" secondItem="km9-3e-4fy" secondAttribute="leading" constant="20" id="HaS-Pb-Vbh"/>
                             <constraint firstItem="kfv-Cn-9ew" firstAttribute="top" secondItem="km9-3e-4fy" secondAttribute="top" constant="10" id="NYK-Ia-JwM"/>
+                            <constraint firstItem="amw-rp-LCj" firstAttribute="top" secondItem="kfv-Cn-9ew" secondAttribute="bottom" constant="10" id="R3k-LB-u7P"/>
                             <constraint firstAttribute="bottom" secondItem="amw-rp-LCj" secondAttribute="bottom" constant="10" id="YvE-ds-iUm"/>
                             <constraint firstAttribute="trailing" secondItem="kfv-Cn-9ew" secondAttribute="trailing" constant="20" id="hsF-iK-zkF"/>
                             <constraint firstItem="amw-rp-LCj" firstAttribute="leading" secondItem="km9-3e-4fy" secondAttribute="leading" constant="20" id="liV-Mt-23v"/>
