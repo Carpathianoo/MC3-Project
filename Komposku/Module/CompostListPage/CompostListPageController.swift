@@ -152,15 +152,13 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func goToCreateCompostPage(_ sender: Any) {
-        let controller = CreateCompostViewController()
-        let nav = UINavigationController(rootViewController: controller)
-        controller.textFieldStatus = false
-        controller.isDismissed = {
+        let controller = PreparationViewController()
+        controller.created = {
             self.dataCollection = CoreDataManager.shared.getAllCompost()
             self.compostList.reloadData()
             self.checkIfListEmpty()
         }
-        present(nav, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
         
     }
     
