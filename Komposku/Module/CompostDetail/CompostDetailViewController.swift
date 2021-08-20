@@ -27,12 +27,8 @@ class CompostDetailViewController: UIViewController {
     @IBOutlet weak var checkBtn: CustomButton!
     
     @IBOutlet weak var navImageView: UIImageView!
+    @IBOutlet weak var backBtnBg: UILabel!
     
-    @IBOutlet weak var backBtn: MoistureLabel!
-    
-    @IBAction func backToPrev(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
     @IBAction func checkCondition(_ sender: Any) {
         let latestProcess = getLatestProcess()
         
@@ -58,22 +54,10 @@ class CompostDetailViewController: UIViewController {
     }
     
     fileprivate func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: " ", style: .plain, target: nil, action: nil)
-
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
-        navigationController?.navigationBar.backItem?.backButtonTitle = " "
-        navigationController?.navigationBar.tintColor = UIColor.black
-        
-        backBtn.backgroundColor = UIColor.lightGray
         
         navImageView.layer.cornerRadius = 20
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
-        
         
     }
     
@@ -149,13 +133,20 @@ class CompostDetailViewController: UIViewController {
         viewWillAppear(true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        backBtnBg.isHidden = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         today = Date()
         guard let unwrappedComp = compDetail else {return}
         setupView(unwrappedComp)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        backBtnBg.isHidden = false
         
         latestProcess = getLatestProcess()
         
