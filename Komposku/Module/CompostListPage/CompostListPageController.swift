@@ -58,7 +58,14 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func setupView(){
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " ", style: .plain, target: nil, action: nil)
+
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named:"backBtn")?.withRenderingMode(.alwaysOriginal)
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backBtn")
+        
         overrideUserInterfaceStyle = .light
         if dataCollection.isEmpty == true{
             compostList.isHidden = true
@@ -140,6 +147,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         //buat code pindah ke detail compost page disini
         let vc = CompostDetailViewController()
         vc.compDetail = dataCollection[indexPath.row]
+        navigationController?.navigationBar.isHidden = false
         navigationController?.pushViewController(vc, animated: true)
         
     }
