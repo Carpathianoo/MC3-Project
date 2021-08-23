@@ -66,7 +66,7 @@ class CompostDetailViewController: UIViewController {
     }
     
     fileprivate func checkCompostMixInterval(_ latestProcess: Process) {
-        if latestProcess.detail == "Aduk dan cek kondisi"{
+        if latestProcess.detail == type.aduk.rawValue{
             if !latestProcess.isDone{
                 processReportLbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
                 processReportLbl.text = "Kamu belum melakukan pengadukan dan pengecekan kondisi."
@@ -78,7 +78,7 @@ class CompostDetailViewController: UIViewController {
                 processReportLbl.text = "Kamu telah menyelesaikan pengecekan."
                 checkBtn.isHidden = true
             }
-        }else if latestProcess.detail == "Perpanjang"{
+        }else if latestProcess.detail == type.perpanjang.rawValue{
             processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             processReportLbl.text = "Kamu telah melakukan perpanjangan kompos."
             checkBtn.isHidden = true
@@ -241,7 +241,7 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func checkCompostHarvestTime(_ latestProcess: Process){
-        if latestProcess.detail == "Panen"{
+        if latestProcess.detail == type.panen.rawValue{
             processReportLbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
             processReportLbl.text = "Kamu belum melakukan pengecekkan panen komposmu."
             checkBtn.isHidden = false

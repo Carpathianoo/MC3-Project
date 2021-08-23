@@ -7,13 +7,19 @@
 
 import UIKit
 
+enum type: String {
+    case panen = "Panen"
+    case perpanjang = "Perpanjang"
+    case aduk = "Aduk dan cek kondisi"
+}
+
 class ConditionViewController: UIViewController {
 
     @IBOutlet weak var conditionTV: UITableView!
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBAction func checkCondition(_ sender: Any) {
-        if upperBtn.titleLabel?.text == "Perpanjang"{
+        if upperBtn.titleLabel?.text == type.perpanjang.rawValue{
             CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Date())
             navigationController?.popViewController(animated: true)
             
@@ -66,7 +72,7 @@ class ConditionViewController: UIViewController {
     fileprivate func setupBtn() {
         upperBtn.layer.cornerRadius = 8
         lowerBtn.layer.cornerRadius = 8
-        if process?.detail == "Panen"{
+        if process?.detail == type.panen.rawValue{
             titleLbl.text = "Hari ini panen \"\(process?.compost?.name ?? "")\""
             conditions = seeder.seedHarvestCondition()
             
@@ -149,7 +155,7 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
             }else{
                 self.conditions[indexPath.section].isChecked = false
             }
-            if self.upperBtn.titleLabel?.text == "Perpanjang"{
+            if self.upperBtn.titleLabel?.text == type.perpanjang.rawValue{
                 self.checkSelected()
             }
         }
