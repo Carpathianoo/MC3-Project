@@ -49,27 +49,19 @@ class ContentTutorialViewController: UIViewController {
         
     }
     
+    @objc func didTapBackButtonTutorial(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: true)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1)
-        //navigationController?.navigationBar.titleTextAttributes = "aaa"
-        //navigationController?.navigationItem.titleView = UIImageView(image: UIImage(named: "Back"))
-        //navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "kembali", style: .plain, target: nil, action: nil)
-        //navigationController?.title = "aaaaa"
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
         labelContainerTutorial.layer.cornerRadius = 20
-        
-//        let swipeButtonLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(getter: self.backButton))
-//        self.backButton.addGestureRecognizer(swipeButtonLeft)
-        
-//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: <#T##Selector?#>)
-//        leftSwipe.direction = UISwipeGestureRecognizer.self
-//        self.view.addGestureRecognizer(leftSwipe)
         
         setData()
         
@@ -80,12 +72,25 @@ class ContentTutorialViewController: UIViewController {
         contentTutorialTableView.delegate = self
         contentTutorialTableView.isScrollEnabled = false
         seperateData()
+        setupView()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + self.contentTutorialTableView.frame.height / 2)
+        
+
     }
+    
+    func setupView() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        let btnBack = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(didTapBackButtonTutorial))
+        btnBack.tintColor = UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1)
+        self.navigationItem.leftBarButtonItem = btnBack
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+    }
+    
     
     func seperateData() {
         if tutorial?.name == "Material Kompos" {
@@ -112,7 +117,6 @@ class ContentTutorialViewController: UIViewController {
             descContentLabel.isHidden = false
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
             descContentLabel.font = descContentLabel.font.withSize(17)
-            //descContentLabel.font = UIFont.boldSystemFont(ofSize: 17)
         }else{
             descContentLabel.isHidden = true
         }
@@ -219,5 +223,11 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
             return headerView
         }
         
+    }
+}
+
+extension ContentTutorialViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

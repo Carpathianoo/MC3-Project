@@ -99,4 +99,8 @@ class Seeder{
         return conditions
     }
     
+//    func contentMaterialTutorial() -> <#return type#> {
+//        <#function body#>
+//    }
+    
 }
