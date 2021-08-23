@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "5-Nasi@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "5-Nasi@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
