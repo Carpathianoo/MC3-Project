@@ -84,6 +84,11 @@ class ConditionViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
