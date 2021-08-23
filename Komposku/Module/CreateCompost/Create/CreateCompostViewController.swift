@@ -50,7 +50,10 @@ class CreateCompostViewController: UIViewController {
     func setupView(){
         let tapDismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapDismiss))
         self.view.addGestureRecognizer(tapDismissKeyboard)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(createNewCompostTapped))
+        let btnBuat = UIBarButtonItem(title: "Buat", style: .plain, target: self, action: #selector(createNewCompostTapped))
+        let attribute = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)]
+        btnBuat.setTitleTextAttributes(attribute, for: .normal)
+        navigationItem.rightBarButtonItem = btnBuat
         navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(dismissCreateCompost))
         navigationItem.rightBarButtonItem?.tintColor = .black
