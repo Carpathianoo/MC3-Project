@@ -18,17 +18,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pengecekkan selesai!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enm-Nj-UJF">
-                    <rect key="frame" x="10" y="547" width="365" height="33.666666666666629"/>
+                    <rect key="frame" x="19" y="547" width="351" height="33.666666666666629"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7i-U8-V9U" customClass="CustomButton" customModule="Komposku" customModuleProvider="target">
-                    <rect key="frame" x="10" y="665.66666666666663" width="365" height="49"/>
+                    <rect key="frame" x="19" y="665.66666666666663" width="351" height="49"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="yrF-Lz-nL2"/>
-                        <constraint firstAttribute="width" constant="365" id="yv3-Qc-39H"/>
                     </constraints>
                     <state key="normal" title="Balik ke Kompos"/>
                     <connections>
@@ -36,7 +35,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lanjutkan kerja kerasmu untuk mengkompos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsW-1q-2fq">
-                    <rect key="frame" x="40" y="588.66666666666663" width="305" height="61"/>
+                    <rect key="frame" x="42" y="588.66666666666663" width="305" height="61"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="305" id="NZ4-SL-OUO"/>
@@ -46,33 +45,31 @@
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Done Checking-1" translatesAutoresizingMaskIntoConstraints="NO" id="xaF-LP-3fB">
-                    <rect key="frame" x="23" y="174" width="344" height="365"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="Done Checking-1" translatesAutoresizingMaskIntoConstraints="NO" id="xaF-LP-3fB">
+                    <rect key="frame" x="19" y="174" width="351" height="365"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="344" id="WpU-Og-eaz"/>
-                        <constraint firstAttribute="height" constant="365" id="hDT-HV-TW6"/>
-                    </constraints>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="lsW-1q-2fq" firstAttribute="top" secondItem="enm-Nj-UJF" secondAttribute="bottom" constant="8" id="1pe-rj-2HU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="enm-Nj-UJF" secondAttribute="trailing" constant="20" id="36N-xg-UeM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B7i-U8-V9U" secondAttribute="bottom" constant="95.329999999999998" id="9Cl-A5-r2K"/>
+                <constraint firstItem="B7i-U8-V9U" firstAttribute="trailing" secondItem="xaF-LP-3fB" secondAttribute="trailing" id="9NK-t5-sD6"/>
+                <constraint firstItem="enm-Nj-UJF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="DTB-96-iZL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xaF-LP-3fB" secondAttribute="trailing" constant="20" id="F40-Mw-G3M"/>
                 <constraint firstItem="enm-Nj-UJF" firstAttribute="centerX" secondItem="lsW-1q-2fq" secondAttribute="centerX" id="Nwm-52-6ik"/>
-                <constraint firstItem="xaF-LP-3fB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="T5u-e7-qfx"/>
+                <constraint firstItem="xaF-LP-3fB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="V9J-Ak-ssg"/>
                 <constraint firstItem="enm-Nj-UJF" firstAttribute="top" secondItem="xaF-LP-3fB" secondAttribute="bottom" constant="8" id="X1M-5X-qsw"/>
-                <constraint firstItem="enm-Nj-UJF" firstAttribute="trailing" secondItem="B7i-U8-V9U" secondAttribute="trailing" id="Yc7-om-MBb"/>
                 <constraint firstItem="xaF-LP-3fB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="130" id="fJ8-ZH-d2z"/>
-                <constraint firstItem="enm-Nj-UJF" firstAttribute="leading" secondItem="B7i-U8-V9U" secondAttribute="leading" id="lFL-iL-mhe"/>
-                <constraint firstItem="enm-Nj-UJF" firstAttribute="top" secondItem="xaF-LP-3fB" secondAttribute="bottom" constant="8" id="nMv-nP-XA3"/>
+                <constraint firstItem="B7i-U8-V9U" firstAttribute="leading" secondItem="xaF-LP-3fB" secondAttribute="leading" id="hMf-Yt-lBm"/>
                 <constraint firstItem="B7i-U8-V9U" firstAttribute="top" secondItem="lsW-1q-2fq" secondAttribute="bottom" constant="16" id="ncT-aJ-bK5"/>
-                <constraint firstItem="enm-Nj-UJF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="y0N-Iw-n8W"/>
             </constraints>
             <point key="canvasLocation" x="20" y="109"/>
         </view>
     </objects>
     <resources>
-        <image name="Done Checking-1" width="1063" height="1063"/>
+        <image name="Done Checking-1" width="255" height="255"/>
     </resources>
 </document>
