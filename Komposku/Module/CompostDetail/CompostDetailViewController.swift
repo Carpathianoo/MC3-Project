@@ -46,7 +46,7 @@ class CompostDetailViewController: UIViewController {
     
     var compDetail: Compost?
     var processes: [Process] = []
-    var latestProcess: Process?
+    var latestProcess = Process()
     var today = Date()
     
     fileprivate func setupTableView() {
@@ -56,6 +56,7 @@ class CompostDetailViewController: UIViewController {
         let compDetailNibCell = UINib(nibName: ProcessTableViewCell.identifier, bundle: nil)
         processTV.register(compDetailNibCell, forCellReuseIdentifier: ProcessTableViewCell.identifier)
         processTV.reloadData()
+        processTV.invalidateIntrinsicContentSize()
     }
     
     fileprivate func setupNavigationBar() {
@@ -122,11 +123,11 @@ class CompostDetailViewController: UIViewController {
         
         latestProcess = getLatestProcess()
         
-        checkCompostCreatedInterval(latestProcess!)
+        checkCompostCreatedInterval(latestProcess)
         
-        checkCompostMixInterval(latestProcess!)
+        checkCompostMixInterval(latestProcess)
         
-        checkCompostHarvestTime(latestProcess!)
+        checkCompostHarvestTime(latestProcess)
         
     }
     
@@ -149,11 +150,11 @@ class CompostDetailViewController: UIViewController {
         
         latestProcess = getLatestProcess()
         
-        checkCompostCreatedInterval(latestProcess!)
+        checkCompostCreatedInterval(latestProcess)
                 
-        checkCompostMixInterval(latestProcess!)
+        checkCompostMixInterval(latestProcess)
                 
-        checkCompostHarvestTime(latestProcess!)
+        checkCompostHarvestTime(latestProcess)
         
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
@@ -247,5 +248,10 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
             checkBtn.isHidden = false
             checkBtn.setTitle("Panen Kompos", for: .normal)
         }
+    }
+}
+extension UITableView{
+    open override var intrinsicContentSize: CGSize {
+        return contentSize
     }
 }
