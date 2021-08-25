@@ -209,6 +209,10 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
         return LineProcessView()
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+    }
+    
     func getLatestProcess() -> Process{
        today = Date()
         if Calendar.current.isDateInToday((processes.last?.date!)!) || dateDiff(from: (processes.last?.date)!, to: today).day! > 0{

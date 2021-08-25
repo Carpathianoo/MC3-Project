@@ -97,7 +97,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="20" sectionHeaderHeight="18" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2d-gy-84L">
-                                    <rect key="frame" x="16" y="447.33333333333331" width="358" height="235.66666666666669"/>
+                                    <rect key="frame" x="16" y="447.33333333333331" width="358" height="245.66666666666669"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <viewLayoutGuide key="contentLayoutGuide" id="w6s-xy-E9G"/>
@@ -144,9 +144,9 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="4aK-Mg-hvL" firstAttribute="top" secondItem="m2d-gy-84L" secondAttribute="bottom" id="4f2-4K-RZz"/>
+                                <constraint firstItem="4aK-Mg-hvL" firstAttribute="top" secondItem="m2d-gy-84L" secondAttribute="bottom" constant="-10" id="4f2-4K-RZz"/>
                                 <constraint firstItem="JtR-TT-QHf" firstAttribute="leading" secondItem="mM0-8U-nfL" secondAttribute="leading" id="4xv-3Y-yrT"/>
                                 <constraint firstItem="bqz-F5-w88" firstAttribute="leading" secondItem="lB9-Fv-SaE" secondAttribute="leading" id="7eq-1g-LbB"/>
                                 <constraint firstItem="VHd-UQ-gdo" firstAttribute="top" secondItem="lB9-Fv-SaE" secondAttribute="bottom" constant="8" id="BfF-4d-0y3"/>
@@ -207,9 +207,6 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
