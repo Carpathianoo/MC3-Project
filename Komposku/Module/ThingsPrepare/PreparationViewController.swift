@@ -25,7 +25,7 @@ class PreparationViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.navigationController?.navigationBar.barTintColor = .white
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     

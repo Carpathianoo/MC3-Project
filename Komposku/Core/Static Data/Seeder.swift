@@ -101,11 +101,11 @@ class Seeder{
     
     static func seedThingsToPrepare() -> [ThingsPrepare] {
         let preparation: [ThingsPrepare] = [
-            ThingsPrepare(image: "2-Potongan Rumput", title: "Pisahkan bahan hijau dan coklat"),
-            ThingsPrepare(image: "1-Sayur dan Buah", title: "Potong bahan berukuran besar menjadi bagian kecil"),
-            ThingsPrepare(image: nil, title: "Ukur bagian dengan menggunakan wadah yang sama"),
-            ThingsPrepare(image: nil, title: "Siapkan ember kompos beserta dengan penutupnya"),
-            ThingsPrepare(image: nil, title: "Masukkan bahan hijau dan cokelat ke ember kompos secara selang-seling")
+            ThingsPrepare(image: "Pisah bahan hijau & coklat", title: "Pisahkan bahan hijau dan coklat"),
+            ThingsPrepare(image: "potong jadi kecil", title: "Potong bahan berukuran besar menjadi bagian kecil"),
+            ThingsPrepare(image: "wadah", title: "Ukur bagian dengan menggunakan wadah yang sama"),
+            ThingsPrepare(image: "siapkan tempat kompos", title: "Siapkan ember kompos beserta dengan penutupnya"),
+            ThingsPrepare(image: "compost layer", title: "Masukkan bahan hijau dan cokelat ke ember kompos secara selang-seling")
         ]
         
         return preparation
