@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4q-5h-gOf">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="749"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="723"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panduan Mengompos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsE-DN-gSb">
                                     <rect key="frame" x="20" y="16" width="374" height="40"/>
@@ -51,7 +51,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="eQT-GZ-7dg">
-                                    <rect key="frame" x="128" y="643" width="158" height="22"/>
+                                    <rect key="frame" x="128" y="617" width="158" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="0kz-zE-0Vo"/>
                                     </constraints>
@@ -59,7 +59,7 @@
                                     <color key="currentPageIndicatorTintColor" red="0.19215686269999999" green="0.59215686270000001" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                 </pageControl>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeO-eA-h3p">
-                                    <rect key="frame" x="19" y="699" width="376" height="50"/>
+                                    <rect key="frame" x="19" y="673" width="376" height="50"/>
                                     <color key="backgroundColor" red="0.19215686269999999" green="0.59215686270000001" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="4a3-4Z-4TD"/>
@@ -79,7 +79,7 @@
                                 <constraint firstAttribute="bottom" secondItem="KeO-eA-h3p" secondAttribute="bottom" id="FL1-TW-RKS"/>
                                 <constraint firstItem="BN8-rn-GZD" firstAttribute="top" secondItem="ZsE-DN-gSb" secondAttribute="bottom" constant="43" id="KQ9-0A-OVl"/>
                                 <constraint firstItem="BN8-rn-GZD" firstAttribute="leading" secondItem="K4q-5h-gOf" secondAttribute="leading" id="QPw-RY-pnG"/>
-                                <constraint firstItem="eQT-GZ-7dg" firstAttribute="top" secondItem="BN8-rn-GZD" secondAttribute="bottom" constant="34" id="erg-sI-87S"/>
+                                <constraint firstItem="eQT-GZ-7dg" firstAttribute="top" secondItem="BN8-rn-GZD" secondAttribute="bottom" constant="8" id="erg-sI-87S"/>
                                 <constraint firstItem="eQT-GZ-7dg" firstAttribute="centerX" secondItem="K4q-5h-gOf" secondAttribute="centerX" id="kM9-Xi-urw"/>
                                 <constraint firstItem="KeO-eA-h3p" firstAttribute="top" secondItem="eQT-GZ-7dg" secondAttribute="bottom" constant="34" id="ndf-Qx-ScF"/>
                                 <constraint firstAttribute="trailing" secondItem="ZsE-DN-gSb" secondAttribute="trailing" constant="20" id="ulY-vL-MB6"/>

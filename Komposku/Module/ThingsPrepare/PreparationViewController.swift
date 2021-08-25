@@ -39,7 +39,6 @@ class PreparationViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         let btnBack = UIBarButtonItem(image: UIImage(named: "Vector")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(didTapBackButton))
         self.navigationItem.leftBarButtonItem = btnBack
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         btnSkip.layer.cornerRadius = 8
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -89,10 +88,4 @@ extension PreparationViewController: UICollectionViewDelegate, UICollectionViewD
         self.navigationController?.present(navVc, animated: true, completion: nil)
     }
     
-}
-
-extension PreparationViewController: UIGestureRecognizerDelegate{
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
 }
