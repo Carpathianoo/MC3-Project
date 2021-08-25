@@ -46,7 +46,7 @@ class Seeder{
     func seedCondition() -> [Condition]{
         var conditions: [Condition] = []
         conditions.append(Condition(desc: "Tidak basah dan berbau tengik", isChecked: false))
-        conditions.append(Condition(desc: "Menghasilkan panas", isChecked: false))
+        conditions.append(Condition(desc: "Kompos terasa hangat ( > 40℃)", isChecked: false))
         conditions.append(Condition(desc: "Lembab dan wangi fermentasi seperti tapai, dan menghasilkan panas", isChecked: false))
         conditions.append(Condition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
         return conditions
