@@ -46,7 +46,7 @@ class CompostDetailViewController: UIViewController {
     
     var compDetail: Compost?
     var processes: [Process] = []
-    var latestProcess = Process()
+    var latestProcess: Process?
     var today = Date()
     
     fileprivate func setupTableView() {
@@ -122,12 +122,12 @@ class CompostDetailViewController: UIViewController {
         setupTableView()
         
         latestProcess = getLatestProcess()
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        checkCompostCreatedInterval(unwrappedLatestProcess)
         
-        checkCompostCreatedInterval(latestProcess)
+        checkCompostMixInterval(unwrappedLatestProcess)
         
-        checkCompostMixInterval(latestProcess)
-        
-        checkCompostHarvestTime(latestProcess)
+        checkCompostHarvestTime(unwrappedLatestProcess)
         
     }
     
@@ -150,11 +150,13 @@ class CompostDetailViewController: UIViewController {
         
         latestProcess = getLatestProcess()
         
-        checkCompostCreatedInterval(latestProcess)
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        
+        checkCompostCreatedInterval(unwrappedLatestProcess)
                 
-        checkCompostMixInterval(latestProcess)
+        checkCompostMixInterval(unwrappedLatestProcess)
                 
-        checkCompostHarvestTime(latestProcess)
+        checkCompostHarvestTime(unwrappedLatestProcess)
         
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
