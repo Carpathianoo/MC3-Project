@@ -43,6 +43,8 @@ class ContentTutorialViewController: UIViewController {
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
         labelContainerTutorial.layer.cornerRadius = 20
+        //scrollView.heightAnchor = UIScrollView(height: 800)
+        scrollView.contentSize = CGSize(width: 390, height: 200)
         
         setData()
         
@@ -56,6 +58,12 @@ class ContentTutorialViewController: UIViewController {
         setupView()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
+    
+//    lazy var tutorialScrollView = UIScrollView = {
+//        let view = UIScrollView(frame: .zero)
+//        return view
+//    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
