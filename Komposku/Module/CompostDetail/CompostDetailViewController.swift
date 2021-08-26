@@ -56,12 +56,14 @@ class CompostDetailViewController: UIViewController {
         let compDetailNibCell = UINib(nibName: ProcessTableViewCell.identifier, bundle: nil)
         processTV.register(compDetailNibCell, forCellReuseIdentifier: ProcessTableViewCell.identifier)
         processTV.reloadData()
+        processTV.invalidateIntrinsicContentSize()
     }
     
     fileprivate func setupNavigationBar() {
         navImageView.layer.cornerRadius = 20
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        navImageView.accessibilityIgnoresInvertColors = true
         
     }
     
@@ -121,12 +123,12 @@ class CompostDetailViewController: UIViewController {
         setupTableView()
         
         latestProcess = getLatestProcess()
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        checkCompostCreatedInterval(unwrappedLatestProcess)
         
-        checkCompostCreatedInterval(latestProcess!)
+        checkCompostMixInterval(unwrappedLatestProcess)
         
-        checkCompostMixInterval(latestProcess!)
-        
-        checkCompostHarvestTime(latestProcess!)
+        checkCompostHarvestTime(unwrappedLatestProcess)
         
     }
     
@@ -149,11 +151,13 @@ class CompostDetailViewController: UIViewController {
         
         latestProcess = getLatestProcess()
         
-        checkCompostCreatedInterval(latestProcess!)
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        
+        checkCompostCreatedInterval(unwrappedLatestProcess)
                 
-        checkCompostMixInterval(latestProcess!)
+        checkCompostMixInterval(unwrappedLatestProcess)
                 
-        checkCompostHarvestTime(latestProcess!)
+        checkCompostHarvestTime(unwrappedLatestProcess)
         
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
@@ -206,6 +210,10 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
         return LineProcessView()
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+    }
+    
     func getLatestProcess() -> Process{
        today = Date()
         if Calendar.current.isDateInToday((processes.last?.date!)!) || dateDiff(from: (processes.last?.date)!, to: today).day! > 0{
@@ -247,5 +255,10 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
             checkBtn.isHidden = false
             checkBtn.setTitle("Panen Kompos", for: .normal)
         }
+    }
+}
+extension UITableView{
+    open override var intrinsicContentSize: CGSize {
+        return contentSize
     }
 }
