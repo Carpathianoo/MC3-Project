@@ -24,23 +24,22 @@ class ContentTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
 
 extension ContentTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ContentList[collectionViewTutorial.tag].contentImage.count
+        return contentList[collectionViewTutorial.tag].contentImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewTutorial.dequeueReusableCell(withReuseIdentifier: "contentCollectionCell", for: indexPath) as! ContentMaterialCompostCollectionViewCell
-        cell.imageContentMaterial.image = UIImage(named: ContentList[collectionViewTutorial.tag].contentImage[indexPath.row])
-        cell.labelContentMaterial.text = ContentList[collectionViewTutorial.tag].contentName[indexPath.row]
+        cell.imageContentMaterial.image = UIImage(named: contentList[collectionViewTutorial.tag].contentImage[indexPath.row])
+        cell.labelContentMaterial.text = contentList[collectionViewTutorial.tag].contentName[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("done \(ContentList[collectionViewTutorial.tag].contentName[indexPath.row])")
+        print("done \(contentList[collectionViewTutorial.tag].contentName[indexPath.row])")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -6,23 +6,7 @@
 //
 
 import UIKit
-
-let ContentList = [
-    ContentTutorial(sectionType: "Disarankan untuk kompos \n Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein.",
-                    contentImage: ["1-Sayur dan Buah","2-Potongan Rumput","3-Belukar","4-Ampas Kopi","5-Nasi","6-Sampah Dapur","7-Sampah Kebun","8-Cangkang Telur"],
-                    contentName: ["Sayur dan buah","Potongan rumput","Belukar","Ampas kopi","Nasi","Sampah dapur","Sampah kebun","Cangkang telur"]),
-    
-    ContentTutorial(sectionType: "Bahan Cokelat adalah bahan yang kaya akan karbon atau karbohidrat.",
-                    contentImage: ["9-Potongan Koran","10-Daun kering","11-Potongan kardus","12-Sekam : gabah","13-Serbuk gergaji","14-Tisu pengesat","15-Tisu Toilet","16-Daun"],
-                    contentName: ["Potongan Koran","Daun kering","Potongan kardus","Sekam / gabah","Serbuk gergaji","Tisu pengesat","Tisu Toilet","Daun"]),
-    
-    ContentTutorial(sectionType: "Tidak disarankan untuk kompos",
-                    contentImage: ["17-Sisa Daging atau Ikan","18 - Olahan Susu","19-Lemak atau Minyak","20-Kotoran Hewan","21-Tumbuhan Sakit","22-Tumbuhan Berpestisida"],
-                    contentName: ["Sisa Daging atau Ikan","Olahan Susu","Lemak atau Minyak","Kotoran Hewan","Tumbuhan Sakit","Tumbuhan Berpestisida"])
-]
-
 class ContentTutorialViewController: UIViewController {
-    
     
     @IBOutlet weak var titleContentTutorialLabel: UILabel!
     @IBOutlet weak var imageContentTutorial: UIImageView!
@@ -35,18 +19,15 @@ class ContentTutorialViewController: UIViewController {
     @IBOutlet weak var labelContainerTutorial: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tutorialStackView: UIStackView!
     
     var tutorial: Tutorial?
-    let listTableTutorial = tutorialData
-    
-    
-    
+    var collectionTutorial: CollectionTutorial?
     var index:Int?
+    let listTableTutorial = tutorialData
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        
-        
     }
     
     @objc func didTapBackButtonTutorial(){
@@ -79,8 +60,6 @@ class ContentTutorialViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + self.contentTutorialTableView.frame.height / 2)
-        
-
     }
     
     func setupView() {
@@ -95,6 +74,9 @@ class ContentTutorialViewController: UIViewController {
     func seperateData() {
         if tutorial?.name == "Material Kompos" {
             contentTutorialTableView.isHidden = false
+        }else if tutorial?.name == "Cara Mengkompos"{
+            contentTutorialTableView.isHidden = true
+            //tutorialStackView.heightAnchor = descContentLabel.heightAnchor + 10
         }else{
             contentTutorialTableView.isHidden = true
         }
@@ -136,7 +118,7 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return ContentList.count
+        return contentList.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -153,7 +135,6 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
         return 238
     }
     
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             return getHeaderSectionTable(section: section, material: nil)
@@ -164,7 +145,6 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
             return getHeaderSectionTable(section: section, material: nil)
         }
     }
-    
     
     private func getHeaderSectionTable(section: Int, material: Tutorial?) -> UIView {
         var height = 0

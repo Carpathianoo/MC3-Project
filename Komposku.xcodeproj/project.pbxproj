@@ -77,6 +77,7 @@
 		CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */; };
 		CC19FEBF26BB70B000FD04A5 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */; };
 		CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */; };
+		CC46573A26D6052100D9F9B4 /* CollectionTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC46573926D6052100D9F9B4 /* CollectionTutorial.swift */; };
 		CC7931E326B18A4F0005C58C /* TutorialTableViewCellPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */; };
 		CC7931E426B18A4F0005C58C /* TutorialTableViewCellPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */; };
 		CC7931E826B18B1C0005C58C /* ContentTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */; };
@@ -160,6 +161,7 @@
 		CC19FEBC26BB70B000FD04A5 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		CC19FEBD26BB70B000FD04A5 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
 		CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionCellData.swift; sourceTree = "<group>"; };
+		CC46573926D6052100D9F9B4 /* CollectionTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTutorial.swift; sourceTree = "<group>"; };
 		CC7931E126B18A4F0005C58C /* TutorialTableViewCellPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCellPage.swift; sourceTree = "<group>"; };
 		CC7931E226B18A4F0005C58C /* TutorialTableViewCellPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialTableViewCellPage.xib; sourceTree = "<group>"; };
 		CC7931E626B18B1C0005C58C /* ContentTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTutorialViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				9ABE34FB26B9AFC000D9ECB9 /* Solution.swift */,
 				9ABE34FE26B9AFC100D9ECB9 /* Tutorial.swift */,
 				9ABE34FF26B9AFC100D9ECB9 /* WasteMaterialTutorial.swift */,
+				CC46573926D6052100D9F9B4 /* CollectionTutorial.swift */,
 			);
 			path = "Static Data";
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				C65630DC26B26FD30043B325 /* CompostListPageController.swift in Sources */,
 				C645E02326AE59D800888F63 /* SceneDelegate.swift in Sources */,
 				78472AA726B53ED00076E3D7 /* LineProcessView.swift in Sources */,
+				CC46573A26D6052100D9F9B4 /* CollectionTutorial.swift in Sources */,
 				78472AB026B540810076E3D7 /* ProcessTableViewCell.swift in Sources */,
 				CC19FEC126BB74F400FD04A5 /* TutorialCollectionCellData.swift in Sources */,
 				CC19FEBE26BB70B000FD04A5 /* ContentTableViewCell.swift in Sources */,
