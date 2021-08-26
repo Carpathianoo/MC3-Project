@@ -63,6 +63,7 @@ class CompostDetailViewController: UIViewController {
         navImageView.layer.cornerRadius = 20
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        navImageView.accessibilityIgnoresInvertColors = true
         
     }
     

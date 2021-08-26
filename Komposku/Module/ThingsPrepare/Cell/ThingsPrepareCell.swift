@@ -23,6 +23,7 @@ class ThingsPrepareCell: UICollectionViewCell {
     }
     
     func UISetup(){
+        prepareImage.accessibilityIgnoresInvertColors = true
         
     }
     

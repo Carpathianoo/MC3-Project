@@ -58,6 +58,8 @@ class ContentTutorialViewController: UIViewController {
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
         labelContainerTutorial.layer.cornerRadius = 20
+        imageViewContent.accessibilityIgnoresInvertColors = true
+        ImageContentTutorial.accessibilityIgnoresInvertColors = true
         
         setData()
         
