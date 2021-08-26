@@ -32,9 +32,10 @@ class ListBahanViewController: UIViewController {
     
     func setupView() {
         self.navigationItem.setHidesBackButton(true, animated: true)
-        let btnBack = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(didTapBackButtonList))
-        btnBack.tintColor = UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1)
-        self.navigationItem.leftBarButtonItem = btnBack
+        let btnSimpan = UIBarButtonItem(title: "Simpan", style: .plain, target: self, action: #selector(didTapBackButtonList))
+        let attribute = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1)]
+        btnSimpan.setTitleTextAttributes(attribute, for: .normal)
+        self.navigationItem.rightBarButtonItem = btnSimpan
         let listBahanNib = UINib(nibName: "ListBahanTableViewCell", bundle: nil)
         let detailNib = UINib(nibName: "DetailMaterialTableViewCell", bundle: nil)
         listBahanTableView.register(listBahanNib, forCellReuseIdentifier: "listBahanCellIdentifier")
