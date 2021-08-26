@@ -23,7 +23,9 @@ class ThingsPrepareCell: UICollectionViewCell {
     }
     
     func UISetup(){
-        
+        let font = UIFont.systemFont(ofSize: 20)
+        prepareTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font)
+        prepareTitle.adjustsFontForContentSizeCategory = true
     }
     
 

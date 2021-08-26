@@ -40,6 +40,10 @@ class DetailMaterialTableViewCell: UITableViewCell {
         
         containerView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1)
         containerView.layer.cornerRadius = 20
-        
+        let font = UIFont.systemFont(ofSize: 20)
+        detailMaterial1.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font)
+        detailMaterial2.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font)
+        detailMaterial1.adjustsFontForContentSizeCategory = true
+        detailMaterial2.adjustsFontForContentSizeCategory = true
     }
 }
