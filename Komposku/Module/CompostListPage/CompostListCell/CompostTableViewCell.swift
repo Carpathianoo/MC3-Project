@@ -46,6 +46,7 @@ import UIKit
         
         compostImage.contentMode = .scaleAspectFill
         compostImage.layer.cornerRadius = 12
+        compostImage.accessibilityIgnoresInvertColors = true
 
         
     }
