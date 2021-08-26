@@ -21,6 +21,8 @@ import UIKit
     @IBOutlet weak var cell: UIView!
     @IBOutlet weak var underCell: UIView!
     
+    @IBOutlet weak var deleteBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

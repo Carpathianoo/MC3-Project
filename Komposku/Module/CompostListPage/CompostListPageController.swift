@@ -46,6 +46,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var firstLine: UILabel!
     @IBOutlet weak var secondLine: UILabel!
     @IBOutlet weak var tutorialBtnDown: UIButton!
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var selesaiBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +78,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         if dataCollection.isEmpty == true{
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
+            editBtn.isHidden = true
+            selesaiBtn.isHidden = true
         }else{
             compostList.isHidden = false
             tutorialBtnTop.isHidden = false
@@ -83,6 +87,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
             firstLine.isHidden = true
             secondLine.isHidden = true
             tutorialBtnDown.isHidden = true
+            editBtn.isHidden = false
+            
         }
         
         dataCollection = CoreDataManager.shared.getAllCompost()
@@ -106,6 +112,8 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         if dataCollection.isEmpty{
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
+            editBtn.isHidden = true
+            selesaiBtn.isHidden = true
         }else{
             compostList.isHidden = false
             tutorialBtnTop.isHidden = false
@@ -113,6 +121,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
             firstLine.isHidden = true
             secondLine.isHidden = true
             tutorialBtnDown.isHidden = true
+            editBtn.isHidden = false
         }
     }
     
@@ -196,10 +205,15 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     
     
+    @IBAction func editBtn(_ sender: Any) {
+        editBtn.isHidden = true
+        selesaiBtn.isHidden = false
+    }
     
-    
-    
-    
+    @IBAction func selesaiBtn(_ sender: Any) {
+        selesaiBtn.isHidden = true
+        editBtn.isHidden = false
+    }
     
     
     @IBAction func goToTutorialPage(_ sender: Any) {

@@ -11,10 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompostListPageController" customModule="Komposku" customModuleProvider="target">
             <connections>
+                <outlet property="EditBtn" destination="JC7-RN-gS4" id="Vgk-Wc-8sj"/>
                 <outlet property="compostList" destination="8z0-ve-fOV" id="f7g-Pn-jGe"/>
                 <outlet property="firstLine" destination="5Cz-rD-3mP" id="Chq-eD-f8l"/>
                 <outlet property="illustration" destination="f8O-HI-rJI" id="91J-us-71I"/>
                 <outlet property="secondLine" destination="S5b-E8-lye" id="Ebp-q9-2hU"/>
+                <outlet property="selesaiBtn" destination="Jdh-U5-X6T" id="W1Q-e3-SYu"/>
                 <outlet property="tutorialBtnDown" destination="7oq-h8-Qfz" id="Xt5-gQ-NrX"/>
                 <outlet property="tutorialBtnTop" destination="tg7-zN-GvM" id="4UY-Jj-ocf"/>
                 <outlet property="view" destination="iN0-l3-epB" id="lK9-Pf-mv2"/>
@@ -31,7 +33,35 @@
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-C3-k9d">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="172"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JC7-RN-gS4">
+                            <rect key="frame" x="16" y="63" width="30" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Edit">
+                                <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="editBtn:" destination="-1" eventType="touchUpInside" id="lpL-Qu-d7q"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdh-U5-X6T">
+                            <rect key="frame" x="16" y="63" width="55" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Selesai">
+                                <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="selesaiBtn:" destination="-1" eventType="touchUpInside" id="aI4-NA-fc4"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Jdh-U5-X6T" firstAttribute="top" secondItem="FVf-C3-k9d" secondAttribute="top" constant="63" id="7Ps-Pm-Yt4"/>
+                        <constraint firstItem="JC7-RN-gS4" firstAttribute="leading" secondItem="FVf-C3-k9d" secondAttribute="leading" constant="16" id="9uP-S4-iCj"/>
+                        <constraint firstItem="JC7-RN-gS4" firstAttribute="top" secondItem="FVf-C3-k9d" secondAttribute="top" constant="63" id="GEx-Ow-cNF"/>
+                        <constraint firstItem="Jdh-U5-X6T" firstAttribute="leading" secondItem="FVf-C3-k9d" secondAttribute="leading" constant="16" id="YLw-Gh-ZJZ"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSS-n5-ukV">
                     <rect key="frame" x="343" y="61" width="32" height="30"/>
@@ -39,9 +69,9 @@
                         <constraint firstAttribute="width" constant="32" id="6zj-VN-qCA"/>
                         <constraint firstAttribute="height" constant="31.329999999999998" id="EUJ-Op-bXm"/>
                     </constraints>
-                    <color key="tintColor" systemColor="labelColor"/>
+                    <color key="tintColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" backgroundImage="plus.circle" catalog="system">
-                        <color key="titleColor" systemColor="labelColor"/>
+                        <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="goToCreateCompostPage:" destination="-1" eventType="touchUpInside" id="DBm-PL-gVa"/>
@@ -64,7 +94,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Kompos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGY-8o-wMK">
-                    <rect key="frame" x="19.999999999999986" y="111.66666666666667" width="229.66666666666663" height="39.333333333333329"/>
+                    <rect key="frame" x="15.999999999999986" y="111.66666666666667" width="229.66666666666663" height="39.333333333333329"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -120,7 +150,7 @@
                 <constraint firstItem="FVf-C3-k9d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iS1-Cw-Ety"/>
                 <constraint firstItem="8z0-ve-fOV" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="j0e-aY-ES2"/>
                 <constraint firstItem="8z0-ve-fOV" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="kMZ-ly-rDH"/>
-                <constraint firstItem="iGY-8o-wMK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="lky-26-NYI"/>
+                <constraint firstItem="iGY-8o-wMK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="lky-26-NYI"/>
                 <constraint firstItem="5Cz-rD-3mP" firstAttribute="top" secondItem="f8O-HI-rJI" secondAttribute="bottom" constant="4" id="m3H-0Q-DXi"/>
                 <constraint firstItem="FVf-C3-k9d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ncU-c0-K89"/>
                 <constraint firstItem="5Cz-rD-3mP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ndT-7O-4PB"/>
@@ -138,9 +168,6 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
