@@ -24,9 +24,8 @@ class ThingsPrepareCell: UICollectionViewCell {
     
     func UISetup(){
         prepareImage.accessibilityIgnoresInvertColors = true
-        
-        let font = UIFont.systemFont(ofSize: 20)
-        prepareTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font)
+        let customFont = FontGuide()
+        prepareTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.title3regular)
         prepareTitle.adjustsFontForContentSizeCategory = true
     }
     

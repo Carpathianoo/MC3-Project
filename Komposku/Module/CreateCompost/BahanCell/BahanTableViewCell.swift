@@ -37,11 +37,11 @@ class BahanTableViewCell: UITableViewCell {
 
     func setupView(){
         viewContainer.dropShadowCell()
+        let customFont = FontGuide()
         viewContainer.layer.cornerRadius = 10
-        let font = UIFont.systemFont(ofSize: 17)
-        bahanTitle.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        bahanTitle.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.body)
         bahanTitle.adjustsFontForContentSizeCategory = true
-        bahanAmount.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        bahanAmount.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.body)
         bahanAmount.adjustsFontForContentSizeCategory = true
     }
     

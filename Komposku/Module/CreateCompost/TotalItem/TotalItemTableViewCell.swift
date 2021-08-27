@@ -38,10 +38,10 @@ class TotalItemTableViewCell: UITableViewCell {
     func setupView() {
         containerView.layer.cornerRadius = 10
         containerView.backgroundColor = UIColor(red: 0.84, green: 0.909, blue: 0.878, alpha: 1)
-        let font = UIFont.boldSystemFont(ofSize: 34)
-        amountItem.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        let customFont = FontGuide()
+        amountItem.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.largeTitle)
         amountItem.adjustsFontForContentSizeCategory = true
-        bagianLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        bagianLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.largeTitle)
         bagianLabel.adjustsFontForContentSizeCategory = true
     }
     

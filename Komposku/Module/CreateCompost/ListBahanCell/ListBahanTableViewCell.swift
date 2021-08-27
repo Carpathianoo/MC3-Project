@@ -47,10 +47,10 @@ class ListBahanTableViewCell: UITableViewCell {
         viewContainer.layer.cornerRadius = 10
         bahanStepper.layer.cornerRadius = 10
         bahanStepper.stepValue = 1
-        let font = UIFont.boldSystemFont(ofSize: 20)
-        let font2 = UIFont.systemFont(ofSize: 20)
-        bahanTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font)
-        jumlahBahan.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font2)
+        let customFont = FontGuide()
+        
+        bahanTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.title3)
+        jumlahBahan.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.title3regular)
         bahanTitle.adjustsFontForContentSizeCategory = true
         jumlahBahan.adjustsFontForContentSizeCategory = true
     }

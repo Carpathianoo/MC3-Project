@@ -85,12 +85,10 @@ class CreateCompostViewController: UIViewController {
     }
     
     func setupDynamicSize(){
-        let font = UIFont.systemFont(ofSize: 17)
-        let font2 = UIFont.boldSystemFont(ofSize: 22)
-        let font3 = UIFont.boldSystemFont(ofSize: 17)
-        wasteHelperLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
-        percentageTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: font3)
-        percentageLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font2)
+        let customFont = FontGuide()
+        wasteHelperLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.body)
+        percentageTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.headline)
+        percentageLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.title2)
         wasteHelperLabel.adjustsFontForContentSizeCategory = true
         percentageTitle.adjustsFontForContentSizeCategory = true
         percentageLabel.adjustsFontForContentSizeCategory = true
