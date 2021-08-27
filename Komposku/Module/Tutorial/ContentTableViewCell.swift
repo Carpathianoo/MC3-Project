@@ -43,7 +43,7 @@ extension ContentTableViewCell : UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 78, height: 102)
+        return CGSize(width: (UIScreen.main.bounds.width - 60)/4, height: 102)
     }
 }
 

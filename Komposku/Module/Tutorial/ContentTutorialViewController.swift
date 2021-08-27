@@ -16,7 +16,12 @@ class ContentTutorialViewController: UIViewController {
     @IBOutlet weak var titleViewTutorial: UIView!
     @IBOutlet weak var backgroundViewLabel: UIView!
     @IBOutlet weak var imageViewContent: UIView!
-    @IBOutlet weak var labelContainerTutorial: UIView!
+    //@IBOutlet weak var labelContainerTutorial: UIView!
+    
+    @IBOutlet weak var labelContainerViewTutorial: UIView!
+    
+    @IBOutlet weak var labelContainer: UIView!
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tutorialStackView: UIStackView!
@@ -42,9 +47,10 @@ class ContentTutorialViewController: UIViewController {
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
-        labelContainerTutorial.layer.cornerRadius = 20
-        //scrollView.heightAnchor = UIScrollView(height: 800)
-        scrollView.contentSize = CGSize(width: 390, height: 200)
+        labelContainer.layer.cornerRadius = 20
+        //scrollView.heightAnchor.constraint(equalTo: 800)
+        //scrollView.contentSize = CGSize(width: 390, height: 200)
+        labelContainerViewTutorial.layer.cornerRadius = 20
         
         setData()
         
@@ -65,10 +71,10 @@ class ContentTutorialViewController: UIViewController {
 //    }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + self.contentTutorialTableView.frame.height / 2)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + self.contentTutorialTableView.frame.height / 2)
+//    }
     
     func setupView() {
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -82,6 +88,7 @@ class ContentTutorialViewController: UIViewController {
     func seperateData() {
         if tutorial?.name == "Material Kompos" {
             contentTutorialTableView.isHidden = false
+            labelContainerViewTutorial.isHidden = true
         }else if tutorial?.name == "Cara Mengkompos"{
             contentTutorialTableView.isHidden = true
             //tutorialStackView.heightAnchor = descContentLabel.heightAnchor + 10
