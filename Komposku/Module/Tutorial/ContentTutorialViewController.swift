@@ -16,7 +16,6 @@ class ContentTutorialViewController: UIViewController {
     @IBOutlet weak var titleViewTutorial: UIView!
     @IBOutlet weak var backgroundViewLabel: UIView!
     @IBOutlet weak var imageViewContent: UIView!
-    //@IBOutlet weak var labelContainerTutorial: UIView!
     
     @IBOutlet weak var labelContainerViewTutorial: UIView!
     
@@ -64,17 +63,6 @@ class ContentTutorialViewController: UIViewController {
         setupView()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
-    
-//    lazy var tutorialScrollView = UIScrollView = {
-//        let view = UIScrollView(frame: .zero)
-//        return view
-//    }
-    
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + self.contentTutorialTableView.frame.height / 2)
-//    }
     
     func setupView() {
         self.navigationItem.setHidesBackButton(true, animated: true)
