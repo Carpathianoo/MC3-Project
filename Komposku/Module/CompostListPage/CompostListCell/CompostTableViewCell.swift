@@ -27,7 +27,7 @@ import UIKit
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         setupView()
     }
 
