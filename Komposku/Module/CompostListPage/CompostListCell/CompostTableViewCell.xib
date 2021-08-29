@@ -90,6 +90,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="trash" catalog="system"/>
+                                        <connections>
+                                            <action selector="pressDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PNO-nf-OCR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

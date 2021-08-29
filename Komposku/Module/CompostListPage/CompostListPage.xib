@@ -41,7 +41,7 @@
                                 <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
-                                <action selector="editBtn:" destination="-1" eventType="touchUpInside" id="lpL-Qu-d7q"/>
+                                <action selector="pressEditBtn:" destination="-1" eventType="touchUpInside" id="2cT-XC-Myz"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdh-U5-X6T">
@@ -51,7 +51,7 @@
                                 <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
-                                <action selector="selesaiBtn:" destination="-1" eventType="touchUpInside" id="aI4-NA-fc4"/>
+                                <action selector="pressSelesaiBtn:" destination="-1" eventType="touchUpInside" id="rEb-3l-9YU"/>
                             </connections>
                         </button>
                     </subviews>

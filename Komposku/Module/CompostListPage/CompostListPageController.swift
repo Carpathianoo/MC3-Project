@@ -39,6 +39,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     var processCollection: [Process] = []
     var latestProcess: Process?
     var currDate = Date()
+    var editState: Bool?
     
     @IBOutlet weak var compostList: UITableView!
     @IBOutlet weak var tutorialBtnTop: UIButton!
@@ -76,8 +77,13 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         
         overrideUserInterfaceStyle = .light
         if dataCollection.isEmpty == true{
+            print("this is data collection:", dataCollection.isEmpty)
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
+            illustration.isHidden = false
+            firstLine.isHidden = false
+            secondLine.isHidden = false
+            tutorialBtnDown.isHidden = false
             editBtn.isHidden = true
             selesaiBtn.isHidden = true
         }else{
@@ -104,25 +110,14 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-      //  latestProcess = getLatestProcess()
+       
         
         dataCollection = CoreDataManager.shared.getAllCompost()
         compostList.reloadData()
         self.navigationController?.navigationBar.isHidden = true
-        if dataCollection.isEmpty{
-            compostList.isHidden = true
-            tutorialBtnTop.isHidden = true
-            editBtn.isHidden = true
-            selesaiBtn.isHidden = true
-        }else{
-            compostList.isHidden = false
-            tutorialBtnTop.isHidden = false
-            illustration.isHidden = true
-            firstLine.isHidden = true
-            secondLine.isHidden = true
-            tutorialBtnDown.isHidden = true
-            editBtn.isHidden = false
-        }
+        
+        setupView()
+        
     }
     
 
@@ -157,9 +152,25 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         }
 
         cell.estimasiPanen.text = calculateLatestProcessDate(latest: unwrappedLatestProcess)
+        
+        if editState == true {
+            cell.deleteBtn.isHidden = false
+        }else {
+            cell.deleteBtn.isHidden = true
+        }
+        
+        cell.delegate = self
+        
+        cell.deleteCompostItem = {
+            CoreDataManager.shared.deleteCompost(compost: self.dataCollection[indexPath.row])
+            self.viewWillAppear(true)
+            
+        }
+        
         return cell
         
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
@@ -205,12 +216,16 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    @IBAction func editBtn(_ sender: Any) {
+    @IBAction func pressEditBtn(_ sender: Any) {
+        editState = true
+        compostList.reloadData()
         editBtn.isHidden = true
         selesaiBtn.isHidden = false
     }
     
-    @IBAction func selesaiBtn(_ sender: Any) {
+    @IBAction func pressSelesaiBtn(_ sender: Any) {
+        editState = false
+        compostList.reloadData()
         selesaiBtn.isHidden = true
         editBtn.isHidden = false
     }
@@ -281,3 +296,4 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         return processes[processes.count-1]
     }
 }
+
