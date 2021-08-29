@@ -26,14 +26,14 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4q-5h-gOf">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="723"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="731"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panduan Mengompos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsE-DN-gSb">
                                     <rect key="frame" x="20" y="16" width="374" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="ZEL-dB-Fjx"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -76,7 +76,7 @@
                             <constraints>
                                 <constraint firstItem="KeO-eA-h3p" firstAttribute="leading" secondItem="K4q-5h-gOf" secondAttribute="leading" constant="19" id="4bC-k4-o3s"/>
                                 <constraint firstAttribute="trailing" secondItem="KeO-eA-h3p" secondAttribute="trailing" constant="19" id="5jm-tR-v7d"/>
-                                <constraint firstAttribute="bottom" secondItem="KeO-eA-h3p" secondAttribute="bottom" id="FL1-TW-RKS"/>
+                                <constraint firstAttribute="bottom" secondItem="KeO-eA-h3p" secondAttribute="bottom" constant="8" id="FL1-TW-RKS"/>
                                 <constraint firstItem="BN8-rn-GZD" firstAttribute="top" secondItem="ZsE-DN-gSb" secondAttribute="bottom" constant="43" id="KQ9-0A-OVl"/>
                                 <constraint firstItem="BN8-rn-GZD" firstAttribute="leading" secondItem="K4q-5h-gOf" secondAttribute="leading" id="QPw-RY-pnG"/>
                                 <constraint firstItem="eQT-GZ-7dg" firstAttribute="top" secondItem="BN8-rn-GZD" secondAttribute="bottom" constant="8" id="erg-sI-87S"/>

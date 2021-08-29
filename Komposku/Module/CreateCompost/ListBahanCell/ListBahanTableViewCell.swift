@@ -47,7 +47,12 @@ class ListBahanTableViewCell: UITableViewCell {
         viewContainer.layer.cornerRadius = 10
         bahanStepper.layer.cornerRadius = 10
         bahanStepper.stepValue = 1
+        let customFont = FontGuide()
         
+        bahanTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.title3)
+        jumlahBahan.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.title3regular)
+        bahanTitle.adjustsFontForContentSizeCategory = true
+        jumlahBahan.adjustsFontForContentSizeCategory = true
     }
     
     override func layoutSubviews() {

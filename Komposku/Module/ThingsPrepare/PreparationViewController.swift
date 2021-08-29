@@ -40,6 +40,9 @@ class PreparationViewController: UIViewController {
         let btnBack = UIBarButtonItem(image: UIImage(named: "Vector")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(didTapBackButton))
         self.navigationItem.leftBarButtonItem = btnBack
         btnSkip.layer.cornerRadius = 8
+        let customfont = FontGuide()
+        titleLabel.font = UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: customfont.largeTitle)
+        titleLabel.adjustsFontForContentSizeCategory = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "ThingsPrepareCell", bundle: nil), forCellWithReuseIdentifier: "preparationCell")
