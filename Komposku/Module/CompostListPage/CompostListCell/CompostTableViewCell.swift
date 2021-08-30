@@ -70,7 +70,7 @@ import UIKit
     
     @IBAction func pressDelete(_ sender: Any) {
          
-        let dialogMessage = UIAlertController(title: "Delete warning", message: "Apakah kamu yakin ingin menghapus kompos mu?", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Perhatian", message: "Apakah kamu yakin ingin menghapus kompos mu?", preferredStyle: .alert)
         
         let ya = UIAlertAction(title: "Ya, hapus", style: .default, handler: { (action) -> Void in
             print("Tombol ya ditekan")
