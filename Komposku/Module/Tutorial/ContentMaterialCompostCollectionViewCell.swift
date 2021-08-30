@@ -17,6 +17,10 @@ class ContentMaterialCompostCollectionViewCell: UICollectionViewCell {
         // Initialization code
         imageContentMaterial.layer.cornerRadius = 10
         imageContentMaterial.accessibilityIgnoresInvertColors = true
+        
+        let customFont = FontGuide()
+        labelContentMaterial.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.labelContainMaterial)
+        labelContentMaterial.adjustsFontForContentSizeCategory = true
     }
 
 }

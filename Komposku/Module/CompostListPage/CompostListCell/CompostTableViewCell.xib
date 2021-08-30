@@ -32,13 +32,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="a9A-6d-SbR">
                                         <rect key="frame" x="0.0" y="19" width="137.66666666666666" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data kompos 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-m1-Kao">
-                                                <rect key="frame" x="0.0" y="0.0" width="137.66666666666666" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data kompos 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-m1-Kao">
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="R0b-hQ-Cty"/>
                                                     <constraint firstAttribute="height" constant="24" id="yOJ-Yg-rVu"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <color key="textColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -49,7 +49,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="Pat-L6-dOY"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="QXc-3y-6Bd"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -62,12 +62,12 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimasi panen" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="91.5" translatesAutoresizingMaskIntoConstraints="NO" id="A6N-JN-QgD" customClass="LabelPadding2" customModule="Komposku" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="78" width="111.66666666666667" height="22"/>
+                                                <rect key="frame" x="0.0" y="78" width="99" height="22"/>
                                                 <color key="backgroundColor" red="0.5609797835" green="0.79334276910000001" blue="0.66664487120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="PxB-Wr-zxL"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -137,7 +137,7 @@
     </objects>
     <designables>
         <designable name="A6N-JN-QgD">
-            <size key="intrinsicContentSize" width="111.66666666666667" height="14.333333333333334"/>
+            <size key="intrinsicContentSize" width="99" height="13.333333333333334"/>
         </designable>
         <designable name="sQu-1P-fQQ">
             <size key="intrinsicContentSize" width="20" height="0.0"/>

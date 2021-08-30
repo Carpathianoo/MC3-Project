@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialPageViewController" customModule="Komposku" customModuleProvider="target">
             <connections>
                 <outlet property="tutorialTableView" destination="5M9-4I-Dbj" id="ZVE-xu-2RW"/>
+                <outlet property="tutorialTitle" destination="fCt-U5-SwA" id="DU2-Wq-R74"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

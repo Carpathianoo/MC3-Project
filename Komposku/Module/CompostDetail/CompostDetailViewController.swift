@@ -24,7 +24,11 @@ class CompostDetailViewController: UIViewController {
     
     @IBOutlet weak var processReportLbl: UILabel!
     
+    @IBOutlet weak var persentaseKelembapanLabel: UILabel!
+    
     @IBOutlet weak var checkBtn: CustomButton!
+    
+    @IBOutlet weak var processLabel: UILabel!
     
     @IBOutlet weak var navImageView: UIImageView!
     
@@ -89,6 +93,13 @@ class CompostDetailViewController: UIViewController {
     
     fileprivate func setupView(_ unwrappedCompDetail: Compost) {
         compostNameLbl.text = unwrappedCompDetail.name
+        compostNameLbl.font = UIFont.boldSystemFont(ofSize: compostNameLbl.font.pointSize)
+        
+        statusLbl.font = UIFont.boldSystemFont(ofSize: statusLbl.font.pointSize)
+        
+        processLabel.font = UIFont.boldSystemFont(ofSize: processLabel.font.pointSize)
+        
+        persentaseKelembapanLabel.font = UIFont.boldSystemFont(ofSize: persentaseKelembapanLabel.font.pointSize)
         
         let harvest_day = dateDiff(from: today, to: unwrappedCompDetail.estimated_date!).day! + 1
         statusLbl.text = "Siap panen dalam \(harvest_day) hari"

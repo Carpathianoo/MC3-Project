@@ -8,6 +8,9 @@
 import UIKit
 
 class DoneCheckingViewController: UIViewController {
+    @IBOutlet weak var pengecekanSelesaiLabel: UILabel!
+    @IBOutlet weak var lanjutkanLabel: UILabel!
+    
     @IBAction func returnToCompost(_ sender: Any) {
         navigationController?.popToViewController((navigationController?.viewControllers[0])!, animated: true)
     }
@@ -17,7 +20,8 @@ class DoneCheckingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        
+        pengecekanSelesaiLabel.font = UIFont.boldSystemFont(ofSize: pengecekanSelesaiLabel.font.pointSize)
+        lanjutkanLabel.font = UIFont.boldSystemFont(ofSize: lanjutkanLabel.font.pointSize)
     }
 
 }
