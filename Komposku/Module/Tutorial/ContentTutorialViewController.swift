@@ -208,6 +208,7 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     }
 }
 
+//swipe back
 extension ContentTutorialViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
