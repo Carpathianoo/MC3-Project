@@ -21,9 +21,13 @@ import UIKit
     @IBOutlet weak var cell: UIView!
     @IBOutlet weak var underCell: UIView!
     
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    var delegate: UIViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         setupView()
     }
 
@@ -46,7 +50,7 @@ import UIKit
         compostImage.layer.cornerRadius = 12
         compostImage.accessibilityIgnoresInvertColors = true
 
-        
+        deleteBtn.roundedCorners([.topRight, .bottomRight], radius: 8, borderColor: nil, borderWidth: nil)
     }
     
     
@@ -56,7 +60,34 @@ import UIKit
         // Configure the view for the selected state
     }
     
-}
+    
+    var deleteCompostItem: (() -> ())?
+   
+    
+    
+    @IBAction func pressDelete(_ sender: Any) {
+         
+        let dialogMessage = UIAlertController(title: "Delete warning", message: "Apakah kamu yakin ingin menghapus kompos mu?", preferredStyle: .alert)
+        
+        let ya = UIAlertAction(title: "Ya, hapus", style: .default, handler: { (action) -> Void in
+            print("Tombol ya ditekan")
+            
+            self.deleteCompostItem?()
+        })
+        
+        let batal = UIAlertAction(title: "Batal", style: .cancel) {
+            (action) -> Void in
+            print("Tombol batal ditekan")
+        }
+        
+        dialogMessage.addAction(ya)
+        dialogMessage.addAction(batal)
+        
+        delegate!.present(dialogMessage, animated: true, completion: nil)
+    }
+ }
+
+
 
 @IBDesignable public class LabelPadding2: UILabel{
     @IBInspectable var topPadding: CGFloat = 0
@@ -74,4 +105,30 @@ import UIKit
             return CGSize(width: size.width + leftPadding + rightPadding, height: size.height + topPadding + bottomPadding)
         
     }
+}
+
+
+extension UIView{
+    func roundedCorners(_ corners: UIRectCorner, radius: CGFloat, borderColor: UIColor?, borderWidth: CGFloat?){
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        
+        let mask = CAShapeLayer()
+        mask.frame = self.bounds
+        mask.path = path.cgPath
+        self.layer.mask = mask
+        
+        if borderWidth != nil{
+            addBorder(mask, borderWidth: borderWidth!, borderColor: borderColor!)
+        }
+    }
+    private func addBorder(_ mask: CAShapeLayer, borderWidth: CGFloat, borderColor: UIColor){
+        let borderLayer = CAShapeLayer()
+        borderLayer.path = mask.path
+        borderLayer.fillColor = UIColor.clear.cgColor
+        borderLayer.strokeColor = borderColor.cgColor
+        borderLayer.lineWidth = borderWidth
+        borderLayer.frame = bounds
+        layer.addSublayer(borderLayer)
+    }
+    
 }
