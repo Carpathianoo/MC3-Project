@@ -19,70 +19,93 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6a-uC-0kL" userLabel="Container Cell">
                         <rect key="frame" x="20" y="8" width="374" height="138"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-1P-fQQ" customClass="LabelPadding2" customModule="Komposku" customModuleProvider="target">
-                                <rect key="frame" x="136.33333333333334" y="61" width="76" height="22"/>
-                                <color key="backgroundColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Pat-L6-dOY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="QXc-3y-6Bd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pPr-xq-qcU">
-                                <rect key="frame" x="12.999999999999993" y="14" width="107.33333333333331" height="110"/>
+                                <rect key="frame" x="13" y="14" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="9N5-n5-wud"/>
+                                    <constraint firstAttribute="width" constant="110" id="Qr4-0b-WLr"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data kompos 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-m1-Kao">
-                                <rect key="frame" x="136.33333333333337" y="21" width="215.66666666666663" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="R0b-hQ-Cty"/>
-                                    <constraint firstAttribute="height" constant="24" id="yOJ-Yg-rVu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimasi panen" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="91.5" translatesAutoresizingMaskIntoConstraints="NO" id="A6N-JN-QgD" customClass="LabelPadding2" customModule="Komposku" customModuleProvider="target">
-                                <rect key="frame" x="136.33333333333334" y="100" width="111.66666666666666" height="22"/>
-                                <color key="backgroundColor" red="0.5609797835" green="0.79334276910000001" blue="0.66664487120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="PxB-Wr-zxL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="Z0a-HU-iqf">
+                                <rect key="frame" x="139" y="0.0" width="234.66666666666663" height="138"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="a9A-6d-SbR">
+                                        <rect key="frame" x="0.0" y="19" width="137.66666666666666" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data kompos 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-m1-Kao">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.66666666666666" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="R0b-hQ-Cty"/>
+                                                    <constraint firstAttribute="height" constant="24" id="yOJ-Yg-rVu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-1P-fQQ" customClass="LabelPadding2" customModule="Komposku" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="76" height="22"/>
+                                                <color key="backgroundColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="Pat-L6-dOY"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="QXc-3y-6Bd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimasi panen" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="91.5" translatesAutoresizingMaskIntoConstraints="NO" id="A6N-JN-QgD" customClass="LabelPadding2" customModule="Komposku" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="78" width="111.66666666666667" height="22"/>
+                                                <color key="backgroundColor" red="0.5609797835" green="0.79334276910000001" blue="0.66664487120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="PxB-Wr-zxL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ0-WT-6dL">
+                                        <rect key="frame" x="179.66666666666669" y="0.0" width="55" height="138"/>
+                                        <color key="backgroundColor" red="0.82690495249999996" green="0.20553672310000001" blue="0.13715302939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="138" id="7Kx-6f-KB8"/>
+                                            <constraint firstAttribute="width" constant="55" id="ryM-Ow-QLK"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="trash" catalog="system"/>
+                                        <connections>
+                                            <action selector="pressDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PNO-nf-OCR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.95295017959999995" green="0.95292967559999997" blue="0.95293372870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="pPr-xq-qcU" secondAttribute="bottom" constant="14" id="AOm-ei-KrE"/>
-                            <constraint firstAttribute="trailing" secondItem="rhu-m1-Kao" secondAttribute="trailing" constant="22" id="CwO-mx-nPv"/>
-                            <constraint firstItem="rhu-m1-Kao" firstAttribute="top" secondItem="g6a-uC-0kL" secondAttribute="top" constant="21" id="Dbj-uM-BoT"/>
-                            <constraint firstItem="sQu-1P-fQQ" firstAttribute="top" secondItem="rhu-m1-Kao" secondAttribute="bottom" constant="16" id="JCx-Eo-iTA"/>
-                            <constraint firstItem="sQu-1P-fQQ" firstAttribute="leading" secondItem="pPr-xq-qcU" secondAttribute="trailing" constant="16" id="QqG-S9-z2c"/>
-                            <constraint firstItem="A6N-JN-QgD" firstAttribute="leading" secondItem="pPr-xq-qcU" secondAttribute="trailing" constant="16" id="RBz-16-xFc"/>
+                            <constraint firstItem="Z0a-HU-iqf" firstAttribute="leading" secondItem="pPr-xq-qcU" secondAttribute="trailing" constant="16" id="BaW-M0-uCC"/>
+                            <constraint firstItem="Z0a-HU-iqf" firstAttribute="top" secondItem="g6a-uC-0kL" secondAttribute="top" id="Lmp-pF-2o7"/>
+                            <constraint firstAttribute="bottom" secondItem="Z0a-HU-iqf" secondAttribute="bottom" id="Q8i-1Z-qKG"/>
                             <constraint firstItem="pPr-xq-qcU" firstAttribute="leading" secondItem="g6a-uC-0kL" secondAttribute="leading" constant="13" id="TDR-to-vBF"/>
-                            <constraint firstItem="A6N-JN-QgD" firstAttribute="top" secondItem="sQu-1P-fQQ" secondAttribute="bottom" constant="17" id="cVp-uq-SNH"/>
                             <constraint firstItem="pPr-xq-qcU" firstAttribute="top" secondItem="g6a-uC-0kL" secondAttribute="top" constant="14" id="khV-CO-IhE"/>
-                            <constraint firstItem="rhu-m1-Kao" firstAttribute="leading" secondItem="pPr-xq-qcU" secondAttribute="trailing" constant="16" id="q3s-Az-pyI"/>
-                            <constraint firstAttribute="trailing" secondItem="A6N-JN-QgD" secondAttribute="trailing" constant="126" id="ruJ-6r-M0N"/>
+                            <constraint firstAttribute="trailing" secondItem="Z0a-HU-iqf" secondAttribute="trailing" constant="0.33000000000000002" id="yjT-ds-An6"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -104,11 +127,12 @@
                 <outlet property="cell" destination="H2p-sc-9uM" id="FTX-YS-Q3t"/>
                 <outlet property="compostImage" destination="pPr-xq-qcU" id="26i-sn-Qfj"/>
                 <outlet property="compostTitle" destination="rhu-m1-Kao" id="ww7-MP-hcw"/>
+                <outlet property="deleteBtn" destination="OZ0-WT-6dL" id="sEa-g3-pHd"/>
                 <outlet property="estimasiPanen" destination="A6N-JN-QgD" id="zO1-6j-cee"/>
                 <outlet property="nextStep" destination="sQu-1P-fQQ" id="VZv-zh-jDT"/>
                 <outlet property="underCell" destination="g6a-uC-0kL" id="OzQ-aG-Qhb"/>
             </connections>
-            <point key="canvasLocation" x="168.11594202898553" y="157.36607142857142"/>
+            <point key="canvasLocation" x="167.69230769230768" y="157.10900473933648"/>
         </tableViewCell>
     </objects>
     <designables>
@@ -119,4 +143,7 @@
             <size key="intrinsicContentSize" width="20" height="0.0"/>
         </designable>
     </designables>
+    <resources>
+        <image name="trash" catalog="system" width="121" height="128"/>
+    </resources>
 </document>

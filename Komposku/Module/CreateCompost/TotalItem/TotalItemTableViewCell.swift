@@ -9,6 +9,7 @@ import UIKit
 
 class TotalItemTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bagianLabel: UILabel!
     @IBOutlet weak var amountItem: UILabel!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
@@ -37,6 +38,11 @@ class TotalItemTableViewCell: UITableViewCell {
     func setupView() {
         containerView.layer.cornerRadius = 10
         containerView.backgroundColor = UIColor(red: 0.84, green: 0.909, blue: 0.878, alpha: 1)
+        let customFont = FontGuide()
+        amountItem.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.largeTitle)
+        amountItem.adjustsFontForContentSizeCategory = true
+        bagianLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.largeTitle)
+        bagianLabel.adjustsFontForContentSizeCategory = true
     }
     
 }

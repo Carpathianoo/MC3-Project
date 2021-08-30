@@ -50,6 +50,9 @@ class ContentTutorialViewController: UIViewController {
         //scrollView.heightAnchor.constraint(equalTo: 800)
         //scrollView.contentSize = CGSize(width: 390, height: 200)
         labelContainerViewTutorial.layer.cornerRadius = 20
+        labelContainerTutorial.layer.cornerRadius = 20
+        imageViewContent.accessibilityIgnoresInvertColors = true
+        ImageContentTutorial.accessibilityIgnoresInvertColors = true
         
         setData()
         

@@ -16,6 +16,7 @@ class CreateCompostViewController: UIViewController {
     @IBOutlet weak var createTableView: UITableView!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var wasteHelperLabel: UILabel!
+    @IBOutlet weak var percentageTitle: UILabel!
     
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var containerViewBottom: UIView!
@@ -80,7 +81,17 @@ class CreateCompostViewController: UIViewController {
         createTableView.sectionHeaderHeight = UITableView.automaticDimension
         
         view.backgroundColor = .white
-        
+        setupDynamicSize()
+    }
+    
+    func setupDynamicSize(){
+        let customFont = FontGuide()
+        wasteHelperLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.body)
+        percentageTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.headline)
+        percentageLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.title2)
+        wasteHelperLabel.adjustsFontForContentSizeCategory = true
+        percentageTitle.adjustsFontForContentSizeCategory = true
+        percentageLabel.adjustsFontForContentSizeCategory = true
     }
     
     @objc func tapDismiss(){

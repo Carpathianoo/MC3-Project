@@ -16,6 +16,7 @@ class ContentMaterialCompostCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         imageContentMaterial.layer.cornerRadius = 10
+        imageContentMaterial.accessibilityIgnoresInvertColors = true
     }
 
 }

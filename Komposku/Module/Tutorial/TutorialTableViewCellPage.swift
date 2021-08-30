@@ -27,6 +27,7 @@ class TutorialTableViewCellPage: UITableViewCell {
     
     func setupView() {
         imageTableTutorial.layer.cornerRadius = 12
+        imageTableTutorial.accessibilityIgnoresInvertColors = true
         viewTableTutorial.layer.cornerRadius = 12
 
         viewShadowTutorial.addGradientBackground(firstColor: .clear, secondColor: .black)
