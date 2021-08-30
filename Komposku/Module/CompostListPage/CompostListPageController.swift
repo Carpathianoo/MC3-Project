@@ -46,6 +46,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tutorialBtnDown: UIButton!
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var selesaiBtn: UIButton!
+    @IBOutlet weak var daftarKomposTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +98,13 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         dataCollection = CoreDataManager.shared.getAllCompost()
         
         tutorialBtnTop.layer.cornerRadius = 10
+        tutorialBtnTop.titleLabel?.font = UIFont.boldSystemFont(ofSize: tutorialBtnTop.titleLabel?.font.pointSize ?? 12)
+        
         tutorialBtnDown.layer.cornerRadius = 10
+        tutorialBtnDown.titleLabel?.font = UIFont.boldSystemFont(ofSize: tutorialBtnDown.titleLabel?.font.pointSize ?? 20)
+        
+        daftarKomposTitle.font = UIFont.boldSystemFont(ofSize: daftarKomposTitle.font.pointSize)
+        
         self.compostList.separatorStyle = UITableViewCell.SeparatorStyle.none
         compostList.layer.masksToBounds = false
 

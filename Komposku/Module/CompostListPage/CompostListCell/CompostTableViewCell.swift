@@ -38,6 +38,7 @@ import UIKit
         nextStep.sizeToFit()
         estimasiPanen?.layer.masksToBounds = true
         estimasiPanen?.layer.cornerRadius = self.estimasiPanen.bounds.width / 10
+        estimasiPanen.font = UIFont.boldSystemFont(ofSize: estimasiPanen.font.pointSize)
         cell.layer.cornerRadius = 8
         underCell.layer.cornerRadius = 8
         
@@ -49,6 +50,8 @@ import UIKit
         compostImage.contentMode = .scaleAspectFill
         compostImage.layer.cornerRadius = 12
         compostImage.accessibilityIgnoresInvertColors = true
+        
+        compostTitle.font = UIFont.boldSystemFont(ofSize: compostTitle.font.pointSize)
 
         deleteBtn.roundedCorners([.topRight, .bottomRight], radius: 8, borderColor: nil, borderWidth: nil)
     }

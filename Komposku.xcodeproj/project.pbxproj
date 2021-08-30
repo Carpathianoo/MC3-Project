@@ -570,8 +570,8 @@
 				CC7931EC26B18BF10005C58C /* TutorialPageViewController.swift */,
 				CC7931ED26B18BF10005C58C /* TutorialPageViewController.xib */,
 				CC7931F126B18C290005C58C /* ContentMaterialCompostCollectionViewCell.swift */,
-				CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */,
 				CC7931F226B18C290005C58C /* ContentMaterialCompostCollectionViewCell.xib */,
+				CC19FEC026BB74F400FD04A5 /* TutorialCollectionCellData.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";

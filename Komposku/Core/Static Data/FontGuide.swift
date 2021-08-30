@@ -17,4 +17,5 @@ struct FontGuide {
     let headline : UIFont = UIFont.boldSystemFont(ofSize: 17)
     let body : UIFont = UIFont.systemFont(ofSize: 17)
     let subhead : UIFont = UIFont.systemFont(ofSize: 15)
+    let labelContainMaterial : UIFont = UIFont.systemFont(ofSize: 12)
 }

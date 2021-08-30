@@ -27,6 +27,7 @@ class SelesaiButton: UITableViewCell{
     func setupView(){
         
         selesaiButton.layer.cornerRadius = 10
+        selesaiButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: selesaiButton.titleLabel?.font.pointSize ?? 20)
         
     }
     
