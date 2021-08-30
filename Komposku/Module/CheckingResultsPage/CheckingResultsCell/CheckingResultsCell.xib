@@ -27,7 +27,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="358" id="qCZ-vW-O4M"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -37,7 +37,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="a5w-SY-FC9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -74,7 +74,7 @@
     </objects>
     <designables>
         <designable name="7Xy-Wl-Eix">
-            <size key="intrinsicContentSize" width="97" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="85.666666666666671" height="17"/>
         </designable>
     </designables>
     <resources>

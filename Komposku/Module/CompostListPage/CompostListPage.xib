@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="EditBtn" destination="JC7-RN-gS4" id="Vgk-Wc-8sj"/>
                 <outlet property="compostList" destination="8z0-ve-fOV" id="f7g-Pn-jGe"/>
+                <outlet property="daftarKomposTitle" destination="iGY-8o-wMK" id="Zu7-9Z-4So"/>
                 <outlet property="firstLine" destination="5Cz-rD-3mP" id="Chq-eD-f8l"/>
                 <outlet property="illustration" destination="f8O-HI-rJI" id="91J-us-71I"/>
                 <outlet property="secondLine" destination="S5b-E8-lye" id="Ebp-q9-2hU"/>
@@ -35,8 +36,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="172"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JC7-RN-gS4">
-                            <rect key="frame" x="16" y="63" width="30" height="33"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="16" y="63" width="30" height="29"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <state key="normal" title="Edit">
                                 <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
@@ -45,8 +46,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdh-U5-X6T">
-                            <rect key="frame" x="16" y="63" width="55" height="33"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="16" y="63" width="46" height="29"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <state key="normal" title="Selesai">
                                 <color key="titleColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
@@ -84,7 +85,7 @@
                         <constraint firstAttribute="width" constant="94" id="4cA-ay-uCI"/>
                         <constraint firstAttribute="height" constant="33" id="fYU-VJ-Y0e"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                     <color key="tintColor" name="AccentColor"/>
                     <state key="normal" title="Lihat Tutorial">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,8 +95,8 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Kompos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGY-8o-wMK">
-                    <rect key="frame" x="15.999999999999986" y="111.66666666666667" width="229.66666666666663" height="39.333333333333329"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                    <rect key="frame" x="16" y="114" width="198.66666666666666" height="37"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -103,24 +104,24 @@
                     <rect key="frame" x="57" y="217" width="276" height="292"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pertama kali dalam membuat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cz-rD-3mP">
-                    <rect key="frame" x="0.0" y="513" width="390" height="26.333333333333371"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <rect key="frame" x="0.0" y="513" width="390" height="23"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kompos?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-E8-lye">
-                    <rect key="frame" x="57" y="542" width="276" height="27"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <rect key="frame" x="57" y="538.66666666666663" width="276" height="23"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oq-h8-Qfz">
-                    <rect key="frame" x="19" y="577" width="352" height="50"/>
+                    <rect key="frame" x="19" y="569.66666666666663" width="352" height="50"/>
                     <color key="backgroundColor" red="0.31393688920000001" green="0.5857653022" blue="0.41957879069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="zmY-XL-amL"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                     <state key="normal" title="Lihat Tutorial">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>

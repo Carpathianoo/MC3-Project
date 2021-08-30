@@ -13,6 +13,7 @@ import UIKit
 class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
     
+    @IBOutlet weak var titleSolusi: UILabel!
     @IBOutlet weak var solutionList: UITableView!
     
     var solutionCollection: [Solution] = Seeder.seedSolution()
@@ -48,6 +49,7 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
     func setupView(){
         print()
+        titleSolusi.font = UIFont.boldSystemFont(ofSize: titleSolusi.font.pointSize)
     }
 
 

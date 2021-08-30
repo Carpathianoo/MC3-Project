@@ -22,7 +22,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="X7e-P5-EOr"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                         <state key="normal" title="Selesai">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>

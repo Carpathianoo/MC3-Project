@@ -69,6 +69,10 @@ class ContentTutorialViewController: UIViewController {
         btnBack.tintColor = UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1)
         self.navigationItem.leftBarButtonItem = btnBack
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let customFont = FontGuide()
+        titleContentTutorialLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.headline)
+        titleContentTutorialLabel.adjustsFontForContentSizeCategory = true
+        
     }
     
     

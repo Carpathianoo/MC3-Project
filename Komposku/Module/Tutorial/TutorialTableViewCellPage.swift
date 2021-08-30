@@ -32,5 +32,8 @@ class TutorialTableViewCellPage: UITableViewCell {
 
         viewShadowTutorial.addGradientBackground(firstColor: .clear, secondColor: .black)
         viewShadowTutorial.layer.cornerRadius = 12
+        let customFont = FontGuide()
+        labelTitleTableTutorial.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.title1)
+        labelTitleTableTutorial.adjustsFontForContentSizeCategory = true
     }
 }

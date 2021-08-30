@@ -8,6 +8,7 @@
 import UIKit
 
 class TutorialPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tutorialTitle: UILabel!
     var listTutorial = tutorialData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +43,9 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
         tutorialTableView.register(UINib(nibName: "TutorialTableViewCellPage", bundle: nil), forCellReuseIdentifier: "tutorialCell")
         tutorialTableView.delegate = self
         tutorialTableView.dataSource = self
+        let customFont = FontGuide()
+        tutorialTitle.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.largeTitle)
+        tutorialTitle.adjustsFontForContentSizeCategory = true
     }
     
     @IBAction func backBtn(_ sender: Any) {

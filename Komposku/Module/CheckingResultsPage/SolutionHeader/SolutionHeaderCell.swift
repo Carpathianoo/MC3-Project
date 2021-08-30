@@ -19,7 +19,7 @@ class SolutionHeaderCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        solutionTitle.font = UIFont.boldSystemFont(ofSize: solutionTitle.font.pointSize)
         // Configure the view for the selected state
     }
     

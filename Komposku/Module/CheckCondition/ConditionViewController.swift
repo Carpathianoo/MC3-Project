@@ -71,7 +71,11 @@ class ConditionViewController: UIViewController {
     
     fileprivate func setupBtn() {
         upperBtn.layer.cornerRadius = 8
+        upperBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: upperBtn.titleLabel?.font.pointSize ?? 20)
+        lowerBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: lowerBtn.titleLabel?.font.pointSize ?? 20)
+        
         lowerBtn.layer.cornerRadius = 8
+        
         if process?.detail == type.panen.rawValue{
             titleLbl.text = "Hari ini panen \"\(process?.compost?.name ?? "")\""
             conditions = seeder.seedHarvestCondition()
