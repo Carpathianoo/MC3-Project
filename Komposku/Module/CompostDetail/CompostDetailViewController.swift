@@ -24,21 +24,26 @@ class CompostDetailViewController: UIViewController {
     
     @IBOutlet weak var processReportLbl: UILabel!
     
+    @IBOutlet weak var persentaseKelembapanLabel: UILabel!
+    
     @IBOutlet weak var checkBtn: CustomButton!
+    
+    @IBOutlet weak var processLabel: UILabel!
     
     @IBOutlet weak var navImageView: UIImageView!
     
-    @IBOutlet weak var backBtn: MoistureLabel!
-    
-    @IBAction func backToPrev(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
     @IBAction func checkCondition(_ sender: Any) {
         let latestProcess = getLatestProcess()
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " ", style: .plain, target: nil, action: nil)
+
         
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.tintColor = UIColor.black
         let vc = ConditionViewController(nibName: "ConditionViewController", bundle: nil)
         vc.process = latestProcess
-
+        vc.extendProcess = processes[5].isDone
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
@@ -55,30 +60,19 @@ class CompostDetailViewController: UIViewController {
         let compDetailNibCell = UINib(nibName: ProcessTableViewCell.identifier, bundle: nil)
         processTV.register(compDetailNibCell, forCellReuseIdentifier: ProcessTableViewCell.identifier)
         processTV.reloadData()
+        processTV.invalidateIntrinsicContentSize()
     }
     
     fileprivate func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: " ", style: .plain, target: nil, action: nil)
-
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
-        navigationController?.navigationBar.backItem?.backButtonTitle = " "
-        navigationController?.navigationBar.tintColor = UIColor.black
-        
-        backBtn.backgroundColor = UIColor.lightGray
-        
         navImageView.layer.cornerRadius = 20
         navImageView.layer.masksToBounds = true
         navImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
-        
+        navImageView.accessibilityIgnoresInvertColors = true
         
     }
     
     fileprivate func checkCompostMixInterval(_ latestProcess: Process) {
-        if latestProcess.detail == "Aduk dan cek kondisi"{
+        if latestProcess.detail == type.aduk.rawValue{
             if !latestProcess.isDone{
                 processReportLbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
                 processReportLbl.text = "Kamu belum melakukan pengadukan dan pengecekan kondisi."
@@ -90,7 +84,7 @@ class CompostDetailViewController: UIViewController {
                 processReportLbl.text = "Kamu telah menyelesaikan pengecekan."
                 checkBtn.isHidden = true
             }
-        }else if latestProcess.detail == "Perpanjang"{
+        }else if latestProcess.detail == type.perpanjang.rawValue{
             processReportLbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             processReportLbl.text = "Kamu telah melakukan perpanjangan kompos."
             checkBtn.isHidden = true
@@ -99,6 +93,13 @@ class CompostDetailViewController: UIViewController {
     
     fileprivate func setupView(_ unwrappedCompDetail: Compost) {
         compostNameLbl.text = unwrappedCompDetail.name
+        compostNameLbl.font = UIFont.boldSystemFont(ofSize: compostNameLbl.font.pointSize)
+        
+        statusLbl.font = UIFont.boldSystemFont(ofSize: statusLbl.font.pointSize)
+        
+        processLabel.font = UIFont.boldSystemFont(ofSize: processLabel.font.pointSize)
+        
+        persentaseKelembapanLabel.font = UIFont.boldSystemFont(ofSize: persentaseKelembapanLabel.font.pointSize)
         
         let harvest_day = dateDiff(from: today, to: unwrappedCompDetail.estimated_date!).day! + 1
         statusLbl.text = "Siap panen dalam \(harvest_day) hari"
@@ -126,8 +127,6 @@ class CompostDetailViewController: UIViewController {
         
         setupNavigationBar()
         
-//        CoreDataManager.shared.createCompost(name: "Kompos Pertamaku", photo: "IMG-1", moisture: 54.6)
-//        compDetail = CoreDataManager.shared.getAllCompost().first
         guard let unwrappedCompDetail = compDetail else {return}
 
         setupView(unwrappedCompDetail)
@@ -135,12 +134,12 @@ class CompostDetailViewController: UIViewController {
         setupTableView()
         
         latestProcess = getLatestProcess()
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        checkCompostCreatedInterval(unwrappedLatestProcess)
         
-        checkCompostCreatedInterval(latestProcess!)
+        checkCompostMixInterval(unwrappedLatestProcess)
         
-        checkCompostMixInterval(latestProcess!)
-        
-        checkCompostHarvestTime(latestProcess!)
+        checkCompostHarvestTime(unwrappedLatestProcess)
         
     }
     
@@ -155,15 +154,21 @@ class CompostDetailViewController: UIViewController {
         setupView(unwrappedComp)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backBtn")?.withRenderingMode(.alwaysOriginal)
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backBtn")
         
         latestProcess = getLatestProcess()
         
-        checkCompostCreatedInterval(latestProcess!)
+        guard let unwrappedLatestProcess = latestProcess else {return}
+        
+        checkCompostCreatedInterval(unwrappedLatestProcess)
                 
-        checkCompostMixInterval(latestProcess!)
+        checkCompostMixInterval(unwrappedLatestProcess)
                 
-        checkCompostHarvestTime(latestProcess!)
+        checkCompostHarvestTime(unwrappedLatestProcess)
         
         processes = CoreDataManager.shared.getAllProcess(from: compDetail!)
         
@@ -216,6 +221,10 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
         return LineProcessView()
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+    }
+    
     func getLatestProcess() -> Process{
        today = Date()
         if Calendar.current.isDateInToday((processes.last?.date!)!) || dateDiff(from: (processes.last?.date)!, to: today).day! > 0{
@@ -251,11 +260,16 @@ extension CompostDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func checkCompostHarvestTime(_ latestProcess: Process){
-        if latestProcess.detail == "Panen"{
+        if latestProcess.detail == type.panen.rawValue{
             processReportLbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
             processReportLbl.text = "Kamu belum melakukan pengecekkan panen komposmu."
             checkBtn.isHidden = false
             checkBtn.setTitle("Panen Kompos", for: .normal)
         }
+    }
+}
+extension UITableView{
+    open override var intrinsicContentSize: CGSize {
+        return contentSize
     }
 }

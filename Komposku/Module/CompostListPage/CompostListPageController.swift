@@ -30,13 +30,13 @@ struct ListModel{
 class CompostListPageController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     
-//    let firstData = ListModel(title: "Kompos Pertama Ku", nextStep: "Aduk dan cek kondisi", estimasiPanen: "2 hari lagi", foto: #imageLiteral(resourceName: "compost1"))
-//    let secondData = ListModel(title: "Kompos Ku Tercinta", nextStep: "Aduk dan cek kondisi", estimasiPanen: "3 hari lagi", foto: #imageLiteral(resourceName: "compost3"))
-//    let thirdData = ListModel(title: "Kompos Yang Mantap", nextStep: "Aduk dan aduk - aduk", estimasiPanen: "5 hari lagi", foto: #imageLiteral(resourceName: "compost2"))
 
     
     var dataCollection: [Compost] = []
+    var processCollection: [Process] = []
     var latestProcess: Process?
+    var currDate = Date()
+    var editState: Bool?
     
     @IBOutlet weak var compostList: UITableView!
     @IBOutlet weak var tutorialBtnTop: UIButton!
@@ -44,11 +44,18 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var firstLine: UILabel!
     @IBOutlet weak var secondLine: UILabel!
     @IBOutlet weak var tutorialBtnDown: UIButton!
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var selesaiBtn: UIButton!
+    @IBOutlet weak var daftarKomposTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupData()
+       
+       
+
         setupView()
+        
     
         
         let nib = UINib(nibName: "CompostTableViewCell" , bundle: nil)
@@ -58,11 +65,25 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func setupView(){
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " ", style: .plain, target: nil, action: nil)
+
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named:"backBtn")?.withRenderingMode(.alwaysOriginal)
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backBtn")
+        
         overrideUserInterfaceStyle = .light
         if dataCollection.isEmpty == true{
+            print("this is data collection:", dataCollection.isEmpty)
             compostList.isHidden = true
             tutorialBtnTop.isHidden = true
+            illustration.isHidden = false
+            firstLine.isHidden = false
+            secondLine.isHidden = false
+            tutorialBtnDown.isHidden = false
+            editBtn.isHidden = true
+            selesaiBtn.isHidden = true
         }else{
             compostList.isHidden = false
             tutorialBtnTop.isHidden = false
@@ -70,12 +91,20 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
             firstLine.isHidden = true
             secondLine.isHidden = true
             tutorialBtnDown.isHidden = true
+            editBtn.isHidden = false
+            
         }
         
         dataCollection = CoreDataManager.shared.getAllCompost()
         
         tutorialBtnTop.layer.cornerRadius = 10
+        tutorialBtnTop.titleLabel?.font = UIFont.boldSystemFont(ofSize: tutorialBtnTop.titleLabel?.font.pointSize ?? 12)
+        
         tutorialBtnDown.layer.cornerRadius = 10
+        tutorialBtnDown.titleLabel?.font = UIFont.boldSystemFont(ofSize: tutorialBtnDown.titleLabel?.font.pointSize ?? 20)
+        
+        daftarKomposTitle.font = UIFont.boldSystemFont(ofSize: daftarKomposTitle.font.pointSize)
+        
         self.compostList.separatorStyle = UITableViewCell.SeparatorStyle.none
         compostList.layer.masksToBounds = false
 
@@ -84,21 +113,18 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+       
+        
         dataCollection = CoreDataManager.shared.getAllCompost()
         compostList.reloadData()
         self.navigationController?.navigationBar.isHidden = true
-        if dataCollection.isEmpty{
-            compostList.isHidden = true
-            tutorialBtnTop.isHidden = true
-        }else{
-            compostList.isHidden = false
-            tutorialBtnTop.isHidden = false
-            illustration.isHidden = true
-            firstLine.isHidden = true
-            secondLine.isHidden = true
-            tutorialBtnDown.isHidden = true
-        }
+        
+        setupView()
+        
     }
+    
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,9 +156,25 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         }
 
         cell.estimasiPanen.text = calculateLatestProcessDate(latest: unwrappedLatestProcess)
+        
+        if editState == true {
+            cell.deleteBtn.isHidden = false
+        }else {
+            cell.deleteBtn.isHidden = true
+        }
+        
+        cell.delegate = self
+        
+        cell.deleteCompostItem = {
+            CoreDataManager.shared.deleteCompost(compost: self.dataCollection[indexPath.row])
+            self.viewWillAppear(true)
+            
+        }
+        
         return cell
         
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
@@ -140,9 +182,58 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         //buat code pindah ke detail compost page disini
         let vc = CompostDetailViewController()
         vc.compDetail = dataCollection[indexPath.row]
+        navigationController?.navigationBar.isHidden = false
         navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    
+    func dateDiff(from startDate: Date, to endDate: Date) -> DateComponents{
+        return Calendar.current.dateComponents([.day], from: startDate, to: endDate)
+    }
+    
+    
+    func getLatestProcess() -> Process{
+       currDate = Date()
+        if dateDiff(from: (processCollection.last?.date)!, to: currDate).day! + 1 >= 0{
+            print("first if")
+            return processCollection[processCollection.count-1]
+        }
+        for p in processCollection{
+            guard let unwrappedDate = p.date else{
+                print("second if")
+                return Process()
+                
+            }
+            
+            if dateDiff(from: unwrappedDate, to: currDate).day! < 3 {
+                print("third if")
+                return p
+            }
+            
+            
+            
+        }
+        return Process()
+    }
+    
+    
+    
+    
+    @IBAction func pressEditBtn(_ sender: Any) {
+        editState = true
+        compostList.reloadData()
+        editBtn.isHidden = true
+        selesaiBtn.isHidden = false
+    }
+    
+    @IBAction func pressSelesaiBtn(_ sender: Any) {
+        editState = false
+        compostList.reloadData()
+        selesaiBtn.isHidden = true
+        editBtn.isHidden = false
+    }
+    
     
     @IBAction func goToTutorialPage(_ sender: Any) {
         //buat function pindah ke tutorial page disini
@@ -152,15 +243,13 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func goToCreateCompostPage(_ sender: Any) {
-        let controller = CreateCompostViewController()
-        let nav = UINavigationController(rootViewController: controller)
-        controller.textFieldStatus = false
-        controller.isDismissed = {
+        let controller = PreparationViewController()
+        controller.created = {
             self.dataCollection = CoreDataManager.shared.getAllCompost()
             self.compostList.reloadData()
             self.checkIfListEmpty()
         }
-        present(nav, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
         
     }
     
@@ -211,3 +300,4 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         return processes[processes.count-1]
     }
 }
+

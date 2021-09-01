@@ -150,4 +150,9 @@ class CoreDataManager{
             
         
     }
+    
+    func deleteCompost(compost: Compost){
+            viewContext.delete(compost)
+            save()
+        }
 }

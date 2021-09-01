@@ -6,58 +6,49 @@
 //
 
 import UIKit
-
-let ContentList = [
-    ContentTutorial(sectionType: "Disarankan untuk kompos \n Bahan Hijau adalah bahan yang kaya akan nitrogen atau protein.",
-                    contentImage: ["1-Sayur dan Buah","2-Potongan Rumput","3-Belukar","4-Ampas Kopi","5-Nasi","6-Sampah Dapur","7-Sampah Kebun","8-Cangkang Telur"],
-                    contentName: ["Sayur dan buah","Potongan rumput","Belukar","Ampas kopi","Nasi","Sampah dapur","Sampah kebun","Cangkang telur"]),
-    
-    ContentTutorial(sectionType: "Bahan Cokelat adalah bahan yang kaya akan karbon atau karbohidrat.",
-                    contentImage: ["9-Potongan Koran","10-Daun kering","11-Potongan kardus","12-Sekam atau gabah","13-Serbuk gergaji","14-Tisu pengesat","15-Tisu Toilet","16-Daun"],
-                    contentName: ["Potongan Koran","Daun kering","Potongan kardus","Sekam / gabah","Serbuk gergaji","Tisu pengesat","Tisu Toilet","Daun"]),
-    
-    ContentTutorial(sectionType: "Tidak disarankan untuk kompos",
-                    contentImage: ["17-Sisa Daging atau Ikan","18 - Olahan Susu","19-Lemak atau Minyak","20-Kotoran Hewan","21-Tumbuhan Sakit","22-Tumbuhan Berpestisida"],
-                    contentName: ["Sisa Daging atau Ikan","Olahan Susu","Lemak atau Minyak","Kotoran Hewan","Tumbuhan Sakit","Tumbuhan Berpestisida"])
-]
-
 class ContentTutorialViewController: UIViewController {
     
-    
-    @IBOutlet weak var TitleContentTutorialLabel: UILabel!
-    @IBOutlet weak var ImageContentTutorial: UIImageView!
+    @IBOutlet weak var titleContentTutorialLabel: UILabel!
+    @IBOutlet weak var imageContentTutorial: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var descContentLabel: UILabel!
     @IBOutlet weak var contentTutorialTableView: UITableView!
     @IBOutlet weak var titleViewTutorial: UIView!
     @IBOutlet weak var backgroundViewLabel: UIView!
     @IBOutlet weak var imageViewContent: UIView!
-    @IBOutlet weak var labelContainerTutorial: UIView!
+    
+    @IBOutlet weak var labelContainerViewTutorial: UIView!
+    
+    @IBOutlet weak var labelContainer: UIView!
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tutorialStackView: UIStackView!
     
     var tutorial: Tutorial?
-    let listTableTutorial = tutorialData
-    
+    var collectionTutorial: CollectionTutorial?
     var index:Int?
-    
+    let listTableTutorial = tutorialData
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func didTapBackButtonTutorial(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        //titleViewTutorial.clipsToBounds = true
-        //titleViewTutorial.layer.cornerRadius = 40
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1)
         backgroundViewLabel.layer.cornerRadius = 20
         contentTutorialTableView.layer.cornerRadius = 20
         imageViewContent.clipsToBounds = true
         imageViewContent.layer.cornerRadius = 40
-        labelContainerTutorial.layer.cornerRadius = 20
+        labelContainer.layer.cornerRadius = 20
+        labelContainerViewTutorial.layer.cornerRadius = 20
+        imageViewContent.accessibilityIgnoresInvertColors = true
         
         setData()
         
@@ -66,18 +57,32 @@ class ContentTutorialViewController: UIViewController {
         
         contentTutorialTableView.dataSource = self
         contentTutorialTableView.delegate = self
-        contentTutorialTableView.isScrollEnabled = true
+        contentTutorialTableView.isScrollEnabled = false
         seperateData()
+        setupView()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + self.contentTutorialTableView.frame.height / 2)
+    func setupView() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        let btnBack = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(didTapBackButtonTutorial))
+        btnBack.tintColor = UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1)
+        self.navigationItem.leftBarButtonItem = btnBack
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let customFont = FontGuide()
+        titleContentTutorialLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.headline)
+        titleContentTutorialLabel.adjustsFontForContentSizeCategory = true
+        
     }
+    
     
     func seperateData() {
         if tutorial?.name == "Material Kompos" {
             contentTutorialTableView.isHidden = false
+            labelContainerViewTutorial.isHidden = true
+        }else if tutorial?.name == "Cara Mengkompos"{
+            contentTutorialTableView.isHidden = true
+            //tutorialStackView.heightAnchor = descContentLabel.heightAnchor + 10
         }else{
             contentTutorialTableView.isHidden = true
         }
@@ -89,9 +94,8 @@ class ContentTutorialViewController: UIViewController {
             return
         }
         
-        TitleContentTutorialLabel.text = tutorial.name
-        ImageContentTutorial.image = UIImage(named: tutorial.photo)
-        
+        titleContentTutorialLabel.text = tutorial.name
+        imageContentTutorial.image = UIImage(named: tutorial.photo)
         
         if index == 1 {
             descContentLabel.isHidden = false
@@ -101,15 +105,11 @@ class ContentTutorialViewController: UIViewController {
             descContentLabel.isHidden = false
             descContentLabel.attributedText = StringModifier.modifyDetailTutorial(sentence: ["1. Terlalu banyak bahan ", "\"cokelat\" ", "maka butuh ", "bertahun-tahun kompos untuk terbentuk. ", "Terlalu banyak bahan ", "\"hijau\" ", "membuat kompos menjadi ", "bau.\n", "2. ", "Activator ", "(EM4 atau air beras) dapat mempercepat proses pembentukan kompos.\n3. ", "Cuci ", "wadah penampungan bahan untuk kompos secara ", "rutin.\n", "4. Kompos yang bagus adalah kompos yang ", "terasa dan berbau seperti tanah ", "dan berwarna ", "gelap. ", "Anda seharusnya ", "tidak dapat mengenali ", "barang apa pun yang Anda masukkan ke sana. \n5. ", "Jangan khawatir! ", "Bahkan jika Anda melakukan semuanya dengan salah, pada akhirnya Anda akan membuat kompos yang bagus."], color1: .black , color2: #colorLiteral(red: 0.1921568627, green: 0.5921568627, blue: 0.4039215686, alpha: 1))
             descContentLabel.font = descContentLabel.font.withSize(17)
-            //descContentLabel.font = UIFont.boldSystemFont(ofSize: 17)
         }else{
             descContentLabel.isHidden = true
         }
-        
     }
 }
-
-
 
 extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,13 +118,13 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentTutorialTableView.dequeueReusableCell(withIdentifier: "contentTableVIew", for: indexPath) as! ContentTableViewCell
-        cell.CollectionViewTutorial.tag = indexPath.section
-        cell.CollectionViewTutorial.reloadData()
+        cell.collectionViewTutorial.tag = indexPath.section
+        cell.collectionViewTutorial.reloadData()
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return ContentList.count
+        return contentList.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -141,7 +141,6 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
         return 238
     }
     
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             return getHeaderSectionTable(section: section, material: nil)
@@ -152,7 +151,6 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
             return getHeaderSectionTable(section: section, material: nil)
         }
     }
-    
     
     private func getHeaderSectionTable(section: Int, material: Tutorial?) -> UIView {
         var height = 0
@@ -211,5 +209,11 @@ extension ContentTutorialViewController: UITableViewDelegate, UITableViewDataSou
             return headerView
         }
         
+    }
+}
+
+extension ContentTutorialViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

@@ -15,6 +15,7 @@
                 <outlet property="createTableView" destination="t16-2s-3et" id="v2p-90-Jvk"/>
                 <outlet property="helpButton" destination="Ecx-sZ-wc7" id="rRy-WT-KJ9"/>
                 <outlet property="percentageLabel" destination="JNF-M7-YAM" id="CMC-qP-HLa"/>
+                <outlet property="percentageTitle" destination="Uz8-fc-Y1q" id="wiT-77-fOO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wasteHelperLabel" destination="sAG-oZ-CI4" id="4cp-Hz-6ab"/>
             </connections>
@@ -33,7 +34,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="1Rw-ZF-2wS">
                                     <rect key="frame" x="0.0" y="5" width="382" height="640"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t16-2s-3et">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t16-2s-3et">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="640"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableView>
@@ -64,7 +65,7 @@
                     <rect key="frame" x="0.0" y="694" width="390" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Persentasi Kelembapan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz8-fc-Y1q">
-                            <rect key="frame" x="92.666666666666686" y="24" width="200" height="22"/>
+                            <rect key="frame" x="95" y="24" width="200" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="brJ-fv-9fq"/>
                             </constraints>
@@ -79,7 +80,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecx-sZ-wc7">
-                            <rect key="frame" x="300.66666666666669" y="24" width="19.666666666666686" height="22"/>
+                            <rect key="frame" x="303" y="24" width="19.666666666666686" height="22"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="questionmark.circle" catalog="system"/>
                             <connections>
@@ -102,7 +103,7 @@
                         <constraint firstItem="sAG-oZ-CI4" firstAttribute="top" secondItem="JNF-M7-YAM" secondAttribute="bottom" constant="8" id="SXN-xG-6hZ"/>
                         <constraint firstAttribute="height" constant="200" id="egx-E2-EX2"/>
                         <constraint firstItem="sAG-oZ-CI4" firstAttribute="centerX" secondItem="US8-2w-T5n" secondAttribute="centerX" id="hAc-fp-YH5"/>
-                        <constraint firstItem="Uz8-fc-Y1q" firstAttribute="leading" secondItem="US8-2w-T5n" secondAttribute="leading" constant="92.5" id="lnU-YF-8Wg"/>
+                        <constraint firstItem="Uz8-fc-Y1q" firstAttribute="centerX" secondItem="US8-2w-T5n" secondAttribute="centerX" id="jiS-RM-z1N"/>
                         <constraint firstItem="Uz8-fc-Y1q" firstAttribute="top" secondItem="US8-2w-T5n" secondAttribute="top" constant="24" id="o3o-Mw-6E9"/>
                         <constraint firstItem="Ecx-sZ-wc7" firstAttribute="centerY" secondItem="Uz8-fc-Y1q" secondAttribute="centerY" id="zYE-O3-bIP"/>
                     </constraints>

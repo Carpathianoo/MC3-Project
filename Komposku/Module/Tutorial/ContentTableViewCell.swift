@@ -9,48 +9,41 @@ import UIKit
 
 class ContentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var CollectionViewTutorial: UICollectionView!
+    @IBOutlet weak var collectionViewTutorial: UICollectionView!
     @IBOutlet weak var sectionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        CollectionViewTutorial.dataSource = self
-        CollectionViewTutorial.delegate = self
+        collectionViewTutorial.dataSource = self
+        collectionViewTutorial.delegate = self
         
         let nib = UINib(nibName: "ContentMaterialCompostCollectionViewCell" , bundle: nil)
-        CollectionViewTutorial.register(nib, forCellWithReuseIdentifier: "contentCollectionCell")
+        collectionViewTutorial.register(nib, forCellWithReuseIdentifier: "contentCollectionCell")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }
 
 extension ContentTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ContentList[CollectionViewTutorial.tag].contentImage.count
+        return contentList[collectionViewTutorial.tag].contentImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = CollectionViewTutorial.dequeueReusableCell(withReuseIdentifier: "contentCollectionCell", for: indexPath) as! ContentMaterialCompostCollectionViewCell
-        cell.imageContentMaterial.image = UIImage(named: ContentList[CollectionViewTutorial.tag].contentImage[indexPath.row])
-        cell.labelContentMaterial.text = ContentList[CollectionViewTutorial.tag].contentName[indexPath.row]
+        let cell = collectionViewTutorial.dequeueReusableCell(withReuseIdentifier: "contentCollectionCell", for: indexPath) as! ContentMaterialCompostCollectionViewCell
+        cell.imageContentMaterial.image = UIImage(named: contentList[collectionViewTutorial.tag].contentImage[indexPath.row])
+        cell.labelContentMaterial.text = contentList[collectionViewTutorial.tag].contentName[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("done \(ContentList[CollectionViewTutorial.tag].contentName[indexPath.row])")
+        print("done \(contentList[collectionViewTutorial.tag].contentName[indexPath.row])")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 78, height: 102)
-        
-//        return CGSize(width: ContentMaterialCompostCollectionViewCell.frame.width, height: ContentMaterialCompostCollectionViewCell.frame.height)
+        return CGSize(width: (UIScreen.main.bounds.width - 60)/4, height: 102)
     }
 }
 

@@ -3,14 +3,15 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialPageViewController" customModule="Komposku" customModuleProvider="target">
             <connections>
                 <outlet property="tutorialTableView" destination="5M9-4I-Dbj" id="ZVE-xu-2RW"/>
+                <outlet property="tutorialTitle" destination="fCt-U5-SwA" id="DU2-Wq-R74"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,9 +21,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-jU-9EZ">
-                    <rect key="frame" x="19" y="62.000000000000014" width="18" height="12.333333333333314"/>
+                    <rect key="frame" x="19" y="54" width="18" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="18" id="0CE-5d-9Ee"/>
+                        <constraint firstAttribute="height" constant="22.666666666666671" id="0CE-5d-9Ee"/>
                         <constraint firstAttribute="width" constant="18" id="7qW-6E-uxV"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,22 +35,22 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCt-U5-SwA">
                     <rect key="frame" x="21" y="93" width="120" height="41"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5M9-4I-Dbj">
                     <rect key="frame" x="19" y="150" width="352" height="644"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="Komposku background color"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="Komposku background color"/>
             <constraints>
                 <constraint firstItem="VGR-jU-9EZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="3gO-PS-IQJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5M9-4I-Dbj" secondAttribute="trailing" constant="19" id="7J5-Ai-tGk"/>
                 <constraint firstItem="5M9-4I-Dbj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="EFv-Om-4qu"/>
                 <constraint firstItem="fCt-U5-SwA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="49" id="Ghg-9q-wAe"/>
-                <constraint firstItem="VGR-jU-9EZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="H2b-NL-al7"/>
+                <constraint firstItem="VGR-jU-9EZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="7" id="H2b-NL-al7"/>
                 <constraint firstItem="fCt-U5-SwA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="JbH-av-b9W"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5M9-4I-Dbj" secondAttribute="bottom" constant="16" id="UrO-UN-MTn"/>
                 <constraint firstItem="5M9-4I-Dbj" firstAttribute="top" secondItem="fCt-U5-SwA" secondAttribute="bottom" constant="16" id="eA2-ZW-ec2"/>
@@ -59,8 +60,8 @@
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Komposku background color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

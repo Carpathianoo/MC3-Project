@@ -16,6 +16,7 @@ class CreateCompostViewController: UIViewController {
     @IBOutlet weak var createTableView: UITableView!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var wasteHelperLabel: UILabel!
+    @IBOutlet weak var percentageTitle: UILabel!
     
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var containerViewBottom: UIView!
@@ -50,7 +51,10 @@ class CreateCompostViewController: UIViewController {
     func setupView(){
         let tapDismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapDismiss))
         self.view.addGestureRecognizer(tapDismissKeyboard)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(createNewCompostTapped))
+        let btnBuat = UIBarButtonItem(title: "Buat", style: .plain, target: self, action: #selector(createNewCompostTapped))
+        let attribute = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.192156, green: 0.59215, blue: 0.4039215, alpha: 1), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)]
+        btnBuat.setTitleTextAttributes(attribute, for: .normal)
+        navigationItem.rightBarButtonItem = btnBuat
         navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(dismissCreateCompost))
         navigationItem.rightBarButtonItem?.tintColor = .black
@@ -77,7 +81,17 @@ class CreateCompostViewController: UIViewController {
         createTableView.sectionHeaderHeight = UITableView.automaticDimension
         
         view.backgroundColor = .white
-        
+        setupDynamicSize()
+    }
+    
+    func setupDynamicSize(){
+        let customFont = FontGuide()
+        wasteHelperLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.body)
+        percentageTitle.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.headline)
+        percentageLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.title2)
+        wasteHelperLabel.adjustsFontForContentSizeCategory = true
+        percentageTitle.adjustsFontForContentSizeCategory = true
+        percentageLabel.adjustsFontForContentSizeCategory = true
     }
     
     @objc func tapDismiss(){

@@ -29,6 +29,7 @@ class CheckingResultsCell: UITableViewCell {
         underView.layer.shadowOpacity = 0.15
         underView.layer.shadowRadius = 1
         underView.layer.cornerRadius = 15
+        solutionSubtitle.font = UIFont.boldSystemFont(ofSize: solutionSubtitle.font.pointSize)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

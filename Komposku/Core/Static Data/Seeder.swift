@@ -46,7 +46,7 @@ class Seeder{
     func seedCondition() -> [Condition]{
         var conditions: [Condition] = []
         conditions.append(Condition(desc: "Tidak basah dan berbau tengik", isChecked: false))
-        conditions.append(Condition(desc: "Menghasilkan panas", isChecked: false))
+        conditions.append(Condition(desc: "Kompos terasa hangat ( > 40℃)", isChecked: false))
         conditions.append(Condition(desc: "Lembab dan wangi fermentasi seperti tapai, dan menghasilkan panas", isChecked: false))
         conditions.append(Condition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
         return conditions
@@ -97,6 +97,18 @@ class Seeder{
         conditions.append(Condition(desc: "Kompos tidak menarik perhatian binatang", isChecked: false))
         conditions.append(Condition(desc: "Kompos tidak terlalu panas", isChecked: false))
         return conditions
+    }
+    
+    static func seedThingsToPrepare() -> [ThingsPrepare] {
+        let preparation: [ThingsPrepare] = [
+            ThingsPrepare(image: "Pisah bahan hijau & coklat", title: "Pisahkan bahan hijau dan coklat"),
+            ThingsPrepare(image: "potong jadi kecil", title: "Potong bahan berukuran besar menjadi bagian kecil"),
+            ThingsPrepare(image: "wadah", title: "Ukur bagian dengan menggunakan wadah yang sama"),
+            ThingsPrepare(image: "siapkan tempat kompos", title: "Siapkan ember kompos beserta dengan penutupnya"),
+            ThingsPrepare(image: "compost layer", title: "Masukkan bahan hijau dan cokelat ke ember kompos secara selang-seling")
+        ]
+        
+        return preparation
     }
     
 }

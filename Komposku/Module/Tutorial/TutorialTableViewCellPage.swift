@@ -23,17 +23,17 @@ class TutorialTableViewCellPage: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func setupView() {
         imageTableTutorial.layer.cornerRadius = 12
+        imageTableTutorial.accessibilityIgnoresInvertColors = true
         viewTableTutorial.layer.cornerRadius = 12
 
         viewShadowTutorial.addGradientBackground(firstColor: .clear, secondColor: .black)
         viewShadowTutorial.layer.cornerRadius = 12
+        let customFont = FontGuide()
+        labelTitleTableTutorial.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.title1)
+        labelTitleTableTutorial.adjustsFontForContentSizeCategory = true
     }
-
-    
 }

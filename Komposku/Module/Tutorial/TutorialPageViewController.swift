@@ -8,6 +8,7 @@
 import UIKit
 
 class TutorialPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tutorialTitle: UILabel!
     var listTutorial = tutorialData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,8 +25,6 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        //show(ContentTutorialViewController, sender: self)
-        //let row = titleTutorial[indexPath.row]
         let controller = ContentTutorialViewController()
         controller.tutorial = listTutorial[indexPath.row]
         controller.index = indexPath.row
@@ -35,8 +34,6 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
     var titleTutorial:[String] = ["Material Kompos", "Cara Mengkompos", "Tips & Tricks"]
     var imageTutorial:[String] = ["Material Kompos","Cara Mengkompos","Tips and Tricks"]
 
-    
-    
     @IBOutlet weak var tutorialTableView: UITableView!
     
     override func viewDidLoad() {
@@ -46,6 +43,9 @@ class TutorialPageViewController: UIViewController, UITableViewDelegate, UITable
         tutorialTableView.register(UINib(nibName: "TutorialTableViewCellPage", bundle: nil), forCellReuseIdentifier: "tutorialCell")
         tutorialTableView.delegate = self
         tutorialTableView.dataSource = self
+        let customFont = FontGuide()
+        tutorialTitle.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont.largeTitle)
+        tutorialTitle.adjustsFontForContentSizeCategory = true
     }
     
     @IBAction func backBtn(_ sender: Any) {

@@ -40,6 +40,9 @@ class ProfileTableViewCell: UITableViewCell, UIImagePickerControllerDelegate, UI
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapCompostPhoto))
         profileImage.addGestureRecognizer(gesture)
         profileTextField.addUnderline()
+        let customFont = FontGuide()
+        profileTextField.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont.title3)
+        profileTextField.adjustsFontForContentSizeCategory = true
         
         profileTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

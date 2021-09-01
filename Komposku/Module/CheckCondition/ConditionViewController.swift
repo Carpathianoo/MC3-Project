@@ -7,13 +7,19 @@
 
 import UIKit
 
+enum type: String {
+    case panen = "Panen"
+    case perpanjang = "Perpanjang"
+    case aduk = "Aduk dan cek kondisi"
+}
+
 class ConditionViewController: UIViewController {
 
     @IBOutlet weak var conditionTV: UITableView!
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBAction func checkCondition(_ sender: Any) {
-        if upperBtn.titleLabel?.text == "Perpanjang"{
+        if upperBtn.titleLabel?.text == type.perpanjang.rawValue{
             CoreDataManager.shared.extendProcess(from: (process?.compost)!, date: Date())
             navigationController?.popViewController(animated: true)
             
@@ -23,9 +29,8 @@ class ConditionViewController: UIViewController {
                 let vc = DoneCheckingViewController()
                 
                 guard let unwrappedProcess = process else {return}
-                guard let unwrappedCompost = unwrappedProcess.compost else {return}
                 
-                CoreDataManager.shared.updateProcessStatus(process: process!)
+                CoreDataManager.shared.updateProcessStatus(process: unwrappedProcess)
                 
                 vc.process = process
                 navigationController?.pushViewController(vc, animated: true)
@@ -33,7 +38,6 @@ class ConditionViewController: UIViewController {
                 let vc = CheckingResultsPageController()
                 vc.uncheckedCondition = uncheckedConditions
                 vc.latestProcess = process
-                //untuk button check condition kirim unchecked conditions ke result page
                 navigationController?.pushViewController(vc, animated: true)
             }
             
@@ -52,6 +56,7 @@ class ConditionViewController: UIViewController {
     let seeder = Seeder()
     var conditions: [Condition] = []
     var process: Process?
+    var extendProcess: Bool = false
     
     fileprivate func setupTableView() {
         let nibCell = UINib(nibName: ConditionTableViewCell.identifier, bundle: nil)
@@ -66,8 +71,12 @@ class ConditionViewController: UIViewController {
     
     fileprivate func setupBtn() {
         upperBtn.layer.cornerRadius = 8
+        upperBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: upperBtn.titleLabel?.font.pointSize ?? 20)
+        lowerBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: lowerBtn.titleLabel?.font.pointSize ?? 20)
+        
         lowerBtn.layer.cornerRadius = 8
-        if process?.detail == "Panen"{
+        
+        if process?.detail == type.panen.rawValue{
             titleLbl.text = "Hari ini panen \"\(process?.compost?.name ?? "")\""
             conditions = seeder.seedHarvestCondition()
             
@@ -85,13 +94,20 @@ class ConditionViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         setupBtn()
-        
+        if extendProcess == true{
+            conditions.remove(at: 1)
+        }
         setupTableView()
     }
     
@@ -117,7 +133,6 @@ class ConditionViewController: UIViewController {
         for c in conditions{
             if !c.isChecked{
                 uncheckedConditions.append(index)
-                print(uncheckedConditions)
             }
             index += 1
         }
@@ -144,7 +159,7 @@ extension ConditionViewController: UITableViewDataSource, UITableViewDelegate{
             }else{
                 self.conditions[indexPath.section].isChecked = false
             }
-            if self.upperBtn.titleLabel?.text == "Perpanjang"{
+            if self.upperBtn.titleLabel?.text == type.perpanjang.rawValue{
                 self.checkSelected()
             }
         }

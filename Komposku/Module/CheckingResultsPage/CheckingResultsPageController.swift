@@ -13,6 +13,7 @@ import UIKit
 class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
     
+    @IBOutlet weak var titleSolusi: UILabel!
     @IBOutlet weak var solutionList: UITableView!
     
     var solutionCollection: [Solution] = Seeder.seedSolution()
@@ -48,6 +49,7 @@ class CheckingResultsPageController: UIViewController, UITableViewDelegate, UITa
     
     func setupView(){
         print()
+        titleSolusi.font = UIFont.boldSystemFont(ofSize: titleSolusi.font.pointSize)
     }
 
 
@@ -150,7 +152,6 @@ extension CheckingResultsPageController: SelesaiButtonDelegate{
         let controller = DoneCheckingViewController()
         guard let unwrappedLatestProcess = latestProcess else {return}
         CoreDataManager.shared.updateProcessStatus(process: unwrappedLatestProcess)
-        print(latestProcess)
              navigationController?.pushViewController(controller, animated: true)
     }
        
