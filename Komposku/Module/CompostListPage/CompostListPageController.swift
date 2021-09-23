@@ -122,6 +122,7 @@ class CompostListPageController: UIViewController, UITableViewDelegate, UITableV
         guard let unwrappedLatestProcess = latestProcess else {return cell}
         if latestProcess?.detail == "Panen" && latestProcess?.isDone == true{
             cell.isUserInteractionEnabled = false
+            cell.textLabel?.isEnabled = false
             cell.nextStep.text = "Sudah dipanen"
             
         }else{
